@@ -33,7 +33,8 @@ public class ControleAction implements ActionListener {
             nome = estoq.getNome_Produto().trim();
             Fornecedor = estoq.getFornecedor().trim();
             QuantAdd = estoq.getQantAdd().trim();
-           // dataAdd = estoq.getData().trim();
+           
+            //O codigo a baixo, pega a data atual do sistema
            Date hoje = new Date();
            SimpleDateFormat df;
            df = new SimpleDateFormat("dd/MM/yyyy");
