@@ -31,14 +31,14 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Label_Quantidade = new javax.swing.JLabel();
-        Label_DataCompra = new javax.swing.JLabel();
+        Label_Preco = new javax.swing.JLabel();
         Label_Id_Produto = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table_Mostra_info = new javax.swing.JTable();
         Label_Fornecedor = new javax.swing.JLabel();
         TextField_Nome_Produto = new javax.swing.JTextField();
         TextField_Fornecedor = new javax.swing.JTextField();
-        FormattedTextField_data = new javax.swing.JFormattedTextField();
+        FormattedTextField_Preco = new javax.swing.JFormattedTextField();
         botao_adicionar = new javax.swing.JButton();
         botao_excluir = new javax.swing.JButton();
         TextField_Id_Produto = new javax.swing.JTextField();
@@ -53,9 +53,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         Label_Quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cestinha.png"))); // NOI18N
         Label_Quantidade.setText("Quantidade");
 
-        Label_DataCompra.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Label_DataCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/calendario.png"))); // NOI18N
-        Label_DataCompra.setText("Data da compra");
+        Label_Preco.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        Label_Preco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/icon_dollar.png"))); // NOI18N
+        Label_Preco.setText("Preço");
 
         Label_Id_Produto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Label_Id_Produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/barcode.png"))); // NOI18N
@@ -67,14 +67,14 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Id_Produto", "Nome ", "Quant.", "Data Compra", "Fornecedor", "Quant. em Estoque"
+                "Id_Produto", "Nome ", "Quant.", "Data Compra", "Fornecedor", "Preço", "Quant. em Estoque"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -100,22 +100,18 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         TextField_Fornecedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        FormattedTextField_data.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        try {
-            FormattedTextField_data.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        FormattedTextField_Preco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        FormattedTextField_Preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
 
         botao_adicionar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/add.png"))); // NOI18N
         botao_adicionar.setText("Adicionar");
-        botao_adicionar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_adicionar.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         botao_excluir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/remove.png"))); // NOI18N
         botao_excluir.setText("Remover");
-        botao_excluir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_excluir.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         TextField_Id_Produto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -128,7 +124,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
         botao_limpar_estoque.setText("Limpar");
-        botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,8 +150,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                                     .addComponent(Label_Quantidade))
                                 .addGap(37, 37, 37)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Label_DataCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(FormattedTextField_data, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Label_Preco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(66, 66, 66)
@@ -180,14 +176,14 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                     .addComponent(Label_Id_Produto)
                     .addComponent(Label_Quantidade)
                     .addComponent(jLabel3)
-                    .addComponent(Label_DataCompra)
+                    .addComponent(Label_Preco)
                     .addComponent(Label_Fornecedor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TextField_Nome_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextField_Quant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextField_Id_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FormattedTextField_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TextField_Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,10 +216,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField FormattedTextField_data;
-    private javax.swing.JLabel Label_DataCompra;
+    private javax.swing.JFormattedTextField FormattedTextField_Preco;
     private javax.swing.JLabel Label_Fornecedor;
     private javax.swing.JLabel Label_Id_Produto;
+    private javax.swing.JLabel Label_Preco;
     private javax.swing.JLabel Label_Quantidade;
     private javax.swing.JTable Table_Mostra_info;
     private javax.swing.JTextField TextField_Fornecedor;
@@ -246,7 +242,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         SimpleDateFormat data;
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
-        //estoque.setData(FormattedTextField_data.getText());
+        estoque.setPreco(FormattedTextField_Preco.getText());
         estoque.setData(DataAtual);
         estoque.setId_produto(TextField_Id_Produto.getText());
         estoque.setNome_Produto(TextField_Nome_Produto.getText());
@@ -268,7 +264,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         TextField_Quant.setText(null);
         TextField_Nome_Produto.setText(null);
         TextField_Id_Produto.setText(null);
-        FormattedTextField_data.setText(null);
+        FormattedTextField_Preco.setText(null);
     }
 
     public void setExcluitabela(int row) {

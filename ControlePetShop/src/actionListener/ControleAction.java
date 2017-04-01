@@ -4,14 +4,19 @@ import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ControleAction implements ActionListener {
 
-    ControleEstoque controle;
+    private ControleEstoque controle;
+
+    String Id;
+    String nome;
+    String Fornecedor;
+    String QuantAdd;
+    String DataAtual;
+    String Preco;
 
     private JTable tabela;
 
@@ -22,12 +27,15 @@ public class ControleAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Adicionar")) {
-            String Id = "";
-            String nome = "";
-            String Fornecedor = "";
-            String QuantAdd = "";
-            String DataAtual = "";
+
             Estoque_Get_Set estoq = controle.getestoq();
+
+            Id = "";
+            nome = "";
+            Fornecedor = "";
+            QuantAdd = "";
+            DataAtual = "";
+            Preco = "";
 
             System.out.println(estoq.toString());
 
@@ -36,6 +44,7 @@ public class ControleAction implements ActionListener {
             Fornecedor = estoq.getFornecedor().trim();
             QuantAdd = estoq.getQantAdd().trim();
             DataAtual = estoq.getData();
+            Preco = estoq.getPreco();
 
             //isso a baixo é apenas pra teste
             String EmEstoque = QuantAdd;
@@ -49,7 +58,7 @@ public class ControleAction implements ActionListener {
 
             } else {
 
-                v.addRow(new String[]{Id, nome, QuantAdd, DataAtual, Fornecedor, EmEstoque});
+                v.addRow(new String[]{Id, nome, QuantAdd, DataAtual, Fornecedor,Preco, EmEstoque});
 
             }
 
