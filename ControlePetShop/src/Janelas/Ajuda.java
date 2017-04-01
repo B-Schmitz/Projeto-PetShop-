@@ -1,6 +1,6 @@
 
 package Janelas;
-// TESTE COMMIT TESTANDO
+
 import javax.swing.ImageIcon;
 
 public class Ajuda extends javax.swing.JInternalFrame {
