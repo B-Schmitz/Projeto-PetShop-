@@ -3,7 +3,7 @@ package Get_Set;
 public class Estoque_Get_Set {
 
     private String Nome_Produto;
-    //temporariamente
+   //Precisa mudar
     private String Id_produto;
     private String QantAdd;
     private String QuantEstoque;
