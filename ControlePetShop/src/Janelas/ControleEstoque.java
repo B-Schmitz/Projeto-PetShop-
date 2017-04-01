@@ -13,6 +13,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
     private String DataAtual;
+    private String Info;
+    private int Row;
 
     public ControleEstoque() {
         initComponents();
@@ -22,7 +24,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         botao_adicionar.addActionListener(control);
         botao_excluir.addActionListener(control);
-        botao_limpar_estoque.addActionListener(control);
+        botao_Editar_Estoque.addActionListener(control);
+        botao_Editar_Estoque.addActionListener(control);
     }
 
     @SuppressWarnings("unchecked")
@@ -44,7 +47,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         TextField_Id_Produto = new javax.swing.JTextField();
         TextField_Quant = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        botao_limpar_estoque = new javax.swing.JButton();
+        botao_Editar_Estoque = new javax.swing.JButton();
+        botao_limpar_estoque1 = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Controle de estoque");
@@ -121,10 +125,15 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/text.png"))); // NOI18N
         jLabel3.setText("Nome do produto");
 
-        botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
-        botao_limpar_estoque.setText("Limpar");
-        botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_Editar_Estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_Editar_Estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Editar.png"))); // NOI18N
+        botao_Editar_Estoque.setText("Editar");
+        botao_Editar_Estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        botao_limpar_estoque1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_limpar_estoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
+        botao_limpar_estoque1.setText("Limpar");
+        botao_limpar_estoque1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,9 +141,17 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(50, 50, 50)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
+                        .addComponent(botao_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(botao_Editar_Estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(botao_limpar_estoque1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(123, 123, 123)
@@ -150,28 +167,21 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                                 .addComponent(Label_Id_Produto)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(179, 179, 179)
+                                .addGap(44, 44, 44)
+                                .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)
                                 .addComponent(TextField_Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(64, 64, 64)
                                 .addComponent(Label_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39)
-                                .addComponent(Label_Fornecedor))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(botao_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Label_Fornecedor)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Label_Id_Produto)
                     .addComponent(Label_Quantidade)
@@ -190,7 +200,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                     .addComponent(botao_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botao_Editar_Estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botao_limpar_estoque1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
@@ -226,9 +237,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TextField_Id_Produto;
     private javax.swing.JTextField TextField_Nome_Produto;
     private javax.swing.JTextField TextField_Quant;
+    private javax.swing.JButton botao_Editar_Estoque;
     private javax.swing.JButton botao_adicionar;
     private javax.swing.JButton botao_excluir;
-    private javax.swing.JButton botao_limpar_estoque;
+    private javax.swing.JButton botao_limpar_estoque1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -269,6 +281,42 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     public void setExcluitabela(int row) {
         ((DefaultTableModel) Table_Mostra_info.getModel()).removeRow(row);
+    }
+
+    public void Editar() {
+
+        Row = Table_Mostra_info.getSelectedRow();
+
+
+        for (int i = 0 ;i < 5; i++) {
+
+            Info = (String) Table_Mostra_info.getModel().getValueAt(Row, i);
+
+            switch (i) {
+                case 0:
+                    TextField_Id_Produto.setText(Info);
+                    break;
+                case 1:
+                    TextField_Nome_Produto.setText(Info);
+                    break;
+                case 2:
+                    TextField_Quant.setText(Info);
+                    break;
+                case 3:
+                    FormattedTextField_Preco.setText(Info);
+                    break;
+                case 4:
+                    TextField_Fornecedor.setText(Info);
+                    break;
+            }
+        }
+        
+         
+
+        
+        // entender porque nao funciona chamar a função   setExcluitabela.
+         //setExcluitabela(Row);
+         
     }
 
 }

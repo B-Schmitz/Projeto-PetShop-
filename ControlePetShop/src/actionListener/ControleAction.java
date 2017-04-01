@@ -79,6 +79,12 @@ public class ControleAction implements ActionListener {
                 controle.setExcluitabela(i);
             }
         }
+        
+        if (e.getActionCommand().equals("Editar")) {
+
+            controle.Editar();
+
+        }
 
     }
 }
