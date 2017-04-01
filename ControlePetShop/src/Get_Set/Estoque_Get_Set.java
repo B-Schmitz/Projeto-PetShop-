@@ -9,6 +9,7 @@ public class Estoque_Get_Set {
     private String QuantEstoque;
     private String Data;
     private String fornecedor;
+    private String Preco;
 
     public String getNome_Produto() {
         return Nome_Produto;
@@ -58,11 +59,17 @@ public class Estoque_Get_Set {
         this.fornecedor = fornecedor;
     }
 
+    public String getPreco() {
+        return Preco;
+    }
+
+    public void setPreco(String Preco) {
+        this.Preco = Preco;
+    }
+
     @Override
     public String toString() {
         return "Nome do Produto = " + Nome_Produto + "Id do produto = " + Id_produto + "Quantidade = " + QantAdd + "Quantidade no estoque = " + QuantEstoque + "Data = " + Data + "Fornecedor = " + fornecedor;
     }
-    
-    
 
 }

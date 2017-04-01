@@ -13,7 +13,7 @@ public class ControleAction implements ActionListener {
 
     ControleEstoque controle;
 
-   private JTable tabela;
+    private JTable tabela;
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
@@ -26,47 +26,41 @@ public class ControleAction implements ActionListener {
             String nome = "";
             String Fornecedor = "";
             String QuantAdd = "";
-            String dataAdd = "";
+            String DataAtual = "";
             Estoque_Get_Set estoq = controle.getestoq();
+
+            System.out.println(estoq.toString());
 
             Id = estoq.getId_produto().trim();
             nome = estoq.getNome_Produto().trim();
             Fornecedor = estoq.getFornecedor().trim();
             QuantAdd = estoq.getQantAdd().trim();
-           
-            //O codigo a baixo, pega a data atual do sistema
-           Date hoje = new Date();
-           SimpleDateFormat df;
-           df = new SimpleDateFormat("dd/MM/yyyy");
-           dataAdd = df.format(hoje);
+            DataAtual = estoq.getData();
+
             //isso a baixo é apenas pra teste
             String EmEstoque = QuantAdd;
-            
-            System.out.println(controle.toString());
 
             tabela = controle.getTabela();
 
             DefaultTableModel v = (DefaultTableModel) tabela.getModel();
 
             if (Id.isEmpty() || nome.isEmpty() || Fornecedor.isEmpty()
-                    || QuantAdd.isEmpty() || dataAdd.isEmpty()) {
+                    || QuantAdd.isEmpty() || DataAtual.isEmpty()) {
 
-            } 
-            
-            else {
+            } else {
 
-                v.addRow(new String[]{Id, nome, QuantAdd, dataAdd, Fornecedor, EmEstoque});
+                v.addRow(new String[]{Id, nome, QuantAdd, DataAtual, Fornecedor, EmEstoque});
 
             }
 
         }
-        
-           if (e.getActionCommand().equals("Limpar")) {
-            
-               controle.limpa();
-            
+
+        if (e.getActionCommand().equals("Limpar")) {
+
+            controle.limpa();
+
         }
-           
+
         if (e.getActionCommand().equals("Remover")) {
             if (tabela.getSelectedRow() == -1) {
 
@@ -76,6 +70,6 @@ public class ControleAction implements ActionListener {
                 controle.setExcluitabela(i);
             }
         }
-        
+
     }
 }

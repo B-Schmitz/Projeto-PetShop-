@@ -3,21 +3,22 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Estoque_Get_Set;
 import actionListener.ControleAction;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class ControleEstoque extends javax.swing.JInternalFrame {
 
-    
     private final ControleAction control = new ControleAction(this);
+    private String DataAtual;
 
     public ControleEstoque() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/estoque.png"));
         TextField_Id_Produto.setDocument(new TeclasPermitidas());
         TextField_Quant.setDocument(new TeclasPermitidas());
-        
 
         botao_adicionar.addActionListener(control);
         botao_excluir.addActionListener(control);
@@ -240,31 +241,35 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     public Estoque_Get_Set getestoq() {
         Estoque_Get_Set estoque = new Estoque_Get_Set();
 
-        estoque.setData(FormattedTextField_data.getText());
+        //O codigo a baixo, pega a data atual do sistema
+        Date hoje = new Date();
+        SimpleDateFormat data;
+        data = new SimpleDateFormat("dd/MM/yyyy");
+        DataAtual = data.format(hoje);
+        //estoque.setData(FormattedTextField_data.getText());
+        estoque.setData(DataAtual);
         estoque.setId_produto(TextField_Id_Produto.getText());
         estoque.setNome_Produto(TextField_Nome_Produto.getText());
         estoque.setQantAdd(TextField_Quant.getText());
         estoque.setFornecedor(TextField_Fornecedor.getText());
-
 
         return estoque;
     }
 
     public JTable getTabela() {
         limpa();
-       
-        return Table_Mostra_info;
-        
-    }
-    
 
-     public void limpa(){
+        return Table_Mostra_info;
+
+    }
+
+    public void limpa() {
         TextField_Fornecedor.setText(null);
         TextField_Quant.setText(null);
         TextField_Nome_Produto.setText(null);
         TextField_Id_Produto.setText(null);
         FormattedTextField_data.setText(null);
-     }
+    }
 
     public void setExcluitabela(int row) {
         ((DefaultTableModel) Table_Mostra_info.getModel()).removeRow(row);
