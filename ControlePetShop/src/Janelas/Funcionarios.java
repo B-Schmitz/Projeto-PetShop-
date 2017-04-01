@@ -47,7 +47,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Cadastro de funcionário");
-        setVisible(true);
+        setVisible(false);
 
         label_nome_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label_nome_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/funcionario.png"))); // NOI18N

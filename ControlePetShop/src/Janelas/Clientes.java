@@ -42,7 +42,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         setTitle("Cadastro de cliente");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setNormalBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setVisible(true);
+        setVisible(false);
 
         label_nome_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label_nome_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cliente.png"))); // NOI18N
@@ -143,7 +143,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                         .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

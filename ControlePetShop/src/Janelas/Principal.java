@@ -42,6 +42,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.setBackground(new java.awt.Color(234, 234, 234));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pegadas.png"))); // NOI18N
+        jLabel1.setOpaque(true);
 
         DesktopPane_Principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -49,16 +50,11 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
         DesktopPane_PrincipalLayout.setHorizontalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, Short.MAX_VALUE)
         );
         DesktopPane_PrincipalLayout.setVerticalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, Short.MAX_VALUE)
         );
 
         Menu_Bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -123,10 +119,7 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DesktopPane_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(DesktopPane_Principal)
         );
 
         pack();
@@ -153,7 +146,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.remove(controle);
         DesktopPane_Principal.add(controle);
         controle.setVisible(true);
-        controle.setLocation(15, 15);
+        controle.setLocation(50, 0);
 
     }//GEN-LAST:event_MenuItem_EstoqueActionPerformed
 
