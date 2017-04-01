@@ -37,7 +37,7 @@ public class ControleAction implements ActionListener {
            Date hoje = new Date();
            SimpleDateFormat df;
            df = new SimpleDateFormat("dd/MM/yyyy");
-           dataAdd = df.format(hoje).toString();
+           dataAdd = df.format(hoje);
             //isso a baixo é apenas pra teste
             String EmEstoque = QuantAdd;
             
