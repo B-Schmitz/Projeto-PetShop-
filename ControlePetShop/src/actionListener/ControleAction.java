@@ -13,7 +13,7 @@ public class ControleAction implements ActionListener {
 
     ControleEstoque controle;
 
-    JTable tabela;
+   private JTable tabela;
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
