@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         DesktopPane_Principal = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         Menu_Bar = new javax.swing.JMenuBar();
         Menu_Cadastros = new javax.swing.JMenu();
         MenuItem_Clientes = new javax.swing.JMenuItem();
@@ -40,15 +41,24 @@ public class Principal extends javax.swing.JFrame {
 
         DesktopPane_Principal.setBackground(new java.awt.Color(234, 234, 234));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pegadas.png"))); // NOI18N
+
+        DesktopPane_Principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout DesktopPane_PrincipalLayout = new javax.swing.GroupLayout(DesktopPane_Principal);
         DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
         DesktopPane_PrincipalLayout.setHorizontalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 853, Short.MAX_VALUE)
+            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 887, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         DesktopPane_PrincipalLayout.setVerticalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 747, Short.MAX_VALUE)
+            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 774, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Menu_Bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -113,9 +123,10 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(DesktopPane_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -170,5 +181,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu Menu_Ajuda;
     private javax.swing.JMenuBar Menu_Bar;
     private javax.swing.JMenu Menu_Cadastros;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
