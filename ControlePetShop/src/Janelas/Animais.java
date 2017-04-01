@@ -8,14 +8,13 @@ import javax.swing.ImageIcon;
 public class Animais extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
- 
 
     public Animais() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/dog.png"));
         botao_cadastrar_animal.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);
-        
+
         field_altura.setDocument(new TeclasPermitidas());
         field_idade_animal.setDocument(new TeclasPermitidas());
         field_peso.setDocument(new TeclasPermitidas());
@@ -220,7 +219,7 @@ public class Animais extends javax.swing.JInternalFrame {
 
     public Animais_Get_Set getAnimais() {
 
-      Animais_Get_Set ani = new Animais_Get_Set();
+        Animais_Get_Set ani = new Animais_Get_Set();
 
         ani.setProprietario(field_proprietario.getText());
         ani.setAnimal((String) comboBox_tipo_animal.getSelectedItem());
@@ -231,7 +230,14 @@ public class Animais extends javax.swing.JInternalFrame {
         ani.setIdade(field_idade_animal.getText());
         ani.setAltura(field_altura.getText());
         ani.setPeso(field_peso.getText());
-       
+        
+        limpar();
+
+        return ani;
+
+    }
+
+    public void limpar() {
         field_proprietario.setText(null);
         field_nome_animal.setText(null);
         field_raca.setText(null);
@@ -239,9 +245,8 @@ public class Animais extends javax.swing.JInternalFrame {
         field_idade_animal.setText(null);
         field_altura.setText(null);
         field_peso.setText(null);
-
-        return ani;
-
     }
-
+    
+    
+    
 }

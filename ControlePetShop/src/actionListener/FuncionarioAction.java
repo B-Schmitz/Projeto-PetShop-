@@ -34,16 +34,9 @@ public class FuncionarioAction implements ActionListener {
         }
         
          if (e.getActionCommand().equals("Limpar")) {
-              Funcionario_Get_Set fun = funcionario.getfuncio();
-            fun.setNome(null);
-            fun.setCargo(null);
-            fun.setIdade(null);
-            fun.setSexo(null);
-            fun.setCPF(null);
-            fun.setNum_Pis(null);
-            fun.setTelefone(null);
-            fun.setEmail(null);
-            fun.setEndereco(null);
+             
+             funcionario.limpar();
+           
          }
 
     }

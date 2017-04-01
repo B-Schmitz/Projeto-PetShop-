@@ -60,12 +60,8 @@ public class ControleAction implements ActionListener {
         }
         
            if (e.getActionCommand().equals("Limpar")) {
-            Estoque_Get_Set estoque = controle.getestoq();
-            estoque.setNome_Produto(null);
-            estoque.setId_produto(null);
-            estoque.setQantAdd(null);
-            estoque.setData(null);
-            estoque.setFornecedor(null);
+            
+               controle.limpa();
             
         }
            

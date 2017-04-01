@@ -242,18 +242,17 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     }
 
     public JTable getTabela() {
-        TextField_Fornecedor.setText("");
-        TextField_Quant.setText("");
-        TextField_Nome_Produto.setText("");
-        TextField_Id_Produto.setText("");
-        FormattedTextField_data.setText("");
+        limpa();
         return Table_Mostra_info;
     }
 
-   /* public void setTabela(DefaultTableModel tabela) {
-        Table_Mostra_info.setModel((TableModel) tabela);
-
-    }*/
+     public void limpa(){
+        TextField_Fornecedor.setText(null);
+        TextField_Quant.setText(null);
+        TextField_Nome_Produto.setText(null);
+        TextField_Id_Produto.setText(null);
+        FormattedTextField_data.setText(null);
+     }
 
     public void setExcluitabela(int row) {
         ((DefaultTableModel) Table_Mostra_info.getModel()).removeRow(row);

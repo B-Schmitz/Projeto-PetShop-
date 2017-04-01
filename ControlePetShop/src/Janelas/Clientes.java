@@ -9,7 +9,6 @@ public class Clientes extends javax.swing.JInternalFrame {
 
     private final CadastroClienteAction cliente = new CadastroClienteAction(this);
 
-
     public Clientes() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/cliente.png"));
@@ -224,15 +223,19 @@ public class Clientes extends javax.swing.JInternalFrame {
         client.setTelefone(tel);
         client.setEmail(field_email_cliente.getText());
 
+        limpar();
+
+        return client;
+
+    }
+
+    public void limpar() {
         field_nome_cliente.setText(null);
         field_email_cliente.setText(null);
         field_CPF_cliente.setText(null);
         field_endereco_cliente.setText(null);
         field_idade_cliente.setText(null);
         field_telefone_cliente.setText(null);
-
-        return client;
-
     }
 
 }

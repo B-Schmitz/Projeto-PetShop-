@@ -257,16 +257,19 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         fun.setSexo((String) comboBox_sexo_funcionario.getSelectedItem());
         fun.setTelefone(tel);
 
-        field_nome_funcionario.setText(null);
+        limpar();
+
+        return fun;
+
+    }
+    public void limpar(){
+         field_nome_funcionario.setText(null);
         field_CPF_funcionario.setText(null);
         field_email_funcionario.setText(null);
         field_endereco_funcionario.setText(null);
         field_idade_funcionario.setText(null);
         field_pis.setText(null);
         field_telefone_funcionario.setText(null);
-        field_cargo.setText(null);
-
-        return fun;
-
-    }
+        field_cargo.setText(null); 
+    } 
 }

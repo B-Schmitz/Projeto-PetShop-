@@ -34,16 +34,7 @@ public class AnimaisAction implements ActionListener {
         }
 
         if (e.getActionCommand().equals("Limpar")) {
-            Animais_Get_Set ani = animais.getAnimais();
-            ani.setProprietario(null);
-            ani.setAnimal(null);
-            ani.setNome(null);
-            ani.setRaca(null);
-            ani.setCor(null);
-            ani.setSexo(null);
-            ani.setIdade(null);
-            ani.setAltura(null);
-            ani.setPeso(null);
+            animais.limpar();
 
         }
 
