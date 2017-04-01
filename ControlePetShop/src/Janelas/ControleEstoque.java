@@ -310,12 +310,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                     break;
             }
         }
-        
-         
 
-        
-        // entender porque nao funciona chamar a função   setExcluitabela.
-         //setExcluitabela(Row);
+        setExcluitabela(Table_Mostra_info.getSelectedRow());
          
     }
 
