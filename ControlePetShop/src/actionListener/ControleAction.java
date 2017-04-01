@@ -4,6 +4,8 @@ import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,7 +33,11 @@ public class ControleAction implements ActionListener {
             nome = estoq.getNome_Produto().trim();
             Fornecedor = estoq.getFornecedor().trim();
             QuantAdd = estoq.getQantAdd().trim();
-            dataAdd = estoq.getData().trim();
+           // dataAdd = estoq.getData().trim();
+           Date hoje = new Date();
+           SimpleDateFormat df;
+           df = new SimpleDateFormat("dd/MM/yyyy");
+           dataAdd = df.format(hoje).toString();
             //isso a baixo é apenas pra teste
             String EmEstoque = QuantAdd;
             
