@@ -2,6 +2,7 @@ package Janelas;
 
 import actionListener.LoginAction;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
@@ -14,6 +15,7 @@ public class Login extends javax.swing.JFrame {
 
         // Configurações da Janela
         this.setResizable(false);
+        field_senha.grabFocus();
         this.setTitle("Login");
         this.setIconImage(icone.getImage());
         this.setLocationRelativeTo(null);
@@ -21,6 +23,17 @@ public class Login extends javax.swing.JFrame {
         Entrar.addActionListener(login);
         Cancelar.addActionListener(login);
 
+    }
+    
+    public void Testa_Senha(){
+     if(field_senha.getText().equals("admin")){
+            Principal p = new Principal();
+            p.setVisible(true);
+            dispose();
+    }
+     else{
+         JOptionPane.showMessageDialog(null, "Por favor, informe outra senha de acesso.","Senha incorreta",JOptionPane.ERROR_MESSAGE,new ImageIcon("src/Icones/erro.png"));
+     }
     }
 
     @SuppressWarnings("unchecked")
