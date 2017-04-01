@@ -71,7 +71,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Id_Produto", "Nome ", "Quant.", "Data Compra", "Fornecedor", "Preço", "Quant. em Estoque"
+                "Id_Produto", "Nome ", "Quant.", "Preço", "Fornecedor", "Data Compra", "Quant. em Estoque"
             }
         ) {
             Class[] types = new Class [] {
