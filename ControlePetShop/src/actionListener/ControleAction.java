@@ -58,7 +58,7 @@ public class ControleAction implements ActionListener {
 
             } else {
 
-                v.addRow(new String[]{Id, nome, QuantAdd, DataAtual, Fornecedor,Preco, EmEstoque});
+                v.addRow(new String[]{Id, nome, QuantAdd,Preco , Fornecedor,DataAtual, EmEstoque});
 
             }
 
