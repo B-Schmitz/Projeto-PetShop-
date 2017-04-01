@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class AnimaisAction implements ActionListener {
 
-    Animais animais;
+    private Animais animais;
 
     public AnimaisAction(Animais animais) {
 

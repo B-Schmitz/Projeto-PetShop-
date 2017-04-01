@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class LoginAction implements ActionListener {
 
-    Login login;
+    private final Login login;
 
     public LoginAction(Login login) {
         this.login = login;

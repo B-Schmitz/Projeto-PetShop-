@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class FuncionarioAction implements ActionListener {
 
-    Funcionarios funcionario;
+    private final Funcionarios funcionario;
 
     public FuncionarioAction(Funcionarios funcionario) {
 

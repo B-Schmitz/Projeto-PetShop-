@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 public class CadastroClienteAction implements ActionListener {
 
-    Clientes cliente;
+    private Clientes cliente;
 
     public CadastroClienteAction(Clientes cliente) {
 
