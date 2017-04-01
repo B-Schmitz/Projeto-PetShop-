@@ -85,4 +85,11 @@ public class Funcionario_Get_Set {
         this.Telefone = telefone;
     }
 
+    @Override
+    public String toString() {
+        return "Nome = " + Nome + "Cargo = " + Cargo + "Sexo = " + Sexo + "Endereço = " + Endereco + "Email = " + Email + "Idade = " + Idade + "CPF = " + CPF + "Número do pis = " + Num_Pis + "Telefone = " + Telefone;
+    }
+    
+    
+
 }

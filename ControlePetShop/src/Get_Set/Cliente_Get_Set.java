@@ -67,4 +67,11 @@ public class Cliente_Get_Set {
         this.Email = Email;
     }
 
+    @Override
+    public String toString() {
+        return "Nome = " + Nome + "Endereço = " + Endereco + "Sexo = " + Sexo + "Email = " + Email + "CPF = " + CPF + "Telefone = " + Telefone + "Idade = " + Idade;
+    }
+
+    
+    
 }

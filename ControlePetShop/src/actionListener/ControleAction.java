@@ -35,12 +35,7 @@ public class ControleAction implements ActionListener {
             //isso a baixo é apenas pra teste
             String EmEstoque = QuantAdd;
             
-            System.out.println(Id);
-            System.out.println(nome);
-            System.out.println(Fornecedor);
-            System.out.println(QuantAdd);
-            System.out.println(dataAdd);
-            System.out.println(EmEstoque);
+            System.out.println(controle.toString());
 
             tabela = controle.getTabela();
 

@@ -58,4 +58,11 @@ public class Estoque_Get_Set {
         this.fornecedor = fornecedor;
     }
 
+    @Override
+    public String toString() {
+        return "Nome do Produto = " + Nome_Produto + "Id do produto = " + Id_produto + "Quantidade = " + QantAdd + "Quantidade no estoque = " + QuantEstoque + "Data = " + Data + "Fornecedor = " + fornecedor;
+    }
+    
+    
+
 }

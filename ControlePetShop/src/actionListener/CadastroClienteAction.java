@@ -21,13 +21,7 @@ public class CadastroClienteAction implements ActionListener {
             
             Cliente_Get_Set client = cliente.getcliente();
            
-            System.out.println("" + client.getNome());
-            System.out.println("" + client.getIdade());
-            System.out.println("" + client.getCPF());
-            System.out.println("" + client.getSexo());
-            System.out.println("" + client.getTelefone());
-            System.out.println("" + client.getEmail());
-            System.out.println("" + client.getEndereco());
+            System.out.println(client.toString());
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         }
 

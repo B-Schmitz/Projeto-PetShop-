@@ -21,15 +21,7 @@ public class AnimaisAction implements ActionListener {
 
             Animais_Get_Set ani = animais.getAnimais();
 
-            System.out.println("" + ani.getProprietario());
-            System.out.println("" + ani.getAnimal());
-            System.out.println("" + ani.getNome());
-            System.out.println("" + ani.getRaca());
-            System.out.println("" + ani.getCor());
-            System.out.println("" + ani.getSexo());
-            System.out.println("" + ani.getIdade());
-            System.out.println("" + ani.getAltura());
-            System.out.println("" + ani.getPeso());
+            System.out.println(ani.toString());
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         }
 

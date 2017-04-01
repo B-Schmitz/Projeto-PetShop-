@@ -85,4 +85,11 @@ public class Animais_Get_Set {
         this.Peso = Peso;
     }
 
+    @Override
+    public String toString() {
+        return "\n\n" + "Proprietario = " + Proprietario + "\n Animal = " + Animal + "\n Nome = " + Nome + "\n Raca = " + Raca + "\n Sexo = " + Sexo + "\n Cor = " + Cor + "\n Idade = " + Idade + "\n Altura = " + Altura + "\n Peso = " + Peso;
+    }
+    
+    
+
 }

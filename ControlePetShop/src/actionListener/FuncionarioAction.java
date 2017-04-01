@@ -21,15 +21,7 @@ public class FuncionarioAction implements ActionListener {
 
             Funcionario_Get_Set fun = funcionario.getfuncio();
             
-            System.out.println("" + fun.getNome());
-            System.out.println("" + fun.getCargo());
-            System.out.println("" + fun.getIdade());
-            System.out.println("" + fun.getSexo());
-            System.out.println("" + fun.getCPF());
-            System.out.println("" + fun.getNum_Pis());
-            System.out.println("" + fun.getTelefone());
-            System.out.println("" + fun.getEmail());
-            System.out.println("" + fun.getEndereco());
+            System.out.println(fun.toString());
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
         }
         
