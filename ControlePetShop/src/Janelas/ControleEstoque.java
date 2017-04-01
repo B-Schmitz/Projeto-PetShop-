@@ -24,8 +24,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         botao_adicionar.addActionListener(control);
         botao_excluir.addActionListener(control);
-        botao_Editar_Estoque.addActionListener(control);
-        botao_Editar_Estoque.addActionListener(control);
+        botao_editar.addActionListener(control);
+        botao_limpar_estoque.addActionListener(control);
     }
 
     @SuppressWarnings("unchecked")
@@ -47,8 +47,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         TextField_Id_Produto = new javax.swing.JTextField();
         TextField_Quant = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        botao_Editar_Estoque = new javax.swing.JButton();
-        botao_limpar_estoque1 = new javax.swing.JButton();
+        botao_editar = new javax.swing.JButton();
+        botao_limpar_estoque = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Controle de estoque");
@@ -125,15 +125,15 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/text.png"))); // NOI18N
         jLabel3.setText("Nome do produto");
 
-        botao_Editar_Estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_Editar_Estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Editar.png"))); // NOI18N
-        botao_Editar_Estoque.setText("Editar");
-        botao_Editar_Estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_editar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/Editar.png"))); // NOI18N
+        botao_editar.setText("Editar");
+        botao_editar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        botao_limpar_estoque1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_limpar_estoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
-        botao_limpar_estoque1.setText("Limpar");
-        botao_limpar_estoque1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
+        botao_limpar_estoque.setText("Limpar");
+        botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,9 +148,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                         .addGap(27, 27, 27)
                         .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
-                        .addComponent(botao_Editar_Estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
-                        .addComponent(botao_limpar_estoque1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -200,8 +200,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                     .addComponent(botao_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botao_Editar_Estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(botao_limpar_estoque1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1))
@@ -237,10 +237,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TextField_Id_Produto;
     private javax.swing.JTextField TextField_Nome_Produto;
     private javax.swing.JTextField TextField_Quant;
-    private javax.swing.JButton botao_Editar_Estoque;
     private javax.swing.JButton botao_adicionar;
+    private javax.swing.JButton botao_editar;
     private javax.swing.JButton botao_excluir;
-    private javax.swing.JButton botao_limpar_estoque1;
+    private javax.swing.JButton botao_limpar_estoque;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -266,7 +266,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     public JTable getTabela() {
         limpa();
-
         return Table_Mostra_info;
 
     }

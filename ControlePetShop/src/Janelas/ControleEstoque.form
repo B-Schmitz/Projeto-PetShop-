@@ -53,9 +53,9 @@
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="botao_excluir" min="-2" pref="145" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                          <Component id="botao_Editar_Estoque" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="botao_editar" min="-2" pref="145" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Component id="botao_limpar_estoque1" min="-2" pref="145" max="-2" attributes="0"/>
+                          <Component id="botao_limpar_estoque" min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -120,8 +120,8 @@
                       <Component id="botao_adicionar" min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botao_excluir" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="botao_Editar_Estoque" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="botao_limpar_estoque1" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="botao_editar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="botao_limpar_estoque" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -337,7 +337,7 @@
             <Property name="text" type="java.lang.String" value="Nome do produto"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botao_Editar_Estoque">
+        <Component class="javax.swing.JButton" name="botao_editar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -353,7 +353,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botao_limpar_estoque1">
+        <Component class="javax.swing.JButton" name="botao_limpar_estoque">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
