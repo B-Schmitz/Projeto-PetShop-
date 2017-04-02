@@ -3,13 +3,13 @@ package Get_Set;
 public class Estoque_Get_Set {
 
     private String Nome_Produto;
-   //Precisa mudar
-    private String Id_produto;
-    private String QantAdd;
-    private String QuantEstoque;
+    //Precisa mudar
+    private long Id_produto;
+    private int QantAdd;
+    private long QuantEstoque;
     private String Data;
     private String fornecedor;
-    private String Preco;
+    private Double Preco;
 
     public String getNome_Produto() {
         return Nome_Produto;
@@ -17,30 +17,6 @@ public class Estoque_Get_Set {
 
     public void setNome_Produto(String Nome_Produto) {
         this.Nome_Produto = Nome_Produto;
-    }
-
-    public String getId_produto() {
-        return Id_produto;
-    }
-
-    public void setId_produto(String Id_produto) {
-        this.Id_produto = Id_produto;
-    }
-
-    public String getQantAdd() {
-        return QantAdd;
-    }
-
-    public void setQantAdd(String QantAdd) {
-        this.QantAdd = QantAdd;
-    }
-
-    public String getQuantEstoque() {
-        return QuantEstoque;
-    }
-
-    public void setQuantEstoque(String QuantEstoque) {
-        this.QuantEstoque = QuantEstoque;
     }
 
     public String getData() {
@@ -59,17 +35,44 @@ public class Estoque_Get_Set {
         this.fornecedor = fornecedor;
     }
 
-    public String getPreco() {
-        return Preco;
+    public long getId_produto() {
+        return Id_produto;
     }
 
-    public void setPreco(String Preco) {
+    public void setId_produto(long Id_produto) {
+        this.Id_produto = Id_produto;
+    }
+
+    public int getQantAdd() {
+        return QantAdd;
+    }
+
+    public void setQantAdd(int QantAdd) {
+        this.QantAdd = QantAdd;
+    }
+
+    public long getQuantEstoque() {
+        return QuantEstoque;
+    }
+
+    public void setQuantEstoque(long QuantEstoque) {
+        this.QuantEstoque = QuantEstoque;
+    }
+
+    public void setPreco(Double Preco) {
         this.Preco = Preco;
     }
 
     @Override
     public String toString() {
-        return "Nome do Produto = " + Nome_Produto + "Id do produto = " + Id_produto + "Quantidade = " + QantAdd + "Quantidade no estoque = " + QuantEstoque + "Data = " + Data + "Fornecedor = " + fornecedor;
+        return "Nome do Produto = " + Nome_Produto + "\nId do produto = " + getId_produto() + "\nQuantidade = " + getQantAdd() + "\nQuantidade no estoque = " + getQuantEstoque() + "\nData = " + Data + "\nFornecedor = " + fornecedor;
+    }
+
+    /**
+     * @return the Preco
+     */
+    public Double getPreco() {
+        return Preco;
     }
 
 }

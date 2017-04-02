@@ -11,12 +11,14 @@ public class ControleAction implements ActionListener {
 
     private ControleEstoque controle;
 
-    String Id;
+    long Id, EmEstoque;
     String nome;
     String Fornecedor;
-    String QuantAdd;
+    int QuantAdd;
     String DataAtual;
-    String Preco;
+    Double Preco;
+    //teste
+    String preco;
 
     private JTable tabela;
 
@@ -30,35 +32,28 @@ public class ControleAction implements ActionListener {
 
             Estoque_Get_Set estoq = controle.getestoq();
 
-            Id = "";
-            nome = "";
-            Fornecedor = "";
-            QuantAdd = "";
-            DataAtual = "";
-            Preco = "";
-
-            System.out.println(estoq.toString());
-
-            Id = estoq.getId_produto().trim();
-            nome = estoq.getNome_Produto().trim();
-            Fornecedor = estoq.getFornecedor().trim();
-            QuantAdd = estoq.getQantAdd().trim();
-            DataAtual = estoq.getData();
-            Preco = estoq.getPreco();
-
-            //isso a baixo é apenas pra teste
-            String EmEstoque = QuantAdd;
-
-            tabela = controle.getTabela();
-
-            DefaultTableModel v = (DefaultTableModel) tabela.getModel();
-
-            if (Id.isEmpty() || nome.isEmpty() || Fornecedor.isEmpty()
-                    || QuantAdd.isEmpty() || DataAtual.isEmpty()) {
+            if (estoq == null) {
 
             } else {
+                System.out.println(estoq.toString());
+                Id = estoq.getId_produto();
+                nome = estoq.getNome_Produto().trim();
+                Fornecedor = estoq.getFornecedor().trim();
+                QuantAdd = estoq.getQantAdd();
+                DataAtual = estoq.getData();
+                Preco = estoq.getPreco();
+                preco = Preco + "";
+                
+                preco = preco.replaceAll("[.]", ",");
 
-                v.addRow(new String[]{Id, nome, QuantAdd,Preco , Fornecedor,DataAtual, EmEstoque});
+                //isso a baixo é apenas pra teste
+                EmEstoque = QuantAdd;
+
+                tabela = controle.getTabela();
+
+                DefaultTableModel v = (DefaultTableModel) tabela.getModel();
+
+                v.addRow(new String[]{Id + "", nome, QuantAdd + "", preco, Fornecedor, DataAtual, EmEstoque + ""});
 
             }
 
@@ -79,7 +74,7 @@ public class ControleAction implements ActionListener {
                 controle.setExcluitabela(i);
             }
         }
-        
+
         if (e.getActionCommand().equals("Editar")) {
 
             controle.Editar();

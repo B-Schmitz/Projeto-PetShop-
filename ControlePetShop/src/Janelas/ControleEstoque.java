@@ -14,7 +14,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
     private String DataAtual;
-    private String Info;
+    private String Info,Preco;
     private int Row;
 
     public ControleEstoque() {
@@ -261,13 +261,21 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         SimpleDateFormat data;
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
-        estoque.setPreco(FormattedTextField_Preco.getText());
+        
+        
+        Preco = FormattedTextField_Preco.getText().replaceAll("[.]", "");
+        Preco = Preco.replaceAll("[,]", ".");
+        if(Preco.isEmpty() || TextField_Quant.getText().isEmpty() || TextField_Nome_Produto.getText().isEmpty()
+                || TextField_Id_Produto.getText().isEmpty() || TextField_Fornecedor.getText().isEmpty()){
+           estoque = null;
+        }else{
+        estoque.setPreco(Double.parseDouble(Preco));
         estoque.setData(DataAtual);
-        estoque.setId_produto(TextField_Id_Produto.getText());
+        estoque.setId_produto(Long.parseLong(TextField_Id_Produto.getText()));
         estoque.setNome_Produto(TextField_Nome_Produto.getText());
-        estoque.setQantAdd(TextField_Quant.getText());
+        estoque.setQantAdd(Integer.parseInt(TextField_Quant.getText()));
         estoque.setFornecedor(TextField_Fornecedor.getText());
-
+        }
         return estoque;
     }
 

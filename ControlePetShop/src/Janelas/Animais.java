@@ -228,9 +228,9 @@ public class Animais extends javax.swing.JInternalFrame {
         ani.setRaca(field_raca.getText());
         ani.setCor(field_cor.getText());
         ani.setSexo((String) comboBox_sexo_animal.getSelectedItem());
-        ani.setIdade(field_idade_animal.getText());
-        ani.setAltura(field_altura.getText());
-        ani.setPeso(field_peso.getText());
+        ani.setIdade(Integer.parseInt(field_idade_animal.getText()));
+        ani.setAltura(Integer.parseInt(field_altura.getText()));
+        ani.setPeso(Integer.parseInt(field_peso.getText()));
         
         limpar();
 

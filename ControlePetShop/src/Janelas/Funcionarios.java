@@ -248,15 +248,15 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         String cpf = field_CPF_funcionario.getText().replaceAll("[-.]", "");
         String tel = field_telefone_funcionario.getText().replaceAll("[()]", "");
 
-        fun.setCPF(cpf);
+        fun.setCPF(Long.parseLong(cpf));
         fun.setEndereco(field_endereco_funcionario.getText());
         fun.setCargo(field_cargo.getText());
-        fun.setIdade(field_idade_funcionario.getText());
+        fun.setIdade(Integer.parseInt(field_idade_funcionario.getText()));
         fun.setNome(field_nome_funcionario.getText());
         fun.setEmail(field_email_funcionario.getText());
-        fun.setNum_Pis(field_pis.getText());
+        fun.setNum_Pis(Long.parseLong(field_pis.getText()));
         fun.setSexo((String) comboBox_sexo_funcionario.getSelectedItem());
-        fun.setTelefone(tel);
+        fun.setTelefone(Long.parseLong(tel));
 
         limpar();
 

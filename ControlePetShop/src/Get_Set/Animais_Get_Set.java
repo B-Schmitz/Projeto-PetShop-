@@ -8,10 +8,9 @@ public class Animais_Get_Set {
     private String Raca;
     private String Sexo;
     private String Cor;
-    // Temporariamente
-    private String Idade;
-    private String Altura;
-    private String Peso;
+    private int Idade;
+    private int Altura;
+    private int Peso;
 
     public String getProprietario() {
         return Proprietario;
@@ -61,35 +60,51 @@ public class Animais_Get_Set {
         this.Cor = Cor;
     }
 
-    public String getIdade() {
+    @Override
+    public String toString() {
+        return "\n\n" + "Proprietario = " + Proprietario + "\n Animal = " + Animal + "\n Nome = " + Nome + "\n Raca = " + Raca + "\n Sexo = " + Sexo + "\n Cor = " + Cor + "\n Idade = " + getIdade() + "\n Altura = " + getAltura() + "\n Peso = " + getPeso();
+    }
+
+    /**
+     * @return the Idade
+     */
+    public int getIdade() {
         return Idade;
     }
 
-    public void setIdade(String Idade) {
+    /**
+     * @param Idade the Idade to set
+     */
+    public void setIdade(int Idade) {
         this.Idade = Idade;
     }
 
-    public String getAltura() {
+    /**
+     * @return the Altura
+     */
+    public int getAltura() {
         return Altura;
     }
 
-    public void setAltura(String Altura) {
+    /**
+     * @param Altura the Altura to set
+     */
+    public void setAltura(int Altura) {
         this.Altura = Altura;
     }
 
-    public String getPeso() {
+    /**
+     * @return the Peso
+     */
+    public int getPeso() {
         return Peso;
     }
 
-    public void setPeso(String Peso) {
+    /**
+     * @param Peso the Peso to set
+     */
+    public void setPeso(int Peso) {
         this.Peso = Peso;
     }
-
-    @Override
-    public String toString() {
-        return "\n\n" + "Proprietario = " + Proprietario + "\n Animal = " + Animal + "\n Nome = " + Nome + "\n Raca = " + Raca + "\n Sexo = " + Sexo + "\n Cor = " + Cor + "\n Idade = " + Idade + "\n Altura = " + Altura + "\n Peso = " + Peso;
-    }
-    
-    
 
 }

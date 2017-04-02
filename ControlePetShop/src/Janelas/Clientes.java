@@ -9,6 +9,10 @@ import java.awt.Dimension;
 public class Clientes extends javax.swing.JInternalFrame {
 
     private final CadastroClienteAction cliente = new CadastroClienteAction(this);
+     private String cpf;
+     private String tel;
+     
+        
 
     public Clientes() {
         initComponents();
@@ -213,15 +217,15 @@ public class Clientes extends javax.swing.JInternalFrame {
 
         Cliente_Get_Set client = new Cliente_Get_Set();
 
-        String cpf = field_CPF_cliente.getText().replaceAll("[-.]", "");
-        String tel = field_telefone_cliente.getText().replaceAll("[()]", "");
+          cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
+          tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
-        client.setCPF(cpf);
+        client.setCPF(Long.parseLong(cpf));
         client.setEndereco(field_endereco_cliente.getText());
-        client.setIdade(field_idade_cliente.getText());
+        client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
         client.setNome(field_nome_cliente.getText());
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
-        client.setTelefone(tel);
+        client.setTelefone(Long.parseLong(tel));
         client.setEmail(field_email_cliente.getText());
 
         limpar();

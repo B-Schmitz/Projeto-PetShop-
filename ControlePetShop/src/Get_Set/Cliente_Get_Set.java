@@ -6,10 +6,9 @@ public class Cliente_Get_Set {
     private String Endereco;
     private String Sexo;
     private String Email;
-    // Temporariamente
-    private String CPF;
-    private String Telefone;
-    private String Idade;
+    private long CPF;
+    private long Telefone;
+    private int Idade;
 
     public String getNome() {
         return Nome;
@@ -35,30 +34,6 @@ public class Cliente_Get_Set {
         this.Sexo = Sexo;
     }
 
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
-
-    public String getTelefone() {
-        return Telefone;
-    }
-
-    public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
-    }
-
-    public String getIdade() {
-        return Idade;
-    }
-
-    public void setIdade(String Idade) {
-        this.Idade = Idade;
-    }
-
     public String getEmail() {
         return Email;
     }
@@ -66,12 +41,41 @@ public class Cliente_Get_Set {
     public void setEmail(String Email) {
         this.Email = Email;
     }
+     public long getCPF() {
+        return CPF;
+    }
+
+ 
+    public void setCPF(long CPF) {
+        this.CPF = CPF;
+    }
+
+   
+    public long getTelefone() {
+        return Telefone;
+    }
+
+  
+    public void setTelefone(long Telefone) {
+        this.Telefone = Telefone;
+    }
+
+  
+    public int getIdade() {
+        return Idade;
+    }
+
+
+    public void setIdade(int Idade) {
+        this.Idade = Idade;
+    }
 
     @Override
     public String toString() {
-        return "Nome = " + Nome + "Endereço = " + Endereco + "Sexo = " + Sexo + "Email = " + Email + "CPF = " + CPF + "Telefone = " + Telefone + "Idade = " + Idade;
+        return "Nome = " + Nome + "Endereço = " + Endereco + "Sexo = " + Sexo + "Email = " + Email + "CPF = " + getCPF() + "Telefone = " + getTelefone() + "Idade = " + getIdade();
     }
 
-    
-    
+   
+   
+
 }

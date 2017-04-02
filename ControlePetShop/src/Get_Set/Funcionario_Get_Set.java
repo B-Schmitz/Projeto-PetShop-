@@ -7,11 +7,10 @@ public class Funcionario_Get_Set {
     private String Sexo;
     private String Endereco;
     private String Email;
-    //temporariamente
-    private String Idade;
-    private String CPF;
-    private String Num_Pis;
-    private String Telefone;
+    private int Idade;
+    private long CPF;
+    private long Num_Pis;
+    private long Telefone;
 
     public String getNome() {
         return Nome;
@@ -20,7 +19,7 @@ public class Funcionario_Get_Set {
     public void setNome(String Nome) {
         this.Nome = Nome;
     }
-    
+
     public String getEmail() {
         return Email;
     }
@@ -52,44 +51,49 @@ public class Funcionario_Get_Set {
     public void setEndereco(String Endereco) {
         this.Endereco = Endereco;
     }
-
-    public String getIdade() {
+    public int getIdade() {
         return Idade;
     }
 
-    public void setIdade(String idade) {
-        this.Idade = idade;
+
+    public void setIdade(int Idade) {
+        this.Idade = Idade;
     }
 
-    public String getCPF() {
+ 
+    public long getCPF() {
         return CPF;
     }
 
-    public void setCPF(String CPF) {
+    public void setCPF(long CPF) {
         this.CPF = CPF;
     }
 
-    public String getNum_Pis() {
+ 
+    public long getNum_Pis() {
         return Num_Pis;
     }
 
-    public void setNum_Pis(String Num_Pis) {
+
+    public void setNum_Pis(long Num_Pis) {
         this.Num_Pis = Num_Pis;
     }
 
-    public String getTelefone() {
+
+    public long getTelefone() {
         return Telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.Telefone = telefone;
+    public void setTelefone(long Telefone) {
+        this.Telefone = Telefone;
     }
 
     @Override
     public String toString() {
-        return "Nome = " + Nome + "Cargo = " + Cargo + "Sexo = " + Sexo + "Endereço = " + Endereco + "Email = " + Email + "Idade = " + Idade + "CPF = " + CPF + "Número do pis = " + Num_Pis + "Telefone = " + Telefone;
+        return "Nome = " + Nome + "\nCargo = " + Cargo + "\nSexo = " + Sexo + "\nEndereço = " + Endereco + "\nEmail = " + Email + "\nIdade = " + getIdade() + "\nCPF = " + getCPF() + "\nNúmero do pis = " + getNum_Pis() + "\nTelefone = " + getTelefone();
     }
-    
+
+
     
 
 }
