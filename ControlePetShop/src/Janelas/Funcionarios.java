@@ -3,6 +3,7 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Funcionario_Get_Set;
 import actionListener.FuncionarioAction;
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Funcionarios extends javax.swing.JInternalFrame {
@@ -271,5 +272,10 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         field_pis.setText(null);
         field_telefone_funcionario.setText(null);
         field_cargo.setText(null); 
-    } 
+    }
+    
+     public void Centralizar() {
+    Dimension d = this.getDesktopPane().getSize();
+    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+    }
 }

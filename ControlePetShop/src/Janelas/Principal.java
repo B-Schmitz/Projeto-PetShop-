@@ -50,7 +50,10 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
         DesktopPane_PrincipalLayout.setHorizontalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, Short.MAX_VALUE)
+            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(0, Short.MAX_VALUE))
         );
         DesktopPane_PrincipalLayout.setVerticalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +132,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.remove(c_cliente);
         DesktopPane_Principal.add(c_cliente);
         c_cliente.setVisible(true);
-        c_cliente.setLocation(200, 150);
+        c_cliente.Centralizar();
 
 
     }//GEN-LAST:event_MenuItem_ClientesActionPerformed
@@ -138,7 +141,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.remove(funcionario);
         DesktopPane_Principal.add(funcionario);
         funcionario.setVisible(true);
-        funcionario.setLocation(200, 150);
+        funcionario.Centralizar();
 
     }//GEN-LAST:event_MenuItem_FuncionariosActionPerformed
 
@@ -146,7 +149,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.remove(controle);
         DesktopPane_Principal.add(controle);
         controle.setVisible(true);
-        controle.setLocation(50, 0);
+        controle.Centralizar();
 
     }//GEN-LAST:event_MenuItem_EstoqueActionPerformed
 
@@ -154,14 +157,14 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.remove(ajuda);
         DesktopPane_Principal.add(ajuda);
         ajuda.setVisible(true);
-        ajuda.setLocation(200, 150);
+        ajuda.Centralizar();
     }//GEN-LAST:event_Menu_AjudaMousePressed
 
     private void MenuItem_AnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_AnimaisActionPerformed
         DesktopPane_Principal.remove(animais);
         DesktopPane_Principal.add(animais);
         animais.setVisible(true);
-        animais.setLocation(200, 150);
+        animais.Centralizar();
     }//GEN-LAST:event_MenuItem_AnimaisActionPerformed
 
 

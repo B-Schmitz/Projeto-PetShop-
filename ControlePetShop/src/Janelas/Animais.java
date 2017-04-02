@@ -3,6 +3,7 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Animais_Get_Set;
 import actionListener.AnimaisAction;
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Animais extends javax.swing.JInternalFrame {
@@ -245,6 +246,11 @@ public class Animais extends javax.swing.JInternalFrame {
         field_idade_animal.setText(null);
         field_altura.setText(null);
         field_peso.setText(null);
+    }
+    
+     public void Centralizar() {
+    Dimension d = this.getDesktopPane().getSize();
+    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
     }
     
     

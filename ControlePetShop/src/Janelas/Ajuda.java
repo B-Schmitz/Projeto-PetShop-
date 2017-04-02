@@ -1,6 +1,7 @@
 
 package Janelas;
 
+import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Ajuda extends javax.swing.JInternalFrame {
@@ -178,4 +179,10 @@ public class Ajuda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel label_michael1;
     private javax.swing.JLabel label_programadores1;
     // End of variables declaration//GEN-END:variables
+
+ public void Centralizar() {
+    Dimension d = this.getDesktopPane().getSize();
+    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+    }
+
 }

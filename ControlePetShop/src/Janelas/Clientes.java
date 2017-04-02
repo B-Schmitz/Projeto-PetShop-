@@ -4,6 +4,7 @@ import Exceções.TeclasPermitidas;
 import Get_Set.Cliente_Get_Set;
 import javax.swing.ImageIcon;
 import actionListener.CadastroClienteAction;
+import java.awt.Dimension;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -236,6 +237,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         field_endereco_cliente.setText(null);
         field_idade_cliente.setText(null);
         field_telefone_cliente.setText(null);
+    }
+    
+     public void Centralizar() {
+    Dimension d = this.getDesktopPane().getSize();
+    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
     }
 
 }
