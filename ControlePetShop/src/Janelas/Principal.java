@@ -14,7 +14,6 @@ public class Principal extends javax.swing.JFrame {
 
         initComponents();
         ImageIcon icone = new ImageIcon("src/Icones/login.png");
-
         // Configuração da Janela
         this.setLocationRelativeTo(null);
         this.setTitle("Painel de controle");
@@ -50,10 +49,7 @@ public class Principal extends javax.swing.JFrame {
         DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
         DesktopPane_PrincipalLayout.setHorizontalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DesktopPane_PrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE)
         );
         DesktopPane_PrincipalLayout.setVerticalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,6 +127,7 @@ public class Principal extends javax.swing.JFrame {
     private void MenuItem_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_ClientesActionPerformed
         DesktopPane_Principal.remove(c_cliente);
         DesktopPane_Principal.add(c_cliente);
+        c_cliente.moveToFront();
         c_cliente.setVisible(true);
         c_cliente.Centralizar();
 
@@ -140,6 +137,7 @@ public class Principal extends javax.swing.JFrame {
     private void MenuItem_FuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_FuncionariosActionPerformed
         DesktopPane_Principal.remove(funcionario);
         DesktopPane_Principal.add(funcionario);
+        funcionario.moveToFront();
         funcionario.setVisible(true);
         funcionario.Centralizar();
 
@@ -148,6 +146,7 @@ public class Principal extends javax.swing.JFrame {
     private void MenuItem_EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_EstoqueActionPerformed
         DesktopPane_Principal.remove(controle);
         DesktopPane_Principal.add(controle);
+        controle.moveToFront();
         controle.setVisible(true);
         controle.Centralizar();
 
@@ -156,6 +155,7 @@ public class Principal extends javax.swing.JFrame {
     private void Menu_AjudaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu_AjudaMousePressed
         DesktopPane_Principal.remove(ajuda);
         DesktopPane_Principal.add(ajuda);
+        ajuda.moveToFront();
         ajuda.setVisible(true);
         ajuda.Centralizar();
     }//GEN-LAST:event_Menu_AjudaMousePressed
@@ -163,6 +163,7 @@ public class Principal extends javax.swing.JFrame {
     private void MenuItem_AnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_AnimaisActionPerformed
         DesktopPane_Principal.remove(animais);
         DesktopPane_Principal.add(animais);
+        animais.moveToFront();
         animais.setVisible(true);
         animais.Centralizar();
     }//GEN-LAST:event_MenuItem_AnimaisActionPerformed
