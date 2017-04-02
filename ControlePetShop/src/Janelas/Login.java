@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     private final LoginAction login = new LoginAction(this);
+    private String senha;
 
     public Login() {
 
@@ -26,7 +27,8 @@ public class Login extends javax.swing.JFrame {
     }
     
     public void Testa_Senha(){
-     if(field_senha.getText().equals("admin")){
+         senha = new String(field_senha.getPassword());
+     if(senha.equals("admin")){
             Principal p = new Principal();
             p.setVisible(true);
             dispose();

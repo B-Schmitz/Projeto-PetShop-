@@ -1,5 +1,12 @@
 package Janelas;
 
+
+
+import Janelas.Ajuda;
+import Janelas.Animais;
+import Janelas.Clientes;
+import Janelas.ControleEstoque;
+import Janelas.Funcionarios;
 import javax.swing.ImageIcon;
 
 public class Principal extends javax.swing.JFrame {
@@ -11,14 +18,13 @@ public class Principal extends javax.swing.JFrame {
     Ajuda ajuda = new Ajuda();
 
     public Principal() {
-
         initComponents();
         ImageIcon icone = new ImageIcon("src/Icones/login.png");
+
         // Configuração da Janela
         this.setLocationRelativeTo(null);
         this.setTitle("Painel de controle");
         this.setIconImage(icone.getImage());
-
     }
 
     @SuppressWarnings("unchecked")
@@ -26,8 +32,8 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         DesktopPane_Principal = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
-        Menu_Bar = new javax.swing.JMenuBar();
+        Pricipal_Patinahs = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
         Menu_Cadastros = new javax.swing.JMenu();
         MenuItem_Clientes = new javax.swing.JMenuItem();
         MenuItem_Funcionarios = new javax.swing.JMenuItem();
@@ -36,27 +42,25 @@ public class Principal extends javax.swing.JFrame {
         Menu_Ajuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Painel de controle");
 
-        DesktopPane_Principal.setBackground(new java.awt.Color(234, 234, 234));
+        DesktopPane_Principal.setBackground(new java.awt.Color(240, 240, 240));
+        DesktopPane_Principal.setForeground(new java.awt.Color(240, 240, 240));
+        DesktopPane_Principal.setToolTipText("");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pegadas.png"))); // NOI18N
-        jLabel1.setOpaque(true);
+        Pricipal_Patinahs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pegadas.png"))); // NOI18N
 
-        DesktopPane_Principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        DesktopPane_Principal.setLayer(Pricipal_Patinahs, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout DesktopPane_PrincipalLayout = new javax.swing.GroupLayout(DesktopPane_Principal);
         DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
         DesktopPane_PrincipalLayout.setHorizontalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE)
+            .addComponent(Pricipal_Patinahs, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE)
         );
         DesktopPane_PrincipalLayout.setVerticalGroup(
             DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, Short.MAX_VALUE)
+            .addComponent(Pricipal_Patinahs, javax.swing.GroupLayout.PREFERRED_SIZE, 609, Short.MAX_VALUE)
         );
-
-        Menu_Bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         Menu_Cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cadastro.png"))); // NOI18N
         Menu_Cadastros.setText("Cadastro");
@@ -70,7 +74,7 @@ public class Principal extends javax.swing.JFrame {
         });
         Menu_Cadastros.add(MenuItem_Clientes);
 
-        MenuItem_Funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/funcionario.PNG"))); // NOI18N
+        MenuItem_Funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/funcionario.png"))); // NOI18N
         MenuItem_Funcionarios.setText("Cadastro de funcionário");
         MenuItem_Funcionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +101,7 @@ public class Principal extends javax.swing.JFrame {
         });
         Menu_Cadastros.add(MenuItem_Estoque);
 
-        Menu_Bar.add(Menu_Cadastros);
+        jMenuBar1.add(Menu_Cadastros);
 
         Menu_Ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
         Menu_Ajuda.setText("Ajuda");
@@ -106,9 +110,9 @@ public class Principal extends javax.swing.JFrame {
                 Menu_AjudaMousePressed(evt);
             }
         });
-        Menu_Bar.add(Menu_Ajuda);
+        jMenuBar1.add(Menu_Ajuda);
 
-        setJMenuBar(Menu_Bar);
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,8 +134,6 @@ public class Principal extends javax.swing.JFrame {
         c_cliente.moveToFront();
         c_cliente.setVisible(true);
         c_cliente.Centralizar();
-
-
     }//GEN-LAST:event_MenuItem_ClientesActionPerformed
 
     private void MenuItem_FuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_FuncionariosActionPerformed
@@ -140,8 +142,15 @@ public class Principal extends javax.swing.JFrame {
         funcionario.moveToFront();
         funcionario.setVisible(true);
         funcionario.Centralizar();
-
     }//GEN-LAST:event_MenuItem_FuncionariosActionPerformed
+
+    private void MenuItem_AnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_AnimaisActionPerformed
+        DesktopPane_Principal.remove(animais);
+        DesktopPane_Principal.add(animais);
+        animais.moveToFront();
+        animais.setVisible(true);
+        animais.Centralizar();
+    }//GEN-LAST:event_MenuItem_AnimaisActionPerformed
 
     private void MenuItem_EstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_EstoqueActionPerformed
         DesktopPane_Principal.remove(controle);
@@ -160,14 +169,38 @@ public class Principal extends javax.swing.JFrame {
         ajuda.Centralizar();
     }//GEN-LAST:event_Menu_AjudaMousePressed
 
-    private void MenuItem_AnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItem_AnimaisActionPerformed
-        DesktopPane_Principal.remove(animais);
-        DesktopPane_Principal.add(animais);
-        animais.moveToFront();
-        animais.setVisible(true);
-        animais.Centralizar();
-    }//GEN-LAST:event_MenuItem_AnimaisActionPerformed
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Principal().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPane_Principal;
@@ -176,8 +209,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItem_Estoque;
     private javax.swing.JMenuItem MenuItem_Funcionarios;
     private javax.swing.JMenu Menu_Ajuda;
-    private javax.swing.JMenuBar Menu_Bar;
     private javax.swing.JMenu Menu_Cadastros;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel Pricipal_Patinahs;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
