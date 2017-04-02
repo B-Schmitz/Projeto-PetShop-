@@ -14,7 +14,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
     private String DataAtual;
-    private String Info,Preco;
+    private String Info, Preco;
+    private Double Big_Preco;
     private int Row;
 
     public ControleEstoque() {
@@ -261,26 +262,28 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         SimpleDateFormat data;
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
-        
-        
+
         Preco = FormattedTextField_Preco.getText().replaceAll("[.]", "");
         Preco = Preco.replaceAll("[,]", ".");
-        if(Preco.isEmpty() || TextField_Quant.getText().isEmpty() || TextField_Nome_Produto.getText().isEmpty()
-                || TextField_Id_Produto.getText().isEmpty() || TextField_Fornecedor.getText().isEmpty()){
-           estoque = null;
-        }else{
-        estoque.setPreco(Double.parseDouble(Preco));
-        estoque.setData(DataAtual);
-        estoque.setId_produto(Long.parseLong(TextField_Id_Produto.getText()));
-        estoque.setNome_Produto(TextField_Nome_Produto.getText());
-        estoque.setQantAdd(Integer.parseInt(TextField_Quant.getText()));
-        estoque.setFornecedor(TextField_Fornecedor.getText());
+        if (Preco.isEmpty() || TextField_Quant.getText().isEmpty() || TextField_Nome_Produto.getText().isEmpty()
+                || TextField_Id_Produto.getText().isEmpty() || TextField_Fornecedor.getText().isEmpty()) {
+            estoque = null;
+        } else {
+            Big_Preco = Double.parseDouble(Preco);
+            estoque.setPreco(Big_Preco);
+
+            estoque.setData(DataAtual);
+            estoque.setId_produto(Long.parseLong(TextField_Id_Produto.getText()));
+            estoque.setNome_Produto(TextField_Nome_Produto.getText());
+            estoque.setQantAdd(Integer.parseInt(TextField_Quant.getText()));
+            estoque.setFornecedor(TextField_Fornecedor.getText());
+            limpa();
         }
         return estoque;
     }
 
     public JTable getTabela() {
-        limpa();
+
         return Table_Mostra_info;
 
     }
@@ -300,12 +303,12 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     public void Editar() {
 
         Row = Table_Mostra_info.getSelectedRow();
-
-
-        for (int i = 0 ;i < 5; i++) {
+        
+        //Essa função exclui a linha selecionada e manda as informaçães para os campos de texto para que o usuario possa editar 
+        for (int i = 0; i < 5; i++) {
 
             Info = (String) Table_Mostra_info.getModel().getValueAt(Row, i);
-
+           
             switch (i) {
                 case 0:
                     TextField_Id_Produto.setText(Info);
@@ -326,12 +329,12 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         }
 
         setExcluitabela(Table_Mostra_info.getSelectedRow());
-         
+
     }
-    
-     public void Centralizar() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+
+    public void Centralizar() {
+        Dimension d = this.getDesktopPane().getSize();
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 
 }
