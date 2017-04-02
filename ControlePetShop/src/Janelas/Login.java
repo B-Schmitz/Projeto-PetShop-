@@ -171,10 +171,10 @@ public class Login extends javax.swing.JFrame {
         senha_nova = JOptionPane.showInputDialog(null, "Informe a senha atual", "Trocar senha", 1);
         if (senha_nova.equals(senha_atual)) {
             senha_atual = JOptionPane.showInputDialog(null, "Informe uma nova senha", "Trocar senha", 1);
-            if (senha_atual == null) {
+            if (senha_atual == null || senha_atual.equals("")) {
                 senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
                 JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Troca não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
-            } else if (senha_atual != null) {
+            } else if (senha_atual != null || !"".equals(senha_atual)) {
                 JOptionPane.showMessageDialog(null, "Senha modificada", "Troca efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
             }
         } else {
