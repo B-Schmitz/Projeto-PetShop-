@@ -1,13 +1,15 @@
 package Janelas;
 
 import actionListener.LoginAction;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
     private final LoginAction login = new LoginAction(this);
-    private String senha;
+    private String senha_nova, senha_atual = "admin";
 
     public Login() {
 
@@ -25,17 +27,16 @@ public class Login extends javax.swing.JFrame {
         Cancelar.addActionListener(login);
 
     }
-    
-    public void Testa_Senha(){
-         senha = new String(field_senha.getPassword());
-     if(senha.equals("admin")){
+
+    public void Testa_Senha() {
+        senha_nova = new String(field_senha.getPassword());
+        if (senha_nova.equals(senha_atual)) {
             Principal p = new Principal();
             p.setVisible(true);
             dispose();
-    }
-     else{
-         JOptionPane.showMessageDialog(null, "Por favor, informe outra senha de acesso.","Senha incorreta",JOptionPane.ERROR_MESSAGE,new ImageIcon("src/Icones/erro.png"));
-     }
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -50,6 +51,7 @@ public class Login extends javax.swing.JFrame {
         field_senha = new javax.swing.JPasswordField();
         label_logo = new javax.swing.JLabel();
         label_senha = new javax.swing.JLabel();
+        label_trocar_senha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -87,6 +89,20 @@ public class Login extends javax.swing.JFrame {
         label_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/senha.png"))); // NOI18N
         label_senha.setText("Senha");
 
+        label_trocar_senha.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
+        label_trocar_senha.setForeground(new java.awt.Color(255, 255, 255));
+        label_trocar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/config.png"))); // NOI18N
+        label_trocar_senha.setText("Trocar senha");
+        label_trocar_senha.setToolTipText("Alterar senha de usúario");
+        label_trocar_senha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_trocar_senha.setDisabledIcon(null);
+        label_trocar_senha.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        label_trocar_senha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_trocar_senhaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -98,13 +114,19 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(Entrar, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(field_user, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_senha)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(label_logo)
-                        .addComponent(label_user)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(field_user, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(label_logo)
+                                .addComponent(label_user))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_senha)
+                                .addGap(18, 18, 18)
+                                .addComponent(label_trocar_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,7 +138,9 @@ public class Login extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addComponent(field_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_senha)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_senha)
+                    .addComponent(label_trocar_senha))
                 .addGap(1, 1, 1)
                 .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,6 +163,26 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void label_trocar_senhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_trocar_senhaMouseClicked
+        /*
+         Esquema básico sem uso de salvamento externo ou BD para uma senha.
+         Também não sei se pode por MouseClicked, como não
+         é algo que o professor solicitou, deixei assim mesmo.
+        */
+        senha_nova = JOptionPane.showInputDialog(null, "Informe a senha atual", "Trocar senha", 1);
+        if (senha_nova.equals(senha_atual)) {
+            senha_atual = JOptionPane.showInputDialog(null, "Informe uma nova senha", "Trocar senha", 1);
+            if (senha_atual == null) {
+                senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
+                JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Troca não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
+            } else if (senha_atual != null) {
+                JOptionPane.showMessageDialog(null, "Senha modificada", "Troca efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
+        }
+    }//GEN-LAST:event_label_trocar_senhaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,6 +225,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label_logo;
     private javax.swing.JLabel label_senha;
+    private javax.swing.JLabel label_trocar_senha;
     private javax.swing.JLabel label_user;
     // End of variables declaration//GEN-END:variables
 }
