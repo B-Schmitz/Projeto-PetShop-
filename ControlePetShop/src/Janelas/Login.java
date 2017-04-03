@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         } else {
+            field_senha.setText("");
             JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
         }
     }

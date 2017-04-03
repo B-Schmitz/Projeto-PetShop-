@@ -8,8 +8,6 @@ import javax.swing.ImageIcon;
 
 public class Funcionarios extends javax.swing.JInternalFrame {
 
-
-
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
 
     public Funcionarios() {
@@ -20,7 +18,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         field_idade_funcionario.setDocument(new TeclasPermitidas());
         field_pis.setDocument(new TeclasPermitidas());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -263,19 +261,31 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         return fun;
 
     }
-    public void limpar(){
-         field_nome_funcionario.setText(null);
+
+    public void limpar() {
+        field_nome_funcionario.setText(null);
         field_CPF_funcionario.setText(null);
         field_email_funcionario.setText(null);
         field_endereco_funcionario.setText(null);
         field_idade_funcionario.setText(null);
         field_pis.setText(null);
         field_telefone_funcionario.setText(null);
-        field_cargo.setText(null); 
+        field_cargo.setText(null);
     }
     
-     public void Centralizar() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+    public boolean Verifica() {
+        return !(field_nome_funcionario.getText().equals("")
+                || field_cargo.getText().equals("")
+                || field_CPF_funcionario.getText().equals("")
+                || field_idade_funcionario.getText().equals("")
+                || field_pis.getText().equals("")
+                || field_endereco_funcionario.getText().equals("")
+                || field_telefone_funcionario.getText().equals("")
+                || field_email_funcionario.getText().equals(""));
+    }
+
+    public void Centralizar() {
+        Dimension d = this.getDesktopPane().getSize();
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 }

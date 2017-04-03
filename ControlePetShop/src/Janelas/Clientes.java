@@ -9,10 +9,8 @@ import java.awt.Dimension;
 public class Clientes extends javax.swing.JInternalFrame {
 
     private final CadastroClienteAction cliente = new CadastroClienteAction(this);
-     private String cpf;
-     private String tel;
-     
-        
+    private String cpf;
+    private String tel;
 
     public Clientes() {
         initComponents();
@@ -217,8 +215,8 @@ public class Clientes extends javax.swing.JInternalFrame {
 
         Cliente_Get_Set client = new Cliente_Get_Set();
 
-          cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
-          tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
+        cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
+        tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
         client.setCPF(Long.parseLong(cpf));
         client.setEndereco(field_endereco_cliente.getText());
@@ -242,10 +240,19 @@ public class Clientes extends javax.swing.JInternalFrame {
         field_idade_cliente.setText(null);
         field_telefone_cliente.setText(null);
     }
-    
-     public void Centralizar() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
+
+    public boolean Verifica() {
+        return !(field_nome_cliente.getText().equals("")
+                || field_idade_cliente.getText().equals("")
+                || field_CPF_cliente.getText().equals("")
+                || field_email_cliente.getText().equals("")
+                || field_telefone_cliente.getText().equals("")
+                || field_endereco_cliente.getText().equals(""));
+    }
+
+    public void Centralizar() {
+        Dimension d = this.getDesktopPane().getSize();
+        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 
 }

@@ -248,6 +248,16 @@ public class Animais extends javax.swing.JInternalFrame {
         field_peso.setText(null);
     }
     
+       public boolean Verifica() {
+        return !(field_proprietario.getText().equals("")
+                || field_nome_animal.getText().equals("")
+                || field_idade_animal.getText().equals("")
+                || field_altura.getText().equals("")
+                || field_cor.getText().equals("")
+                || field_raca.getText().equals("")
+                || field_peso.getText().equals(""));
+    }
+    
      public void Centralizar() {
     Dimension d = this.getDesktopPane().getSize();
     this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 

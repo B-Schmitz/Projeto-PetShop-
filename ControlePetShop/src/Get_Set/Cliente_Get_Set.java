@@ -41,30 +41,26 @@ public class Cliente_Get_Set {
     public void setEmail(String Email) {
         this.Email = Email;
     }
-     public long getCPF() {
+
+    public long getCPF() {
         return CPF;
     }
 
- 
     public void setCPF(long CPF) {
         this.CPF = CPF;
     }
 
-   
     public long getTelefone() {
         return Telefone;
     }
 
-  
     public void setTelefone(long Telefone) {
         this.Telefone = Telefone;
     }
 
-  
     public int getIdade() {
         return Idade;
     }
-
 
     public void setIdade(int Idade) {
         this.Idade = Idade;
@@ -72,10 +68,7 @@ public class Cliente_Get_Set {
 
     @Override
     public String toString() {
-        return "Nome = " + Nome + "Endereço = " + Endereco + "Sexo = " + Sexo + "Email = " + Email + "CPF = " + getCPF() + "Telefone = " + getTelefone() + "Idade = " + getIdade();
+        return "Nome = " + Nome + "\nEndereço = " + Endereco + "\nSexo = " + Sexo + "\nEmail = " + Email + "\nCPF = " + getCPF() + "\nTelefone = " + getTelefone() + "\nIdade = " + getIdade();
     }
-
-   
-   
 
 }
