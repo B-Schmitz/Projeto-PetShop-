@@ -2,6 +2,7 @@ package Get_Set;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
 public class Estoque_Get_Set {
 
     private String Nome_Produto;

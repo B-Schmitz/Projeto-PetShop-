@@ -23,17 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Component id="Jpanel" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="Jpanel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="Jpanel">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -51,7 +51,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="botao_adicionar" pref="145" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="botao_excluir" min="-2" pref="145" max="-2" attributes="0"/>
+                                  <Component id="botao_remover" min="-2" pref="145" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="botao_editar" min="-2" pref="145" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -59,35 +59,35 @@
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TextField_Id_Produto" max="32767" attributes="0"/>
+                                      <Component id="field_Idproduto" max="32767" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                          <Component id="Label_Id_Produto" min="-2" max="-2" attributes="0"/>
+                                          <Component id="label_Idproduto" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TextField_Nome_Produto" min="-2" pref="116" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="field_nome_produto" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <Component id="label_nome_produto" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TextField_Quant" min="-2" pref="83" max="-2" attributes="0"/>
-                                      <Component id="Label_Quantidade" min="-2" max="-2" attributes="0"/>
+                                      <Component id="field_quantidade" min="-2" pref="83" max="-2" attributes="0"/>
+                                      <Component id="label_quantidade" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="FormattedTextField_Preco" min="-2" pref="87" max="-2" attributes="0"/>
+                                          <Component id="field_preco" min="-2" pref="87" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="TextField_Fornecedor" min="-2" pref="177" max="-2" attributes="0"/>
+                                          <Component id="field_fornecedor" min="-2" pref="177" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                          <Component id="Label_Preco" min="-2" max="-2" attributes="0"/>
+                                          <Component id="label_preco" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="Label_Fornecedor" min="-2" pref="93" max="-2" attributes="0"/>
+                                          <Component id="label_fornecedor" min="-2" pref="93" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -104,26 +104,26 @@
               <Group type="102" attributes="0">
                   <EmptySpace pref="41" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Label_Id_Produto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Label_Quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Label_Preco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Label_Fornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_Idproduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_nome_produto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_preco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_fornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TextField_Nome_Produto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextField_Quant" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextField_Id_Produto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FormattedTextField_Preco" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TextField_Fornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_nome_produto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_Idproduto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_preco" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="field_fornecedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="botao_adicionar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="botao_excluir" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="botao_remover" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="botao_editar" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                       <Component id="botao_limpar_estoque" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
@@ -135,7 +135,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="Label_Quantidade">
+        <Component class="javax.swing.JLabel" name="label_quantidade">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -146,7 +146,7 @@
             <Property name="text" type="java.lang.String" value="Quantidade"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Label_Preco">
+        <Component class="javax.swing.JLabel" name="label_preco">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -157,7 +157,7 @@
             <Property name="text" type="java.lang.String" value="Pre&#xe7;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Label_Id_Produto">
+        <Component class="javax.swing.JLabel" name="label_Idproduto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -175,7 +175,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="Table_Mostra_info">
+            <Component class="javax.swing.JTable" name="tabela_mostra_info">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="12" style="0"/>
@@ -238,7 +238,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="Label_Fornecedor">
+        <Component class="javax.swing.JLabel" name="label_fornecedor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -249,7 +249,7 @@
             <Property name="text" type="java.lang.String" value="Fornecedor"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TextField_Nome_Produto">
+        <Component class="javax.swing.JTextField" name="field_nome_produto">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -258,7 +258,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TextField_Fornecedor">
+        <Component class="javax.swing.JTextField" name="field_fornecedor">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -267,7 +267,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="FormattedTextField_Preco">
+        <Component class="javax.swing.JFormattedTextField" name="field_preco">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -295,7 +295,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="botao_excluir">
+        <Component class="javax.swing.JButton" name="botao_remover">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -311,7 +311,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TextField_Id_Produto">
+        <Component class="javax.swing.JTextField" name="field_Idproduto">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -320,7 +320,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="TextField_Quant">
+        <Component class="javax.swing.JTextField" name="field_quantidade">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -329,7 +329,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="label_nome_produto">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>

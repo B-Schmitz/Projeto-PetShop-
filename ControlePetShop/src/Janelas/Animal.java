@@ -1,19 +1,21 @@
 package Janelas;
 
 import Exceções.TeclasPermitidas;
-import Get_Set.Animais_Get_Set;
+import Get_Set.Animal_Get_Set;
 import actionListener.AnimaisAction;
 import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
-public class Animais extends javax.swing.JInternalFrame {
+public class Animal extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
 
-    public Animais() {
+    public Animal() {
         initComponents();
+
         this.setFrameIcon(new ImageIcon("src/Icones/dog.png"));
-        botao_cadastrar_animal.addActionListener(animais);
+
+        botao_cadastrar_animais.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);
 
         field_altura.setDocument(new TeclasPermitidas());
@@ -40,11 +42,11 @@ public class Animais extends javax.swing.JInternalFrame {
         field_nome_animal = new javax.swing.JTextField();
         field_cor = new javax.swing.JTextField();
         field_raca = new javax.swing.JTextField();
-        field_idade_animal = new javax.swing.JTextField();
         field_altura = new javax.swing.JTextField();
         field_peso = new javax.swing.JTextField();
-        botao_cadastrar_animal = new javax.swing.JButton();
+        botao_cadastrar_animais = new javax.swing.JButton();
         botao_limpar_animais = new javax.swing.JButton();
+        field_idade_animal = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Cadastro de animal");
@@ -90,10 +92,10 @@ public class Animais extends javax.swing.JInternalFrame {
 
         comboBox_tipo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachorro", "Gato", "Coelho" }));
 
-        botao_cadastrar_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_cadastrar_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/add.png"))); // NOI18N
-        botao_cadastrar_animal.setText("Cadastrar");
-        botao_cadastrar_animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_cadastrar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/add.png"))); // NOI18N
+        botao_cadastrar_animais.setText("Cadastrar");
+        botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         botao_limpar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_limpar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/limpar.png"))); // NOI18N
@@ -123,12 +125,12 @@ public class Animais extends javax.swing.JInternalFrame {
                         .addComponent(field_nome_animal)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                     .addComponent(comboBox_sexo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(label_idade_animal)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(field_idade_animal))
+                                    .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(field_raca, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
@@ -144,7 +146,7 @@ public class Animais extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(field_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(botao_cadastrar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -175,20 +177,20 @@ public class Animais extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(comboBox_sexo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(label_sexo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label_idade_animal)
                         .addComponent(label_altura)
-                        .addComponent(field_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(field_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_idade_animal)
+                        .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botao_limpar_animais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(label_peso)
                         .addComponent(field_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botao_cadastrar_animal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,7 +198,7 @@ public class Animais extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botao_cadastrar_animal;
+    private javax.swing.JButton botao_cadastrar_animais;
     private javax.swing.JButton botao_limpar_animais;
     private javax.swing.JComboBox<String> comboBox_sexo_animal;
     private javax.swing.JComboBox<String> comboBox_tipo_animal;
@@ -218,9 +220,9 @@ public class Animais extends javax.swing.JInternalFrame {
     private javax.swing.JLabel label_sexo_animal;
     // End of variables declaration//GEN-END:variables
 
-    public Animais_Get_Set getAnimais() {
+    public Animal_Get_Set getAnimais() {
 
-        Animais_Get_Set ani = new Animais_Get_Set();
+        Animal_Get_Set ani = new Animal_Get_Set();
 
         ani.setProprietario(field_proprietario.getText());
         ani.setAnimal((String) comboBox_tipo_animal.getSelectedItem());
@@ -231,7 +233,7 @@ public class Animais extends javax.swing.JInternalFrame {
         ani.setIdade(Integer.parseInt(field_idade_animal.getText()));
         ani.setAltura(Integer.parseInt(field_altura.getText()));
         ani.setPeso(Integer.parseInt(field_peso.getText()));
-        
+
         limpar();
 
         return ani;
@@ -247,8 +249,8 @@ public class Animais extends javax.swing.JInternalFrame {
         field_altura.setText(null);
         field_peso.setText(null);
     }
-    
-       public boolean Verifica() {
+
+    public boolean Verifica() {
         return !(field_proprietario.getText().equals("")
                 || field_nome_animal.getText().equals("")
                 || field_idade_animal.getText().equals("")
@@ -257,12 +259,5 @@ public class Animais extends javax.swing.JInternalFrame {
                 || field_raca.getText().equals("")
                 || field_peso.getText().equals(""));
     }
-    
-     public void Centralizar() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
-    }
-    
-    
-    
+
 }

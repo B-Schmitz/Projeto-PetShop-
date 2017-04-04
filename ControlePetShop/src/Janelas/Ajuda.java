@@ -1,4 +1,3 @@
-
 package Janelas;
 
 import java.awt.Dimension;
@@ -8,142 +7,142 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
     public Ajuda() {
         initComponents();
-         this.setFrameIcon(new ImageIcon("src/Icones/ajuda.png"));
+        this.setFrameIcon(new ImageIcon("src/Icones/ajuda.png"));
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        label_duarte1 = new javax.swing.JLabel();
-        label_michael1 = new javax.swing.JLabel();
-        label_icones1 = new javax.swing.JLabel();
-        label_descrição1 = new javax.swing.JLabel();
-        label_clientes1 = new javax.swing.JLabel();
-        label_funcionarios1 = new javax.swing.JLabel();
-        label_animais1 = new javax.swing.JLabel();
-        label_logo1 = new javax.swing.JLabel();
-        label_estoque1 = new javax.swing.JLabel();
-        label_programadores1 = new javax.swing.JLabel();
-        label_bernardo1 = new javax.swing.JLabel();
+        Jpanel = new javax.swing.JPanel();
+        label_duarte = new javax.swing.JLabel();
+        label_michael = new javax.swing.JLabel();
+        label_icones = new javax.swing.JLabel();
+        label_descrição = new javax.swing.JLabel();
+        label_clientes = new javax.swing.JLabel();
+        label_funcionarios = new javax.swing.JLabel();
+        label_animais = new javax.swing.JLabel();
+        label_logo = new javax.swing.JLabel();
+        label_estoque = new javax.swing.JLabel();
+        label_programadores = new javax.swing.JLabel();
+        label_bernardo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
 
         setClosable(true);
         setTitle("Ajuda");
 
-        jPanel1.setBackground(new java.awt.Color(115, 59, 30));
+        Jpanel.setBackground(new java.awt.Color(115, 59, 30));
 
-        label_duarte1.setForeground(new java.awt.Color(255, 255, 255));
-        label_duarte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ironman.png"))); // NOI18N
-        label_duarte1.setText("Duarte");
+        label_duarte.setForeground(new java.awt.Color(255, 255, 255));
+        label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ironman.png"))); // NOI18N
+        label_duarte.setText("Duarte");
 
-        label_michael1.setForeground(new java.awt.Color(255, 255, 255));
-        label_michael1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/batman.png"))); // NOI18N
-        label_michael1.setText("Michael");
+        label_michael.setForeground(new java.awt.Color(255, 255, 255));
+        label_michael.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/batman.png"))); // NOI18N
+        label_michael.setText("Michael");
 
-        label_icones1.setForeground(new java.awt.Color(255, 255, 255));
-        label_icones1.setText("www.fatcow.com/free-icons");
+        label_icones.setForeground(new java.awt.Color(255, 255, 255));
+        label_icones.setText("www.fatcow.com/free-icons");
 
-        label_descrição1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        label_descrição1.setForeground(new java.awt.Color(255, 255, 255));
-        label_descrição1.setText("Software para gestão e controle de um PetShop");
+        label_descrição.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_descrição.setForeground(new java.awt.Color(255, 255, 255));
+        label_descrição.setText("Software para gestão e controle de um PetShop");
 
-        label_clientes1.setForeground(new java.awt.Color(255, 255, 255));
-        label_clientes1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cliente.png"))); // NOI18N
-        label_clientes1.setText("Cadastro de clientes");
+        label_clientes.setForeground(new java.awt.Color(255, 255, 255));
+        label_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cliente.png"))); // NOI18N
+        label_clientes.setText("Cadastro de clientes");
 
-        label_funcionarios1.setForeground(new java.awt.Color(255, 255, 255));
-        label_funcionarios1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/funcionario.png"))); // NOI18N
-        label_funcionarios1.setText("Cadastro de funcionários");
+        label_funcionarios.setForeground(new java.awt.Color(255, 255, 255));
+        label_funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/funcionario.png"))); // NOI18N
+        label_funcionarios.setText("Cadastro de funcionários");
 
-        label_animais1.setForeground(new java.awt.Color(255, 255, 255));
-        label_animais1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/dog.png"))); // NOI18N
-        label_animais1.setText("Cadastro de animais");
+        label_animais.setForeground(new java.awt.Color(255, 255, 255));
+        label_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/dog.png"))); // NOI18N
+        label_animais.setText("Cadastro de animais");
 
-        label_logo1.setForeground(new java.awt.Color(255, 204, 0));
-        label_logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/bigdog.png"))); // NOI18N
-        label_logo1.setText("PetControl");
+        label_logo.setForeground(new java.awt.Color(255, 204, 0));
+        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/bigdog.png"))); // NOI18N
+        label_logo.setText("PetControl");
 
-        label_estoque1.setForeground(new java.awt.Color(255, 255, 255));
-        label_estoque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/estoque.png"))); // NOI18N
-        label_estoque1.setText("Controle de estoque");
+        label_estoque.setForeground(new java.awt.Color(255, 255, 255));
+        label_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/estoque.png"))); // NOI18N
+        label_estoque.setText("Controle de estoque");
 
-        label_programadores1.setForeground(new java.awt.Color(255, 255, 255));
-        label_programadores1.setText("Programadores");
+        label_programadores.setForeground(new java.awt.Color(255, 255, 255));
+        label_programadores.setText("Programadores");
 
-        label_bernardo1.setForeground(new java.awt.Color(255, 255, 255));
-        label_bernardo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/spider.png"))); // NOI18N
-        label_bernardo1.setText("Bernardo");
+        label_bernardo.setForeground(new java.awt.Color(255, 255, 255));
+        label_bernardo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/spider.png"))); // NOI18N
+        label_bernardo.setText("Bernardo");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
+        Jpanel.setLayout(JpanelLayout);
+        JpanelLayout.setHorizontalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JpanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_clientes1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_estoque1)
-                            .addComponent(label_funcionarios1)
-                            .addComponent(label_animais1)
-                            .addComponent(label_icones1))
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_clientes)
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_estoque)
+                            .addComponent(label_funcionarios)
+                            .addComponent(label_animais)
+                            .addComponent(label_icones))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_michael1)
-                                    .addComponent(label_duarte1)
-                                    .addComponent(label_bernardo1))
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_michael)
+                                    .addComponent(label_duarte)
+                                    .addComponent(label_bernardo))
                                 .addGap(9, 9, 9))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(label_programadores1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                                .addComponent(label_programadores)
                                 .addContainerGap())))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(label_logo1)
+                .addComponent(label_logo)
                 .addGap(155, 155, 155))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                 .addGap(34, 80, Short.MAX_VALUE)
-                .addComponent(label_descrição1)
+                .addComponent(label_descrição)
                 .addGap(62, 62, 62))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JpanelLayout.setVerticalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JpanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_logo1)
+                .addComponent(label_logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_descrição1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(label_descrição)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JpanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(label_clientes1)
+                        .addComponent(label_clientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_funcionarios1)
+                        .addComponent(label_funcionarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_animais1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(label_animais))
+                    .addGroup(JpanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(label_programadores1)
+                        .addComponent(label_programadores)
                         .addGap(4, 4, 4)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JpanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_estoque1)
+                        .addComponent(label_estoque)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(label_icones1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(label_icones))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(label_bernardo1)
+                        .addComponent(label_bernardo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_duarte1)
+                        .addComponent(label_duarte)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_michael1)
+                        .addComponent(label_michael)
                         .addContainerGap())))
         );
 
@@ -152,12 +151,12 @@ public class Ajuda extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -165,24 +164,19 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel Jpanel;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel label_animais1;
-    private javax.swing.JLabel label_bernardo1;
-    private javax.swing.JLabel label_clientes1;
-    private javax.swing.JLabel label_descrição1;
-    private javax.swing.JLabel label_duarte1;
-    private javax.swing.JLabel label_estoque1;
-    private javax.swing.JLabel label_funcionarios1;
-    private javax.swing.JLabel label_icones1;
-    private javax.swing.JLabel label_logo1;
-    private javax.swing.JLabel label_michael1;
-    private javax.swing.JLabel label_programadores1;
+    private javax.swing.JLabel label_animais;
+    private javax.swing.JLabel label_bernardo;
+    private javax.swing.JLabel label_clientes;
+    private javax.swing.JLabel label_descrição;
+    private javax.swing.JLabel label_duarte;
+    private javax.swing.JLabel label_estoque;
+    private javax.swing.JLabel label_funcionarios;
+    private javax.swing.JLabel label_icones;
+    private javax.swing.JLabel label_logo;
+    private javax.swing.JLabel label_michael;
+    private javax.swing.JLabel label_programadores;
     // End of variables declaration//GEN-END:variables
-
- public void Centralizar() {
-    Dimension d = this.getDesktopPane().getSize();
-    this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2); 
-    }
 
 }

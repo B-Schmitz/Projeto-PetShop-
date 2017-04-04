@@ -250,9 +250,4 @@ public class Clientes extends javax.swing.JInternalFrame {
                 || field_endereco_cliente.getText().equals(""));
     }
 
-    public void Centralizar() {
-        Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
-    }
-
 }

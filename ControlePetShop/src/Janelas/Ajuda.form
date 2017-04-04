@@ -24,19 +24,19 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="Jpanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="Jpanel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="Jpanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1e" green="3b" red="73" type="rgb"/>
@@ -49,27 +49,27 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="label_clientes1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_clientes" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="label_estoque1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_funcionarios1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_animais1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="label_icones1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_estoque" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_funcionarios" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_animais" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_icones" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="label_michael1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label_duarte1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="label_bernardo1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_michael" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_duarte" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label_bernardo" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator2" alignment="1" min="-2" pref="92" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="label_programadores1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_programadores" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -78,12 +78,12 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="label_logo1" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_logo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="34" pref="80" max="32767" attributes="0"/>
-                  <Component id="label_descrição1" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_descrição" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -92,21 +92,21 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="label_logo1" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_logo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="label_descrição1" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_descrição" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="label_clientes1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_clientes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="label_funcionarios1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_funcionarios" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="label_animais1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_animais" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="label_programadores1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_programadores" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                           <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
@@ -114,17 +114,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="label_estoque1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_estoque" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="label_icones1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_icones" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="label_bernardo1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_bernardo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="label_duarte1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_duarte" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="label_michael1" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_michael" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -133,7 +133,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="label_duarte1">
+        <Component class="javax.swing.JLabel" name="label_duarte">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -144,7 +144,7 @@
             <Property name="text" type="java.lang.String" value="Duarte"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_michael1">
+        <Component class="javax.swing.JLabel" name="label_michael">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -155,7 +155,7 @@
             <Property name="text" type="java.lang.String" value="Michael"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_icones1">
+        <Component class="javax.swing.JLabel" name="label_icones">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -163,7 +163,7 @@
             <Property name="text" type="java.lang.String" value="www.fatcow.com/free-icons"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_descri&#xe7;&#xe3;o1">
+        <Component class="javax.swing.JLabel" name="label_descri&#xe7;&#xe3;o">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -174,7 +174,7 @@
             <Property name="text" type="java.lang.String" value="Software para gest&#xe3;o e controle de um PetShop"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_clientes1">
+        <Component class="javax.swing.JLabel" name="label_clientes">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -185,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Cadastro de clientes"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_funcionarios1">
+        <Component class="javax.swing.JLabel" name="label_funcionarios">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -196,7 +196,7 @@
             <Property name="text" type="java.lang.String" value="Cadastro de funcion&#xe1;rios"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_animais1">
+        <Component class="javax.swing.JLabel" name="label_animais">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -207,7 +207,7 @@
             <Property name="text" type="java.lang.String" value="Cadastro de animais"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_logo1">
+        <Component class="javax.swing.JLabel" name="label_logo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="cc" red="ff" type="rgb"/>
@@ -218,7 +218,7 @@
             <Property name="text" type="java.lang.String" value="PetControl"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_estoque1">
+        <Component class="javax.swing.JLabel" name="label_estoque">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -229,7 +229,7 @@
             <Property name="text" type="java.lang.String" value="Controle de estoque"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_programadores1">
+        <Component class="javax.swing.JLabel" name="label_programadores">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -237,7 +237,7 @@
             <Property name="text" type="java.lang.String" value="Programadores"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_bernardo1">
+        <Component class="javax.swing.JLabel" name="label_bernardo">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

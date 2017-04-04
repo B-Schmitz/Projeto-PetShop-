@@ -272,7 +272,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         field_telefone_funcionario.setText(null);
         field_cargo.setText(null);
     }
-    
+
     public boolean Verifica() {
         return !(field_nome_funcionario.getText().equals("")
                 || field_cargo.getText().equals("")
@@ -284,8 +284,4 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 || field_email_funcionario.getText().equals(""));
     }
 
-    public void Centralizar() {
-        Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
-    }
 }

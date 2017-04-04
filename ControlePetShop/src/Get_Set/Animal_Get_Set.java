@@ -1,6 +1,6 @@
 package Get_Set;
 
-public class Animais_Get_Set {
+public class Animal_Get_Set {
 
     private String Proprietario;
     private String Animal;
@@ -83,8 +83,8 @@ public class Animais_Get_Set {
     public void setPeso(int Peso) {
         this.Peso = Peso;
     }
-    
-     @Override
+
+    @Override
     public String toString() {
         return "Proprietário = " + Proprietario + "\n Animal = " + Animal + "\n Nome = " + Nome + "\n Raca = " + Raca + "\n Sexo = " + Sexo + "\n Cor = " + Cor + "\n Idade = " + getIdade() + " anos" + "\n Altura = " + getAltura() + "cm" + "\n Peso = " + getPeso() + "gr";
     }

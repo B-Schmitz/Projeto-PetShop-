@@ -51,16 +51,15 @@ public class Funcionario_Get_Set {
     public void setEndereco(String Endereco) {
         this.Endereco = Endereco;
     }
+
     public int getIdade() {
         return Idade;
     }
-
 
     public void setIdade(int Idade) {
         this.Idade = Idade;
     }
 
- 
     public long getCPF() {
         return CPF;
     }
@@ -69,16 +68,13 @@ public class Funcionario_Get_Set {
         this.CPF = CPF;
     }
 
- 
     public long getNum_Pis() {
         return Num_Pis;
     }
 
-
     public void setNum_Pis(long Num_Pis) {
         this.Num_Pis = Num_Pis;
     }
-
 
     public long getTelefone() {
         return Telefone;
@@ -92,8 +88,5 @@ public class Funcionario_Get_Set {
     public String toString() {
         return "Nome = " + Nome + "\nCargo = " + Cargo + "\nSexo = " + Sexo + "\nEndereço = " + Endereco + "\nEmail = " + Email + "\nIdade = " + getIdade() + "\nCPF = " + getCPF() + "\nNúmero do pis = " + getNum_Pis() + "\nTelefone = " + getTelefone();
     }
-
-
-    
 
 }

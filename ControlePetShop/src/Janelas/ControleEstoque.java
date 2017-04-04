@@ -21,11 +21,11 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     public ControleEstoque() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/estoque.png"));
-        TextField_Id_Produto.setDocument(new TeclasPermitidas());
-        TextField_Quant.setDocument(new TeclasPermitidas());
+        field_Idproduto.setDocument(new TeclasPermitidas());
+        field_quantidade.setDocument(new TeclasPermitidas());
 
         botao_adicionar.addActionListener(control);
-        botao_excluir.addActionListener(control);
+        botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
         botao_limpar_estoque.addActionListener(control);
     }
@@ -34,21 +34,21 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Label_Quantidade = new javax.swing.JLabel();
-        Label_Preco = new javax.swing.JLabel();
-        Label_Id_Produto = new javax.swing.JLabel();
+        Jpanel = new javax.swing.JPanel();
+        label_quantidade = new javax.swing.JLabel();
+        label_preco = new javax.swing.JLabel();
+        label_Idproduto = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Table_Mostra_info = new javax.swing.JTable();
-        Label_Fornecedor = new javax.swing.JLabel();
-        TextField_Nome_Produto = new javax.swing.JTextField();
-        TextField_Fornecedor = new javax.swing.JTextField();
-        FormattedTextField_Preco = new javax.swing.JFormattedTextField();
+        tabela_mostra_info = new javax.swing.JTable();
+        label_fornecedor = new javax.swing.JLabel();
+        field_nome_produto = new javax.swing.JTextField();
+        field_fornecedor = new javax.swing.JTextField();
+        field_preco = new javax.swing.JFormattedTextField();
         botao_adicionar = new javax.swing.JButton();
-        botao_excluir = new javax.swing.JButton();
-        TextField_Id_Produto = new javax.swing.JTextField();
-        TextField_Quant = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        botao_remover = new javax.swing.JButton();
+        field_Idproduto = new javax.swing.JTextField();
+        field_quantidade = new javax.swing.JTextField();
+        label_nome_produto = new javax.swing.JLabel();
         botao_editar = new javax.swing.JButton();
         botao_limpar_estoque = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -56,20 +56,20 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Controle de estoque");
 
-        Label_Quantidade.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Label_Quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cestinha.png"))); // NOI18N
-        Label_Quantidade.setText("Quantidade");
+        label_quantidade.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_quantidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cestinha.png"))); // NOI18N
+        label_quantidade.setText("Quantidade");
 
-        Label_Preco.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Label_Preco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/dinheiro.png"))); // NOI18N
-        Label_Preco.setText("Preço");
+        label_preco.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_preco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/dinheiro.png"))); // NOI18N
+        label_preco.setText("Preço");
 
-        Label_Id_Produto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Label_Id_Produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/barcode.png"))); // NOI18N
-        Label_Id_Produto.setText("IdProduto");
+        label_Idproduto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_Idproduto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/barcode.png"))); // NOI18N
+        label_Idproduto.setText("IdProduto");
 
-        Table_Mostra_info.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Table_Mostra_info.setModel(new javax.swing.table.DefaultTableModel(
+        tabela_mostra_info.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        tabela_mostra_info.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -92,41 +92,41 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        Table_Mostra_info.setToolTipText("");
-        Table_Mostra_info.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        Table_Mostra_info.setSurrendersFocusOnKeystroke(true);
-        Table_Mostra_info.getTableHeader().setReorderingAllowed(false);
-        Table_Mostra_info.setVerifyInputWhenFocusTarget(false);
-        jScrollPane1.setViewportView(Table_Mostra_info);
+        tabela_mostra_info.setToolTipText("");
+        tabela_mostra_info.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabela_mostra_info.setSurrendersFocusOnKeystroke(true);
+        tabela_mostra_info.getTableHeader().setReorderingAllowed(false);
+        tabela_mostra_info.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(tabela_mostra_info);
 
-        Label_Fornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        Label_Fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/fornecedor.png"))); // NOI18N
-        Label_Fornecedor.setText("Fornecedor");
+        label_fornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/fornecedor.png"))); // NOI18N
+        label_fornecedor.setText("Fornecedor");
 
-        TextField_Nome_Produto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_nome_produto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TextField_Fornecedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_fornecedor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        FormattedTextField_Preco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        FormattedTextField_Preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
+        field_preco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_preco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
 
         botao_adicionar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/table_add.png"))); // NOI18N
         botao_adicionar.setText("Adicionar");
         botao_adicionar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        botao_excluir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/remove_tabela.png"))); // NOI18N
-        botao_excluir.setText("Remover");
-        botao_excluir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_remover.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_remover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/remove_tabela.png"))); // NOI18N
+        botao_remover.setText("Remover");
+        botao_remover.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        TextField_Id_Produto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_Idproduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TextField_Quant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_quantidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/text.png"))); // NOI18N
-        jLabel3.setText("Nome do produto");
+        label_nome_produto.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_nome_produto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/text.png"))); // NOI18N
+        label_nome_produto.setText("Nome do produto");
 
         botao_editar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/editar_tabela.png"))); // NOI18N
@@ -138,79 +138,79 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_limpar_estoque.setText("Limpar");
         botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
+        Jpanel.setLayout(JpanelLayout);
+        JpanelLayout.setHorizontalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JpanelLayout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JpanelLayout.createSequentialGroup()
                                 .addComponent(botao_adicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botao_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextField_Id_Produto)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(field_Idproduto)
+                                    .addGroup(JpanelLayout.createSequentialGroup()
                                         .addGap(11, 11, 11)
-                                        .addComponent(Label_Id_Produto)
+                                        .addComponent(label_Idproduto)
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextField_Nome_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))
+                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(field_nome_produto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_nome_produto))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TextField_Quant, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Label_Quantidade))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(field_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label_quantidade))
+                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(JpanelLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(field_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(TextField_Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(field_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JpanelLayout.createSequentialGroup()
                                         .addGap(38, 38, 38)
-                                        .addComponent(Label_Preco)
+                                        .addComponent(label_preco)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(Label_Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(28, 28, 28)))))
                         .addGap(28, 28, 28))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        JpanelLayout.setVerticalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JpanelLayout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Label_Id_Produto)
-                    .addComponent(Label_Quantidade)
-                    .addComponent(jLabel3)
-                    .addComponent(Label_Preco)
-                    .addComponent(Label_Fornecedor))
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_Idproduto)
+                    .addComponent(label_quantidade)
+                    .addComponent(label_nome_produto)
+                    .addComponent(label_preco)
+                    .addComponent(label_fornecedor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextField_Nome_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextField_Quant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextField_Id_Produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FormattedTextField_Preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TextField_Fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(field_nome_produto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_Idproduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -222,11 +222,11 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -234,24 +234,24 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField FormattedTextField_Preco;
-    private javax.swing.JLabel Label_Fornecedor;
-    private javax.swing.JLabel Label_Id_Produto;
-    private javax.swing.JLabel Label_Preco;
-    private javax.swing.JLabel Label_Quantidade;
-    private javax.swing.JTable Table_Mostra_info;
-    private javax.swing.JTextField TextField_Fornecedor;
-    private javax.swing.JTextField TextField_Id_Produto;
-    private javax.swing.JTextField TextField_Nome_Produto;
-    private javax.swing.JTextField TextField_Quant;
+    private javax.swing.JPanel Jpanel;
     private javax.swing.JButton botao_adicionar;
     private javax.swing.JButton botao_editar;
-    private javax.swing.JButton botao_excluir;
     private javax.swing.JButton botao_limpar_estoque;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton botao_remover;
+    private javax.swing.JTextField field_Idproduto;
+    private javax.swing.JTextField field_fornecedor;
+    private javax.swing.JTextField field_nome_produto;
+    private javax.swing.JFormattedTextField field_preco;
+    private javax.swing.JTextField field_quantidade;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel label_Idproduto;
+    private javax.swing.JLabel label_fornecedor;
+    private javax.swing.JLabel label_nome_produto;
+    private javax.swing.JLabel label_preco;
+    private javax.swing.JLabel label_quantidade;
+    private javax.swing.JTable tabela_mostra_info;
     // End of variables declaration//GEN-END:variables
 
     public Estoque_Get_Set getestoq() {
@@ -263,20 +263,20 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
 
-        Preco = FormattedTextField_Preco.getText().replaceAll("[.]", "");
+        Preco = field_preco.getText().replaceAll("[.]", "");
         Preco = Preco.replaceAll("[,]", ".");
-        if (Preco.isEmpty() || TextField_Quant.getText().isEmpty() || TextField_Nome_Produto.getText().isEmpty()
-                || TextField_Id_Produto.getText().isEmpty() || TextField_Fornecedor.getText().isEmpty()) {
+        if (Preco.isEmpty() || field_quantidade.getText().isEmpty() || field_nome_produto.getText().isEmpty()
+                || field_Idproduto.getText().isEmpty() || field_fornecedor.getText().isEmpty()) {
             estoque = null;
         } else {
             Big_Preco = Double.parseDouble(Preco);
             estoque.setPreco(Big_Preco);
 
             estoque.setData(DataAtual);
-            estoque.setId_produto(Long.parseLong(TextField_Id_Produto.getText()));
-            estoque.setNome_Produto(TextField_Nome_Produto.getText());
-            estoque.setQantAdd(Integer.parseInt(TextField_Quant.getText()));
-            estoque.setFornecedor(TextField_Fornecedor.getText());
+            estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
+            estoque.setNome_Produto(field_nome_produto.getText());
+            estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
+            estoque.setFornecedor(field_fornecedor.getText());
             limpa();
         }
         return estoque;
@@ -284,57 +284,52 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     public JTable getTabela() {
 
-        return Table_Mostra_info;
+        return tabela_mostra_info;
 
     }
 
     public void limpa() {
-        TextField_Fornecedor.setText(null);
-        TextField_Quant.setText(null);
-        TextField_Nome_Produto.setText(null);
-        TextField_Id_Produto.setText(null);
-        FormattedTextField_Preco.setText(null);
+        field_fornecedor.setText(null);
+        field_quantidade.setText(null);
+        field_nome_produto.setText(null);
+        field_Idproduto.setText(null);
+        field_preco.setText(null);
     }
 
     public void setExcluitabela(int row) {
-        ((DefaultTableModel) Table_Mostra_info.getModel()).removeRow(row);
+        ((DefaultTableModel) tabela_mostra_info.getModel()).removeRow(row);
     }
 
     public void Editar() {
 
-        Row = Table_Mostra_info.getSelectedRow();
-        
+        Row = tabela_mostra_info.getSelectedRow();
+
         //Essa função exclui a linha selecionada e manda as informaçães para os campos de texto para que o usuario possa editar 
         for (int i = 0; i < 5; i++) {
 
-            Info = (String) Table_Mostra_info.getModel().getValueAt(Row, i);
-           
+            Info = (String) tabela_mostra_info.getModel().getValueAt(Row, i);
+
             switch (i) {
                 case 0:
-                    TextField_Id_Produto.setText(Info);
+                    field_Idproduto.setText(Info);
                     break;
                 case 1:
-                    TextField_Nome_Produto.setText(Info);
+                    field_nome_produto.setText(Info);
                     break;
                 case 2:
-                    TextField_Quant.setText(Info);
+                    field_quantidade.setText(Info);
                     break;
                 case 3:
-                    FormattedTextField_Preco.setText(Info);
+                    field_preco.setText(Info);
                     break;
                 case 4:
-                    TextField_Fornecedor.setText(Info);
+                    field_fornecedor.setText(Info);
                     break;
             }
         }
 
-        setExcluitabela(Table_Mostra_info.getSelectedRow());
+        setExcluitabela(tabela_mostra_info.getSelectedRow());
 
-    }
-
-    public void Centralizar() {
-        Dimension d = this.getDesktopPane().getSize();
-        this.setLocation((d.width - this.getSize().width) / 2, (d.height - this.getSize().height) / 2);
     }
 
 }
