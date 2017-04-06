@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class FuncionarioAction implements ActionListener {
 
     private final Funcionarios funcionario;
+    private Funcionario_Get_Set fun;
 
     public FuncionarioAction(Funcionarios funcionario) {
 
@@ -20,7 +21,7 @@ public class FuncionarioAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
             if (funcionario.Verifica()) {
-                Funcionario_Get_Set fun = funcionario.getfuncio();
+                 fun = funcionario.getfuncio();
                 System.out.println(fun.toString());
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
             } else {

@@ -3,12 +3,13 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Funcionario_Get_Set;
 import actionListener.FuncionarioAction;
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Funcionarios extends javax.swing.JInternalFrame {
 
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
+    private Funcionario_Get_Set fun;
+    private String cpf,tel;
 
     public Funcionarios() {
         initComponents();
@@ -241,10 +242,10 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
     public Funcionario_Get_Set getfuncio() {
 
-        Funcionario_Get_Set fun = new Funcionario_Get_Set();
+        fun = new Funcionario_Get_Set();
 
-        String cpf = field_CPF_funcionario.getText().replaceAll("[-.]", "");
-        String tel = field_telefone_funcionario.getText().replaceAll("[()]", "");
+        cpf = field_CPF_funcionario.getText().replaceAll("[-.]", "");
+        tel = field_telefone_funcionario.getText().replaceAll("[()]", "");
 
         fun.setCPF(Long.parseLong(cpf));
         fun.setEndereco(field_endereco_funcionario.getText());

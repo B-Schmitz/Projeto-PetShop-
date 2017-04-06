@@ -8,11 +8,12 @@ public class Login extends javax.swing.JFrame {
 
     private final LoginAction login = new LoginAction(this);
     private String senha_nova, senha_atual = "admin";
+    private ImageIcon icone;
 
     public Login() {
 
         initComponents();
-        ImageIcon icone = new ImageIcon("src/Icones/bigdog.png");
+        icone = new ImageIcon("src/Icones/bigdog.png");
 
         // Configurações da Janela
         this.setResizable(false);

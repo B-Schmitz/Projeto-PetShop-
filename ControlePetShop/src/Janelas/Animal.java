@@ -3,12 +3,12 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Animal_Get_Set;
 import actionListener.AnimaisAction;
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Animal extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
+    Animal_Get_Set ani;
 
     public Animal() {
         initComponents();
@@ -222,7 +222,7 @@ public class Animal extends javax.swing.JInternalFrame {
 
     public Animal_Get_Set getAnimais() {
 
-        Animal_Get_Set ani = new Animal_Get_Set();
+        ani = new Animal_Get_Set();
 
         ani.setProprietario(field_proprietario.getText());
         ani.setAnimal((String) comboBox_tipo_animal.getSelectedItem());

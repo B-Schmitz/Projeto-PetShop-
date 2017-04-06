@@ -3,7 +3,6 @@ package Janelas;
 import Exceções.TeclasPermitidas;
 import Get_Set.Estoque_Get_Set;
 import actionListener.ControleAction;
-import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -13,10 +12,13 @@ import javax.swing.table.DefaultTableModel;
 public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
+    Estoque_Get_Set estoque;
     private String DataAtual;
     private String Info, Preco;
     private Double Big_Preco;
     private int Row;
+    private Date hoje;
+    private SimpleDateFormat data;
 
     public ControleEstoque() {
         initComponents();
@@ -255,11 +257,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     public Estoque_Get_Set getestoq() {
-        Estoque_Get_Set estoque = new Estoque_Get_Set();
+        estoque = new Estoque_Get_Set();
 
         //O codigo a baixo, pega a data atual do sistema
-        Date hoje = new Date();
-        SimpleDateFormat data;
+        hoje = new Date();
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
 

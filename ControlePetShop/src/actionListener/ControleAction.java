@@ -17,12 +17,12 @@ public class ControleAction implements ActionListener {
     private String Fornecedor;
     private int QuantAdd;
     private String DataAtual;
-
-    //teste
     private String preco;
     private BigDecimal Preco;
-
+    private Estoque_Get_Set estoq;
     private JTable tabela;
+    private StringBuilder stringBuilder;
+    private DefaultTableModel v;
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
@@ -32,7 +32,7 @@ public class ControleAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Adicionar")) {
 
-            Estoque_Get_Set estoq = controle.getestoq();
+            estoq = controle.getestoq();
 
             // Se quando a funçao getestoq() for chamada e não hover nada nos capos de texto, ela retorna null e armazena em estoq
             // Se estoque estiver como null nao faz nada.
@@ -64,7 +64,7 @@ public class ControleAction implements ActionListener {
                     for (int i = 3; i < Tam - 1; i++) {
 
                         if (i % 3 == 1) {
-                            StringBuilder stringBuilder = new StringBuilder(preco);
+                            stringBuilder = new StringBuilder(preco);
                             int a = 2;
                             a += (i - 1);
                             stringBuilder.insert(Tam - a, '.');
@@ -86,7 +86,7 @@ public class ControleAction implements ActionListener {
 
                 tabela = controle.getTabela();
 
-                DefaultTableModel v = (DefaultTableModel) tabela.getModel();
+                v = (DefaultTableModel) tabela.getModel();
 
                 v.addRow(new String[]{Id + "", nome, QuantAdd + "", preco, Fornecedor, DataAtual, EmEstoque + ""});
 

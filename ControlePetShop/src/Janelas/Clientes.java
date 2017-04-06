@@ -11,6 +11,7 @@ public class Clientes extends javax.swing.JInternalFrame {
     private final CadastroClienteAction cliente = new CadastroClienteAction(this);
     private String cpf;
     private String tel;
+    private Cliente_Get_Set client;
 
     public Clientes() {
         initComponents();
@@ -213,7 +214,7 @@ public class Clientes extends javax.swing.JInternalFrame {
 
     public Cliente_Get_Set getcliente() {
 
-        Cliente_Get_Set client = new Cliente_Get_Set();
+        client = new Cliente_Get_Set();
 
         cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();

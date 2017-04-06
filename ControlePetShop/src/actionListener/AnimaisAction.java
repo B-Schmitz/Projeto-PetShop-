@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class AnimaisAction implements ActionListener {
 
     private Animal animais;
+    private Animal_Get_Set ani;
 
     public AnimaisAction(Animal animais) {
 
@@ -21,7 +22,7 @@ public class AnimaisAction implements ActionListener {
         if (e.getActionCommand().equals("Cadastrar")) {
 
             if (animais.Verifica()) {
-                Animal_Get_Set ani = animais.getAnimais();
+                ani = animais.getAnimais();
                 System.out.println(ani.toString());
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
             } else {

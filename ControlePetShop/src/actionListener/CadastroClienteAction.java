@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 public class CadastroClienteAction implements ActionListener {
 
     private final Clientes cliente;
+    private Cliente_Get_Set client;
 
     public CadastroClienteAction(Clientes cliente) {
 
@@ -20,7 +21,7 @@ public class CadastroClienteAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
             if (cliente.Verifica()) {
-                Cliente_Get_Set client = cliente.getcliente();
+                 client = cliente.getcliente();
                 System.out.println(client.toString());
                  JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
             } else {

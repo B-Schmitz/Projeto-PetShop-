@@ -6,15 +6,17 @@ import javax.swing.JInternalFrame;
 
 public class Principal extends javax.swing.JFrame {
 
-    Clientes c_cliente = new Clientes();
-    Funcionarios funcionario = new Funcionarios();
-    Animal animal = new Animal();
-    ControleEstoque controle = new ControleEstoque();
-    Ajuda ajuda = new Ajuda();
+    private Clientes c_cliente = new Clientes();
+    private Funcionarios funcionario = new Funcionarios();
+    private Animal animal = new Animal();
+    private ControleEstoque controle = new ControleEstoque();
+    private Ajuda ajuda = new Ajuda();
+    private ImageIcon icone;
+    private Dimension d;
 
     public Principal() {
         initComponents();
-        ImageIcon icone = new ImageIcon("src/Icones/login.png");
+        icone = new ImageIcon("src/Icones/login.png");
 
         // Configuração da Janela
         this.setLocationRelativeTo(null);
@@ -34,7 +36,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     public void Centralizar(JInternalFrame frame) {
-        Dimension d = frame.getDesktopPane().getSize();
+        d = frame.getDesktopPane().getSize();
         frame.setLocation((d.width - frame.getSize().width) / 2, (d.height - frame.getSize().height) / 2);
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
