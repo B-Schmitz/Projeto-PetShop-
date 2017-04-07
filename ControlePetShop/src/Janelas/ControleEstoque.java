@@ -24,7 +24,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private SimpleDateFormat data;
     private JTable tabelaAux;
 
-    int t = 0;
 
     public ControleEstoque() {
         initComponents();

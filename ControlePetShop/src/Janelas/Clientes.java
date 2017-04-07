@@ -1,10 +1,9 @@
 package Janelas;
 
-import Exceções.TeclasPermitidas;
+import Exceções.LimitandoIdade;
 import Get_Set.Cliente_Get_Set;
 import javax.swing.ImageIcon;
 import actionListener.CadastroClienteAction;
-import java.awt.Dimension;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -18,7 +17,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         this.setFrameIcon(new ImageIcon("src/Icones/cliente.png"));
         botao_cadastrar_cliente.addActionListener(cliente);
         botao_limpar_cliente.addActionListener(cliente);
-        field_idade_cliente.setDocument(new TeclasPermitidas());
+        field_idade_cliente.setDocument(new LimitandoIdade(3));
     }
 
     @SuppressWarnings("unchecked")

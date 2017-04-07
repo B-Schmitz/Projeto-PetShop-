@@ -1,5 +1,6 @@
 package Janelas;
 
+import Exceções.LimitandoIdade;
 import Exceções.TeclasPermitidas;
 import Get_Set.Animal_Get_Set;
 import actionListener.AnimaisAction;
@@ -21,6 +22,7 @@ public class Animal extends javax.swing.JInternalFrame {
         field_altura.setDocument(new TeclasPermitidas());
         field_idade_animal.setDocument(new TeclasPermitidas());
         field_peso.setDocument(new TeclasPermitidas());
+        field_idade_animal.setDocument(new LimitandoIdade(2));
     }
 
     @SuppressWarnings("unchecked")
