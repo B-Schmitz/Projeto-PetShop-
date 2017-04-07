@@ -9,6 +9,7 @@ public class Login extends javax.swing.JFrame {
     private final LoginAction login = new LoginAction(this);
     private String senha_nova, senha_atual = "admin";
     private ImageIcon icone;
+    private Principal p;
 
     public Login() {
 
@@ -30,7 +31,7 @@ public class Login extends javax.swing.JFrame {
     public void Testa_Senha() {
         senha_nova = new String(field_senha.getPassword());
         if (senha_nova.equals(senha_atual)) {
-            Principal p = new Principal();
+            p = new Principal();
             p.setVisible(true);
             dispose();
         } else {

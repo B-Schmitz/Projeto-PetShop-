@@ -7,18 +7,24 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
-    Estoque_Get_Set estoque;
+    private Estoque_Get_Set estoque;
     private String DataAtual;
     private String Info, Preco;
     private Double Big_Preco;
     private int Row;
     private Date hoje;
     private SimpleDateFormat data;
+    private JTable tabelaAux;
+
+    int t = 0;
 
     public ControleEstoque() {
         initComponents();
@@ -29,7 +35,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_adicionar.addActionListener(control);
         botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
-        botao_limpar_estoque.addActionListener(control);
+        tabelaAux = tabela_mostra_info;
+
     }
 
     @SuppressWarnings("unchecked")
@@ -123,6 +130,11 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_remover.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         field_Idproduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        field_Idproduto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                field_IdprodutoKeyReleased(evt);
+            }
+        });
 
         field_quantidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -234,6 +246,21 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void field_IdprodutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IdprodutoKeyReleased
+        Filtra();
+    }//GEN-LAST:event_field_IdprodutoKeyReleased
+
+    public void Filtra() {
+        TableRowSorter sorter = null;
+        DefaultTableModel model = (DefaultTableModel) tabela_mostra_info.getModel();
+        sorter = new TableRowSorter<TableModel>(model);
+        tabela_mostra_info.setRowSorter(sorter);
+
+        String texto = field_Idproduto.getText();
+
+        sorter.setRowFilter(RowFilter.regexFilter(texto));
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
@@ -270,6 +297,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                 || field_Idproduto.getText().isEmpty() || field_fornecedor.getText().isEmpty()) {
             estoque = null;
         } else {
+
             Big_Preco = Double.parseDouble(Preco);
             estoque.setPreco(Big_Preco);
 
@@ -279,6 +307,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
             estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
             estoque.setFornecedor(field_fornecedor.getText());
             limpa();
+            field_Idproduto.requestFocus();
         }
         return estoque;
     }
