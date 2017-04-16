@@ -5,10 +5,10 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class LimitandoIdade extends PlainDocument{
+public class LimitandoCamposNumericos extends PlainDocument{
 
     private int tamanhoMax ;
-    public LimitandoIdade(int tamanhoMax){
+    public LimitandoCamposNumericos(int tamanhoMax){
         this.tamanhoMax = tamanhoMax;
     }
     @Override

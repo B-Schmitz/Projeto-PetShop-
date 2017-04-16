@@ -1,7 +1,8 @@
 package Janelas;
 
-import Exceções.LimitandoIdade;
-import Exceções.TeclasPermitidas;
+import Exceções.Letras;
+import Exceções.LimitandoCamposNumericos;
+import Exceções.Numeros;
 import Get_Set.Animal_Get_Set;
 import actionListener.AnimaisAction;
 import javax.swing.ImageIcon;
@@ -19,10 +20,15 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_cadastrar_animais.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);
 
-        field_altura.setDocument(new TeclasPermitidas());
-        field_idade_animal.setDocument(new TeclasPermitidas());
-        field_peso.setDocument(new TeclasPermitidas());
-        field_idade_animal.setDocument(new LimitandoIdade(2));
+        field_altura.setDocument(new Numeros());
+        field_idade_animal.setDocument(new Numeros());
+        field_peso.setDocument(new Numeros());
+        field_idade_animal.setDocument(new LimitandoCamposNumericos(2));
+        
+        field_cor.setDocument(new Letras());
+        field_nome_animal.setDocument(new Letras());
+        field_proprietario.setDocument(new Letras());
+        field_raca.setDocument(new Letras());
     }
 
     @SuppressWarnings("unchecked")

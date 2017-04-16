@@ -1,6 +1,7 @@
 package Janelas;
 
-import Exceções.TeclasPermitidas;
+import Exceções.Letras;
+import Exceções.Numeros;
 import Get_Set.Estoque_Get_Set;
 import TableModel.ContorleTableModel;
 import actionListener.ControleAction;
@@ -8,36 +9,34 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
-import javax.swing.RowFilter;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 
 public class ControleEstoque extends javax.swing.JInternalFrame {
 
     private final ControleAction control = new ControleAction(this);
     private Estoque_Get_Set estoque;
     private String DataAtual;
-    private String Info, Preco;
+    private String Preco;
     private Double Big_Preco;
-    private int Row;
     private Date hoje;
     private SimpleDateFormat data;
 
-   ContorleTableModel model = new ContorleTableModel();
+   
 
     public ControleEstoque() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/estoque.png"));
-        field_Idproduto.setDocument(new TeclasPermitidas());
-        field_quantidade.setDocument(new TeclasPermitidas());
+        field_Idproduto.setDocument(new Numeros());
+        field_quantidade.setDocument(new Numeros());
+        
+        field_nome_produto.setDocument(new Letras());
+        field_fornecedor.setDocument(new Letras());
 
         botao_adicionar.addActionListener(control);
         botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
         botao_limpar_estoque.addActionListener(control);
-       
-        tabela_mostra_info.setModel(model);
+
+        
 
     }
 
@@ -85,7 +84,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "IdProduto", "Nome ", "Quant.", "Preço", "Fornecedor", "Data Compra", "Qtd Estoque"
+                "IdProduto", "Nome ", "Quantade", "Preço", "Fornecedor", "Data da Compra", "Qtd Estoque"
             }
         ) {
             Class[] types = new Class [] {
@@ -109,6 +108,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         tabela_mostra_info.getTableHeader().setReorderingAllowed(false);
         tabela_mostra_info.setVerifyInputWhenFocusTarget(false);
         jScrollPane1.setViewportView(tabela_mostra_info);
+        if (tabela_mostra_info.getColumnModel().getColumnCount() > 0) {
+            tabela_mostra_info.getColumnModel().getColumn(4).setResizable(false);
+            tabela_mostra_info.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         label_fornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/fornecedor.png"))); // NOI18N
@@ -207,7 +210,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_Idproduto)
                     .addComponent(label_quantidade)
@@ -253,7 +256,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_field_IdprodutoKeyReleased
 
     public void Filtra() {
-      /*  TableRowSorter sorter = null;
+        /*  TableRowSorter sorter = null;
         DefaultTableModel model = (DefaultTableModel) tabela_mostra_info.getModel();
         sorter = new TableRowSorter<TableModel>(model);
         tabela_mostra_info.setRowSorter(sorter);
@@ -302,7 +305,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
             Big_Preco = Double.parseDouble(Preco);
             estoque.setPreco(Big_Preco);
-            
+
             estoque.setPrecoStr(field_preco.getText());
             estoque.setData(DataAtual);
             estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
@@ -330,12 +333,12 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     }
 
     public void Editar(Estoque_Get_Set estoq) {
-        
-        field_Idproduto.setText(estoq.getId_produto()+"");
+
+        field_Idproduto.setText(estoq.getId_produto() + "");
         field_fornecedor.setText(estoq.getFornecedor());
         field_nome_produto.setText(estoq.getNome_Produto());
         field_preco.setText(estoq.getPrecoStr());
-        field_quantidade.setText(estoq.getQantAdd()+"");
+        field_quantidade.setText(estoq.getQantAdd() + "");
 
     }
 

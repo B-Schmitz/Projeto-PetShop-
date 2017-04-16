@@ -102,7 +102,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_Idproduto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="label_quantidade" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -184,10 +184,10 @@
                   <Table columnCount="7" rowCount="0">
                     <Column editable="false" title="IdProduto" type="java.lang.String"/>
                     <Column editable="false" title="Nome " type="java.lang.String"/>
-                    <Column editable="false" title="Quant." type="java.lang.String"/>
+                    <Column editable="false" title="Quantade" type="java.lang.String"/>
                     <Column editable="false" title="Pre&#xe7;o" type="java.lang.String"/>
                     <Column editable="false" title="Fornecedor" type="java.lang.String"/>
-                    <Column editable="false" title="Data Compra" type="java.lang.String"/>
+                    <Column editable="false" title="Data da Compra" type="java.lang.String"/>
                     <Column editable="false" title="Qtd Estoque" type="java.lang.String"/>
                   </Table>
                 </Property>
@@ -214,7 +214,12 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
                       <Title/>
                       <Editor/>
                       <Renderer/>

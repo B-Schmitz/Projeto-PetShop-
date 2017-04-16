@@ -3,7 +3,7 @@ package Exceções;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-public class TeclasPermitidas extends PlainDocument {
+public class Numeros extends PlainDocument {
 
     @Override
     public void insertString(int offset, String str, javax.swing.text.AttributeSet attr)
@@ -13,11 +13,6 @@ public class TeclasPermitidas extends PlainDocument {
 
     }
 
-    public void replace(int offset, String str, javax.swing.text.AttributeSet attr)
-            throws BadLocationException {
-
-        super.insertString(offset, str.replaceAll("[^0-9]", ""), attr);
-
-    }
+  
 
 }

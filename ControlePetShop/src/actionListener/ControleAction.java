@@ -5,9 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
 import TableModel.ContorleTableModel;
-import java.math.BigDecimal;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 public class ControleAction implements ActionListener {
 

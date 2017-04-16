@@ -1,7 +1,7 @@
 package Janelas;
 
-import Exceções.LimitandoIdade;
-import Exceções.TeclasPermitidas;
+import Exceções.Letras;
+import Exceções.LimitandoCamposNumericos;
 import Get_Set.Funcionario_Get_Set;
 import actionListener.FuncionarioAction;
 import javax.swing.ImageIcon;
@@ -17,8 +17,11 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         this.setFrameIcon(new ImageIcon("src/Icones/funcionario.png"));
         botao_cadastrar_funcionario.addActionListener(funcionario);
         botao_limpar_funcionario.addActionListener(funcionario);
-        field_idade_funcionario.setDocument(new LimitandoIdade(3));
-        field_pis.setDocument(new TeclasPermitidas());
+        field_idade_funcionario.setDocument(new LimitandoCamposNumericos(3));
+        field_pis.setDocument(new LimitandoCamposNumericos(11));
+        
+        field_cargo.setDocument(new Letras());
+        field_nome_funcionario.setDocument(new Letras());
     }
 
     @SuppressWarnings("unchecked")

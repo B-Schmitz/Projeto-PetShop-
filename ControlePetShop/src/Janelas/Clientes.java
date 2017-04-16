@@ -1,6 +1,7 @@
 package Janelas;
 
-import Exceções.LimitandoIdade;
+import Exceções.Letras;
+import Exceções.LimitandoCamposNumericos;
 import Get_Set.Cliente_Get_Set;
 import javax.swing.ImageIcon;
 import actionListener.CadastroClienteAction;
@@ -17,7 +18,10 @@ public class Clientes extends javax.swing.JInternalFrame {
         this.setFrameIcon(new ImageIcon("src/Icones/cliente.png"));
         botao_cadastrar_cliente.addActionListener(cliente);
         botao_limpar_cliente.addActionListener(cliente);
-        field_idade_cliente.setDocument(new LimitandoIdade(3));
+        field_idade_cliente.setDocument(new LimitandoCamposNumericos(3));
+
+        field_nome_cliente.setDocument(new Letras());
+
     }
 
     @SuppressWarnings("unchecked")
