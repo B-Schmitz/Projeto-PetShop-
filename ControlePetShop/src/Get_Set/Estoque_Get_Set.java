@@ -12,6 +12,15 @@ public class Estoque_Get_Set {
     private String Data;
     private String fornecedor;
     private BigDecimal Preco;
+    private String PrecoStr;
+
+    public String getPrecoStr() {
+        return PrecoStr;
+    }
+
+    public void setPrecoStr(String PrecoStr) {
+        this.PrecoStr = PrecoStr;
+    }
 
     public String getNome_Produto() {
         return Nome_Produto;
@@ -75,5 +84,7 @@ public class Estoque_Get_Set {
     public String toString() {
         return "Nome do Produto = " + Nome_Produto + "\nId do produto = " + getId_produto() + "\nQuantidade = " + getQantAdd() + "\nQuantidade no estoque = " + getQuantEstoque() + "\nData = " + Data + "\nFornecedor = " + fornecedor;
     }
+    
+   
 
 }

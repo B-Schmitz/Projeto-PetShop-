@@ -2,6 +2,7 @@ package Janelas;
 
 import Exceções.TeclasPermitidas;
 import Get_Set.Estoque_Get_Set;
+import TableModel.ContorleTableModel;
 import actionListener.ControleAction;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,8 +23,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private int Row;
     private Date hoje;
     private SimpleDateFormat data;
-    private JTable tabelaAux;
 
+   ContorleTableModel model = new ContorleTableModel();
 
     public ControleEstoque() {
         initComponents();
@@ -34,7 +35,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_adicionar.addActionListener(control);
         botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
-        tabelaAux = tabela_mostra_info;
+        botao_limpar_estoque.addActionListener(control);
+       
+        tabela_mostra_info.setModel(model);
 
     }
 
@@ -250,14 +253,14 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_field_IdprodutoKeyReleased
 
     public void Filtra() {
-        TableRowSorter sorter = null;
+      /*  TableRowSorter sorter = null;
         DefaultTableModel model = (DefaultTableModel) tabela_mostra_info.getModel();
         sorter = new TableRowSorter<TableModel>(model);
         tabela_mostra_info.setRowSorter(sorter);
 
         String texto = field_Idproduto.getText();
 
-        sorter.setRowFilter(RowFilter.regexFilter(texto));
+        sorter.setRowFilter(RowFilter.regexFilter(texto));*/
 
     }
 
@@ -292,14 +295,15 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         Preco = field_preco.getText().replaceAll("[.]", "");
         Preco = Preco.replaceAll("[,]", ".");
-        if (Preco.isEmpty() || field_quantidade.getText().isEmpty() || field_nome_produto.getText().isEmpty()
+        if (field_preco.getText().isEmpty() || field_quantidade.getText().isEmpty() || field_nome_produto.getText().isEmpty()
                 || field_Idproduto.getText().isEmpty() || field_fornecedor.getText().isEmpty()) {
             estoque = null;
         } else {
 
             Big_Preco = Double.parseDouble(Preco);
             estoque.setPreco(Big_Preco);
-
+            
+            estoque.setPrecoStr(field_preco.getText());
             estoque.setData(DataAtual);
             estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
             estoque.setNome_Produto(field_nome_produto.getText());
@@ -325,39 +329,13 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         field_preco.setText(null);
     }
 
-    public void setExcluitabela(int row) {
-        ((DefaultTableModel) tabela_mostra_info.getModel()).removeRow(row);
-    }
-
-    public void Editar() {
-
-        Row = tabela_mostra_info.getSelectedRow();
-
-        //Essa função exclui a linha selecionada e manda as informaçães para os campos de texto para que o usuario possa editar 
-        for (int i = 0; i < 5; i++) {
-
-            Info = (String) tabela_mostra_info.getModel().getValueAt(Row, i);
-
-            switch (i) {
-                case 0:
-                    field_Idproduto.setText(Info);
-                    break;
-                case 1:
-                    field_nome_produto.setText(Info);
-                    break;
-                case 2:
-                    field_quantidade.setText(Info);
-                    break;
-                case 3:
-                    field_preco.setText(Info);
-                    break;
-                case 4:
-                    field_fornecedor.setText(Info);
-                    break;
-            }
-        }
-
-        setExcluitabela(tabela_mostra_info.getSelectedRow());
+    public void Editar(Estoque_Get_Set estoq) {
+        
+        field_Idproduto.setText(estoq.getId_produto()+"");
+        field_fornecedor.setText(estoq.getFornecedor());
+        field_nome_produto.setText(estoq.getNome_Produto());
+        field_preco.setText(estoq.getPrecoStr());
+        field_quantidade.setText(estoq.getQantAdd()+"");
 
     }
 

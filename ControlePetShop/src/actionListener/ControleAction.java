@@ -4,6 +4,7 @@ import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
+import TableModel.ContorleTableModel;
 import java.math.BigDecimal;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -12,20 +13,23 @@ public class ControleAction implements ActionListener {
 
     private ControleEstoque controle;
 
-    private long Id, EmEstoque;
+    /*private long Id, EmEstoque;
     private String nome;
     private String Fornecedor;
     private int QuantAdd;
     private String DataAtual;
     private String preco;
-    private BigDecimal Preco;
+    private BigDecimal Preco;*/
+    
     private Estoque_Get_Set estoq;
     private JTable tabela;
     private StringBuilder stringBuilder;
-    private DefaultTableModel v;
+    //private DefaultTableModel v;
+    private ContorleTableModel model = new ContorleTableModel();
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
+        
     }
 
     @Override
@@ -42,24 +46,24 @@ public class ControleAction implements ActionListener {
             } //Se estoque nao estiver como null significa q todos os campos de texto estão preenchidos e serão adicionados a lista
             else {
                 System.out.println(estoq.toString());
-                Id = estoq.getId_produto();
+                /*Id = estoq.getId_produto();
                 nome = estoq.getNome_Produto().trim();
                 Fornecedor = estoq.getFornecedor().trim();
                 QuantAdd = estoq.getQantAdd();
                 DataAtual = estoq.getData();
                 Preco = estoq.getPreco();
-                preco = Preco + "";
+                preco = Preco + "";*/
 
                 // Isso é pra tirar qualquer ponto que possa haver.
                 //Foi feito dessa forma pois Double trabalha com ponto
                 // em quanto o campo de texto de preço trabalha com virgula.
-                preco = preco.replaceAll("[.]", "");
+              //  preco = preco.replaceAll("[.]", "");
 
                 //A partir daqui pontos serão adicionados correspondentes a mil, milhao bilhao .....
                 //OBS: só é possivel trabalhar com 2 casas decimais
                 //Foi utilizado a classe BigDecimal pois se o numero informado fosse muito grande
                 //ele nao aparecia inteiro aparecia ex: 1,0E7 que causava conflito com essa funçao
-                if (preco.length() > 5) {
+                /*if (preco.length() > 5) {
                     int Tam = preco.length();
                     for (int i = 3; i < Tam - 1; i++) {
 
@@ -83,12 +87,13 @@ public class ControleAction implements ActionListener {
                 preco = stringBuilder.toString();
                 //isso a baixo é apenas pra teste
                 EmEstoque = QuantAdd;
-
+*/
                 tabela = controle.getTabela();
+                tabela.setModel(model);
 
-                v = (DefaultTableModel) tabela.getModel();
+               
 
-                v.addRow(new String[]{Id + "", nome, QuantAdd + "", preco, Fornecedor, DataAtual, EmEstoque + ""});
+                model.addLinha(estoq);
 
             }
 
@@ -108,7 +113,8 @@ public class ControleAction implements ActionListener {
             } else {
 
                 int i = tabela.getSelectedRow();
-                controle.setExcluitabela(i);
+               
+               model.remove(i);
             }
         }
 
@@ -119,7 +125,11 @@ public class ControleAction implements ActionListener {
                 return;
 
             } else {
-                controle.Editar();
+               estoq =  model.getproduto(tabela.getSelectedRow());
+               controle.Editar(estoq);
+               model.remove(tabela.getSelectedRow());
+               
+              
             }
         }
 
