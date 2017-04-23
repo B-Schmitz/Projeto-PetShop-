@@ -11,23 +11,14 @@ public class ControleAction implements ActionListener {
 
     private ControleEstoque controle;
 
-    /*private long Id, EmEstoque;
-    private String nome;
-    private String Fornecedor;
-    private int QuantAdd;
-    private String DataAtual;
-    private String preco;
-    private BigDecimal Preco;*/
-    
     private Estoque_Get_Set estoq;
     private JTable tabela;
-    private StringBuilder stringBuilder;
-    //private DefaultTableModel v;
+
     private ContorleTableModel model = new ContorleTableModel();
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
-        
+
     }
 
     @Override
@@ -43,53 +34,10 @@ public class ControleAction implements ActionListener {
 
             } //Se estoque nao estiver como null significa q todos os campos de texto estão preenchidos e serão adicionados a lista
             else {
-                System.out.println(estoq.toString());
-                /*Id = estoq.getId_produto();
-                nome = estoq.getNome_Produto().trim();
-                Fornecedor = estoq.getFornecedor().trim();
-                QuantAdd = estoq.getQantAdd();
-                DataAtual = estoq.getData();
-                Preco = estoq.getPreco();
-                preco = Preco + "";*/
+                //  System.out.println(estoq.toString());
 
-                // Isso é pra tirar qualquer ponto que possa haver.
-                //Foi feito dessa forma pois Double trabalha com ponto
-                // em quanto o campo de texto de preço trabalha com virgula.
-              //  preco = preco.replaceAll("[.]", "");
-
-                //A partir daqui pontos serão adicionados correspondentes a mil, milhao bilhao .....
-                //OBS: só é possivel trabalhar com 2 casas decimais
-                //Foi utilizado a classe BigDecimal pois se o numero informado fosse muito grande
-                //ele nao aparecia inteiro aparecia ex: 1,0E7 que causava conflito com essa funçao
-                /*if (preco.length() > 5) {
-                    int Tam = preco.length();
-                    for (int i = 3; i < Tam - 1; i++) {
-
-                        if (i % 3 == 1) {
-                            stringBuilder = new StringBuilder(preco);
-                            int a = 2;
-                            a += (i - 1);
-                            stringBuilder.insert(Tam - a, '.');
-
-                            preco = stringBuilder.toString();
-
-                        }
-                    }
-
-                }
-                //Aqui é adicionado virgula antes dos dois numeros finais por ser em ponto flutuante.
-                StringBuilder stringBuilder = new StringBuilder(preco);
-                int a = 2;
-                stringBuilder.insert(preco.length() - a, ',');
-
-                preco = stringBuilder.toString();
-                //isso a baixo é apenas pra teste
-                EmEstoque = QuantAdd;
-*/
                 tabela = controle.getTabela();
                 tabela.setModel(model);
-
-               
 
                 model.addLinha(estoq);
 
@@ -111,8 +59,8 @@ public class ControleAction implements ActionListener {
             } else {
 
                 int i = tabela.getSelectedRow();
-               
-               model.remove(i);
+
+                model.remove(i);
             }
         }
 
@@ -123,11 +71,10 @@ public class ControleAction implements ActionListener {
                 return;
 
             } else {
-               estoq =  model.getproduto(tabela.getSelectedRow());
-               controle.Editar(estoq);
-               model.remove(tabela.getSelectedRow());
-               
-              
+                estoq = model.getproduto(tabela.getSelectedRow());
+                controle.Editar(estoq);
+                model.remove(tabela.getSelectedRow());
+
             }
         }
 

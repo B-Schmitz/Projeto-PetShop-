@@ -79,7 +79,13 @@ public class Login extends javax.swing.JFrame {
         botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        field_senha.setText("admin");
         field_senha.setToolTipText("Informe sua senha");
+        field_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                field_senhaActionPerformed(evt);
+            }
+        });
 
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/bigdog.png"))); // NOI18N
@@ -184,6 +190,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
         }
     }//GEN-LAST:event_label_trocar_senhaMouseClicked
+
+    private void field_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_field_senhaActionPerformed
 
     /**
      * @param args the command line arguments

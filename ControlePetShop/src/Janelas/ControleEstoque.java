@@ -3,7 +3,6 @@ package Janelas;
 import Exceções.Letras;
 import Exceções.Numeros;
 import Get_Set.Estoque_Get_Set;
-import TableModel.ContorleTableModel;
 import actionListener.ControleAction;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,14 +19,12 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private Date hoje;
     private SimpleDateFormat data;
 
-   
-
     public ControleEstoque() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/Icones/estoque.png"));
         field_Idproduto.setDocument(new Numeros());
         field_quantidade.setDocument(new Numeros());
-        
+
         field_nome_produto.setDocument(new Letras());
         field_fornecedor.setDocument(new Letras());
 
@@ -35,8 +32,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
         botao_limpar_estoque.addActionListener(control);
-
-        
 
     }
 
@@ -252,20 +247,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void field_IdprodutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IdprodutoKeyReleased
-        Filtra();
+
     }//GEN-LAST:event_field_IdprodutoKeyReleased
 
-    public void Filtra() {
-        /*  TableRowSorter sorter = null;
-        DefaultTableModel model = (DefaultTableModel) tabela_mostra_info.getModel();
-        sorter = new TableRowSorter<TableModel>(model);
-        tabela_mostra_info.setRowSorter(sorter);
-
-        String texto = field_Idproduto.getText();
-
-        sorter.setRowFilter(RowFilter.regexFilter(texto));*/
-
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;

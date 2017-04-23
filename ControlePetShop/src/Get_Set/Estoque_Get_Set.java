@@ -3,7 +3,7 @@ package Get_Set;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Estoque_Get_Set {
+public class Estoque_Get_Set implements Comparable<Estoque_Get_Set> {
 
     private String Nome_Produto;
     private long Id_produto;
@@ -13,6 +13,8 @@ public class Estoque_Get_Set {
     private String fornecedor;
     private BigDecimal Preco;
     private String PrecoStr;
+    private String[] diaMesAno, diaMesAno1;
+    private int comp1, comp2;
 
     public String getPrecoStr() {
         return PrecoStr;
@@ -84,7 +86,28 @@ public class Estoque_Get_Set {
     public String toString() {
         return "Nome do Produto = " + Nome_Produto + "\nId do produto = " + getId_produto() + "\nQuantidade = " + getQantAdd() + "\nQuantidade no estoque = " + getQuantEstoque() + "\nData = " + Data + "\nFornecedor = " + fornecedor;
     }
-    
-   
+
+    @Override
+    public int compareTo(Estoque_Get_Set estoque) {
+
+        diaMesAno = this.getData().split("/");
+        diaMesAno1 = estoque.getData().split("/");
+
+        for (int i = 2; i > -1; i--) {
+            if (!diaMesAno[i].equals(diaMesAno1[i])) {
+                comp1 = Integer.parseInt(diaMesAno[i]);
+                comp2 = Integer.parseInt(diaMesAno1[i]);
+               
+
+                if (comp1 > comp2) {
+                    return -1;
+                } else {
+                    return 1;
+                }
+            }
+        }
+
+        return this.Nome_Produto.compareTo(estoque.Nome_Produto);
+    }
 
 }

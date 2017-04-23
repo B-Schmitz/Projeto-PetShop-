@@ -77,13 +77,7 @@ public class ContorleTableModel extends AbstractTableModel {
     public void addLinha(Estoque_Get_Set produto){
         
         this.produtos.add(produto);
-         Collections.sort(produtos , new Comparator<Estoque_Get_Set>() {
-            @Override
-            public int compare(Estoque_Get_Set p1, Estoque_Get_Set p2) {
-                
-               return p1.getNome_Produto().compareTo(p2.getNome_Produto());
-            }
-        });
+        Collections.sort(produtos);
         this.fireTableDataChanged();
     }
 
