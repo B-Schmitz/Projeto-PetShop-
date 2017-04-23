@@ -83,7 +83,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
@@ -103,10 +103,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         tabela_mostra_info.getTableHeader().setReorderingAllowed(false);
         tabela_mostra_info.setVerifyInputWhenFocusTarget(false);
         jScrollPane1.setViewportView(tabela_mostra_info);
-        if (tabela_mostra_info.getColumnModel().getColumnCount() > 0) {
-            tabela_mostra_info.getColumnModel().getColumn(4).setResizable(false);
-            tabela_mostra_info.getColumnModel().getColumn(5).setResizable(false);
-        }
 
         label_fornecedor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/fornecedor.png"))); // NOI18N

@@ -182,13 +182,13 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="7" rowCount="0">
-                    <Column editable="false" title="IdProduto" type="java.lang.String"/>
+                    <Column editable="false" title="IdProduto" type="java.lang.Long"/>
                     <Column editable="false" title="Nome " type="java.lang.String"/>
-                    <Column editable="false" title="Quantade" type="java.lang.String"/>
-                    <Column editable="false" title="Pre&#xe7;o" type="java.lang.String"/>
+                    <Column editable="false" title="Quantade" type="java.lang.Integer"/>
+                    <Column editable="false" title="Pre&#xe7;o" type="java.lang.Double"/>
                     <Column editable="false" title="Fornecedor" type="java.lang.String"/>
                     <Column editable="false" title="Data da Compra" type="java.lang.String"/>
-                    <Column editable="false" title="Qtd Estoque" type="java.lang.String"/>
+                    <Column editable="false" title="Qtd Estoque" type="java.lang.Long"/>
                   </Table>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -214,12 +214,12 @@
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
