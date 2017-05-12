@@ -6,12 +6,12 @@ import javax.swing.JInternalFrame;
 
 public class Principal extends javax.swing.JFrame {
 
-    private Clientes c_cliente = new Clientes();
-    private Funcionarios funcionario = new Funcionarios();
-    private Animal animal = new Animal();
-    private ControleEstoque controle = new ControleEstoque();
-    private Ajuda ajuda = new Ajuda();
-    private ImageIcon icone;
+    private final Clientes c_cliente = new Clientes();
+    private final Funcionarios funcionario = new Funcionarios();
+    private final Animal animal = new Animal();
+    private final ControleEstoque controle = new ControleEstoque();
+    private final Ajuda ajuda = new Ajuda();
+    private final ImageIcon icone;
     private Dimension d;
 
     public Principal() {
@@ -27,8 +27,8 @@ public class Principal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
 
     public void Janela(JInternalFrame frame) {
-        DesktopPane_Principal.remove(frame);
-        DesktopPane_Principal.add(frame);
+        desktopPane_principal.remove(frame);
+        desktopPane_principal.add(frame);
         frame.moveToFront();
         frame.setVisible(true);
         Centralizar(frame);
@@ -42,9 +42,9 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DesktopPane_Principal = new javax.swing.JDesktopPane();
+        desktopPane_principal = new javax.swing.JDesktopPane();
         label_patinhas = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        menu_bar = new javax.swing.JMenuBar();
         menu_cadastros = new javax.swing.JMenu();
         menu_cliente = new javax.swing.JMenuItem();
         menu_funcionario = new javax.swing.JMenuItem();
@@ -54,23 +54,23 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        DesktopPane_Principal.setBackground(new java.awt.Color(240, 240, 240));
-        DesktopPane_Principal.setForeground(new java.awt.Color(240, 240, 240));
-        DesktopPane_Principal.setToolTipText("");
+        desktopPane_principal.setBackground(new java.awt.Color(240, 240, 240));
+        desktopPane_principal.setForeground(new java.awt.Color(240, 240, 240));
+        desktopPane_principal.setToolTipText("");
 
         label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/pegadas.png"))); // NOI18N
 
-        DesktopPane_Principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktopPane_principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout DesktopPane_PrincipalLayout = new javax.swing.GroupLayout(DesktopPane_Principal);
-        DesktopPane_Principal.setLayout(DesktopPane_PrincipalLayout);
-        DesktopPane_PrincipalLayout.setHorizontalGroup(
-            DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE)
+        javax.swing.GroupLayout desktopPane_principalLayout = new javax.swing.GroupLayout(desktopPane_principal);
+        desktopPane_principal.setLayout(desktopPane_principalLayout);
+        desktopPane_principalLayout.setHorizontalGroup(
+            desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 917, Short.MAX_VALUE)
         );
-        DesktopPane_PrincipalLayout.setVerticalGroup(
-            DesktopPane_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 609, Short.MAX_VALUE)
+        desktopPane_principalLayout.setVerticalGroup(
+            desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 609, Short.MAX_VALUE)
         );
 
         menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cadastro.png"))); // NOI18N
@@ -112,7 +112,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_estoque);
 
-        jMenuBar1.add(menu_cadastros);
+        menu_bar.add(menu_cadastros);
 
         menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
         menu_ajuda.setText("Ajuda");
@@ -121,19 +121,19 @@ public class Principal extends javax.swing.JFrame {
                 menu_ajudaMousePressed(evt);
             }
         });
-        jMenuBar1.add(menu_ajuda);
+        menu_bar.add(menu_ajuda);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menu_bar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPane_Principal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(desktopPane_principal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DesktopPane_Principal)
+            .addComponent(desktopPane_principal)
         );
 
         pack();
@@ -185,19 +185,17 @@ public class Principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Principal().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane DesktopPane_Principal;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JDesktopPane desktopPane_principal;
     private javax.swing.JLabel label_patinhas;
     private javax.swing.JMenu menu_ajuda;
     private javax.swing.JMenuItem menu_animal;
+    private javax.swing.JMenuBar menu_bar;
     private javax.swing.JMenu menu_cadastros;
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_estoque;

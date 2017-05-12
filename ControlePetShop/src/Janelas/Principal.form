@@ -2,7 +2,7 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+    <Menu class="javax.swing.JMenuBar" name="menu_bar">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menu_cadastros">
           <Properties>
@@ -76,7 +76,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menu_bar"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -95,17 +95,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="DesktopPane_Principal" alignment="1" max="32767" attributes="0"/>
+          <Component id="desktopPane_principal" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="DesktopPane_Principal" alignment="0" max="32767" attributes="0"/>
+          <Component id="desktopPane_principal" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JDesktopPane" name="DesktopPane_Principal">
+    <Container class="javax.swing.JDesktopPane" name="desktopPane_principal">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f0" green="f0" red="f0" type="rgb"/>
@@ -119,12 +119,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="0" pref="917" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="1" pref="917" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="0" pref="609" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="1" pref="609" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

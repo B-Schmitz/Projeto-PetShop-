@@ -24,7 +24,7 @@ public class Animal extends javax.swing.JInternalFrame {
         field_idade_animal.setDocument(new Numeros());
         field_peso.setDocument(new Numeros());
         field_idade_animal.setDocument(new LimitandoCamposNumericos(2));
-        
+
         field_cor.setDocument(new Letras());
         field_nome_animal.setDocument(new Letras());
         field_proprietario.setDocument(new Letras());

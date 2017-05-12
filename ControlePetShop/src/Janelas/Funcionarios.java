@@ -10,7 +10,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
     private Funcionario_Get_Set fun;
-    private String cpf,tel;
+    private String cpf, tel;
 
     public Funcionarios() {
         initComponents();
@@ -19,7 +19,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_limpar_funcionario.addActionListener(funcionario);
         field_idade_funcionario.setDocument(new LimitandoCamposNumericos(3));
         field_pis.setDocument(new LimitandoCamposNumericos(11));
-        
+
         field_cargo.setDocument(new Letras());
         field_nome_funcionario.setDocument(new Letras());
     }

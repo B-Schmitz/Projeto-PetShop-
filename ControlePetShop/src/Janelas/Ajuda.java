@@ -1,6 +1,5 @@
 package Janelas;
 
-import java.awt.Dimension;
 import javax.swing.ImageIcon;
 
 public class Ajuda extends javax.swing.JInternalFrame {

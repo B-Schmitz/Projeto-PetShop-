@@ -97,7 +97,6 @@ public class Estoque_Get_Set implements Comparable<Estoque_Get_Set> {
             if (!diaMesAno[i].equals(diaMesAno1[i])) {
                 comp1 = Integer.parseInt(diaMesAno[i]);
                 comp2 = Integer.parseInt(diaMesAno1[i]);
-               
 
                 if (comp1 > comp2) {
                     return -1;

@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class AnimaisAction implements ActionListener {
 
-    private Animal animais;
+    private final Animal animais;
     private Animal_Get_Set ani;
 
     public AnimaisAction(Animal animais) {
@@ -28,12 +28,11 @@ public class AnimaisAction implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
             }
-
-            if (e.getActionCommand().equals("Limpar")) {
-                animais.limpar();
-
-            }
+        }
+        if (e.getActionCommand().equals("Limpar")) {
+            animais.limpar();
 
         }
+
     }
 }

@@ -13,6 +13,4 @@ public class Numeros extends PlainDocument {
 
     }
 
-  
-
 }

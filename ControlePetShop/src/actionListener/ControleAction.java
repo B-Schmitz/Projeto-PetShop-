@@ -4,17 +4,17 @@ import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
-import TableModel.ContorleTableModel;
+import TableModel.ControleTableModel;
 import javax.swing.JTable;
 
 public class ControleAction implements ActionListener {
 
-    private ControleEstoque controle;
+    private final ControleEstoque controle;
 
     private Estoque_Get_Set estoq;
     private JTable tabela;
 
-    private ContorleTableModel model = new ContorleTableModel();
+    private final ControleTableModel model = new ControleTableModel();
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
