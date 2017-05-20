@@ -4,18 +4,13 @@ import Exceções.Letras;
 import Exceções.LimitandoCamposNumericos;
 import Exceções.Numeros;
 import Get_Set.Animal_Get_Set;
-import actionListener.AnimaisAction;
+import ActionListeners.AnimaisAction;
 import javax.swing.ImageIcon;
 
 public class Animal extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
     private Animal_Get_Set ani;
-    private String user;
-
-    public void setUser(String user) {
-        this.user = user;
-    }
 
     public Animal() {
         initComponents();
@@ -237,11 +232,11 @@ public class Animal extends javax.swing.JInternalFrame {
 
         ani = new Animal_Get_Set();
 
-        ani.setProprietario(field_proprietario.getText());
+        ani.setProprietario(field_proprietario.getText().trim());
         ani.setAnimal((String) comboBox_tipo_animal.getSelectedItem());
-        ani.setNome(field_nome_animal.getText());
-        ani.setRaca(field_raca.getText());
-        ani.setCor(field_cor.getText());
+        ani.setNome(field_nome_animal.getText().trim());
+        ani.setRaca(field_raca.getText().trim());
+        ani.setCor(field_cor.getText().trim());
         ani.setSexo((String) comboBox_sexo_animal.getSelectedItem());
         ani.setIdade(Integer.parseInt(field_idade_animal.getText()));
         ani.setAltura(Integer.parseInt(field_altura.getText()));
@@ -264,12 +259,12 @@ public class Animal extends javax.swing.JInternalFrame {
     }
 
     public boolean Verifica() {
-        return !(field_proprietario.getText().equals("")
-                || field_nome_animal.getText().equals("")
+        return !(field_proprietario.getText().trim().equals("")
+                || field_nome_animal.getText().trim().equals("")
                 || field_idade_animal.getText().equals("")
                 || field_altura.getText().equals("")
-                || field_cor.getText().equals("")
-                || field_raca.getText().equals("")
+                || field_cor.getText().trim().equals("")
+                || field_raca.getText().trim().equals("")
                 || field_peso.getText().equals(""));
     }
 

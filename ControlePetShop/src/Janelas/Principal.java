@@ -14,9 +14,8 @@ public class Principal extends javax.swing.JFrame {
     private final ControleEstoque controle = new ControleEstoque();
     private final Ajuda ajuda = new Ajuda();
     private final ImageIcon icone;
-    private String user;
     private Dimension d;
-    private Log log = new Log();
+    private final Log log = new Log();
 
     public Principal() {
         initComponents();
@@ -38,9 +37,9 @@ public class Principal extends javax.swing.JFrame {
         Centralizar(frame);
     }
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+   // public void setUser(String user) {
+   //     this.user = user;
+   // }
 
     public void Centralizar(JInternalFrame frame) {
         d = frame.getDesktopPane().getSize();
@@ -154,52 +153,47 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
         try {
-            Log.escrever("Abriu a janela Cliente");
+            Log.escrever("!Abriu a janela Cliente");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(c_cliente);
-        c_cliente.setUser(user);
     }//GEN-LAST:event_menu_clienteActionPerformed
 
     private void menu_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_funcionarioActionPerformed
         try {
-            Log.escrever("Abriu a janela Funcionário");
+            Log.escrever("!Abriu a janela Funcionário");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(funcionario);
-        funcionario.setUser(user);
     }//GEN-LAST:event_menu_funcionarioActionPerformed
 
     private void menu_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_animalActionPerformed
         try {
-            Log.escrever("Abriu a janela Animal");
+            Log.escrever("!Abriu a janela Animal");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(animal);
-        animal.setUser(user);
     }//GEN-LAST:event_menu_animalActionPerformed
 
     private void menu_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_estoqueActionPerformed
         try {
-            Log.escrever("Abriu a janela Controle de Estoque");
+            Log.escrever("!Abriu a janela Controle de Estoque");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(controle);
-        controle.setUser(user);
     }//GEN-LAST:event_menu_estoqueActionPerformed
 
     private void menu_sobreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sobreMousePressed
         try {
-            Log.escrever("Abriu a janela Ajuda");
+            Log.escrever("!Abriu a janela Ajuda");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(ajuda);
-        ajuda.setUser(user);
 
     }//GEN-LAST:event_menu_sobreMousePressed
 

@@ -1,6 +1,6 @@
 package Janelas;
 
-import actionListener.LoginAction;
+import ActionListeners.LoginAction;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -9,11 +9,11 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import Log.Log;
-import Get_Set.Usuario;
+import Get_Set.Usuario_Get_Set;
 
 public class Login extends javax.swing.JFrame {
 
-    private Usuario usuario = new Usuario();
+    private Usuario_Get_Set usuario = new Usuario_Get_Set();
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
     private String senha_nova, senha_atual = "admin";
@@ -81,12 +81,11 @@ public class Login extends javax.swing.JFrame {
             log.setUser(user);
 
             try {
-                Log.escrever("Entrou");
+                Log.escrever("!Entrou");
             } catch (IOException ex) {
                 //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
             p = new Principal();
-            p.setUser(user);
             p.setVisible(true);
             dispose();
         } else {
@@ -229,11 +228,12 @@ public class Login extends javax.swing.JFrame {
         senha_nova = JOptionPane.showInputDialog(null, "Informe a senha atual", "Trocar senha", 1);
         if (senha_nova.equals(senha_atual)) {
             senha_atual = JOptionPane.showInputDialog(null, "Informe uma nova senha", "Trocar senha", 1);
-            if (senha_atual == null || senha_atual.equals("")) {
+            if (senha_atual.trim().equals("")) {
                 senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
                 JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Troca não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
-            } else if (senha_atual != null || !"".equals(senha_atual)) {
+            } else if (!senha_atual.trim().equals("")) {
                 JOptionPane.showMessageDialog(null, "Senha modificada", "Troca efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
+            } else {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));

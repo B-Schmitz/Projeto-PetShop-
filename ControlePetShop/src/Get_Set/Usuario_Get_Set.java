@@ -1,6 +1,6 @@
 package Get_Set;
 
-public class Usuario {
+public class Usuario_Get_Set {
 
     private String user, pass;
 

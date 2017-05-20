@@ -3,7 +3,7 @@ package Janelas;
 import Exceções.Letras;
 import Exceções.Numeros;
 import Get_Set.Estoque_Get_Set;
-import actionListener.ControleAction;
+import ActionListeners.ControleAction;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -14,11 +14,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private final ControleAction control = new ControleAction(this);
     private Estoque_Get_Set estoque;
     private String DataAtual;
-    private String Preco,user;
+    private String Preco;
 
-    public void setUser(String user) {
-        this.user = user;
-    }
     private Double Big_Preco;
     private Date hoje;
     private SimpleDateFormat data;
@@ -293,9 +290,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
             estoque.setPrecoStr(field_preco.getText());
             estoque.setData(DataAtual);
             estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
-            estoque.setNome_Produto(field_nome_produto.getText());
+            estoque.setNome_Produto(field_nome_produto.getText().trim());
             estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
-            estoque.setFornecedor(field_fornecedor.getText());
+            estoque.setFornecedor(field_fornecedor.getText().trim());
             limpa();
             field_Idproduto.requestFocus();
         }

@@ -5,10 +5,7 @@ import Exceções.LimitandoCamposNumericos;
 import Get_Set.Cliente_Get_Set;
 import Log.Log;
 import javax.swing.ImageIcon;
-import actionListener.CadastroClienteAction;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import ActionListeners.CadastroClienteAction;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -16,12 +13,10 @@ public class Clientes extends javax.swing.JInternalFrame {
     private String cpf;
     private String tel;
     private Cliente_Get_Set client;
-    private String user;
     private Log log = new Log();
 
-    public void setUser(String user) {
-        this.user = user;
-    }
+
+    
 
     public Clientes() {
         initComponents();
@@ -233,18 +228,12 @@ public class Clientes extends javax.swing.JInternalFrame {
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
         client.setCPF(Long.parseLong(cpf));
-        client.setEndereco(field_endereco_cliente.getText());
+        client.setEndereco(field_endereco_cliente.getText().trim());
         client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
-        client.setNome(field_nome_cliente.getText());
+        client.setNome(field_nome_cliente.getText().trim());
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
         client.setTelefone(Long.parseLong(tel));
-        client.setEmail(field_email_cliente.getText());
-
-        try {
-            Log.escrever("Cadastrar");
-        } catch (IOException ex) {
-            //Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        client.setEmail(field_email_cliente.getText().trim());
         limpar();
 
         return client;
@@ -261,12 +250,12 @@ public class Clientes extends javax.swing.JInternalFrame {
     }
 
     public boolean Verifica() {
-        return !(field_nome_cliente.getText().equals("")
+        return !(field_nome_cliente.getText().trim().equals("")
                 || field_idade_cliente.getText().equals("")
                 || field_CPF_cliente.getText().equals("")
-                || field_email_cliente.getText().equals("")
+                || field_email_cliente.getText().trim().equals("")
                 || field_telefone_cliente.getText().equals("")
-                || field_endereco_cliente.getText().equals(""));
+                || field_endereco_cliente.getText().trim().equals(""));
     }
 
 }
