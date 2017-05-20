@@ -31,6 +31,8 @@ public class Login extends javax.swing.JFrame {
         } catch (IOException ex) {
             //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        user = linha;
+        log.setUser(user);
 
         icone = new ImageIcon("src/Icones/bigdog.png");
 

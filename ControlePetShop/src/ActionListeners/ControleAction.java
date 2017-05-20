@@ -4,7 +4,9 @@ import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Janelas.ControleEstoque;
+import Log.Log;
 import TableModel.ControleTableModel;
+import java.io.IOException;
 import javax.swing.JTable;
 
 public class ControleAction implements ActionListener {
@@ -24,6 +26,11 @@ public class ControleAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Adicionar")) {
+            try {
+                Log.escrever("!Clicou em 'Adicionar'");
+            } catch (IOException ex) {
+                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             estoq = controle.getestoq();
 
@@ -34,12 +41,17 @@ public class ControleAction implements ActionListener {
 
             } //Se estoque nao estiver como null significa q todos os campos de texto estão preenchidos e serão adicionados a lista
             else {
-                //  System.out.println(estoq.toString());
+                System.out.println(estoq.toString());
 
                 tabela = controle.getTabela();
                 tabela.setModel(model);
 
                 model.addLinha(estoq);
+                try {
+                    Log.escrever("!Cadastrado um novo produto");
+                } catch (IOException ex) {
+                    //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
             }
 
@@ -47,11 +59,23 @@ public class ControleAction implements ActionListener {
 
         if (e.getActionCommand().equals("Limpar")) {
 
+            try {
+                Log.escrever("!Clicou em 'Limpar'");
+            } catch (IOException ex) {
+                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             controle.limpa();
 
         }
 
         if (e.getActionCommand().equals("Remover")) {
+
+            try {
+                Log.escrever("!Clicou em 'Remover'");
+            } catch (IOException ex) {
+                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
             tabela = controle.getTabela();
             if (tabela.getSelectedRow() == -1) {
                 return;
@@ -61,10 +85,20 @@ public class ControleAction implements ActionListener {
                 int i = tabela.getSelectedRow();
 
                 model.remove(i);
+                try {
+                    Log.escrever("!Produto removido");
+                } catch (IOException ex) {
+                    //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
 
         if (e.getActionCommand().equals("Editar")) {
+            try {
+                Log.escrever("!Clicou em 'Editar'");
+            } catch (IOException ex) {
+                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             tabela = controle.getTabela();
 
             if (tabela.getSelectedRow() == -1) {
@@ -74,6 +108,11 @@ public class ControleAction implements ActionListener {
                 estoq = model.getproduto(tabela.getSelectedRow());
                 controle.Editar(estoq);
                 model.remove(tabela.getSelectedRow());
+                try {
+                    Log.escrever("!Produto foi para a edição'");
+                } catch (IOException ex) {
+                    //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
             }
         }

@@ -15,7 +15,7 @@ public class Principal extends javax.swing.JFrame {
     private final Ajuda ajuda = new Ajuda();
     private final ImageIcon icone;
     private Dimension d;
-    private final Log log = new Log();
+   
 
     public Principal() {
         initComponents();
@@ -36,10 +36,6 @@ public class Principal extends javax.swing.JFrame {
         frame.setVisible(true);
         Centralizar(frame);
     }
-
-   // public void setUser(String user) {
-   //     this.user = user;
-   // }
 
     public void Centralizar(JInternalFrame frame) {
         d = frame.getDesktopPane().getSize();

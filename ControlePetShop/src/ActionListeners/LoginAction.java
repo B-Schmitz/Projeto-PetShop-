@@ -1,8 +1,10 @@
 package ActionListeners;
 
 import Janelas.Login;
+import Log.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class LoginAction implements ActionListener {
 
@@ -22,6 +24,11 @@ public class LoginAction implements ActionListener {
 
         }
         if (e.getActionCommand().equals("Cancelar")) {
+            try {
+                Log.escrever("!Login cancelado");
+            } catch (IOException ex) {
+                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             System.exit(0);
         }
     }

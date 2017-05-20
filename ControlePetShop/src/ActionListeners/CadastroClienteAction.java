@@ -22,6 +22,11 @@ public class CadastroClienteAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
+            try {
+            Log.escrever("!Clicou em 'Cadastrar'");
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
             if (cliente.Verifica()) {
                 client = cliente.getcliente();
                 System.out.println(client.toString());
