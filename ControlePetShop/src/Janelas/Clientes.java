@@ -17,8 +17,7 @@ public class Clientes extends javax.swing.JInternalFrame {
     private String tel;
     private Cliente_Get_Set client;
     private String user;
-    private  Log log = new Log();
-            
+    private Log log = new Log();
 
     public void setUser(String user) {
         this.user = user;
@@ -227,9 +226,9 @@ public class Clientes extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     public Cliente_Get_Set getcliente() {
-      
+
         client = new Cliente_Get_Set();
-    
+
         cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
@@ -240,9 +239,9 @@ public class Clientes extends javax.swing.JInternalFrame {
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
         client.setTelefone(Long.parseLong(tel));
         client.setEmail(field_email_cliente.getText());
-        
+
         try {
-            Log.escrever("Cadastrar", user);
+            Log.escrever("Cadastrar");
         } catch (IOException ex) {
             //Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -9,9 +9,11 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import Log.Log;
+import Get_Set.Usuario;
 
 public class Login extends javax.swing.JFrame {
 
+    private Usuario usuario = new Usuario();
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
     private String senha_nova, senha_atual = "admin";
@@ -47,10 +49,10 @@ public class Login extends javax.swing.JFrame {
         //O segundo parametro "true" indica append para o arquivo em questao.
         String a = "usuario.txt";
         FileWriter fileWriter = new FileWriter(a);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        bufferedWriter.write(user);
-        bufferedWriter.flush();
-        bufferedWriter.close();
+        try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+            bufferedWriter.write(user);
+            bufferedWriter.flush();
+        }
 
     }
 
@@ -76,10 +78,10 @@ public class Login extends javax.swing.JFrame {
     public void Testa_Senha() {
         senha_nova = new String(field_senha.getPassword());
         if (senha_nova.equals(senha_atual)) {
-            String msg = "Entrou";
+            log.setUser(user);
 
             try {
-                log.escrever(msg, user);
+                Log.escrever("Entrou");
             } catch (IOException ex) {
                 //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }

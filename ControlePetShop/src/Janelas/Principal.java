@@ -37,8 +37,8 @@ public class Principal extends javax.swing.JFrame {
         frame.setVisible(true);
         Centralizar(frame);
     }
-    
-    public void setUser(String user ){
+
+    public void setUser(String user) {
         this.user = user;
     }
 
@@ -57,8 +57,8 @@ public class Principal extends javax.swing.JFrame {
         menu_funcionario = new javax.swing.JMenuItem();
         menu_animal = new javax.swing.JMenuItem();
         menu_estoque = new javax.swing.JMenuItem();
-        menu_sobre = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menu_ajuda = new javax.swing.JMenu();
+        menu_sobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,18 +122,19 @@ public class Principal extends javax.swing.JFrame {
 
         menu_bar.add(menu_cadastros);
 
-        menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
-        menu_sobre.setText("Ajuda");
+        menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/help.png"))); // NOI18N
+        menu_ajuda.setText("Ajuda");
 
-        jMenuItem1.setText("Sobre");
-        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+        menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
+        menu_sobre.setText("Sobre");
+        menu_sobre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jMenuItem1MousePressed(evt);
+                menu_sobreMousePressed(evt);
             }
         });
-        menu_sobre.add(jMenuItem1);
+        menu_ajuda.add(menu_sobre);
 
-        menu_bar.add(menu_sobre);
+        menu_bar.add(menu_ajuda);
 
         setJMenuBar(menu_bar);
 
@@ -153,7 +154,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
         try {
-            Log.escrever("Abriu a janela Cliente", user);
+            Log.escrever("Abriu a janela Cliente");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -163,7 +164,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_funcionarioActionPerformed
         try {
-            Log.escrever("Abriu a janela Funcionário", user);
+            Log.escrever("Abriu a janela Funcionário");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -173,7 +174,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_animalActionPerformed
         try {
-            Log.escrever("Abriu a janela Animal", user);
+            Log.escrever("Abriu a janela Animal");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -183,7 +184,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_estoqueActionPerformed
         try {
-            Log.escrever("Abriu a janela Controle de Estoque", user);
+            Log.escrever("Abriu a janela Controle de Estoque");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -191,16 +192,16 @@ public class Principal extends javax.swing.JFrame {
         controle.setUser(user);
     }//GEN-LAST:event_menu_estoqueActionPerformed
 
-    private void jMenuItem1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MousePressed
-             try {
-            Log.escrever("Abriu a janela Ajuda", user);
+    private void menu_sobreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sobreMousePressed
+        try {
+            Log.escrever("Abriu a janela Ajuda");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(ajuda);
         ajuda.setUser(user);
 
-    }//GEN-LAST:event_jMenuItem1MousePressed
+    }//GEN-LAST:event_menu_sobreMousePressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -235,14 +236,14 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane_principal;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel label_patinhas;
+    private javax.swing.JMenu menu_ajuda;
     private javax.swing.JMenuItem menu_animal;
     private javax.swing.JMenuBar menu_bar;
     private javax.swing.JMenu menu_cadastros;
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_estoque;
     private javax.swing.JMenuItem menu_funcionario;
-    private javax.swing.JMenu menu_sobre;
+    private javax.swing.JMenuItem menu_sobre;
     // End of variables declaration//GEN-END:variables
 }

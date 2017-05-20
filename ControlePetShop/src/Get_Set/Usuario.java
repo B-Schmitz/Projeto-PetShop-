@@ -1,9 +1,7 @@
 package Get_Set;
 
 public class Usuario {
-    
-    
-    
+
     private String user, pass;
 
     public String getUser() {

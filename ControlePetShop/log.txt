@@ -1,5 +1,0 @@
-Fri May 19 21:45:29 BRT 2017 : xim ti amu S2 Entrou
-Fri May 19 21:45:32 BRT 2017 : xim ti amu S2 Abriu a janela Cliente
-Fri May 19 21:45:34 BRT 2017 : xim ti amu S2 Abriu a janela Funcionário
-Fri May 19 21:45:35 BRT 2017 : xim ti amu S2 Abriu a janela Animal
-Fri May 19 21:45:36 BRT 2017 : xim ti amu S2 Abriu a janela Controle de Estoque
