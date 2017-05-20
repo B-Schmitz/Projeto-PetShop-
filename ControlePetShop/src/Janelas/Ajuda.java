@@ -3,6 +3,12 @@ package Janelas;
 import javax.swing.ImageIcon;
 
 public class Ajuda extends javax.swing.JInternalFrame {
+    
+    private String user;
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public Ajuda() {
         initComponents();

@@ -3,8 +3,12 @@ package Janelas;
 import Exceções.Letras;
 import Exceções.LimitandoCamposNumericos;
 import Get_Set.Cliente_Get_Set;
+import Log.Log;
 import javax.swing.ImageIcon;
 import actionListener.CadastroClienteAction;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -12,6 +16,13 @@ public class Clientes extends javax.swing.JInternalFrame {
     private String cpf;
     private String tel;
     private Cliente_Get_Set client;
+    private String user;
+    private  Log log = new Log();
+            
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public Clientes() {
         initComponents();
@@ -216,9 +227,9 @@ public class Clientes extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     public Cliente_Get_Set getcliente() {
-
+      
         client = new Cliente_Get_Set();
-
+    
         cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
@@ -229,7 +240,12 @@ public class Clientes extends javax.swing.JInternalFrame {
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
         client.setTelefone(Long.parseLong(tel));
         client.setEmail(field_email_cliente.getText());
-
+        
+        try {
+            Log.escrever("Cadastrar", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
         limpar();
 
         return client;

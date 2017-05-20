@@ -16,7 +16,9 @@ public class LoginAction implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Entrar")) {
+            login.Testa_Usuario();
             login.Testa_Senha();
+            
 
         }
         if (e.getActionCommand().equals("Cancelar")) {

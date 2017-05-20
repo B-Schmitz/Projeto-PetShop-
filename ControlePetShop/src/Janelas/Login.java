@@ -1,24 +1,39 @@
 package Janelas;
 
 import actionListener.LoginAction;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import Log.Log;
 
 public class Login extends javax.swing.JFrame {
 
-    private final LoginAction login = new LoginAction(this);
+    private LoginAction login = new LoginAction(this);
+    private Log log = new Log();
     private String senha_nova, senha_atual = "admin";
-    private ImageIcon icone;
+    private String user;
+    private final ImageIcon icone;
     private Principal p;
+    private static String linha;
 
     public Login() {
 
         initComponents();
+        try {
+            ler();
+            field_usuario.setText(linha);
+        } catch (IOException ex) {
+            //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         icone = new ImageIcon("src/Icones/bigdog.png");
 
         // Configurações da Janela
         this.setResizable(false);
-        field_senha.grabFocus();
         this.setTitle("Login");
         this.setIconImage(icone.getImage());
         this.setLocationRelativeTo(null);
@@ -28,10 +43,48 @@ public class Login extends javax.swing.JFrame {
 
     }
 
+    public static void escrever(String user) throws IOException {
+        //O segundo parametro "true" indica append para o arquivo em questao.
+        String a = "usuario.txt";
+        FileWriter fileWriter = new FileWriter(a);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter.write(user);
+        bufferedWriter.flush();
+        bufferedWriter.close();
+
+    }
+
+    public static void ler() throws IOException {
+        FileReader fileReader = new FileReader("usuario.txt");
+        try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+            while (bufferedReader.ready()) {
+                linha = bufferedReader.readLine();
+
+            }
+        }
+    }
+
+    public void Testa_Usuario() {
+        user = field_usuario.getText();
+        try {
+            escrever(user);
+        } catch (IOException e) {
+            //        e.printStackTrace();
+        }
+    }
+
     public void Testa_Senha() {
         senha_nova = new String(field_senha.getPassword());
         if (senha_nova.equals(senha_atual)) {
+            String msg = "Entrou";
+
+            try {
+                log.escrever(msg, user);
+            } catch (IOException ex) {
+                //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
             p = new Principal();
+            p.setUser(user);
             p.setVisible(true);
             dispose();
         } else {
@@ -59,7 +112,6 @@ public class Login extends javax.swing.JFrame {
 
         Jpanel.setBackground(new java.awt.Color(115, 59, 30));
 
-        field_usuario.setText("admin");
         field_usuario.setToolTipText("Informe seu nome de usúario");
 
         label_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -70,22 +122,17 @@ public class Login extends javax.swing.JFrame {
         botao_entrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/entrar.png"))); // NOI18N
         botao_entrar.setText("Entrar");
-        botao_entrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_entrar.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sair.png"))); // NOI18N
         botao_cancelar.setText("Cancelar");
-        botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         field_senha.setText("admin");
         field_senha.setToolTipText("Informe sua senha");
-        field_senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                field_senhaActionPerformed(evt);
-            }
-        });
 
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/bigdog.png"))); // NOI18N
@@ -173,9 +220,9 @@ public class Login extends javax.swing.JFrame {
 
     private void label_trocar_senhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_trocar_senhaMouseClicked
         /*
-         Esquema básico sem uso de salvamento externo ou BD para uma senha.
-         Também não sei se pode por MouseClicked, como não
-         é algo que o professor solicitou, deixei assim mesmo.
+        Esquema básico sem uso de salvamento externo ou BD para uma senha.
+        Também não sei se pode por MouseClicked, como não
+        é algo que o professor solicitou, deixei assim mesmo.
          */
         senha_nova = JOptionPane.showInputDialog(null, "Informe a senha atual", "Trocar senha", 1);
         if (senha_nova.equals(senha_atual)) {
@@ -190,10 +237,6 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
         }
     }//GEN-LAST:event_label_trocar_senhaMouseClicked
-
-    private void field_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_field_senhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_field_senhaActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,6 +1,8 @@
 package Janelas;
 
+import Log.Log;
 import java.awt.Dimension;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 
@@ -12,7 +14,9 @@ public class Principal extends javax.swing.JFrame {
     private final ControleEstoque controle = new ControleEstoque();
     private final Ajuda ajuda = new Ajuda();
     private final ImageIcon icone;
+    private String user;
     private Dimension d;
+    private Log log = new Log();
 
     public Principal() {
         initComponents();
@@ -32,7 +36,10 @@ public class Principal extends javax.swing.JFrame {
         frame.moveToFront();
         frame.setVisible(true);
         Centralizar(frame);
-
+    }
+    
+    public void setUser(String user ){
+        this.user = user;
     }
 
     public void Centralizar(JInternalFrame frame) {
@@ -50,7 +57,8 @@ public class Principal extends javax.swing.JFrame {
         menu_funcionario = new javax.swing.JMenuItem();
         menu_animal = new javax.swing.JMenuItem();
         menu_estoque = new javax.swing.JMenuItem();
-        menu_ajuda = new javax.swing.JMenu();
+        menu_sobre = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,14 +122,18 @@ public class Principal extends javax.swing.JFrame {
 
         menu_bar.add(menu_cadastros);
 
-        menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
-        menu_ajuda.setText("Ajuda");
-        menu_ajuda.addMouseListener(new java.awt.event.MouseAdapter() {
+        menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/ajuda.png"))); // NOI18N
+        menu_sobre.setText("Ajuda");
+
+        jMenuItem1.setText("Sobre");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                menu_ajudaMousePressed(evt);
+                jMenuItem1MousePressed(evt);
             }
         });
-        menu_bar.add(menu_ajuda);
+        menu_sobre.add(jMenuItem1);
+
+        menu_bar.add(menu_sobre);
 
         setJMenuBar(menu_bar);
 
@@ -140,24 +152,55 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
+        try {
+            Log.escrever("Abriu a janela Cliente", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Janela(c_cliente);
+        c_cliente.setUser(user);
     }//GEN-LAST:event_menu_clienteActionPerformed
 
     private void menu_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_funcionarioActionPerformed
+        try {
+            Log.escrever("Abriu a janela Funcionário", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Janela(funcionario);
+        funcionario.setUser(user);
     }//GEN-LAST:event_menu_funcionarioActionPerformed
 
     private void menu_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_animalActionPerformed
+        try {
+            Log.escrever("Abriu a janela Animal", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Janela(animal);
+        animal.setUser(user);
     }//GEN-LAST:event_menu_animalActionPerformed
 
     private void menu_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_estoqueActionPerformed
+        try {
+            Log.escrever("Abriu a janela Controle de Estoque", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Janela(controle);
+        controle.setUser(user);
     }//GEN-LAST:event_menu_estoqueActionPerformed
 
-    private void menu_ajudaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_ajudaMousePressed
+    private void jMenuItem1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MousePressed
+             try {
+            Log.escrever("Abriu a janela Ajuda", user);
+        } catch (IOException ex) {
+            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Janela(ajuda);
-    }//GEN-LAST:event_menu_ajudaMousePressed
+        ajuda.setUser(user);
+
+    }//GEN-LAST:event_jMenuItem1MousePressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -192,13 +235,14 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane_principal;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel label_patinhas;
-    private javax.swing.JMenu menu_ajuda;
     private javax.swing.JMenuItem menu_animal;
     private javax.swing.JMenuBar menu_bar;
     private javax.swing.JMenu menu_cadastros;
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_estoque;
     private javax.swing.JMenuItem menu_funcionario;
+    private javax.swing.JMenu menu_sobre;
     // End of variables declaration//GEN-END:variables
 }

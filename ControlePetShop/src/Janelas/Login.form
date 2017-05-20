@@ -102,7 +102,6 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="field_usuario">
           <Properties>
-            <Property name="text" type="java.lang.String" value="admin"/>
             <Property name="toolTipText" type="java.lang.String" value="Informe seu nome de us&#xfa;ario"/>
           </Properties>
         </Component>
@@ -163,9 +162,6 @@
             <Property name="text" type="java.lang.String" value="admin"/>
             <Property name="toolTipText" type="java.lang.String" value="Informe sua senha"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="field_senhaActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_logo">
           <Properties>

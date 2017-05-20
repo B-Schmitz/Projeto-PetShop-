@@ -14,7 +14,11 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private final ControleAction control = new ControleAction(this);
     private Estoque_Get_Set estoque;
     private String DataAtual;
-    private String Preco;
+    private String Preco,user;
+
+    public void setUser(String user) {
+        this.user = user;
+    }
     private Double Big_Preco;
     private Date hoje;
     private SimpleDateFormat data;

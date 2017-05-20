@@ -10,7 +10,11 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
     private Funcionario_Get_Set fun;
-    private String cpf, tel;
+    private String cpf, tel,user;
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public Funcionarios() {
         initComponents();

@@ -10,7 +10,12 @@ import javax.swing.ImageIcon;
 public class Animal extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
-    Animal_Get_Set ani;
+    private Animal_Get_Set ani;
+    private String user;
+
+    public void setUser(String user) {
+        this.user = user;
+    }
 
     public Animal() {
         initComponents();
