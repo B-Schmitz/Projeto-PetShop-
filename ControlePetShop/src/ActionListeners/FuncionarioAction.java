@@ -1,5 +1,6 @@
 package ActionListeners;
 
+import Exceções.LogExceptions;
 import Get_Set.Funcionario_Get_Set;
 import Janelas.Funcionarios;
 import Log.Log;
@@ -13,7 +14,7 @@ public class FuncionarioAction implements ActionListener {
 
     private final Funcionarios funcionario;
     private Funcionario_Get_Set fun;
-
+    private LogExceptions execao = new LogExceptions();
     public FuncionarioAction(Funcionarios funcionario) {
 
         this.funcionario = funcionario;
@@ -26,6 +27,7 @@ public class FuncionarioAction implements ActionListener {
                 Log.escrever("!Clicou em 'Limpar'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
             if (funcionario.Verifica()) {
                 fun = funcionario.getfuncio();
@@ -34,6 +36,8 @@ public class FuncionarioAction implements ActionListener {
                 Log.escrever("!Cadastrou um novo funcionario'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
+                
             }
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/Icones/aceito.png"));
             } else {
@@ -46,6 +50,7 @@ public class FuncionarioAction implements ActionListener {
                 Log.escrever("!Clicou em 'Limpar'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
 
             funcionario.limpar();

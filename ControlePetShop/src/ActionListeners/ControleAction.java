@@ -1,5 +1,6 @@
 package ActionListeners;
 
+import Exceções.LogExceptions;
 import Get_Set.Estoque_Get_Set;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,7 @@ import javax.swing.JTable;
 public class ControleAction implements ActionListener {
 
     private final ControleEstoque controle;
+    private LogExceptions execao = new LogExceptions();
 
     private Estoque_Get_Set estoq;
     private JTable tabela;
@@ -30,6 +32,7 @@ public class ControleAction implements ActionListener {
                 Log.escrever("!Clicou em 'Adicionar'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
 
             estoq = controle.getestoq();
@@ -51,6 +54,7 @@ public class ControleAction implements ActionListener {
                     Log.escrever("!Cadastrado um novo produto");
                 } catch (IOException ex) {
                     //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    execao.exception(ex);
                 }
 
             }
@@ -63,6 +67,7 @@ public class ControleAction implements ActionListener {
                 Log.escrever("!Clicou em 'Limpar'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
             controle.limpa();
 
@@ -74,6 +79,7 @@ public class ControleAction implements ActionListener {
                 Log.escrever("!Clicou em 'Remover'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
 
             tabela = controle.getTabela();
@@ -89,6 +95,7 @@ public class ControleAction implements ActionListener {
                     Log.escrever("!Produto removido");
                 } catch (IOException ex) {
                     //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    execao.exception(ex);
                 }
             }
         }
@@ -98,6 +105,7 @@ public class ControleAction implements ActionListener {
                 Log.escrever("!Clicou em 'Editar'");
             } catch (IOException ex) {
                 //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
             tabela = controle.getTabela();
 
@@ -112,6 +120,7 @@ public class ControleAction implements ActionListener {
                     Log.escrever("!Produto foi para a edição'");
                 } catch (IOException ex) {
                     //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    execao.exception(ex);
                 }
 
             }

@@ -9,11 +9,15 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import Log.Log;
+import Exceções.LogExceptions;
 import Get_Set.Usuario_Get_Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Login extends javax.swing.JFrame {
 
     private Usuario_Get_Set usuario = new Usuario_Get_Set();
+    private LogExceptions execao = new LogExceptions();
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
     private String senha_nova, senha_atual = "admin";
@@ -29,7 +33,8 @@ public class Login extends javax.swing.JFrame {
             ler();
             field_usuario.setText(linha);
         } catch (IOException ex) {
-            //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         user = linha;
         log.setUser(user);
@@ -54,6 +59,8 @@ public class Login extends javax.swing.JFrame {
         try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             bufferedWriter.write(user);
             bufferedWriter.flush();
+            bufferedWriter.close();
+            
         }
 
     }
@@ -73,10 +80,12 @@ public class Login extends javax.swing.JFrame {
         try {
             escrever(user);
         } catch (IOException e) {
-            //        e.printStackTrace();
+            e.printStackTrace();
+            execao.exception(e);
         }
     }
-
+    
+ 
     public void Testa_Senha() {
         senha_nova = new String(field_senha.getPassword());
         if (senha_nova.equals(senha_atual)) {
@@ -85,7 +94,8 @@ public class Login extends javax.swing.JFrame {
             try {
                 Log.escrever("!Entrou");
             } catch (IOException ex) {
-                //Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                execao.exception(ex);
             }
             p = new Principal();
             p.setVisible(true);

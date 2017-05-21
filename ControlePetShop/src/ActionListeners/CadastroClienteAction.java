@@ -1,5 +1,6 @@
 package ActionListeners;
 
+import Exceções.LogExceptions;
 import Get_Set.Cliente_Get_Set;
 import Janelas.Clientes;
 import Log.Log;
@@ -13,6 +14,7 @@ public class CadastroClienteAction implements ActionListener {
 
     private final Clientes cliente;
     private Cliente_Get_Set client;
+    private LogExceptions execao = new LogExceptions();
 
     public CadastroClienteAction(Clientes cliente) {
 
@@ -26,6 +28,7 @@ public class CadastroClienteAction implements ActionListener {
             Log.escrever("!Clicou em 'Cadastrar'");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            execao.exception(ex);
         }
             if (cliente.Verifica()) {
                 client = cliente.getcliente();
@@ -35,6 +38,7 @@ public class CadastroClienteAction implements ActionListener {
             Log.escrever("!Cadastrou um novo cliente");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            execao.exception(ex);
         }
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/Icones/erro.png"));
@@ -47,6 +51,7 @@ public class CadastroClienteAction implements ActionListener {
             Log.escrever("!Limpou os campos no cadastro de cliente");
         } catch (IOException ex) {
             //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            execao.exception(ex);
         }
         }
 

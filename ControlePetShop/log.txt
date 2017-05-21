@@ -1,0 +1,11 @@
+Sat May 20 23:53:14 BRT 2017 : Michael !Entrou
+Sat May 20 23:53:25 BRT 2017 : Michael !Abriu a janela Cliente
+Sat May 20 23:53:27 BRT 2017 : Michael !Abriu a janela Animal
+Sat May 20 23:53:29 BRT 2017 : Michael !Abriu a janela Funcionário
+Sat May 20 23:53:31 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Sat May 20 23:53:34 BRT 2017 : Michael !Clicou em 'Limpar'
+Sat May 20 23:53:35 BRT 2017 : Michael !Clicou em 'Editar'
+Sat May 20 23:53:36 BRT 2017 : Michael !Clicou em 'Remover'
+Sat May 20 23:53:36 BRT 2017 : Michael !Clicou em 'Adicionar'
+Sat May 20 23:53:50 BRT 2017 : Michael !Clicou em 'Adicionar'
+Sat May 20 23:53:50 BRT 2017 : Michael !Cadastrado um novo produto
