@@ -4,6 +4,7 @@ import Exceções.Letras;
 import Exceções.LimitandoCamposNumericos;
 import Get_Set.Funcionario_Get_Set;
 import ActionListeners.FuncionarioAction;
+import Exceções.LogExceptions;
 import javax.swing.ImageIcon;
 
 public class Funcionarios extends javax.swing.JInternalFrame {
@@ -11,6 +12,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
     private Funcionario_Get_Set fun;
     private String cpf, tel;
+    private LogExceptions execao = new LogExceptions();
 
     public Funcionarios() {
         initComponents();
@@ -251,15 +253,20 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         cpf = field_CPF_funcionario.getText().replaceAll("[-.]", "");
         tel = field_telefone_funcionario.getText().replaceAll("[()]", "");
 
-        fun.setCPF(Long.parseLong(cpf));
+        try {
+            fun.setCPF(Long.parseLong(cpf));
+            fun.setIdade(Integer.parseInt(field_idade_funcionario.getText().trim()));
+            fun.setNum_Pis(Long.parseLong(field_pis.getText()));
+            fun.setTelefone(Long.parseLong(tel));
+        } catch (Exception ex) {
+
+            execao.exception(ex);
+        }
         fun.setEndereco(field_endereco_funcionario.getText().trim());
         fun.setCargo(field_cargo.getText().trim());
-        fun.setIdade(Integer.parseInt(field_idade_funcionario.getText()));
         fun.setNome(field_nome_funcionario.getText().trim());
         fun.setEmail(field_email_funcionario.getText().trim());
-        fun.setNum_Pis(Long.parseLong(field_pis.getText()));
         fun.setSexo((String) comboBox_sexo_funcionario.getSelectedItem());
-        fun.setTelefone(Long.parseLong(tel));
 
         limpar();
 
@@ -279,14 +286,14 @@ public class Funcionarios extends javax.swing.JInternalFrame {
     }
 
     public boolean Verifica() {
-        return !(field_nome_funcionario.getText().trim().equals("")
-                || field_cargo.getText().trim().equals("")
-                || field_CPF_funcionario.getText().equals("")
-                || field_idade_funcionario.getText().equals("")
-                || field_pis.getText().equals("")
-                || field_endereco_funcionario.getText().trim().equals("")
-                || field_telefone_funcionario.getText().equals("")
-                || field_email_funcionario.getText().trim().equals(""));
+        return !(field_nome_funcionario.getText().trim().isEmpty()
+                || field_cargo.getText().trim().isEmpty()
+                || field_CPF_funcionario.getText().replaceAll("[-.]", "").trim().isEmpty()
+                || field_idade_funcionario.getText().isEmpty()
+                || field_pis.getText().isEmpty()
+                || field_endereco_funcionario.getText().trim().isEmpty()
+                || field_telefone_funcionario.getText().replaceAll("[()]", "").trim().isEmpty()
+                || field_email_funcionario.getText().trim().isEmpty());
     }
 
 }

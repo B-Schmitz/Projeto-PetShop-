@@ -4,6 +4,7 @@ import Exceções.Letras;
 import Exceções.Numeros;
 import Get_Set.Estoque_Get_Set;
 import ActionListeners.ControleAction;
+import Exceções.LogExceptions;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -15,6 +16,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private Estoque_Get_Set estoque;
     private String DataAtual;
     private String Preco;
+    private LogExceptions execao = new LogExceptions();
 
     private Double Big_Preco;
     private Date hoje;
@@ -279,19 +281,24 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         Preco = field_preco.getText().replaceAll("[.]", "");
         Preco = Preco.replaceAll("[,]", ".");
-        if (field_preco.getText().isEmpty() || field_quantidade.getText().isEmpty() || field_nome_produto.getText().isEmpty()
-                || field_Idproduto.getText().isEmpty() || field_fornecedor.getText().isEmpty()) {
+        if (field_preco.getText().trim().isEmpty() || field_quantidade.getText().trim().isEmpty() || field_nome_produto.getText().trim().isEmpty()
+                || field_Idproduto.getText().trim().isEmpty() || field_fornecedor.getText().trim().isEmpty()) {
             estoque = null;
         } else {
 
+            try{
             Big_Preco = Double.parseDouble(Preco);
+            estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
+            estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
+            }
+            catch(Exception ex){
+                execao.exception(ex);
+            }
             estoque.setPreco(Big_Preco);
 
             estoque.setPrecoStr(field_preco.getText());
             estoque.setData(DataAtual);
-            estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
             estoque.setNome_Produto(field_nome_produto.getText().trim());
-            estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
             estoque.setFornecedor(field_fornecedor.getText().trim());
             limpa();
             field_Idproduto.requestFocus();

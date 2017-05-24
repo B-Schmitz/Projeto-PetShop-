@@ -80,7 +80,7 @@ public class Login extends javax.swing.JFrame {
         try {
             escrever(user);
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
             execao.exception(e);
         }
     }

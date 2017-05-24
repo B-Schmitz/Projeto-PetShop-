@@ -6,6 +6,7 @@ import Get_Set.Cliente_Get_Set;
 import Log.Log;
 import javax.swing.ImageIcon;
 import ActionListeners.CadastroClienteAction;
+import Exceções.LogExceptions;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -14,9 +15,7 @@ public class Clientes extends javax.swing.JInternalFrame {
     private String tel;
     private Cliente_Get_Set client;
     private Log log = new Log();
-
-
-    
+    private LogExceptions execao = new LogExceptions();
 
     public Clientes() {
         initComponents();
@@ -227,12 +226,17 @@ public class Clientes extends javax.swing.JInternalFrame {
         cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
-        client.setCPF(Long.parseLong(cpf));
+        try {
+            client.setCPF(Long.parseLong(cpf));
+            client.setTelefone(Long.parseLong(tel));
+            client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
+        } catch (Exception ex) {
+            execao.exception(ex);
+        }
+
         client.setEndereco(field_endereco_cliente.getText().trim());
-        client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
         client.setNome(field_nome_cliente.getText().trim());
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
-        client.setTelefone(Long.parseLong(tel));
         client.setEmail(field_email_cliente.getText().trim());
         limpar();
 
@@ -250,12 +254,12 @@ public class Clientes extends javax.swing.JInternalFrame {
     }
 
     public boolean Verifica() {
-        return !(field_nome_cliente.getText().trim().equals("")
-                || field_idade_cliente.getText().equals("")
-                || field_CPF_cliente.getText().equals("")
-                || field_email_cliente.getText().trim().equals("")
-                || field_telefone_cliente.getText().equals("")
-                || field_endereco_cliente.getText().trim().equals(""));
+        return !(field_nome_cliente.getText().trim().isEmpty()
+                || field_idade_cliente.getText().isEmpty()
+                || field_CPF_cliente.getText().replaceAll("[-.]", "").trim().isEmpty()
+                || field_email_cliente.getText().trim().isEmpty()
+                || field_telefone_cliente.getText().replaceAll("[()]", "").trim().isEmpty()
+                || field_endereco_cliente.getText().trim().isEmpty());
     }
 
 }

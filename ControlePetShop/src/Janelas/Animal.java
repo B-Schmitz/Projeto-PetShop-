@@ -5,12 +5,14 @@ import Exceções.LimitandoCamposNumericos;
 import Exceções.Numeros;
 import Get_Set.Animal_Get_Set;
 import ActionListeners.AnimaisAction;
+import Exceções.LogExceptions;
 import javax.swing.ImageIcon;
 
 public class Animal extends javax.swing.JInternalFrame {
 
     private final AnimaisAction animais = new AnimaisAction(this);
     private Animal_Get_Set ani;
+    private LogExceptions execao = new LogExceptions();
 
     public Animal() {
         initComponents();
@@ -231,16 +233,21 @@ public class Animal extends javax.swing.JInternalFrame {
     public Animal_Get_Set getAnimais() {
 
         ani = new Animal_Get_Set();
-
+        
+        try{
+        ani.setIdade(Integer.parseInt(field_idade_animal.getText()));
+        ani.setAltura(Integer.parseInt(field_altura.getText()));
+        ani.setPeso(Integer.parseInt(field_peso.getText()));
+        }
+        catch(Exception ex){
+         execao.exception(ex);
+        }
         ani.setProprietario(field_proprietario.getText().trim());
         ani.setAnimal((String) comboBox_tipo_animal.getSelectedItem());
         ani.setNome(field_nome_animal.getText().trim());
         ani.setRaca(field_raca.getText().trim());
         ani.setCor(field_cor.getText().trim());
         ani.setSexo((String) comboBox_sexo_animal.getSelectedItem());
-        ani.setIdade(Integer.parseInt(field_idade_animal.getText()));
-        ani.setAltura(Integer.parseInt(field_altura.getText()));
-        ani.setPeso(Integer.parseInt(field_peso.getText()));
 
         limpar();
 
@@ -259,13 +266,13 @@ public class Animal extends javax.swing.JInternalFrame {
     }
 
     public boolean Verifica() {
-        return !(field_proprietario.getText().trim().equals("")
-                || field_nome_animal.getText().trim().equals("")
-                || field_idade_animal.getText().equals("")
-                || field_altura.getText().equals("")
-                || field_cor.getText().trim().equals("")
-                || field_raca.getText().trim().equals("")
-                || field_peso.getText().equals(""));
+        return !(field_proprietario.getText().trim().isEmpty()
+                || field_nome_animal.getText().trim().isEmpty()
+                || field_idade_animal.getText().isEmpty()
+                || field_altura.getText().isEmpty()
+                || field_cor.getText().trim().isEmpty()
+                || field_raca.getText().trim().isEmpty()
+                || field_peso.getText().isEmpty());
     }
 
 }
