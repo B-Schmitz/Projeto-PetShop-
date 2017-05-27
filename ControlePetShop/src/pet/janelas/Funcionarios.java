@@ -92,6 +92,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_cadastrar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_funcionario.setText("Cadastrar");
         botao_cadastrar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         label_idade_funcionaro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label_idade_funcionaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/calendario.png"))); // NOI18N
@@ -115,6 +116,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_limpar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_funcionario.setText("Limpar");
         botao_limpar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

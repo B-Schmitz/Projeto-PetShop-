@@ -23,56 +23,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="label_proprietario" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label_animal" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label_nome_animal" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="label_raca" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_sexo_animal" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_peso" min="-2" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Component id="label_peso" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="comboBox_tipo_animal" min="-2" max="-2" attributes="0"/>
-                      <Component id="field_proprietario" max="32767" attributes="0"/>
-                      <Component id="field_nome_animal" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="field_nome_animal" alignment="0" max="32767" attributes="0"/>
+                              <Component id="field_proprietario" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="comboBox_tipo_animal" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="label_sexo_animal" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="comboBox_sexo_animal" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="label_idade_animal" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="field_idade_animal" min="-2" pref="47" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="field_raca" min="-2" pref="212" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="label_cor" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="field_cor" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="field_raca" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="label_cor" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="field_peso" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="label_altura" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Component id="label_altura" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="field_cor" pref="116" max="32767" attributes="0"/>
                                   <Component id="field_altura" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="field_peso" min="-2" pref="68" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                       <Component id="botao_cadastrar_animais" min="-2" pref="143" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botao_limpar_animais" min="-2" pref="143" max="-2" attributes="0"/>
@@ -90,46 +91,38 @@
                   <Component id="field_proprietario" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="label_proprietario" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBox_tipo_animal" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="label_animal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_sexo_animal" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="comboBox_sexo_animal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_idade_animal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_idade_animal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="label_nome_animal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="field_nome_animal" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="label_raca" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="field_raca" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="field_cor" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="label_cor" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label_nome_animal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_nome_animal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="comboBox_sexo_animal" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_sexo_animal" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="label_altura" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="field_altura" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="label_idade_animal" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="field_idade_animal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label_raca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_raca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_cor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_cor" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="botao_limpar_animais" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="label_peso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="field_peso" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="botao_cadastrar_animais" alignment="0" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label_peso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_peso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_altura" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="field_altura" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botao_cadastrar_animais" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botao_limpar_animais" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -238,9 +231,6 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBox_sexo_animal">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="14" style="0"/>
-        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Macho"/>
@@ -293,6 +283,9 @@
             <BevelBorder/>
           </Border>
         </Property>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="botao_limpar_animais">
@@ -308,6 +301,9 @@
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
           </Border>
+        </Property>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
       </Properties>
     </Component>

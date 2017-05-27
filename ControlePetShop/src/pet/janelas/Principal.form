@@ -9,6 +9,7 @@
             <TitledBorder/>
           </Border>
         </Property>
+        <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menu_cadastros">
@@ -17,6 +18,9 @@
               <Image iconType="3" name="/pet/icones/cadastro.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de M&#xe3;o"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menu_cliente">
@@ -25,6 +29,9 @@
                   <Image iconType="3" name="/pet/icones/cliente.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de cliente"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_clienteActionPerformed"/>
@@ -36,6 +43,9 @@
                   <Image iconType="3" name="/pet/icones/funcionario.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de funcion&#xe1;rio"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_funcionarioActionPerformed"/>
@@ -47,6 +57,9 @@
                   <Image iconType="3" name="/pet/icones/dog.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de animal"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_animalActionPerformed"/>
@@ -58,6 +71,9 @@
                   <Image iconType="3" name="/pet/icones/estoque.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Controle de estoque"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menu_estoqueActionPerformed"/>
@@ -71,6 +87,9 @@
               <Image iconType="3" name="/pet/icones/help.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ajuda"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de M&#xe3;o"/>
+            </Property>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menu_sobre">
@@ -79,12 +98,29 @@
                   <Image iconType="3" name="/pet/icones/ajuda.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor em Forma de M&#xe3;o"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menu_sobreMousePressed"/>
               </Events>
             </MenuItem>
           </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menu_sair">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/pet/icones/sair.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de M&#xe3;o"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menu_sairMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
@@ -117,7 +153,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane_principal" alignment="0" max="32767" attributes="0"/>
+          <Component id="desktopPane_principal" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -136,12 +172,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="1" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="1" pref="887" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="1" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="1" pref="646" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

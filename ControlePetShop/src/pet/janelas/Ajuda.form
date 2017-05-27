@@ -158,10 +158,16 @@
         <Component class="javax.swing.JLabel" name="label_icones">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+              <Color blue="ff" green="cc" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="www.fatcow.com/free-icons"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de M&#xe3;o"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_iconesMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_descri&#xe7;&#xe3;o">
           <Properties>

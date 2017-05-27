@@ -93,6 +93,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_cadastrar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_cliente.setText("Cadastrar");
         botao_cadastrar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         try {
             field_telefone_cliente.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)######### ")));
@@ -108,6 +109,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_limpar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_cliente.setText("Limpar");
         botao_limpar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

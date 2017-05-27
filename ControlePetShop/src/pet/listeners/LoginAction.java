@@ -28,7 +28,6 @@ public class LoginAction implements ActionListener {
             try {
                 Log.escrever("!Login cancelado");
             } catch (IOException ex) {
-                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
                 execao.exception(ex);
             }
             System.exit(0);

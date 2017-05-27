@@ -53,13 +53,13 @@
                           <Component id="botao_cancelar" min="-2" pref="77" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="field_usuario" min="-2" pref="155" max="-2" attributes="0"/>
                               <Component id="label_user" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="label_senha" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="label_trocar_senha" min="-2" pref="73" max="-2" attributes="0"/>
+                                  <Component id="label_alterar_senha" max="32767" attributes="0"/>
                               </Group>
                               <Component id="field_senha" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                           </Group>
@@ -87,7 +87,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="label_senha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="label_trocar_senha" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="label_alterar_senha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Component id="field_senha" min="-2" max="-2" attributes="0"/>
@@ -190,7 +190,7 @@
             <Property name="text" type="java.lang.String" value="Senha"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_trocar_senha">
+        <Component class="javax.swing.JLabel" name="label_alterar_senha">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="9" style="0"/>
@@ -201,7 +201,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/pet/icones/config.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Trocar senha"/>
+            <Property name="text" type="java.lang.String" value="Alterar senha"/>
             <Property name="toolTipText" type="java.lang.String" value="Alterar senha de us&#xfa;ario"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor em Forma de M&#xe3;o"/>
@@ -209,7 +209,7 @@
             <Property name="horizontalTextPosition" type="int" value="2"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_trocar_senhaMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_alterar_senhaMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

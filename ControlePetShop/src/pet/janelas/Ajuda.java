@@ -1,9 +1,13 @@
 package pet.janelas;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javax.swing.ImageIcon;
+import pet.excecoes.LogExceptions;
 
 public class Ajuda extends javax.swing.JInternalFrame {
-    
+            
+  private final LogExceptions execao = new LogExceptions();
 
     public Ajuda() {
         initComponents();
@@ -41,8 +45,14 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_michael.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/batman.png"))); // NOI18N
         label_michael.setText("Michael");
 
-        label_icones.setForeground(new java.awt.Color(255, 255, 255));
+        label_icones.setForeground(new java.awt.Color(102, 204, 255));
         label_icones.setText("www.fatcow.com/free-icons");
+        label_icones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        label_icones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_iconesMouseClicked(evt);
+            }
+        });
 
         label_descrição.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_descrição.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,6 +171,15 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void label_iconesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_iconesMouseClicked
+        try {
+            java.awt.Desktop.getDesktop().browse(new java.net.URI("http://www.fatcow.com/free-icons"));
+        } catch (URISyntaxException | IOException ex) {
+             execao.exception(ex);
+        }
+
+    }//GEN-LAST:event_label_iconesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

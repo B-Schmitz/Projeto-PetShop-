@@ -122,11 +122,13 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_adicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/table_add.png"))); // NOI18N
         botao_adicionar.setText("Adicionar");
         botao_adicionar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_adicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_remover.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_remover.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/remove_tabela.png"))); // NOI18N
         botao_remover.setText("Remover");
         botao_remover.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_remover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         field_Idproduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         field_Idproduto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -145,11 +147,13 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/editar_tabela.png"))); // NOI18N
         botao_editar.setText("Editar");
         botao_editar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar_tabela.PNG"))); // NOI18N
         botao_limpar_estoque.setText("Limpar");
         botao_limpar_estoque.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
         Jpanel.setLayout(JpanelLayout);
@@ -204,7 +208,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_Idproduto)
                     .addComponent(label_quantidade)
@@ -239,7 +243,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 11, Short.MAX_VALUE)
+                .addComponent(Jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();

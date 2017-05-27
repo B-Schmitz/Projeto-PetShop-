@@ -5,9 +5,12 @@ import java.awt.Dimension;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import pet.excecoes.LogExceptions;
 
 public class Principal extends javax.swing.JFrame {
 
+    private final LogExceptions execao = new LogExceptions();
     private final Clientes c_cliente = new Clientes();
     private final Funcionarios funcionario = new Funcionarios();
     private final Animal animal = new Animal();
@@ -15,7 +18,6 @@ public class Principal extends javax.swing.JFrame {
     private final Ajuda ajuda = new Ajuda();
     private final ImageIcon icone;
     private Dimension d;
-   
 
     public Principal() {
         initComponents();
@@ -54,6 +56,7 @@ public class Principal extends javax.swing.JFrame {
         menu_estoque = new javax.swing.JMenuItem();
         menu_ajuda = new javax.swing.JMenu();
         menu_sobre = new javax.swing.JMenuItem();
+        menu_sair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,20 +72,23 @@ public class Principal extends javax.swing.JFrame {
         desktopPane_principal.setLayout(desktopPane_principalLayout);
         desktopPane_principalLayout.setHorizontalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 887, Short.MAX_VALUE)
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 646, Short.MAX_VALUE)
         );
 
         menu_bar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        menu_bar.setOpaque(false);
 
         menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cadastro.png"))); // NOI18N
         menu_cadastros.setText("Cadastro");
+        menu_cadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         menu_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cliente.png"))); // NOI18N
         menu_cliente.setText("Cadastro de cliente");
+        menu_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_cliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_clienteActionPerformed(evt);
@@ -92,6 +98,7 @@ public class Principal extends javax.swing.JFrame {
 
         menu_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/funcionario.png"))); // NOI18N
         menu_funcionario.setText("Cadastro de funcionário");
+        menu_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_funcionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_funcionarioActionPerformed(evt);
@@ -101,6 +108,7 @@ public class Principal extends javax.swing.JFrame {
 
         menu_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/dog.png"))); // NOI18N
         menu_animal.setText("Cadastro de animal");
+        menu_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_animal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_animalActionPerformed(evt);
@@ -110,6 +118,7 @@ public class Principal extends javax.swing.JFrame {
 
         menu_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/estoque.png"))); // NOI18N
         menu_estoque.setText("Controle de estoque");
+        menu_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_estoqueActionPerformed(evt);
@@ -121,9 +130,11 @@ public class Principal extends javax.swing.JFrame {
 
         menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/help.png"))); // NOI18N
         menu_ajuda.setText("Ajuda");
+        menu_ajuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/ajuda.png"))); // NOI18N
         menu_sobre.setText("Sobre");
+        menu_sobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_sobre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 menu_sobreMousePressed(evt);
@@ -132,6 +143,16 @@ public class Principal extends javax.swing.JFrame {
         menu_ajuda.add(menu_sobre);
 
         menu_bar.add(menu_ajuda);
+
+        menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sair.png"))); // NOI18N
+        menu_sair.setText("Sair");
+        menu_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_sair.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menu_sairMouseClicked(evt);
+            }
+        });
+        menu_bar.add(menu_sair);
 
         setJMenuBar(menu_bar);
 
@@ -143,7 +164,7 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane_principal)
+            .addComponent(desktopPane_principal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -153,7 +174,6 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever("!Abriu a janela Cliente");
         } catch (IOException ex) {
-            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(c_cliente);
     }//GEN-LAST:event_menu_clienteActionPerformed
@@ -162,7 +182,6 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever("!Abriu a janela Funcionário");
         } catch (IOException ex) {
-            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(funcionario);
     }//GEN-LAST:event_menu_funcionarioActionPerformed
@@ -171,7 +190,6 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever("!Abriu a janela Animal");
         } catch (IOException ex) {
-            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(animal);
     }//GEN-LAST:event_menu_animalActionPerformed
@@ -180,7 +198,6 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever("!Abriu a janela Controle de Estoque");
         } catch (IOException ex) {
-            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(controle);
     }//GEN-LAST:event_menu_estoqueActionPerformed
@@ -189,11 +206,30 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever("!Abriu a janela Ajuda");
         } catch (IOException ex) {
-            //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
         Janela(ajuda);
 
     }//GEN-LAST:event_menu_sobreMousePressed
+
+    private void menu_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sairMouseClicked
+      
+       int opcao = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 2);
+
+        if (opcao == 0) {
+            try {
+                Log.escrever("!Saiu");
+            } catch (IOException ex) {
+                execao.exception(ex);
+            }
+            System.exit(0);
+        } 
+        else{
+         try {
+                Log.escrever("!Cancelou sair");
+            } catch (IOException ex) {
+                execao.exception(ex);
+            }}
+    }//GEN-LAST:event_menu_sairMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -236,6 +272,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_estoque;
     private javax.swing.JMenuItem menu_funcionario;
+    private javax.swing.JMenu menu_sair;
     private javax.swing.JMenuItem menu_sobre;
     // End of variables declaration//GEN-END:variables
 }
