@@ -1,6 +1,6 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.listeners.LoginAction;
+import br.pet.listeners.LoginAction;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -8,9 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import pet.log.Log;
-import pet.excecoes.LogExceptions;
-import pet.getset.UsuarioGetSet;
+import br.pet.log.Log;
+import br.pet.excecoes.LogExceptions;
+import br.pet.getset.UsuarioGetSet;
 
 public class Login extends javax.swing.JFrame {
 
@@ -35,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         user = linha;
         log.setUser(user);
 
-        icone = new ImageIcon("src/pet/icones/bigdog.png");
+        icone = new ImageIcon("src/br/pet/icones/bigdog.png");
 
         // Configurações da Janela
         this.setResizable(false);
@@ -93,7 +93,7 @@ public class Login extends javax.swing.JFrame {
             dispose();
         } else {
             field_senha.setText("");
-            JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pet/icones/erro.png"));
+            JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         }
     }
 
@@ -235,9 +235,9 @@ public class Login extends javax.swing.JFrame {
                 senha_atual = JOptionPane.showInputDialog(null, "Informe uma nova senha", "Alterar senha", 1);
                 if (senha_atual.trim().isEmpty()) {
                     senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
-                    JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Alteração não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pet/icones/erro.png"));
+                    JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Alteração não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 } else if (!senha_atual.trim().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/pet/icones/aceito.png"));
+                    JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     try {
                         Log.escrever("!Alterou a senha");
                     } catch (IOException ex) {
@@ -246,7 +246,7 @@ public class Login extends javax.swing.JFrame {
                 } else {
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pet/icones/erro.png"));
+                JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
         } catch (Exception ex) {
             senha_atual = senha_nova;

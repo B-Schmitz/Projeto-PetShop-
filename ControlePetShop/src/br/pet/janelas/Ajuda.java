@@ -1,9 +1,9 @@
-package pet.janelas;
+package br.pet.janelas;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import javax.swing.ImageIcon;
-import pet.excecoes.LogExceptions;
+import br.pet.excecoes.LogExceptions;
 
 public class Ajuda extends javax.swing.JInternalFrame {
             
@@ -11,7 +11,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
     public Ajuda() {
         initComponents();
-        this.setFrameIcon(new ImageIcon("src/pet/icones/ajuda.png"));
+        this.setFrameIcon(new ImageIcon("src/br/pet/icones/ajuda.png"));
     }
 
     @SuppressWarnings("unchecked")

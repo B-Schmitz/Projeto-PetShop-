@@ -1,12 +1,12 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.log.Log;
+import br.pet.log.Log;
 import java.awt.Dimension;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
-import pet.excecoes.LogExceptions;
+import br.pet.excecoes.LogExceptions;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -21,7 +21,7 @@ public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
-        icone = new ImageIcon("src/pet/icones/login.png");
+        icone = new ImageIcon("src/br/pet/icones/login.png");
 
         // Configuração da Janela
         this.setLocationRelativeTo(null);

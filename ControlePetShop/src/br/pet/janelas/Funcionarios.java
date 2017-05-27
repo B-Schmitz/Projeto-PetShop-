@@ -1,10 +1,10 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.excecoes.Letras;
-import pet.excecoes.LimitandoCamposNumericos;
-import pet.getset.FuncionarioGetSet;
-import pet.listeners.FuncionarioAction;
-import pet.excecoes.LogExceptions;
+import br.pet.excecoes.Letras;
+import br.pet.excecoes.LimitandoCamposNumericos;
+import br.pet.getset.FuncionarioGetSet;
+import br.pet.listeners.FuncionarioAction;
+import br.pet.excecoes.LogExceptions;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
 
@@ -17,7 +17,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
     public Funcionarios() {
         initComponents();
-        this.setFrameIcon(new ImageIcon("src/pet/icones/funcionario.png"));
+        this.setFrameIcon(new ImageIcon("src/br/pet/icones/funcionario.png"));
         botao_cadastrar_funcionario.addActionListener(funcionario);
         botao_limpar_funcionario.addActionListener(funcionario);
         field_idade_funcionario.setDocument(new LimitandoCamposNumericos(3));

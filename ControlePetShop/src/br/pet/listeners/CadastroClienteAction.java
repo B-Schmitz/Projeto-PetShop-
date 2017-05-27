@@ -1,9 +1,9 @@
-package pet.listeners;
+package br.pet.listeners;
 
-import pet.excecoes.LogExceptions;
-import pet.getset.ClienteGetSet;
-import pet.janelas.Clientes;
-import pet.log.Log;
+import br.pet.excecoes.LogExceptions;
+import br.pet.getset.ClienteGetSet;
+import br.pet.janelas.Clientes;
+import br.pet.log.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class CadastroClienteAction implements ActionListener {
             if (cliente.Verifica()) {
                 client = cliente.getcliente();
                 System.out.println(client.toString());
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/pet/icones/aceito.png"));
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                  try {
             Log.escrever("!Cadastrou um novo cliente");
         } catch (IOException ex) {
@@ -41,7 +41,7 @@ public class CadastroClienteAction implements ActionListener {
             execao.exception(ex);
         }
             } else {
-                JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pet/icones/erro.png"));
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
         }
 

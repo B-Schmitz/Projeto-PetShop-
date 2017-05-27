@@ -1,4 +1,4 @@
-package pet.excecoes;
+package br.pet.excecoes;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;

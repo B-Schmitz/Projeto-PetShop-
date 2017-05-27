@@ -1,11 +1,11 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.excecoes.Letras;
-import pet.excecoes.LimitandoCamposNumericos;
-import pet.excecoes.Numeros;
-import pet.getset.AnimalGetSet;
-import pet.listeners.AnimaisAction;
-import pet.excecoes.LogExceptions;
+import br.pet.excecoes.Letras;
+import br.pet.excecoes.LimitandoCamposNumericos;
+import br.pet.excecoes.Numeros;
+import br.pet.getset.AnimalGetSet;
+import br.pet.listeners.AnimaisAction;
+import br.pet.excecoes.LogExceptions;
 import javax.swing.ImageIcon;
 
 public class Animal extends javax.swing.JInternalFrame {
@@ -17,7 +17,7 @@ public class Animal extends javax.swing.JInternalFrame {
     public Animal() {
         initComponents();
 
-        this.setFrameIcon(new ImageIcon("src/pet/icones/dog.png"));
+        this.setFrameIcon(new ImageIcon("src/br/pet/icones/dog.png"));
 
         botao_cadastrar_animais.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);

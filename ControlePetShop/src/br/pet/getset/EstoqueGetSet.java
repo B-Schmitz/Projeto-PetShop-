@@ -1,4 +1,4 @@
-package pet.getset;
+package br.pet.getset;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,7 +7,7 @@ public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
 
     private String Nome_Produto;
     private long Id_produto;
-    private int QantAdd;
+    private long QantAdd;
     private long QuantEstoque;
     private String Data;
     private String fornecedor;
@@ -56,11 +56,11 @@ public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
         this.Id_produto = Id_produto;
     }
 
-    public int getQantAdd() {
+    public long getQantAdd() {
         return QantAdd;
     }
 
-    public void setQantAdd(int QantAdd) {
+    public void setQantAdd(long QantAdd) {
         this.QantAdd = QantAdd;
     }
 

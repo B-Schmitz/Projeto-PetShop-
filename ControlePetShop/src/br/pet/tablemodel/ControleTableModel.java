@@ -1,6 +1,6 @@
-package pet.tablemodel;
+package br.pet.tablemodel;
 
-import pet.getset.EstoqueGetSet;
+import br.pet.getset.EstoqueGetSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

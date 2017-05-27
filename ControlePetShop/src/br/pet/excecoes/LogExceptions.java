@@ -1,8 +1,8 @@
 
-package pet.excecoes;
+package br.pet.excecoes;
 
-import pet.janelas.Login;
-import pet.log.Log;
+import br.pet.janelas.Login;
+import br.pet.log.Log;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;

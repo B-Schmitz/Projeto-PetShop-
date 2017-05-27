@@ -1,13 +1,14 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.excecoes.Letras;
-import pet.excecoes.Numeros;
-import pet.getset.EstoqueGetSet;
-import pet.listeners.ControleAction;
-import pet.excecoes.LogExceptions;
+import br.pet.excecoes.Letras;
+import br.pet.excecoes.Numeros;
+import br.pet.getset.EstoqueGetSet;
+import br.pet.listeners.ControleAction;
+import br.pet.excecoes.LogExceptions;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 
 public class ControleEstoque extends javax.swing.JInternalFrame {
@@ -24,7 +25,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
     public ControleEstoque() {
         initComponents();
-        this.setFrameIcon(new ImageIcon("src/pet/icones/estoque.png"));
+        this.setFrameIcon(new ImageIcon("src/br/pet/icones/estoque.png"));
         field_Idproduto.setDocument(new Numeros());
         field_quantidade.setDocument(new Numeros());
 
@@ -131,11 +132,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_remover.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         field_Idproduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        field_Idproduto.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                field_IdprodutoKeyReleased(evt);
-            }
-        });
+        field_Idproduto.setPreferredSize(new java.awt.Dimension(6, 20));
 
         field_quantidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -169,7 +166,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                         .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JpanelLayout.createSequentialGroup()
-                                .addComponent(botao_adicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                                .addComponent(botao_adicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(botao_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -178,7 +175,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                                 .addComponent(botao_limpar_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
                                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(field_Idproduto)
+                                    .addComponent(field_Idproduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(JpanelLayout.createSequentialGroup()
                                         .addGap(11, 11, 11)
                                         .addComponent(label_Idproduto)
@@ -251,10 +248,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void field_IdprodutoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_field_IdprodutoKeyReleased
-
-    }//GEN-LAST:event_field_IdprodutoKeyReleased
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
@@ -295,10 +288,17 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
             try{
             Big_Preco = Double.parseDouble(Preco);
             estoque.setId_produto(Long.parseLong(field_Idproduto.getText()));
-            estoque.setQantAdd(Integer.parseInt(field_quantidade.getText()));
+            estoque.setQantAdd(Long.parseLong(field_quantidade.getText()));
+
+            }
+            catch(NumberFormatException ex){
+            
+                estoque = null;
+                execao.exception(ex);
+                return estoque;
             }
             catch(Exception ex){
-                execao.exception(ex);
+                
             }
             estoque.setPreco(Big_Preco);
 
@@ -324,6 +324,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         field_nome_produto.setText(null);
         field_Idproduto.setText(null);
         field_preco.setText(null);
+        field_preco.setFocusLostBehavior(JFormattedTextField.PERSIST);
     }
 
     public void Editar(EstoqueGetSet estoq) {

@@ -1,4 +1,4 @@
-package pet.getset;
+package br.pet.getset;
 
 public class ClienteGetSet {
 

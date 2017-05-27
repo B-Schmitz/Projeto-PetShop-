@@ -1,13 +1,13 @@
-package pet.janelas;
+package br.pet.janelas;
 
-import pet.excecoes.Letras;
-import pet.excecoes.LimitandoCamposNumericos;
-import pet.getset.ClienteGetSet;
-import pet.log.Log;
+import br.pet.excecoes.Letras;
+import br.pet.excecoes.LimitandoCamposNumericos;
+import br.pet.getset.ClienteGetSet;
+import br.pet.log.Log;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
-import pet.listeners.CadastroClienteAction;
-import pet.excecoes.LogExceptions;
+import br.pet.listeners.CadastroClienteAction;
+import br.pet.excecoes.LogExceptions;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -20,7 +20,7 @@ public class Clientes extends javax.swing.JInternalFrame {
 
     public Clientes() {
         initComponents();
-        this.setFrameIcon(new ImageIcon("src/pet/icones/cliente.png"));
+        this.setFrameIcon(new ImageIcon("src/br/pet/icones/cliente.png"));
         botao_cadastrar_cliente.addActionListener(cliente);
         botao_limpar_cliente.addActionListener(cliente);
         field_idade_cliente.setDocument(new LimitandoCamposNumericos(3));

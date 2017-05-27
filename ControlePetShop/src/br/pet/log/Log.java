@@ -1,14 +1,12 @@
-package pet.log;
+package br.pet.log;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import pet.getset.UsuarioGetSet;
 
 public class Log {
 
-    private static String user, pass;
-    private final  UsuarioGetSet usuario = new UsuarioGetSet();
+    private static String user;
 
     public void setUser(String user) {
         Log.user = user;
