@@ -286,7 +286,7 @@
               <Font name="Tahoma" size="10" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/pet/icones/config.png"/>
+              <Image iconType="3" name="/br/pet/icones/alterarsenha.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Alterar senha"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

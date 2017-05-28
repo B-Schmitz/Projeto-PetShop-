@@ -243,7 +243,7 @@ public class Login extends javax.swing.JFrame {
         label_senha.setText("Senha");
 
         botao_alterar_senha.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        botao_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/config.png"))); // NOI18N
+        botao_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/alterarsenha.png"))); // NOI18N
         botao_alterar_senha.setText("Alterar senha");
         botao_alterar_senha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_alterar_senha.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);

@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import br.pet.excecoes.LogExceptions;
+import java.awt.Color;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -18,6 +19,8 @@ public class Principal extends javax.swing.JFrame {
     private final Ajuda ajuda = new Ajuda();
     private final ImageIcon icone;
     private Dimension d;
+    private final Color classic = new Color(204, 204, 204);
+    private final Color dark = new Color(3,36,101);
 
     public Principal() {
         initComponents();
@@ -25,7 +28,6 @@ public class Principal extends javax.swing.JFrame {
 
         // Configuração da Janela
         this.setLocationRelativeTo(null);
-        this.setTitle("PetControl");
         this.setIconImage(icone.getImage());
     }
 
@@ -47,7 +49,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane_principal = new javax.swing.JDesktopPane();
-        label_patinhas = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menu_bar = new javax.swing.JMenuBar();
         menu_cadastros = new javax.swing.JMenu();
         menu_cliente = new javax.swing.JMenuItem();
@@ -56,27 +58,30 @@ public class Principal extends javax.swing.JFrame {
         menu_estoque = new javax.swing.JMenuItem();
         menu_ajuda = new javax.swing.JMenu();
         menu_sobre = new javax.swing.JMenuItem();
+        menu_tema = new javax.swing.JMenu();
+        menu_dark = new javax.swing.JMenuItem();
+        menu_classico = new javax.swing.JMenuItem();
         menu_sair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("PetControl");
 
-        desktopPane_principal.setBackground(new java.awt.Color(240, 240, 240));
-        desktopPane_principal.setForeground(new java.awt.Color(240, 240, 240));
-        desktopPane_principal.setToolTipText("");
+        desktopPane_principal.setBackground(new java.awt.Color(204, 204, 204));
 
-        label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
-        desktopPane_principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktopPane_principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout desktopPane_principalLayout = new javax.swing.GroupLayout(desktopPane_principal);
         desktopPane_principal.setLayout(desktopPane_principalLayout);
         desktopPane_principalLayout.setHorizontalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 963, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, Short.MAX_VALUE)
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
         );
 
         menu_bar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -144,6 +149,27 @@ public class Principal extends javax.swing.JFrame {
 
         menu_bar.add(menu_ajuda);
 
+        menu_tema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/tema.png"))); // NOI18N
+        menu_tema.setText("Tema");
+
+        menu_dark.setText("Tema Dark");
+        menu_dark.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_darkActionPerformed(evt);
+            }
+        });
+        menu_tema.add(menu_dark);
+
+        menu_classico.setText("Tema Clássico");
+        menu_classico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_classicoActionPerformed(evt);
+            }
+        });
+        menu_tema.add(menu_classico);
+
+        menu_bar.add(menu_tema);
+
         menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
         menu_sair.setText("Sair");
         menu_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -160,15 +186,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(desktopPane_principal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(desktopPane_principal)
         );
 
         pack();
@@ -216,8 +238,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_sobreMousePressed
 
     private void menu_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sairMouseClicked
-      
-       int opcao = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 2);
+
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 2);
 
         if (opcao == 0) {
             try {
@@ -226,14 +248,22 @@ public class Principal extends javax.swing.JFrame {
                 execao.exception(ex);
             }
             System.exit(0);
-        } 
-        else{
-         try {
+        } else {
+            try {
                 Log.escrever("!Cancelou sair");
             } catch (IOException ex) {
                 execao.exception(ex);
-            }}
+            }
+        }
     }//GEN-LAST:event_menu_sairMouseClicked
+
+    private void menu_darkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_darkActionPerformed
+        desktopPane_principal.setBackground(dark);
+    }//GEN-LAST:event_menu_darkActionPerformed
+
+    private void menu_classicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_classicoActionPerformed
+         desktopPane_principal.setBackground(classic);
+    }//GEN-LAST:event_menu_classicoActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -268,15 +298,18 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane_principal;
-    private javax.swing.JLabel label_patinhas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu menu_ajuda;
     private javax.swing.JMenuItem menu_animal;
     private javax.swing.JMenuBar menu_bar;
     private javax.swing.JMenu menu_cadastros;
+    private javax.swing.JMenuItem menu_classico;
     private javax.swing.JMenuItem menu_cliente;
+    private javax.swing.JMenuItem menu_dark;
     private javax.swing.JMenuItem menu_estoque;
     private javax.swing.JMenuItem menu_funcionario;
     private javax.swing.JMenu menu_sair;
     private javax.swing.JMenuItem menu_sobre;
+    private javax.swing.JMenu menu_tema;
     // End of variables declaration//GEN-END:variables
 }
