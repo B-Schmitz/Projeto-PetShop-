@@ -57,24 +57,24 @@ public class Clientes extends javax.swing.JInternalFrame {
         setVisible(false);
 
         label_nome_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_nome_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cliente.png"))); // NOI18N
-        label_nome_cliente.setText(" Nome:");
+        label_nome_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
+        label_nome_cliente.setText("Nome:");
 
         label_idade_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_idade_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/calendario.png"))); // NOI18N
+        label_idade_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/calendario.png"))); // NOI18N
         label_idade_cliente.setText("Idade:");
         label_idade_cliente.setDoubleBuffered(true);
 
         label_cpf_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_cpf_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cpf.png"))); // NOI18N
+        label_cpf_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cpf.png"))); // NOI18N
         label_cpf_cliente.setText("CPF:");
 
         label_telefone_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_telefone_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/telefone.png"))); // NOI18N
+        label_telefone_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/telefone.png"))); // NOI18N
         label_telefone_cliente.setText("Telefone:");
 
         label_sexo_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_sexo_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sexo.PNG"))); // NOI18N
+        label_sexo_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sexo.PNG"))); // NOI18N
         label_sexo_cliente.setText("Sexo:");
 
         comboBox_sexo_cliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
@@ -86,11 +86,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         }
 
         label_endereco_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_endereco_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/mapa.png"))); // NOI18N
+        label_endereco_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/mapa.png"))); // NOI18N
         label_endereco_cliente.setText("Endereço:");
 
         botao_cadastrar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_cadastrar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/add.png"))); // NOI18N
+        botao_cadastrar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_cliente.setText("Cadastrar");
         botao_cadastrar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cadastrar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -102,11 +102,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         }
 
         label_email_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_email_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/email.png"))); // NOI18N
+        label_email_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/email.png"))); // NOI18N
         label_email_cliente.setText("E-mail:");
 
         botao_limpar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_limpar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar.png"))); // NOI18N
+        botao_limpar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_cliente.setText("Limpar");
         botao_limpar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_limpar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -117,86 +117,85 @@ public class Clientes extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(label_idade_cliente)
+                            .addGap(104, 104, 104)
+                            .addComponent(label_cpf_cliente)
+                            .addGap(18, 18, 18)
+                            .addComponent(field_CPF_cliente))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(label_nome_cliente))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(26, 26, 26)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(field_email_cliente)
+                                .addComponent(field_nome_cliente)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(label_telefone_cliente)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_email_cliente)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label_endereco_cliente)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(field_endereco_cliente)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_nome_cliente)
-                        .addGap(26, 26, 26)
-                        .addComponent(field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_idade_cliente)
-                        .addGap(32, 32, 32)
-                        .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_cpf_cliente)
-                        .addGap(44, 44, 44)
-                        .addComponent(field_CPF_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(label_telefone_cliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_email_cliente)
-                        .addGap(32, 32, 32)
-                        .addComponent(field_email_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_endereco_cliente)
-                        .addGap(10, 10, 10)
-                        .addComponent(field_endereco_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(63, 63, 63)
                         .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_nome_cliente)
-                    .addComponent(field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_idade_cliente)
-                    .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_cpf_cliente)
-                    .addComponent(field_CPF_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_telefone_cliente)
-                    .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_email_cliente)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_nome_cliente)
+                            .addComponent(field_nome_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_idade_cliente)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label_cpf_cliente)
+                                .addComponent(field_CPF_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_telefone_cliente)
+                            .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_email_cliente))
                     .addComponent(field_email_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_endereco_cliente)
                     .addComponent(field_endereco_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(botao_cadastrar_cliente))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

@@ -64,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
         desktopPane_principal.setForeground(new java.awt.Color(240, 240, 240));
         desktopPane_principal.setToolTipText("");
 
-        label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/pegadas.png"))); // NOI18N
+        label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
 
         desktopPane_principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -72,21 +72,21 @@ public class Principal extends javax.swing.JFrame {
         desktopPane_principal.setLayout(desktopPane_principalLayout);
         desktopPane_principalLayout.setHorizontalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 887, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 963, Short.MAX_VALUE)
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 646, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
         );
 
         menu_bar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         menu_bar.setOpaque(false);
 
-        menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cadastro.png"))); // NOI18N
+        menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cadastro.png"))); // NOI18N
         menu_cadastros.setText("Cadastro");
         menu_cadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        menu_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cliente.png"))); // NOI18N
+        menu_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
         menu_cliente.setText("Cadastro de cliente");
         menu_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_cliente.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +96,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_cliente);
 
-        menu_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/funcionario.png"))); // NOI18N
+        menu_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcionario.png"))); // NOI18N
         menu_funcionario.setText("Cadastro de funcionário");
         menu_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_funcionario.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_funcionario);
 
-        menu_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/dog.png"))); // NOI18N
+        menu_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         menu_animal.setText("Cadastro de animal");
         menu_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_animal.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +116,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_animal);
 
-        menu_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/estoque.png"))); // NOI18N
+        menu_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/estoque.png"))); // NOI18N
         menu_estoque.setText("Controle de estoque");
         menu_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_estoque.addActionListener(new java.awt.event.ActionListener() {
@@ -128,11 +128,11 @@ public class Principal extends javax.swing.JFrame {
 
         menu_bar.add(menu_cadastros);
 
-        menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/help.png"))); // NOI18N
+        menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/help.png"))); // NOI18N
         menu_ajuda.setText("Ajuda");
         menu_ajuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/ajuda.png"))); // NOI18N
+        menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ajuda.png"))); // NOI18N
         menu_sobre.setText("Sobre");
         menu_sobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_sobre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,7 +144,7 @@ public class Principal extends javax.swing.JFrame {
 
         menu_bar.add(menu_ajuda);
 
-        menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sair.png"))); // NOI18N
+        menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
         menu_sair.setText("Sair");
         menu_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_sair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,11 +160,15 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane_principal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(desktopPane_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane_principal, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(desktopPane_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

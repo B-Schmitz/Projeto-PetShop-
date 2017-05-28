@@ -10,11 +10,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import br.pet.log.Log;
 import br.pet.excecoes.LogExceptions;
-import br.pet.getset.UsuarioGetSet;
+import java.awt.HeadlessException;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 
 public class Login extends javax.swing.JFrame {
 
-    private UsuarioGetSet usuario = new UsuarioGetSet();
     private LogExceptions execao = new LogExceptions();
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
@@ -49,7 +51,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     public static void escrever(String user) throws IOException {
-        //O segundo parametro "true" indica append para o arquivo em questao.
         String a = "usuario.txt";
         FileWriter fileWriter = new FileWriter(a);
         try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
@@ -101,6 +102,12 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        painel_senha = new javax.swing.JPanel();
+        rotulo = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        painel_senha2 = new javax.swing.JPanel();
+        rotulo2 = new javax.swing.JLabel();
+        password2 = new javax.swing.JPasswordField();
         Jpanel = new javax.swing.JPanel();
         field_usuario = new javax.swing.JTextField();
         label_user = new javax.swing.JLabel();
@@ -111,6 +118,60 @@ public class Login extends javax.swing.JFrame {
         label_senha = new javax.swing.JLabel();
         label_alterar_senha = new javax.swing.JLabel();
 
+        rotulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
+        rotulo.setText("Informe a senha nova");
+
+        javax.swing.GroupLayout painel_senhaLayout = new javax.swing.GroupLayout(painel_senha);
+        painel_senha.setLayout(painel_senhaLayout);
+        painel_senhaLayout.setHorizontalGroup(
+            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senhaLayout.createSequentialGroup()
+                .addGroup(painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painel_senhaLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(rotulo))
+                    .addGroup(painel_senhaLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        painel_senhaLayout.setVerticalGroup(
+            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senhaLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(rotulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
+        rotulo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
+        rotulo2.setText("Informe a senha atual");
+
+        javax.swing.GroupLayout painel_senha2Layout = new javax.swing.GroupLayout(painel_senha2);
+        painel_senha2.setLayout(painel_senha2Layout);
+        painel_senha2Layout.setHorizontalGroup(
+            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senha2Layout.createSequentialGroup()
+                .addGroup(painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painel_senha2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(rotulo2))
+                    .addGroup(painel_senha2Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(password2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        painel_senha2Layout.setVerticalGroup(
+            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senha2Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(rotulo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
 
@@ -120,17 +181,17 @@ public class Login extends javax.swing.JFrame {
 
         label_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_user.setForeground(new java.awt.Color(255, 255, 255));
-        label_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/user.png"))); // NOI18N
+        label_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/user.png"))); // NOI18N
         label_user.setText("Nome de usúario");
 
         botao_entrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/entrar.png"))); // NOI18N
+        botao_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/entrar.png"))); // NOI18N
         botao_entrar.setText("Entrar");
         botao_entrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sair.png"))); // NOI18N
+        botao_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
         botao_cancelar.setText("Cancelar");
         botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -139,17 +200,17 @@ public class Login extends javax.swing.JFrame {
         field_senha.setToolTipText("Informe sua senha");
 
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
-        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/bigdog.png"))); // NOI18N
+        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
         label_logo.setText("PetControl");
 
         label_senha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_senha.setForeground(new java.awt.Color(255, 255, 255));
-        label_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/senha.png"))); // NOI18N
+        label_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
         label_senha.setText("Senha");
 
         label_alterar_senha.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         label_alterar_senha.setForeground(new java.awt.Color(255, 255, 255));
-        label_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/config.png"))); // NOI18N
+        label_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/config.png"))); // NOI18N
         label_alterar_senha.setText("Alterar senha");
         label_alterar_senha.setToolTipText("Alterar senha de usúario");
         label_alterar_senha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -224,31 +285,37 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void label_alterar_senhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_alterar_senhaMouseClicked
-        /*
-        Esquema básico sem uso de salvamento externo ou BD para uma senha.
-        Também não sei se pode por MouseClicked, como não
-        é algo que o professor solicitou, deixei assim mesmo.
-         */
-        senha_nova = JOptionPane.showInputDialog(null, "Informe a senha atual", "Alterar senha", 1);
+
+        password.setText(null);
+        password2.setText(null);
+
         try {
+            password2.setEchoChar('*');
+            JOptionPane.showMessageDialog(null, painel_senha2, "Alterar Senha", JOptionPane.PLAIN_MESSAGE);
+            senha_nova = password2.getText();
+
             if (senha_nova.equals(senha_atual)) {
-                senha_atual = JOptionPane.showInputDialog(null, "Informe uma nova senha", "Alterar senha", 1);
+
+                password.setEchoChar('*');
+                JOptionPane.showMessageDialog(null, painel_senha, "Alterar Senha", JOptionPane.PLAIN_MESSAGE);
+                senha_atual = password.getText();
+
                 if (senha_atual.trim().isEmpty()) {
                     senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
                     JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Alteração não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                } else if (!senha_atual.trim().isEmpty()) {
+                } else {
                     JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     try {
                         Log.escrever("!Alterou a senha");
                     } catch (IOException ex) {
                         execao.exception(ex);
                     }
-                } else {
                 }
+
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
-        } catch (Exception ex) {
+        } catch (HeadlessException ex) {
             senha_atual = senha_nova;
         }
     }//GEN-LAST:event_label_alterar_senhaMouseClicked
@@ -296,5 +363,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel label_logo;
     private javax.swing.JLabel label_senha;
     private javax.swing.JLabel label_user;
+    private javax.swing.JPanel painel_senha;
+    private javax.swing.JPanel painel_senha2;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JPasswordField password2;
+    private javax.swing.JLabel rotulo;
+    private javax.swing.JLabel rotulo2;
     // End of variables declaration//GEN-END:variables
 }

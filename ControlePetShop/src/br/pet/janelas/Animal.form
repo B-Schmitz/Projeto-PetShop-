@@ -38,7 +38,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Component id="field_nome_animal" alignment="0" max="32767" attributes="0"/>
-                              <Component id="field_proprietario" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="comboBox_tipo_animal" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -50,12 +49,13 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="field_idade_animal" min="-2" pref="47" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="field_proprietario" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="field_raca" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="label_cor" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -73,7 +73,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                       <Component id="botao_cadastrar_animais" min="-2" pref="143" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botao_limpar_animais" min="-2" pref="143" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
                   <Component id="botao_cadastrar_animais" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botao_limpar_animais" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -136,7 +136,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/tag.png"/>
+          <Image iconType="3" name="/br/pet/icones/tag.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Animal:"/>
       </Properties>
@@ -147,7 +147,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/text.png"/>
+          <Image iconType="3" name="/br/pet/icones/text.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nome:"/>
       </Properties>
@@ -158,7 +158,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/cliente.png"/>
+          <Image iconType="3" name="/br/pet/icones/cliente.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Propriet&#xe1;rio(a):"/>
       </Properties>
@@ -169,7 +169,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/calendario.png"/>
+          <Image iconType="3" name="/br/pet/icones/calendario.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Idade:"/>
       </Properties>
@@ -180,7 +180,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/raca.png"/>
+          <Image iconType="3" name="/br/pet/icones/raca.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ra&#xe7;a: "/>
       </Properties>
@@ -191,7 +191,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/peso.png"/>
+          <Image iconType="3" name="/br/pet/icones/peso.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Peso(gr):"/>
       </Properties>
@@ -202,7 +202,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/altura.png"/>
+          <Image iconType="3" name="/br/pet/icones/altura.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Altura(cm):"/>
       </Properties>
@@ -213,7 +213,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/cor.png"/>
+          <Image iconType="3" name="/br/pet/icones/cor.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cor:"/>
       </Properties>
@@ -224,7 +224,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/sexo.PNG"/>
+          <Image iconType="3" name="/br/pet/icones/sexo.PNG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sexo:"/>
       </Properties>
@@ -275,7 +275,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/add.png"/>
+          <Image iconType="3" name="/br/pet/icones/add.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -294,7 +294,7 @@
           <Font name="Tahoma" size="14" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/pet/icones/limpar.png"/>
+          <Image iconType="3" name="/br/pet/icones/limpar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Limpar"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

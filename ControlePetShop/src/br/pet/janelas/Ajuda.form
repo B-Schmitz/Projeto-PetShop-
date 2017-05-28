@@ -139,7 +139,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/ironman.png"/>
+              <Image iconType="3" name="/br/pet/icones/ironman.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Duarte"/>
           </Properties>
@@ -150,7 +150,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/batman.png"/>
+              <Image iconType="3" name="/br/pet/icones/batman.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Michael"/>
           </Properties>
@@ -186,7 +186,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/cliente.png"/>
+              <Image iconType="3" name="/br/pet/icones/cliente.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de clientes"/>
           </Properties>
@@ -197,7 +197,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/funcionario.png"/>
+              <Image iconType="3" name="/br/pet/icones/funcionario.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de funcion&#xe1;rios"/>
           </Properties>
@@ -208,7 +208,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/dog.png"/>
+              <Image iconType="3" name="/br/pet/icones/dog.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de animais"/>
           </Properties>
@@ -219,7 +219,7 @@
               <Color blue="0" green="cc" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/bigdog.png"/>
+              <Image iconType="3" name="/br/pet/icones/bigdog.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PetControl"/>
           </Properties>
@@ -230,7 +230,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/estoque.png"/>
+              <Image iconType="3" name="/br/pet/icones/estoque.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Controle de estoque"/>
           </Properties>
@@ -249,7 +249,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/spider.png"/>
+              <Image iconType="3" name="/br/pet/icones/spider.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Bernardo"/>
           </Properties>

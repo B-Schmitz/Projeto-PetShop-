@@ -57,27 +57,27 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         setVisible(false);
 
         label_nome_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_nome_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/funcionario.png"))); // NOI18N
+        label_nome_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcionario.png"))); // NOI18N
         label_nome_funcionario.setText("Nome:");
 
         label_cargo_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_cargo_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/funcao.png"))); // NOI18N
+        label_cargo_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcao.png"))); // NOI18N
         label_cargo_funcionario.setText("Cargo:");
 
         label_CPF_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_CPF_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cpf.png"))); // NOI18N
+        label_CPF_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cpf.png"))); // NOI18N
         label_CPF_funcionario.setText("CPF:");
 
         label_sexo_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_sexo_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sexo.PNG"))); // NOI18N
+        label_sexo_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sexo.PNG"))); // NOI18N
         label_sexo_funcionario.setText("Sexo:");
 
         label_pis_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_pis_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/carteiradetrabalho.png"))); // NOI18N
+        label_pis_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/carteiradetrabalho.png"))); // NOI18N
         label_pis_funcionario.setText("N°Pis:");
 
         label_endereco_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_endereco_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/mapa.png"))); // NOI18N
+        label_endereco_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/mapa.png"))); // NOI18N
         label_endereco_funcionario.setText("Endereço:");
 
         comboBox_sexo_funcionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
@@ -89,17 +89,17 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         }
 
         botao_cadastrar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_cadastrar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/add.png"))); // NOI18N
+        botao_cadastrar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_funcionario.setText("Cadastrar");
         botao_cadastrar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cadastrar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         label_idade_funcionaro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_idade_funcionaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/calendario.png"))); // NOI18N
+        label_idade_funcionaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/calendario.png"))); // NOI18N
         label_idade_funcionaro.setText("Idade:");
 
         label_telefone_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_telefone_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/telefone.png"))); // NOI18N
+        label_telefone_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/telefone.png"))); // NOI18N
         label_telefone_funcionario.setText("Telefone:");
 
         try {
@@ -109,11 +109,11 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         }
 
         label_email_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_email_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/email.png"))); // NOI18N
+        label_email_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/email.png"))); // NOI18N
         label_email_funcionario.setText("Email:");
 
         botao_limpar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_limpar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar.png"))); // NOI18N
+        botao_limpar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_funcionario.setText("Limpar");
         botao_limpar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_limpar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -123,103 +123,97 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(label_nome_funcionario, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_cargo_funcionario)
-                                .addGap(419, 419, 419))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(label_email_funcionario)
-                        .addGap(45, 45, 45)
-                        .addComponent(field_email_funcionario))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(label_endereco_funcionario)
-                        .addGap(18, 18, 18)
-                        .addComponent(field_endereco_funcionario))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_telefone_funcionario)
-                                .addGap(25, 25, 25)
-                                .addComponent(field_telefone_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_sexo_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(comboBox_sexo_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_CPF_funcionario)
-                                .addGap(52, 52, 52)
-                                .addComponent(field_CPF_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_pis_funcionario)
-                                .addGap(44, 44, 44)
-                                .addComponent(field_pis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label_idade_funcionaro)
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(field_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(field_idade_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botao_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
+                .addGap(76, 76, 76))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_cargo_funcionario)
+                            .addComponent(label_pis_funcionario)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(label_nome_funcionario)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label_email_funcionario)
+                                    .addGap(369, 369, 369))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(label_idade_funcionaro)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(field_idade_funcionario)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(label_CPF_funcionario)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(field_CPF_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(label_endereco_funcionario)
+                                            .addComponent(label_sexo_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(comboBox_sexo_funcionario, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(label_telefone_funcionario)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(field_telefone_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(field_pis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(field_endereco_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(field_email_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(field_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_nome_funcionario)
                     .addComponent(field_nome_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_idade_funcionaro)
+                    .addComponent(field_idade_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_CPF_funcionario)
+                    .addComponent(field_CPF_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_sexo_funcionario)
+                    .addComponent(comboBox_sexo_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_telefone_funcionario)
+                    .addComponent(field_telefone_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_cargo_funcionario)
                     .addComponent(field_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_idade_funcionaro)
-                    .addComponent(field_idade_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBox_sexo_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_sexo_funcionario))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_CPF_funcionario)
-                    .addComponent(field_CPF_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_pis_funcionario)
-                    .addComponent(field_pis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_telefone_funcionario)
-                    .addComponent(field_telefone_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(field_email_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_email_funcionario))
-                .addGap(18, 18, 18)
+                    .addComponent(label_email_funcionario)
+                    .addComponent(field_email_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label_endereco_funcionario)
                     .addComponent(field_endereco_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_pis_funcionario)
+                    .addComponent(field_pis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

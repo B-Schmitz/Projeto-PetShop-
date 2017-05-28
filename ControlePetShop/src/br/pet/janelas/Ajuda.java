@@ -38,11 +38,11 @@ public class Ajuda extends javax.swing.JInternalFrame {
         Jpanel.setBackground(new java.awt.Color(115, 59, 30));
 
         label_duarte.setForeground(new java.awt.Color(255, 255, 255));
-        label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/ironman.png"))); // NOI18N
+        label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ironman.png"))); // NOI18N
         label_duarte.setText("Duarte");
 
         label_michael.setForeground(new java.awt.Color(255, 255, 255));
-        label_michael.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/batman.png"))); // NOI18N
+        label_michael.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/batman.png"))); // NOI18N
         label_michael.setText("Michael");
 
         label_icones.setForeground(new java.awt.Color(102, 204, 255));
@@ -59,30 +59,30 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_descrição.setText("Software para gestão e controle de um PetShop");
 
         label_clientes.setForeground(new java.awt.Color(255, 255, 255));
-        label_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cliente.png"))); // NOI18N
+        label_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
         label_clientes.setText("Cadastro de clientes");
 
         label_funcionarios.setForeground(new java.awt.Color(255, 255, 255));
-        label_funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/funcionario.png"))); // NOI18N
+        label_funcionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcionario.png"))); // NOI18N
         label_funcionarios.setText("Cadastro de funcionários");
 
         label_animais.setForeground(new java.awt.Color(255, 255, 255));
-        label_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/dog.png"))); // NOI18N
+        label_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         label_animais.setText("Cadastro de animais");
 
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
-        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/bigdog.png"))); // NOI18N
+        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
         label_logo.setText("PetControl");
 
         label_estoque.setForeground(new java.awt.Color(255, 255, 255));
-        label_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/estoque.png"))); // NOI18N
+        label_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/estoque.png"))); // NOI18N
         label_estoque.setText("Controle de estoque");
 
         label_programadores.setForeground(new java.awt.Color(255, 255, 255));
         label_programadores.setText("Programadores");
 
         label_bernardo.setForeground(new java.awt.Color(255, 255, 255));
-        label_bernardo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/spider.png"))); // NOI18N
+        label_bernardo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/spider.png"))); // NOI18N
         label_bernardo.setText("Bernardo");
 
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);

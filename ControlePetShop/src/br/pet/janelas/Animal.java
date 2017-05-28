@@ -62,39 +62,39 @@ public class Animal extends javax.swing.JInternalFrame {
         setTitle("Cadastro de animal");
 
         label_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/tag.png"))); // NOI18N
+        label_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/tag.png"))); // NOI18N
         label_animal.setText("Animal:");
 
         label_nome_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_nome_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/text.png"))); // NOI18N
+        label_nome_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/text.png"))); // NOI18N
         label_nome_animal.setText("Nome:");
 
         label_proprietario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_proprietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cliente.png"))); // NOI18N
+        label_proprietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
         label_proprietario.setText("Proprietário(a):");
 
         label_idade_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_idade_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/calendario.png"))); // NOI18N
+        label_idade_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/calendario.png"))); // NOI18N
         label_idade_animal.setText("Idade:");
 
         label_raca.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_raca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/raca.png"))); // NOI18N
+        label_raca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/raca.png"))); // NOI18N
         label_raca.setText("Raça: ");
 
         label_peso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_peso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/peso.png"))); // NOI18N
+        label_peso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/peso.png"))); // NOI18N
         label_peso.setText("Peso(gr):");
 
         label_altura.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_altura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/altura.png"))); // NOI18N
+        label_altura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/altura.png"))); // NOI18N
         label_altura.setText("Altura(cm):");
 
         label_cor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/cor.png"))); // NOI18N
+        label_cor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cor.png"))); // NOI18N
         label_cor.setText("Cor:");
 
         label_sexo_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        label_sexo_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/sexo.PNG"))); // NOI18N
+        label_sexo_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sexo.PNG"))); // NOI18N
         label_sexo_animal.setText("Sexo:");
 
         comboBox_sexo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea", " " }));
@@ -102,13 +102,13 @@ public class Animal extends javax.swing.JInternalFrame {
         comboBox_tipo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachorro", "Gato", "Coelho" }));
 
         botao_cadastrar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_cadastrar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/add.png"))); // NOI18N
+        botao_cadastrar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_animais.setText("Cadastrar");
         botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cadastrar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_limpar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        botao_limpar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pet/icones/limpar.png"))); // NOI18N
+        botao_limpar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_animais.setText("Limpar");
         botao_limpar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_limpar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -131,7 +131,6 @@ public class Animal extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(field_nome_animal)
-                                .addComponent(field_proprietario)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(comboBox_tipo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
@@ -141,7 +140,8 @@ public class Animal extends javax.swing.JInternalFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(label_idade_animal)
                                     .addGap(18, 18, 18)
-                                    .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(field_proprietario))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -157,7 +157,7 @@ public class Animal extends javax.swing.JInternalFrame {
                                     .addComponent(field_cor, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                                     .addComponent(field_altura)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(103, 103, 103)
                         .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -198,7 +198,7 @@ public class Animal extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_cadastrar_animais)
                     .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();

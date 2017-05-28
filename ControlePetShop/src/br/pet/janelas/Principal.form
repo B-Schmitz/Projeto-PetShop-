@@ -15,7 +15,7 @@
         <Menu class="javax.swing.JMenu" name="menu_cadastros">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/cadastro.png"/>
+              <Image iconType="3" name="/br/pet/icones/cadastro.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -26,7 +26,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_cliente">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/pet/icones/cliente.png"/>
+                  <Image iconType="3" name="/br/pet/icones/cliente.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de cliente"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -40,7 +40,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_funcionario">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/pet/icones/funcionario.png"/>
+                  <Image iconType="3" name="/br/pet/icones/funcionario.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de funcion&#xe1;rio"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -54,7 +54,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_animal">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/pet/icones/dog.png"/>
+                  <Image iconType="3" name="/br/pet/icones/dog.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cadastro de animal"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -68,7 +68,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_estoque">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/pet/icones/estoque.png"/>
+                  <Image iconType="3" name="/br/pet/icones/estoque.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Controle de estoque"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -84,7 +84,7 @@
         <Menu class="javax.swing.JMenu" name="menu_ajuda">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/help.png"/>
+              <Image iconType="3" name="/br/pet/icones/help.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ajuda"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -95,7 +95,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menu_sobre">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/pet/icones/ajuda.png"/>
+                  <Image iconType="3" name="/br/pet/icones/ajuda.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sobre"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -111,7 +111,7 @@
         <Menu class="javax.swing.JMenu" name="menu_sair">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/sair.png"/>
+              <Image iconType="3" name="/br/pet/icones/sair.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sair"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -148,12 +148,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane_principal" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="desktopPane_principal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane_principal" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="desktopPane_principal" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -172,12 +178,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="1" pref="887" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="0" pref="963" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_patinhas" alignment="1" pref="646" max="32767" attributes="0"/>
+              <Component id="label_patinhas" alignment="0" pref="548" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -185,7 +191,7 @@
         <Component class="javax.swing.JLabel" name="label_patinhas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/pet/icones/pegadas.png"/>
+              <Image iconType="3" name="/br/pet/icones/pegadas.png"/>
             </Property>
           </Properties>
         </Component>
