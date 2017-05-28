@@ -11,9 +11,7 @@ import javax.swing.JOptionPane;
 import br.pet.log.Log;
 import br.pet.excecoes.LogExceptions;
 import java.awt.HeadlessException;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
+import javax.swing.event.AncestorListener;
 
 public class Login extends javax.swing.JFrame {
 
@@ -47,6 +45,7 @@ public class Login extends javax.swing.JFrame {
 
         botao_entrar.addActionListener(login);
         botao_cancelar.addActionListener(login);
+        botao_alterar_senha.addActionListener(login);
 
     }
 
@@ -97,195 +96,9 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         }
     }
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        painel_senha = new javax.swing.JPanel();
-        rotulo = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
-        painel_senha2 = new javax.swing.JPanel();
-        rotulo2 = new javax.swing.JLabel();
-        password2 = new javax.swing.JPasswordField();
-        Jpanel = new javax.swing.JPanel();
-        field_usuario = new javax.swing.JTextField();
-        label_user = new javax.swing.JLabel();
-        botao_entrar = new javax.swing.JButton();
-        botao_cancelar = new javax.swing.JButton();
-        field_senha = new javax.swing.JPasswordField();
-        label_logo = new javax.swing.JLabel();
-        label_senha = new javax.swing.JLabel();
-        label_alterar_senha = new javax.swing.JLabel();
-
-        rotulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
-        rotulo.setText("Informe a senha nova");
-
-        javax.swing.GroupLayout painel_senhaLayout = new javax.swing.GroupLayout(painel_senha);
-        painel_senha.setLayout(painel_senhaLayout);
-        painel_senhaLayout.setHorizontalGroup(
-            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_senhaLayout.createSequentialGroup()
-                .addGroup(painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painel_senhaLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(rotulo))
-                    .addGroup(painel_senhaLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        painel_senhaLayout.setVerticalGroup(
-            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_senhaLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(rotulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
-
-        rotulo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
-        rotulo2.setText("Informe a senha atual");
-
-        javax.swing.GroupLayout painel_senha2Layout = new javax.swing.GroupLayout(painel_senha2);
-        painel_senha2.setLayout(painel_senha2Layout);
-        painel_senha2Layout.setHorizontalGroup(
-            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_senha2Layout.createSequentialGroup()
-                .addGroup(painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painel_senha2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(rotulo2))
-                    .addGroup(painel_senha2Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(password2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-        painel_senha2Layout.setVerticalGroup(
-            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_senha2Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(rotulo2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
-
-        Jpanel.setBackground(new java.awt.Color(115, 59, 30));
-
-        field_usuario.setToolTipText("Informe seu nome de usúario");
-
-        label_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        label_user.setForeground(new java.awt.Color(255, 255, 255));
-        label_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/user.png"))); // NOI18N
-        label_user.setText("Nome de usúario");
-
-        botao_entrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/entrar.png"))); // NOI18N
-        botao_entrar.setText("Entrar");
-        botao_entrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botao_entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        botao_cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botao_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
-        botao_cancelar.setText("Cancelar");
-        botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        botao_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        field_senha.setText("admin");
-        field_senha.setToolTipText("Informe sua senha");
-
-        label_logo.setForeground(new java.awt.Color(255, 204, 0));
-        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
-        label_logo.setText("PetControl");
-
-        label_senha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        label_senha.setForeground(new java.awt.Color(255, 255, 255));
-        label_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
-        label_senha.setText("Senha");
-
-        label_alterar_senha.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
-        label_alterar_senha.setForeground(new java.awt.Color(255, 255, 255));
-        label_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/config.png"))); // NOI18N
-        label_alterar_senha.setText("Alterar senha");
-        label_alterar_senha.setToolTipText("Alterar senha de usúario");
-        label_alterar_senha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        label_alterar_senha.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        label_alterar_senha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                label_alterar_senhaMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
-        Jpanel.setLayout(JpanelLayout);
-        JpanelLayout.setHorizontalGroup(
-            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JpanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                        .addComponent(botao_entrar, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(JpanelLayout.createSequentialGroup()
-                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label_user)
-                            .addGroup(JpanelLayout.createSequentialGroup()
-                                .addComponent(label_senha)
-                                .addGap(18, 18, 18)
-                                .addComponent(label_alterar_senha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(JpanelLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(label_logo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        JpanelLayout.setVerticalGroup(
-            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JpanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(label_logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(label_user)
-                .addGap(1, 1, 1)
-                .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_senha)
-                    .addComponent(label_alterar_senha))
-                .addGap(1, 1, 1)
-                .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void label_alterar_senhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_alterar_senhaMouseClicked
-
+    
+    public void AlterarSenha(){
+        
         password.setText(null);
         password2.setText(null);
 
@@ -318,7 +131,185 @@ public class Login extends javax.swing.JFrame {
         } catch (HeadlessException ex) {
             senha_atual = senha_nova;
         }
-    }//GEN-LAST:event_label_alterar_senhaMouseClicked
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        painel_senha = new javax.swing.JPanel();
+        rotulo = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        painel_senha2 = new javax.swing.JPanel();
+        rotulo2 = new javax.swing.JLabel();
+        password2 = new javax.swing.JPasswordField();
+        Jpanel = new javax.swing.JPanel();
+        field_usuario = new javax.swing.JTextField();
+        label_user = new javax.swing.JLabel();
+        botao_entrar = new javax.swing.JButton();
+        botao_cancelar = new javax.swing.JButton();
+        field_senha = new javax.swing.JPasswordField();
+        label_logo = new javax.swing.JLabel();
+        label_senha = new javax.swing.JLabel();
+        botao_alterar_senha = new javax.swing.JButton();
+
+        rotulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
+        rotulo.setText("Informe a senha nova");
+
+        javax.swing.GroupLayout painel_senhaLayout = new javax.swing.GroupLayout(painel_senha);
+        painel_senha.setLayout(painel_senhaLayout);
+        painel_senhaLayout.setHorizontalGroup(
+            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senhaLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(rotulo)
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(painel_senhaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(password)
+                .addContainerGap())
+        );
+        painel_senhaLayout.setVerticalGroup(
+            painel_senhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senhaLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(rotulo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
+        rotulo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
+        rotulo2.setText("Informe a senha atual");
+
+        javax.swing.GroupLayout painel_senha2Layout = new javax.swing.GroupLayout(painel_senha2);
+        painel_senha2.setLayout(painel_senha2Layout);
+        painel_senha2Layout.setHorizontalGroup(
+            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senha2Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(rotulo2)
+                .addContainerGap(78, Short.MAX_VALUE))
+            .addGroup(painel_senha2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(password2)
+                .addContainerGap())
+        );
+        painel_senha2Layout.setVerticalGroup(
+            painel_senha2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painel_senha2Layout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(rotulo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+
+        Jpanel.setBackground(new java.awt.Color(0, 51, 102));
+
+        field_usuario.setToolTipText("Informe seu nome de usúario");
+
+        label_user.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_user.setForeground(new java.awt.Color(255, 204, 0));
+        label_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/user.png"))); // NOI18N
+        label_user.setText("Nome de usúario");
+
+        botao_entrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/entrar.png"))); // NOI18N
+        botao_entrar.setText("Entrar");
+        botao_entrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_entrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botao_cancelar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        botao_cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
+        botao_cancelar.setText("Cancelar");
+        botao_cancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        field_senha.setText("admin");
+        field_senha.setToolTipText("Informe sua senha");
+
+        label_logo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_logo.setForeground(new java.awt.Color(255, 204, 0));
+        label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
+        label_logo.setText("PetControl");
+
+        label_senha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_senha.setForeground(new java.awt.Color(255, 204, 0));
+        label_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/senha.png"))); // NOI18N
+        label_senha.setText("Senha");
+
+        botao_alterar_senha.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        botao_alterar_senha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/config.png"))); // NOI18N
+        botao_alterar_senha.setText("Alterar senha");
+        botao_alterar_senha.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_alterar_senha.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
+        Jpanel.setLayout(JpanelLayout);
+        JpanelLayout.setHorizontalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JpanelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addComponent(label_senha)
+                        .addGap(168, 168, 168)
+                        .addComponent(botao_alterar_senha))
+                    .addComponent(label_user)
+                    .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JpanelLayout.createSequentialGroup()
+                            .addComponent(botao_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(botao_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(field_senha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(label_logo)))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        JpanelLayout.setVerticalGroup(
+            JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JpanelLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(label_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_user)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(label_senha))
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_alterar_senha)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
     /**
      * @param args the command line arguments
@@ -355,11 +346,11 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
+    private javax.swing.JButton botao_alterar_senha;
     private javax.swing.JButton botao_cancelar;
     private javax.swing.JButton botao_entrar;
     private javax.swing.JPasswordField field_senha;
     private javax.swing.JTextField field_usuario;
-    private javax.swing.JLabel label_alterar_senha;
     private javax.swing.JLabel label_logo;
     private javax.swing.JLabel label_senha;
     private javax.swing.JLabel label_user;

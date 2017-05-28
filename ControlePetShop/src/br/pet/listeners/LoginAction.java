@@ -32,6 +32,9 @@ public class LoginAction implements ActionListener {
             }
             System.exit(0);
         }
+        if(e.getActionCommand().equals("Alterar senha")){
+            login.AlterarSenha();
+        }
     }
 
 }

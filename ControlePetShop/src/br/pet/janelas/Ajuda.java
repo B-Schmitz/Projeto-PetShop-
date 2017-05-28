@@ -35,7 +35,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Ajuda");
 
-        Jpanel.setBackground(new java.awt.Color(115, 59, 30));
+        Jpanel.setBackground(new java.awt.Color(0, 51, 102));
 
         label_duarte.setForeground(new java.awt.Color(255, 255, 255));
         label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ironman.png"))); // NOI18N
@@ -70,6 +70,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         label_animais.setText("Cadastro de animais");
 
+        label_logo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
         label_logo.setText("PetControl");
@@ -116,7 +117,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
                 .addComponent(label_descrição)
                 .addGap(62, 62, 62))
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addGap(161, 161, 161)
+                .addGap(158, 158, 158)
                 .addComponent(label_logo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

@@ -140,3 +140,9 @@ Sun May 28 04:58:31 BRT 2017 : Michael !Entrou
 Sun May 28 05:00:03 BRT 2017 : Michael !Alterou a senha
 Sun May 28 05:00:06 BRT 2017 : Michael !Entrou
 Sun May 28 05:05:03 BRT 2017 : Michael !Alterou a senha
+Sun May 28 18:29:54 BRT 2017 : Michael !Alterou a senha
+Sun May 28 18:30:51 BRT 2017 : Michael !Alterou a senha
+Sun May 28 18:32:25 BRT 2017 : Michael !Entrou
+Sun May 28 18:32:28 BRT 2017 : Michael !Abriu a janela Ajuda
+Sun May 28 18:32:34 BRT 2017 : Michael !Abriu a janela Cliente
+Sun May 28 18:32:36 BRT 2017 : Michael !Abriu a janela Ajuda
