@@ -31,11 +31,17 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_programadores = new javax.swing.JLabel();
         label_bernardo = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        label_programadores1 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setClosable(true);
         setTitle("Ajuda");
 
-        Jpanel.setBackground(new java.awt.Color(0, 51, 102));
+        Jpanel.setBackground(new java.awt.Color(18, 50, 115));
 
         label_duarte.setForeground(new java.awt.Color(255, 255, 255));
         label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ironman.png"))); // NOI18N
@@ -70,7 +76,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         label_animais.setText("Cadastro de animais");
 
-        label_logo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_logo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
         label_logo.setText("PetControl");
@@ -79,91 +85,120 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/estoque.png"))); // NOI18N
         label_estoque.setText("Controle de estoque");
 
-        label_programadores.setForeground(new java.awt.Color(255, 255, 255));
+        label_programadores.setForeground(new java.awt.Color(255, 204, 0));
         label_programadores.setText("Programadores");
 
         label_bernardo.setForeground(new java.awt.Color(255, 255, 255));
         label_bernardo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/spider.png"))); // NOI18N
         label_bernardo.setText("Bernardo");
 
+        label_programadores1.setForeground(new java.awt.Color(255, 204, 0));
+        label_programadores1.setText("Funcionalidades do Sistema");
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
         Jpanel.setLayout(JpanelLayout);
         JpanelLayout.setHorizontalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(149, 149, 149)
+                .addComponent(label_logo))
+            .addGroup(JpanelLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(label_descrição))
+            .addGroup(JpanelLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(label_programadores1))
+            .addGroup(JpanelLayout.createSequentialGroup()
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label_clientes)
                     .addGroup(JpanelLayout.createSequentialGroup()
                         .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_estoque)
-                            .addComponent(label_funcionarios)
-                            .addComponent(label_animais)
-                            .addComponent(label_icones))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                            .addGroup(JpanelLayout.createSequentialGroup()
                                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_michael)
-                                    .addComponent(label_duarte)
-                                    .addComponent(label_bernardo))
-                                .addGap(9, 9, 9))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                                .addComponent(label_programadores)
-                                .addContainerGap())))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                .addGap(34, 80, Short.MAX_VALUE)
-                .addComponent(label_descrição)
-                .addGap(62, 62, 62))
-            .addGroup(JpanelLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(label_logo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(label_estoque)
+                                    .addComponent(label_animais)
+                                    .addComponent(label_funcionarios)
+                                    .addComponent(label_clientes))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(150, 150, 150))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                        .addComponent(label_icones)
+                        .addGap(28, 28, 28)))
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                        .addComponent(label_programadores)
+                        .addGap(20, 20, 20))
+                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_michael)
+                            .addComponent(label_duarte)
+                            .addComponent(label_bernardo)))))
         );
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(11, 11, 11)
                 .addComponent(label_logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_descrição, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(label_descrição)
+                .addGap(16, 16, 16)
+                .addComponent(label_programadores1)
+                .addGap(6, 6, 6)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(label_clientes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_funcionarios)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_animais))
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(3, 3, 3)
+                                .addComponent(label_clientes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_funcionarios)
+                                .addGap(4, 4, 4)
+                                .addComponent(label_animais)
+                                .addGap(4, 4, 4)
+                                .addComponent(label_estoque)))
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JpanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)
                         .addComponent(label_programadores)
-                        .addGap(4, 4, 4)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JpanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_estoque)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(label_icones))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(label_bernardo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_duarte)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label_michael)
-                        .addContainerGap())))
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(label_michael))
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(label_duarte))
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(label_bernardo))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addGap(72, 72, 72)
+                                .addComponent(label_icones)))))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(Jpanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Jpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +220,12 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JLabel label_animais;
     private javax.swing.JLabel label_bernardo;
     private javax.swing.JLabel label_clientes;
@@ -197,6 +237,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel label_logo;
     private javax.swing.JLabel label_michael;
     private javax.swing.JLabel label_programadores;
+    private javax.swing.JLabel label_programadores1;
     // End of variables declaration//GEN-END:variables
 
 }

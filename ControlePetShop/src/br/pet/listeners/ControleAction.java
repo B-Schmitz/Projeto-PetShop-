@@ -25,14 +25,18 @@ public class ControleAction implements ActionListener {
 
     }
 
+    public void Log(String msg) {
+        try {
+            Log.escrever(msg);
+        } catch (IOException ex) {
+            execao.exception(ex);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Adicionar")) {
-            try {
-                Log.escrever("!Clicou em 'Adicionar'");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Clicou em 'Adicionar'");
 
             estoq = controle.getestoq();
 
@@ -49,34 +53,21 @@ public class ControleAction implements ActionListener {
                 tabela.setModel(model);
 
                 model.addLinha(estoq);
-                try {
-                    Log.escrever("!Cadastrado um novo produto");
-                } catch (IOException ex) {
-                    execao.exception(ex);
-                }
+                    Log("!Cadastrado um novo produto");
 
             }
 
         }
 
         if (e.getActionCommand().equals("Limpar")) {
-
-            try {
-                Log.escrever("!Clicou em 'Limpar'");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Clicou em 'Limpar'");
             controle.limpa();
 
         }
 
         if (e.getActionCommand().equals("Remover")) {
 
-            try {
-                Log.escrever("!Clicou em 'Remover'");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Clicou em 'Remover'");
 
             tabela = controle.getTabela();
             if (tabela.getSelectedRow() == -1) {
@@ -87,34 +78,22 @@ public class ControleAction implements ActionListener {
                 int i = tabela.getSelectedRow();
 
                 model.remove(i);
-                try {
-                    Log.escrever("!Produto removido");
-                } catch (IOException ex) {
-                    execao.exception(ex);
-                }
+                Log("!Produto removido");
             }
         }
 
         if (e.getActionCommand().equals("Editar")) {
-            try {
-                Log.escrever("!Clicou em 'Editar'");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Clicou em 'Editar'");
             tabela = controle.getTabela();
 
             if (tabela.getSelectedRow() == -1) {
-                return;
+                //???  return;
 
             } else {
                 estoq = model.getproduto(tabela.getSelectedRow());
                 controle.Editar(estoq);
                 model.remove(tabela.getSelectedRow());
-                try {
-                    Log.escrever("!Produto foi para a edição'");
-                } catch (IOException ex) {
-                    execao.exception(ex);
-                }
+                Log("!Produto foi para a edição'");
 
             }
         }

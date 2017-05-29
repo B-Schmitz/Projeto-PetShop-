@@ -22,5 +22,4 @@ public class Log {
             bufferedWriter.close();
         }
     }
-
 }

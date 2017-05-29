@@ -10,7 +10,7 @@ import java.io.IOException;
 public class LoginAction implements ActionListener {
 
     private final Login login;
-    private LogExceptions execao = new LogExceptions();
+    private final LogExceptions execao = new LogExceptions();
 
     public LoginAction(Login login) {
         this.login = login;

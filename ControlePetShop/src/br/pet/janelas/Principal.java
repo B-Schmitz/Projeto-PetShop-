@@ -20,14 +20,14 @@ public class Principal extends javax.swing.JFrame {
     private final ImageIcon icone;
     private Dimension d;
     private final Color classic = new Color(204, 204, 204);
-    private final Color dark = new Color(3,36,101);
+    private final Color dark = new Color(18, 50, 115);
 
     public Principal() {
         initComponents();
-        icone = new ImageIcon("src/br/pet/icones/login.png");
 
         // Configuração da Janela
         this.setLocationRelativeTo(null);
+        icone = new ImageIcon("src/br/pet/icones/login.png");
         this.setIconImage(icone.getImage());
     }
 
@@ -45,11 +45,19 @@ public class Principal extends javax.swing.JFrame {
         d = frame.getDesktopPane().getSize();
         frame.setLocation((d.width - frame.getSize().width) / 2, (d.height - frame.getSize().height) / 2);
     }
+
+    public void Log(String msg) {
+        try {
+            Log.escrever(msg);
+        } catch (IOException ex) {
+             execao.exception(ex);
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         desktopPane_principal = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
+        label_patinhas = new javax.swing.JLabel();
         menu_bar = new javax.swing.JMenuBar();
         menu_cadastros = new javax.swing.JMenu();
         menu_cliente = new javax.swing.JMenuItem();
@@ -68,29 +76,32 @@ public class Principal extends javax.swing.JFrame {
 
         desktopPane_principal.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
+        label_patinhas.setText("jLabel1");
 
-        desktopPane_principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        desktopPane_principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout desktopPane_principalLayout = new javax.swing.GroupLayout(desktopPane_principal);
         desktopPane_principal.setLayout(desktopPane_principalLayout);
         desktopPane_principalLayout.setHorizontalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 963, Short.MAX_VALUE)
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 553, Short.MAX_VALUE)
         );
 
-        menu_bar.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        menu_bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        menu_bar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         menu_bar.setOpaque(false);
 
         menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cadastro.png"))); // NOI18N
         menu_cadastros.setText("Cadastro");
         menu_cadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_cadastros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        menu_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
         menu_cliente.setText("Cadastro de cliente");
         menu_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -101,6 +112,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_cliente);
 
+        menu_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcionario.png"))); // NOI18N
         menu_funcionario.setText("Cadastro de funcionário");
         menu_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -111,6 +123,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_funcionario);
 
+        menu_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         menu_animal.setText("Cadastro de animal");
         menu_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -121,6 +134,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_animal);
 
+        menu_estoque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/estoque.png"))); // NOI18N
         menu_estoque.setText("Controle de estoque");
         menu_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -136,7 +150,9 @@ public class Principal extends javax.swing.JFrame {
         menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/help.png"))); // NOI18N
         menu_ajuda.setText("Ajuda");
         menu_ajuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_ajuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        menu_sobre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ajuda.png"))); // NOI18N
         menu_sobre.setText("Sobre");
         menu_sobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -151,8 +167,12 @@ public class Principal extends javax.swing.JFrame {
 
         menu_tema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/tema.png"))); // NOI18N
         menu_tema.setText("Tema");
+        menu_tema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_tema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
+        menu_dark.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_dark.setText("Tema Dark");
+        menu_dark.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_dark.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_darkActionPerformed(evt);
@@ -160,7 +180,9 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_tema.add(menu_dark);
 
+        menu_classico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_classico.setText("Tema Clássico");
+        menu_classico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_classico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menu_classicoActionPerformed(evt);
@@ -173,6 +195,7 @@ public class Principal extends javax.swing.JFrame {
         menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
         menu_sair.setText("Sair");
         menu_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_sair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         menu_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menu_sairMouseClicked(evt);
@@ -197,42 +220,28 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
-        try {
-            Log.escrever("!Abriu a janela Cliente");
-        } catch (IOException ex) {
-        }
+        Log("!Abriu a janela Cliente");
         Janela(c_cliente);
     }//GEN-LAST:event_menu_clienteActionPerformed
 
     private void menu_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_funcionarioActionPerformed
-        try {
-            Log.escrever("!Abriu a janela Funcionário");
-        } catch (IOException ex) {
-        }
+        Log("!Abriu a janela Funcionário");
         Janela(funcionario);
     }//GEN-LAST:event_menu_funcionarioActionPerformed
 
     private void menu_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_animalActionPerformed
-        try {
-            Log.escrever("!Abriu a janela Animal");
-        } catch (IOException ex) {
-        }
+        Log("!Abriu a janela Animal");
+
         Janela(animal);
     }//GEN-LAST:event_menu_animalActionPerformed
 
     private void menu_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_estoqueActionPerformed
-        try {
-            Log.escrever("!Abriu a janela Controle de Estoque");
-        } catch (IOException ex) {
-        }
+        Log("!Abriu a janela Controle de Estoque");
         Janela(controle);
     }//GEN-LAST:event_menu_estoqueActionPerformed
 
     private void menu_sobreMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sobreMousePressed
-        try {
-            Log.escrever("!Abriu a janela Ajuda");
-        } catch (IOException ex) {
-        }
+        Log("!Abriu a janela Ajuda");
         Janela(ajuda);
 
     }//GEN-LAST:event_menu_sobreMousePressed
@@ -240,20 +249,11 @@ public class Principal extends javax.swing.JFrame {
     private void menu_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sairMouseClicked
 
         int opcao = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 2);
-
         if (opcao == 0) {
-            try {
-                Log.escrever("!Saiu");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Saiu");
             System.exit(0);
         } else {
-            try {
-                Log.escrever("!Cancelou sair");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Cancelou sair");
         }
     }//GEN-LAST:event_menu_sairMouseClicked
 
@@ -262,7 +262,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_darkActionPerformed
 
     private void menu_classicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_classicoActionPerformed
-         desktopPane_principal.setBackground(classic);
+        desktopPane_principal.setBackground(classic);
     }//GEN-LAST:event_menu_classicoActionPerformed
 
     public static void main(String args[]) {
@@ -276,16 +276,24 @@ public class Principal extends javax.swing.JFrame {
                 if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -298,7 +306,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane_principal;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel label_patinhas;
     private javax.swing.JMenu menu_ajuda;
     private javax.swing.JMenuItem menu_animal;
     private javax.swing.JMenuBar menu_bar;

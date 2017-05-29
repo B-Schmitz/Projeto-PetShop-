@@ -37,9 +37,7 @@ public class ControleTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-
         return produtos.size();
-
     }
 
     @Override
@@ -117,11 +115,8 @@ public class ControleTableModel extends AbstractTableModel {
         for (int i = 0; i < produtos.size(); i++) {
 
             if (produtos.get(i).getNome_Produto().equals(produto.getNome_Produto())) {
-
                 produtos.get(i).setQuantEstoque(soma);
-
             }
-
         }
     }
 }

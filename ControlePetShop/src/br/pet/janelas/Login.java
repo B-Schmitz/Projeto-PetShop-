@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
 import br.pet.log.Log;
 import br.pet.excecoes.LogExceptions;
 import java.awt.HeadlessException;
-import javax.swing.event.AncestorListener;
 
 public class Login extends javax.swing.JFrame {
 
@@ -31,15 +30,14 @@ public class Login extends javax.swing.JFrame {
             ler();
             field_usuario.setText(linha);
         } catch (IOException ex) {
+            execao.exception(ex);
         }
         user = linha;
         log.setUser(user);
 
-        icone = new ImageIcon("src/br/pet/icones/bigdog.png");
-
         // Configurações da Janela
         this.setResizable(false);
-        this.setTitle("Login");
+        icone = new ImageIcon("src/br/pet/icones/bigdog.png");
         this.setIconImage(icone.getImage());
         this.setLocationRelativeTo(null);
 
@@ -47,6 +45,14 @@ public class Login extends javax.swing.JFrame {
         botao_cancelar.addActionListener(login);
         botao_alterar_senha.addActionListener(login);
 
+    }
+
+    public void Log(String msg) {
+        try {
+            Log.escrever(msg);
+        } catch (IOException ex) {
+            execao.exception(ex);
+        }
     }
 
     public static void escrever(String user) throws IOException {
@@ -82,12 +88,7 @@ public class Login extends javax.swing.JFrame {
         senha_nova = new String(field_senha.getPassword());
         if (senha_nova.equals(senha_atual)) {
             log.setUser(user);
-
-            try {
-                Log.escrever("!Entrou");
-            } catch (IOException ex) {
-                execao.exception(ex);
-            }
+            Log("!Entrou");
             p = new Principal();
             p.setVisible(true);
             dispose();
@@ -96,9 +97,9 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         }
     }
-    
-    public void AlterarSenha(){
-        
+
+    public void AlterarSenha() {
+
         password.setText(null);
         password2.setText(null);
 
@@ -118,11 +119,8 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Alteração não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 } else {
                     JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
-                    try {
-                        Log.escrever("!Alterou a senha");
-                    } catch (IOException ex) {
-                        execao.exception(ex);
-                    }
+
+                        Log("!Alterou a senha");
                 }
 
             } else {
@@ -206,9 +204,9 @@ public class Login extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
+        setTitle("Tela de Login");
 
-        Jpanel.setBackground(new java.awt.Color(0, 51, 102));
+        Jpanel.setBackground(new java.awt.Color(18, 50, 115));
 
         field_usuario.setToolTipText("Informe seu nome de usúario");
 
@@ -232,7 +230,7 @@ public class Login extends javax.swing.JFrame {
         field_senha.setText("admin");
         field_senha.setToolTipText("Informe sua senha");
 
-        label_logo.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        label_logo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         label_logo.setForeground(new java.awt.Color(255, 204, 0));
         label_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/bigdog.png"))); // NOI18N
         label_logo.setText("PetControl");
@@ -253,24 +251,25 @@ public class Login extends javax.swing.JFrame {
         JpanelLayout.setHorizontalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JpanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpanelLayout.createSequentialGroup()
-                        .addComponent(label_senha)
-                        .addGap(168, 168, 168)
-                        .addComponent(botao_alterar_senha))
-                    .addComponent(label_user)
-                    .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JpanelLayout.createSequentialGroup()
-                            .addComponent(botao_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(botao_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(field_senha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(label_user)
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addComponent(botao_entrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(botao_cancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE))
+                            .addComponent(field_senha)
+                            .addGroup(JpanelLayout.createSequentialGroup()
+                                .addComponent(label_senha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botao_alterar_senha))
+                            .addComponent(field_usuario)))
                     .addGroup(JpanelLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+                        .addGap(77, 77, 77)
                         .addComponent(label_logo)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,16 +277,14 @@ public class Login extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addComponent(label_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_user)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(JpanelLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(label_senha))
-                    .addGroup(JpanelLayout.createSequentialGroup()
+                        .addComponent(label_user)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botao_alterar_senha)))
+                        .addComponent(field_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botao_alterar_senha))
+                    .addComponent(label_senha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(field_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

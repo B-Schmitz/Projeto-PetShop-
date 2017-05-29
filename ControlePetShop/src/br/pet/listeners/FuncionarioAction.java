@@ -14,31 +14,29 @@ public class FuncionarioAction implements ActionListener {
 
     private final Funcionarios funcionario;
     private FuncionarioGetSet fun;
-    private LogExceptions execao = new LogExceptions();
+    private final LogExceptions execao = new LogExceptions();
+
     public FuncionarioAction(Funcionarios funcionario) {
 
         this.funcionario = funcionario;
     }
 
+    public void Log(String msg) {
+        try {
+            Log.escrever(msg);
+        } catch (IOException ex) {
+            execao.exception(ex);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
-            try {
-                Log.escrever("!Clicou em 'Limpar'");
-            } catch (IOException ex) {
-                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                execao.exception(ex);
-            }
+            Log("!Clicou em 'Limpar'");
             if (funcionario.Verifica()) {
                 fun = funcionario.getfuncio();
                 System.out.println(fun.toString());
-                try {
-                Log.escrever("!Cadastrou um novo funcionario'");
-            } catch (IOException ex) {
-                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                execao.exception(ex);
-                
-            }
+                Log("!Cadastrou um novo funcionario'");
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
@@ -46,15 +44,8 @@ public class FuncionarioAction implements ActionListener {
         }
 
         if (e.getActionCommand().equals("Limpar")) {
-            try {
-                Log.escrever("!Clicou em 'Limpar'");
-            } catch (IOException ex) {
-                //Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                execao.exception(ex);
-            }
-
+            Log("!Clicou em 'Limpar'");
             funcionario.limpar();
-
         }
     }
 }
