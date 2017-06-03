@@ -84,7 +84,7 @@ public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
 
     @Override
     public String toString() {
-        return "Nome do Produto = " + Nome_Produto + "\nId do produto = " + getId_produto() + "\nQuantidade = " + getQantAdd() + "\nQuantidade no estoque = " + getQuantEstoque() + "\nData = " + Data + "\nFornecedor = " + fornecedor;
+        return "Nome do wProduto = " + Nome_Produto + "\nId do produto = " + getId_produto() + "\nQuantidade = " + getQantAdd() + "\nQuantidade no estoque = " + getQuantEstoque() + "\nData = " + Data + "\nFornecedor = " + fornecedor;
     }
 
     @Override

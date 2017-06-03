@@ -93,6 +93,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         } else {
+              Log("!Login falhou, senha incorreta");
             field_senha.setText("");
             JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         }
@@ -206,7 +207,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Login");
 
-        Jpanel.setBackground(new java.awt.Color(18, 50, 115));
+        Jpanel.setBackground(new java.awt.Color(82, 63, 33));
 
         field_usuario.setToolTipText("Informe seu nome de usúario");
 

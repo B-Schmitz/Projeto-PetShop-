@@ -20,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
     private final ImageIcon icone;
     private Dimension d;
     private final Color classic = new Color(204, 204, 204);
-    private final Color dark = new Color(18, 50, 115);
+    private final Color dark = new Color(82,63,33);
 
     public Principal() {
         initComponents();
@@ -89,7 +89,7 @@ public class Principal extends javax.swing.JFrame {
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 553, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 554, Short.MAX_VALUE)
         );
 
         menu_bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -99,9 +99,9 @@ public class Principal extends javax.swing.JFrame {
         menu_cadastros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cadastro.png"))); // NOI18N
         menu_cadastros.setText("Cadastro");
         menu_cadastros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menu_cadastros.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_cadastros.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
 
-        menu_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_cliente.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/cliente.png"))); // NOI18N
         menu_cliente.setText("Cadastro de cliente");
         menu_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -112,7 +112,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_cliente);
 
-        menu_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_funcionario.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/funcionario.png"))); // NOI18N
         menu_funcionario.setText("Cadastro de funcionário");
         menu_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -123,7 +123,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_funcionario);
 
-        menu_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_animal.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/dog.png"))); // NOI18N
         menu_animal.setText("Cadastro de animal");
         menu_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,7 +134,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_cadastros.add(menu_animal);
 
-        menu_estoque.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_estoque.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/estoque.png"))); // NOI18N
         menu_estoque.setText("Controle de estoque");
         menu_estoque.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -150,9 +150,9 @@ public class Principal extends javax.swing.JFrame {
         menu_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/help.png"))); // NOI18N
         menu_ajuda.setText("Ajuda");
         menu_ajuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menu_ajuda.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_ajuda.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
 
-        menu_sobre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_sobre.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ajuda.png"))); // NOI18N
         menu_sobre.setText("Sobre");
         menu_sobre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,9 +168,9 @@ public class Principal extends javax.swing.JFrame {
         menu_tema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/tema.png"))); // NOI18N
         menu_tema.setText("Tema");
         menu_tema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menu_tema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_tema.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
 
-        menu_dark.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_dark.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_dark.setText("Tema Dark");
         menu_dark.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_dark.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +180,7 @@ public class Principal extends javax.swing.JFrame {
         });
         menu_tema.add(menu_dark);
 
-        menu_classico.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_classico.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_classico.setText("Tema Clássico");
         menu_classico.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_classico.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +195,7 @@ public class Principal extends javax.swing.JFrame {
         menu_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sair.png"))); // NOI18N
         menu_sair.setText("Sair");
         menu_sair.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menu_sair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        menu_sair.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_sair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menu_sairMouseClicked(evt);
@@ -247,7 +247,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_sobreMousePressed
 
     private void menu_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menu_sairMouseClicked
-
+        Log("!Clicou em sair");
         int opcao = JOptionPane.showConfirmDialog(null, "Deseja mesmo sair?", "Sair", 2);
         if (opcao == 0) {
             Log("!Saiu");
@@ -259,10 +259,12 @@ public class Principal extends javax.swing.JFrame {
 
     private void menu_darkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_darkActionPerformed
         desktopPane_principal.setBackground(dark);
+        Log("!Alterou tema para dark");
     }//GEN-LAST:event_menu_darkActionPerformed
 
     private void menu_classicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_classicoActionPerformed
         desktopPane_principal.setBackground(classic);
+        Log("!Alterou tema para clássico");
     }//GEN-LAST:event_menu_classicoActionPerformed
 
     public static void main(String args[]) {

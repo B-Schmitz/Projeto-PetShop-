@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 import br.pet.excecoes.LogExceptions;
 
 public class Ajuda extends javax.swing.JInternalFrame {
-            
-  private final LogExceptions execao = new LogExceptions();
+
+    private final LogExceptions execao = new LogExceptions();
 
     public Ajuda() {
         initComponents();
@@ -37,11 +37,12 @@ public class Ajuda extends javax.swing.JInternalFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Ajuda");
 
-        Jpanel.setBackground(new java.awt.Color(18, 50, 115));
+        Jpanel.setBackground(new java.awt.Color(82, 63, 33));
 
         label_duarte.setForeground(new java.awt.Color(255, 255, 255));
         label_duarte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/ironman.png"))); // NOI18N
@@ -51,7 +52,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         label_michael.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/batman.png"))); // NOI18N
         label_michael.setText("Michael");
 
-        label_icones.setForeground(new java.awt.Color(102, 204, 255));
+        label_icones.setForeground(new java.awt.Color(0, 204, 51));
         label_icones.setText("www.fatcow.com/free-icons");
         label_icones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         label_icones.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,6 +100,9 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Versão: 2.0");
+
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
         Jpanel.setLayout(JpanelLayout);
         JpanelLayout.setHorizontalGroup(
@@ -116,33 +120,33 @@ public class Ajuda extends javax.swing.JInternalFrame {
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JpanelLayout.createSequentialGroup()
                         .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JpanelLayout.createSequentialGroup()
-                                .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_estoque)
-                                    .addComponent(label_animais)
-                                    .addComponent(label_funcionarios)
-                                    .addComponent(label_clientes))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(150, 150, 150))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                        .addComponent(label_icones)
-                        .addGap(28, 28, 28)))
+                            .addComponent(label_estoque)
+                            .addComponent(label_animais)
+                            .addComponent(label_funcionarios)
+                            .addComponent(label_clientes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(150, 150, 150)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                        .addComponent(label_programadores)
-                        .addGap(20, 20, 20))
                     .addGroup(JpanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_michael)
                             .addComponent(label_duarte)
-                            .addComponent(label_bernardo)))))
+                            .addComponent(label_bernardo)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(label_programadores))
+                        .addGap(20, 20, 20))))
+            .addGroup(JpanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_icones))
         );
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +155,9 @@ public class Ajuda extends javax.swing.JInternalFrame {
                 .addComponent(label_logo)
                 .addGap(6, 6, 6)
                 .addComponent(label_descrição)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(2, 2, 2)
                 .addComponent(label_programadores1)
                 .addGap(6, 6, 6)
                 .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,11 +193,9 @@ public class Ajuda extends javax.swing.JInternalFrame {
                             .addGroup(JpanelLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(label_bernardo))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(JpanelLayout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addComponent(label_icones)))))
-                .addContainerGap())
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(label_icones))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,7 +216,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         try {
             java.awt.Desktop.getDesktop().browse(new java.net.URI("http://www.fatcow.com/free-icons"));
         } catch (URISyntaxException | IOException ex) {
-             execao.exception(ex);
+            execao.exception(ex);
         }
 
     }//GEN-LAST:event_label_iconesMouseClicked
@@ -220,6 +224,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
