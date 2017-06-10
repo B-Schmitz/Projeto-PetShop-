@@ -93,7 +93,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         } else {
-              Log("!Login falhou, senha incorreta");
+            Log("!Login falhou, senha incorreta");
             field_senha.setText("");
             JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         }
@@ -107,13 +107,13 @@ public class Login extends javax.swing.JFrame {
         try {
             password2.setEchoChar('*');
             JOptionPane.showMessageDialog(null, painel_senha2, "Alterar Senha", JOptionPane.PLAIN_MESSAGE);
-            senha_nova = password2.getText();
+            senha_nova = new String(password2.getPassword());
 
             if (senha_nova.equals(senha_atual)) {
 
                 password.setEchoChar('*');
                 JOptionPane.showMessageDialog(null, painel_senha, "Alterar Senha", JOptionPane.PLAIN_MESSAGE);
-                senha_atual = password.getText();
+                senha_atual = new String(password.getPassword());
 
                 if (senha_atual.trim().isEmpty()) {
                     senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
@@ -121,7 +121,7 @@ public class Login extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
 
-                        Log("!Alterou a senha");
+                    Log("!Alterou a senha");
                 }
 
             } else {
