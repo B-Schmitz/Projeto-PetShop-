@@ -1,10 +1,12 @@
 package br.pet.janelas;
 
+import br.pet.dao.ControleEstoqueDao;
 import br.pet.excecoes.Letras;
 import br.pet.excecoes.Numeros;
 import br.pet.getset.EstoqueGetSet;
 import br.pet.listeners.ControleAction;
 import br.pet.excecoes.LogExceptions;
+import br.pet.tablemodel.ControleTableModel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -18,6 +20,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private String DataAtual;
     private String Preco;
     private LogExceptions execao = new LogExceptions();
+    private ControleTableModel model = new ControleTableModel();
 
     private Double Big_Preco;
     private Date hoje;
@@ -36,6 +39,8 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_remover.addActionListener(control);
         botao_editar.addActionListener(control);
         botao_limpar_estoque.addActionListener(control);
+        
+        readJTable();
 
     }
 
@@ -149,11 +154,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_editar.setText("Editar");
         botao_editar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botao_editar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_editarActionPerformed(evt);
-            }
-        });
 
         botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar_tabela.PNG"))); // NOI18N
@@ -261,10 +261,6 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botao_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_editarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_editarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
@@ -287,6 +283,18 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
     private javax.swing.JTable tabela_mostra_info;
     // End of variables declaration//GEN-END:variables
 
+     public void readJTable() {
+        
+         ControleEstoqueDao dao = new ControleEstoqueDao();
+          
+        for (EstoqueGetSet es : dao.read()) {
+
+           model.addLinha(es);
+
+        }
+
+        tabela_mostra_info.setModel(model);
+    }
     public EstoqueGetSet getestoq() {
         estoque = new EstoqueGetSet();
 
@@ -295,7 +303,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         data = new SimpleDateFormat("dd/MM/yyyy");
         DataAtual = data.format(hoje);
 
-        Preco = field_preco.getText().replaceAll("[.]", "");
+        Preco = field_preco.getText().replaceAll("[.]", ",");
         Preco = Preco.replaceAll("[,]", ".");
         if (field_preco.getText().trim().isEmpty() || field_quantidade.getText().trim().isEmpty() || field_nome_produto.getText().trim().isEmpty()
                 || field_Idproduto.getText().trim().isEmpty() || field_fornecedor.getText().trim().isEmpty()) {
@@ -315,7 +323,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
                 return estoque;
             }
             catch(Exception ex){
-                
+              execao.exception(ex);  
             }
             estoque.setPreco(Big_Preco);
 
@@ -334,6 +342,9 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         return tabela_mostra_info;
 
     }
+    public ControleTableModel getmodel(){
+        return model;
+    }
 
     public void limpa() {
         field_fornecedor.setText(null);
@@ -349,7 +360,7 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         field_Idproduto.setText(estoq.getId_produto() + "");
         field_fornecedor.setText(estoq.getFornecedor());
         field_nome_produto.setText(estoq.getNome_Produto());
-        field_preco.setText(estoq.getPrecoStr());
+        field_preco.setText(estoq.getPreco().toString());
         field_quantidade.setText(estoq.getQantAdd() + "");
 
     }

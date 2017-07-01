@@ -394,9 +394,6 @@
               <Color id="Cursor em Forma de M&#xe3;o"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botao_editarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botao_limpar_estoque">
           <Properties>

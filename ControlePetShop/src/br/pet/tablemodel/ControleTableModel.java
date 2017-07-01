@@ -2,9 +2,11 @@ package br.pet.tablemodel;
 
 import br.pet.dao.ControleEstoqueDao;
 import br.pet.getset.EstoqueGetSet;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
 public class ControleTableModel extends AbstractTableModel {
@@ -13,7 +15,7 @@ public class ControleTableModel extends AbstractTableModel {
     private final String[] colunas = {"IdProduto", "Nome", "Quantidade", "Preço",
         "Fornecedor", "Data da compra", "Qtd Estoque"};
     private long soma;
-    
+
     private ControleEstoqueDao dao = new ControleEstoqueDao();
 
     @Override
@@ -63,7 +65,7 @@ public class ControleTableModel extends AbstractTableModel {
                 return produtos.get(linha).getQantAdd();
 
             case 3:
-                return produtos.get(linha).getPrecoStr();
+                return produtos.get(linha).getPreco();
 
             case 4:
                 return produtos.get(linha).getFornecedor();
@@ -81,21 +83,29 @@ public class ControleTableModel extends AbstractTableModel {
     }
 
     public void addLinha(EstoqueGetSet produto) {
+        
+        for(int i = 0; i < produtos.size(); i++){
+            if(produtos.get(i).getId_produto() == produto.getId_produto()){
+                JOptionPane.showMessageDialog(null, "Ja existe um produto com esse id");
+                return;
+            }
+        }
+        
+            somaEstoque(produto);
+            this.produtos.add(produto);
+            //Essa parte esta aqui pois o ultimo produto adicionado ainda nao foi somado
+            //no método somaEstoque, foi feito assim para que se possa chamar os mesmos
+            //métodos tando para adicionar um produto quanto para remover
+            //por isso só esse método é que possui essa linha a baixo
+            soma += produto.getQantAdd();
 
-        somaEstoque(produto);
-        this.produtos.add(produto);
-        //Essa parte esta aqui pois o ultimo produto adicionado ainda nao foi somado
-        //no método somaEstoque, foi feito assim para que se possa chamar os mesmos
-        //métodos tando para adicionar um produto quanto para remover
-        //por isso só esse método é que possui essa linha a baixo
-        soma += produto.getQantAdd();
+            atualizaEstoque(produto);
+           
+            soma = 0;
 
-        atualizaEstoque(produto);
-
-        soma = 0;
-
-        Collections.sort(produtos);
-        this.fireTableDataChanged();
+            Collections.sort(produtos);
+            this.fireTableDataChanged();
+        
     }
 
     // Esse método é responsavel por atualizar os produtos em estoque

@@ -9,7 +9,6 @@ import br.pet.janelas.ControleEstoque;
 import br.pet.log.Log;
 import br.pet.tablemodel.ControleTableModel;
 import java.io.IOException;
-import java.text.ParseException;
 import javax.swing.JTable;
 
 public class ControleAction implements ActionListener {
@@ -20,8 +19,7 @@ public class ControleAction implements ActionListener {
 
     private EstoqueGetSet estoq;
     private JTable tabela;
-
-    private final ControleTableModel model = new ControleTableModel();
+    private ControleTableModel model;
 
     public ControleAction(ControleEstoque controle) {
         this.controle = controle;
@@ -34,6 +32,12 @@ public class ControleAction implements ActionListener {
         } catch (IOException ex) {
             execao.exception(ex);
         }
+    }
+
+    public void pegaTabela() {
+        tabela = controle.getTabela();
+        model = controle.getmodel();
+        tabela.setModel(model);
     }
 
     @Override
@@ -52,16 +56,14 @@ public class ControleAction implements ActionListener {
             else {
                 System.out.println(estoq.toString());
 
-                tabela = controle.getTabela();
-                tabela.setModel(model);
-
+                pegaTabela();
                 model.addLinha(estoq);
                 try {
                     dao.Insert(estoq);
-                } catch (ParseException ex) {
-                  //  Logger.getLogger(ControleAction.class.getName()).log(Level.SEVERE, null, ex);
+                Log("!Cadastrado um novo produto");
+                } catch (Exception ex) {
+                    execao.exception(ex);
                 }
-                    Log("!Cadastrado um novo produto");
 
             }
 
@@ -76,15 +78,13 @@ public class ControleAction implements ActionListener {
         if (e.getActionCommand().equals("Remover")) {
 
             Log("!Clicou em 'Remover'");
-
-            tabela = controle.getTabela();
+            pegaTabela();
             if (tabela.getSelectedRow() == -1) {
                 return;
 
             } else {
 
                 int i = tabela.getSelectedRow();
-                
 
                 model.remove(i);
                 Log("!Produto removido");
@@ -93,10 +93,9 @@ public class ControleAction implements ActionListener {
 
         if (e.getActionCommand().equals("Editar")) {
             Log("!Clicou em 'Editar'");
-            tabela = controle.getTabela();
-
+            pegaTabela();
             if (tabela.getSelectedRow() == -1) {
-                //???  return;
+                
 
             } else {
                 estoq = model.getproduto(tabela.getSelectedRow());
