@@ -1,5 +1,6 @@
 package br.pet.listeners;
 
+import br.pet.dao.AnimalDao;
 import br.pet.getset.AnimalGetSet;
 import br.pet.janelas.Animal;
 import br.pet.log.Log;
@@ -15,6 +16,7 @@ public class AnimaisAction implements ActionListener {
     private final Animal animais;
     private AnimalGetSet ani;
     private final LogExceptions execao = new LogExceptions();
+     private final AnimalDao dao = new AnimalDao();
 
     public AnimaisAction(Animal animais) {
 
@@ -47,6 +49,14 @@ public class AnimaisAction implements ActionListener {
         if (e.getActionCommand().equals("Limpar")) {
                 Log("!Clicou em 'Limpar'");
             animais.limpar();
+
+        }
+        
+          if (e.getActionCommand().equals("Deletar")) {
+              ani = animais.getAnimais();
+              //animais.Deletar();
+              //falta log
+          
 
         }
 

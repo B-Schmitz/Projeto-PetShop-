@@ -12,7 +12,7 @@ public class AnimalGetSet {
     private int Altura;
     private int Peso;
 
-    public String getProprietario() {
+    public  String getProprietario() {
         return Proprietario;
     }
 

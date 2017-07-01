@@ -47,5 +47,11 @@ public class FuncionarioAction implements ActionListener {
             Log("!Clicou em 'Limpar'");
             funcionario.limpar();
         }
+        
+        if (e.getActionCommand().equals("Deletar")) {
+            //falta log
+            fun = funcionario.getfuncio();
+            funcionario.Deletar();
+        }
     }
 }
