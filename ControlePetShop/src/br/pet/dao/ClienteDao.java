@@ -1,14 +1,19 @@
 package br.pet.dao;
 
+import br.pet.excecoes.LogExceptions;
 import br.pet.getset.ClienteGetSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteDao {
-    
-    
-    public void Insert(ClienteGetSet c)  {
+
+    private final LogExceptions execao = new LogExceptions();
+
+    public void Insert(ClienteGetSet c) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -26,10 +31,10 @@ public class ClienteDao {
 
             conn.commit();
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
 
-            if(conn != null){
+            if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
@@ -38,14 +43,14 @@ public class ClienteDao {
             }
 
         } finally {
-            if( ps != null) {
+            if (ps != null) {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
@@ -54,15 +59,15 @@ public class ClienteDao {
             }
         }
     }
-        
-        public void Update(ClienteGetSet c){
-              Connection conn = null;
+
+    public void Update(ClienteGetSet c) {
+        Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
             String sql = "update cliente set endereco = ?, email= ?,idade = ?,nome = ?, sexo = ?, telefone = ?, where cpf = ?";
             ps = conn.prepareStatement(sql);
-           
+
             ps.setString(1, c.getEndereco());
             ps.setString(2, c.getEmail());
             ps.setInt(3, c.getIdade());
@@ -73,10 +78,10 @@ public class ClienteDao {
             ps.execute();
 
             conn.commit();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
 
-            if(conn != null){
+            if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
@@ -84,16 +89,15 @@ public class ClienteDao {
                 }
             }
 
-
         } finally {
-            if( ps != null) {
+            if (ps != null) {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
@@ -101,10 +105,9 @@ public class ClienteDao {
                 }
             }
         }
-        }
-        
-        
-         public void Delete(ClienteGetSet c) {
+    }
+
+    public void Delete(ClienteGetSet c) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -115,10 +118,10 @@ public class ClienteDao {
             ps.execute();
 
             conn.commit();
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
 
-            if(conn != null){
+            if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
@@ -126,16 +129,15 @@ public class ClienteDao {
                 }
             }
 
-
         } finally {
-            if( ps != null) {
+            if (ps != null) {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
-            if(conn != null) {
+            if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
@@ -144,7 +146,60 @@ public class ClienteDao {
             }
         }
     }
-        
-    
 
+    public void Read(ClienteGetSet c) {
+
+        ResultSet rs = null;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = Conexao.getConnection();
+            String sql = "select * from cliente where cpf = ?";
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            ps.setLong(1, c.getCPF());
+            ps.execute();
+
+                c.setCPF(rs.getLong("cpf"));
+                c.setNome(rs.getString("nome"));
+                c.setIdade(rs.getInt("idade"));
+                c.setSexo(rs.getString("sexo"));
+                c.setTelefone(rs.getLong("telefone"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setEmail(rs.getString("email"));
+
+            conn.commit();
+        } catch (SQLException e) {
+            // System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException ex) {
+                    // System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                }
+            }
+
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERRO: " + ex.getMessage());
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    // System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                }
+            }
+        }
+    }
 }

@@ -54,6 +54,12 @@ public class CadastroClienteAction implements ActionListener {
              cliente.Deletar();
              // faltou log
         }
+         
+          if (e.getActionCommand().equals("Buscar")) {
+             client = cliente.getcliente();
+             cliente.Buscar();
+             // faltou log
+        }
         
         
         if (e.getActionCommand().equals("Limpar")) {
