@@ -1,5 +1,6 @@
 package br.pet.janelas;
 
+import br.pet.dao.ClienteDao;
 import br.pet.excecoes.Letras;
 import br.pet.excecoes.LimitandoCamposNumericos;
 import br.pet.getset.ClienteGetSet;
@@ -8,10 +9,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
 import br.pet.listeners.CadastroClienteAction;
 import br.pet.excecoes.LogExceptions;
+import javax.swing.JOptionPane;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
     private final CadastroClienteAction cliente = new CadastroClienteAction(this);
+    private final ClienteDao dao = new ClienteDao();
     private String cpf;
     private String tel;
     private ClienteGetSet client;
@@ -22,6 +25,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/br/pet/icones/cliente.png"));
         botao_cadastrar_cliente.addActionListener(cliente);
+        botao_deletar_cliente.addActionListener(cliente);
         botao_limpar_cliente.addActionListener(cliente);
         field_idade_cliente.setDocument(new LimitandoCamposNumericos(3));
 
@@ -49,6 +53,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         field_email_cliente = new javax.swing.JTextField();
         field_idade_cliente = new javax.swing.JTextField();
         botao_limpar_cliente = new javax.swing.JButton();
+        botao_deletar_cliente = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de cliente");
@@ -92,7 +97,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_cadastrar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_cadastrar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_cliente.setText("Cadastrar");
-        botao_cadastrar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_cadastrar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         try {
@@ -108,8 +113,14 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_limpar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_limpar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_cliente.setText("Limpar");
-        botao_limpar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_limpar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botao_deletar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_deletar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/remove.png"))); // NOI18N
+        botao_deletar_cliente.setText("Deletar");
+        botao_deletar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_deletar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,11 +167,13 @@ public class Clientes extends javax.swing.JInternalFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(field_endereco_cliente)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
+                        .addContainerGap()
                         .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,10 +205,11 @@ public class Clientes extends javax.swing.JInternalFrame {
                     .addComponent(label_endereco_cliente)
                     .addComponent(field_endereco_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,6 +218,7 @@ public class Clientes extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_cliente;
+    private javax.swing.JButton botao_deletar_cliente;
     private javax.swing.JButton botao_limpar_cliente;
     private javax.swing.JComboBox<String> comboBox_sexo_cliente;
     private javax.swing.JFormattedTextField field_CPF_cliente;
@@ -264,6 +279,12 @@ public class Clientes extends javax.swing.JInternalFrame {
                 || field_email_cliente.getText().trim().isEmpty()
                 || field_telefone_cliente.getText().replaceAll("[()]", "").trim().isEmpty()
                 || field_endereco_cliente.getText().trim().isEmpty());
+    }
+
+    public void Deletar() {
+        long result = Long.valueOf(JOptionPane.showInputDialog(null, "Informe o CPF:"));
+        client.setCPF(result);
+        dao.Delete(client);
     }
 
 }

@@ -1,5 +1,6 @@
 package br.pet.janelas;
 
+import br.pet.dao.FuncionarioDao;
 import br.pet.excecoes.Letras;
 import br.pet.excecoes.LimitandoCamposNumericos;
 import br.pet.getset.FuncionarioGetSet;
@@ -7,19 +8,22 @@ import br.pet.listeners.FuncionarioAction;
 import br.pet.excecoes.LogExceptions;
 import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 
 public class Funcionarios extends javax.swing.JInternalFrame {
 
     private final FuncionarioAction funcionario = new FuncionarioAction(this);
+    private final FuncionarioDao dao = new FuncionarioDao();
     private FuncionarioGetSet fun;
     private String cpf, tel;
-    private LogExceptions execao = new LogExceptions();
+    private final LogExceptions execao = new LogExceptions();
 
     public Funcionarios() {
         initComponents();
         this.setFrameIcon(new ImageIcon("src/br/pet/icones/funcionario.png"));
         botao_cadastrar_funcionario.addActionListener(funcionario);
         botao_limpar_funcionario.addActionListener(funcionario);
+        botao_deletar_funcionario.addActionListener(funcionario);
         field_idade_funcionario.setDocument(new LimitandoCamposNumericos(3));
         field_pis.setDocument(new LimitandoCamposNumericos(11));
 
@@ -51,6 +55,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         label_email_funcionario = new javax.swing.JLabel();
         field_email_funcionario = new javax.swing.JTextField();
         botao_limpar_funcionario = new javax.swing.JButton();
+        botao_deletar_funcionario = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de funcionário");
@@ -91,7 +96,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_cadastrar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_cadastrar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_funcionario.setText("Cadastrar");
-        botao_cadastrar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_cadastrar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         label_idade_funcionaro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -115,26 +120,21 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_limpar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_limpar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_funcionario.setText("Limpar");
-        botao_limpar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_limpar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botao_deletar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_deletar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/remove.png"))); // NOI18N
+        botao_deletar_funcionario.setText("Deletar");
+        botao_deletar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_deletar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botao_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_cargo_funcionario)
-                            .addComponent(label_pis_funcionario)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(10, 10, 10)
@@ -171,7 +171,18 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                                             .addComponent(field_pis, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(field_endereco_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(field_email_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(field_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                            .addComponent(field_cargo, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botao_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao_deletar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label_cargo_funcionario)
+                            .addComponent(label_pis_funcionario))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -212,7 +223,8 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_cadastrar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botao_limpar_funcionario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_deletar_funcionario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -222,6 +234,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_funcionario;
+    private javax.swing.JButton botao_deletar_funcionario;
     private javax.swing.JButton botao_limpar_funcionario;
     private javax.swing.JComboBox<String> comboBox_sexo_funcionario;
     private javax.swing.JFormattedTextField field_CPF_funcionario;
@@ -294,6 +307,12 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 || field_endereco_funcionario.getText().trim().isEmpty()
                 || field_telefone_funcionario.getText().replaceAll("[()]", "").trim().isEmpty()
                 || field_email_funcionario.getText().trim().isEmpty());
+    }
+    
+    public void Deletar() {
+       long result = Long.valueOf(JOptionPane.showInputDialog(null, "Informe o CPF:"));
+        fun.setCPF(result);
+        dao.Delete(fun);
     }
 
 }

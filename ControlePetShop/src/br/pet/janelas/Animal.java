@@ -7,6 +7,7 @@ import br.pet.getset.AnimalGetSet;
 import br.pet.listeners.AnimaisAction;
 import br.pet.excecoes.LogExceptions;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class Animal extends javax.swing.JInternalFrame {
 
@@ -21,6 +22,7 @@ public class Animal extends javax.swing.JInternalFrame {
 
         botao_cadastrar_animais.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);
+        botao_deletar_animal.addActionListener(animais);
 
         field_altura.setDocument(new Numeros());
         field_idade_animal.setDocument(new Numeros());
@@ -57,6 +59,7 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_cadastrar_animais = new javax.swing.JButton();
         botao_limpar_animais = new javax.swing.JButton();
         field_idade_animal = new javax.swing.JTextField();
+        botao_deletar_animal = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de animal");
@@ -104,23 +107,29 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_cadastrar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_cadastrar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_animais.setText("Cadastrar");
-        botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_cadastrar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_limpar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_limpar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_animais.setText("Limpar");
-        botao_limpar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_limpar_animais.setBorder(new javax.swing.border.SoftBevelBorder(0));
         botao_limpar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botao_deletar_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_deletar_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/remove.png"))); // NOI18N
+        botao_deletar_animal.setText("Deletar");
+        botao_deletar_animal.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_deletar_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label_proprietario)
                             .addComponent(label_animal)
@@ -157,9 +166,11 @@ public class Animal extends javax.swing.JInternalFrame {
                                     .addComponent(field_cor, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                                     .addComponent(field_altura)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
+                        .addGap(10, 10, 10)
                         .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
+                        .addComponent(botao_deletar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -194,11 +205,12 @@ public class Animal extends javax.swing.JInternalFrame {
                     .addComponent(field_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_altura)
                     .addComponent(field_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_cadastrar_animais)
-                    .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_deletar_animal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,6 +219,7 @@ public class Animal extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_cadastrar_animais;
+    private javax.swing.JButton botao_deletar_animal;
     private javax.swing.JButton botao_limpar_animais;
     private javax.swing.JComboBox<String> comboBox_sexo_animal;
     private javax.swing.JComboBox<String> comboBox_tipo_animal;
@@ -272,5 +285,15 @@ public class Animal extends javax.swing.JInternalFrame {
                 || field_raca.getText().trim().isEmpty()
                 || field_peso.getText().isEmpty());
     }
+    
+    
+    /*
+        Não da para fazer com ID, pois não tem como setar ID, talvez criar um campo Código do animal resolve !
+    
+    public Deletar(){
+         long result = Long.valueOf(JOptionPane.showInputDialog(null, "Informe o ID:"));
+        dao.Delete(ani);
+        }
+*/
 
 }

@@ -49,6 +49,13 @@ public class CadastroClienteAction implements ActionListener {
             }
         }
 
+         if (e.getActionCommand().equals("Deletar")) {
+             client = cliente.getcliente();
+             cliente.Deletar();
+             // faltou log
+        }
+        
+        
         if (e.getActionCommand().equals("Limpar")) {
             cliente.limpar();
             Log("!Limpou os campos no cadastro de cliente");
