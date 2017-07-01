@@ -157,18 +157,18 @@ public class ClienteDao {
             conn = Conexao.getConnection();
             String sql = "select * from cliente where cpf = ?";
             ps = conn.prepareStatement(sql);
-            rs = ps.executeQuery();
-
             ps.setLong(1, c.getCPF());
             ps.execute();
+            rs = ps.executeQuery();
 
-                c.setCPF(rs.getLong("cpf"));
+                while(rs.next()){
+               c.setCPF(rs.getLong("cpf"));
                 c.setNome(rs.getString("nome"));
                 c.setIdade(rs.getInt("idade"));
                 c.setSexo(rs.getString("sexo"));
                 c.setTelefone(rs.getLong("telefone"));
                 c.setEndereco(rs.getString("endereco"));
-                c.setEmail(rs.getString("email"));
+                c.setEmail(rs.getString("email"));}
 
             conn.commit();
         } catch (SQLException e) {

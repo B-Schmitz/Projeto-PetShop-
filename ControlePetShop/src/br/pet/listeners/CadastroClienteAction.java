@@ -56,6 +56,7 @@ public class CadastroClienteAction implements ActionListener {
         }
          
           if (e.getActionCommand().equals("Buscar")) {
+             // Clientes c = new Clientes();
              client = cliente.getcliente();
              cliente.Buscar();
              // faltou log
