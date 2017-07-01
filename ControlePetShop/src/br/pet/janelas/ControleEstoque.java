@@ -149,6 +149,11 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
         botao_editar.setText("Editar");
         botao_editar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_editarActionPerformed(evt);
+            }
+        });
 
         botao_limpar_estoque.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         botao_limpar_estoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar_tabela.PNG"))); // NOI18N
@@ -255,6 +260,10 @@ public class ControleEstoque extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botao_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_editarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_editarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

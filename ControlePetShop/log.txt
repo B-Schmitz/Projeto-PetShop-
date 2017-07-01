@@ -476,3 +476,104 @@ Fri Jun 09 21:39:34 BRT 2017 : Michael !Entrou
 Fri Jun 09 21:39:36 BRT 2017 : Michael !Abriu a janela Cliente
 Fri Jun 09 21:39:43 BRT 2017 : Michael !Clicou em 'Cadastrar'
 Fri Jun 09 21:39:44 BRT 2017 : Michael !Cadastrou um novo cliente
+Fri Jun 30 20:38:24 BRT 2017 : Michael !Entrou
+Fri Jun 30 20:38:29 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 20:38:36 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 20:45:43 BRT 2017 : Michael !Entrou
+Fri Jun 30 20:45:46 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 20:45:53 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 20:45:53 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 20:46:52 BRT 2017 : Michael !Entrou
+Fri Jun 30 20:46:55 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 20:47:02 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 20:47:02 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 20:49:25 BRT 2017 : Michael !Entrou
+Fri Jun 30 20:49:27 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 20:49:33 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:00:02 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:00:04 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:00:10 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:00:10 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:01:04 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:01:06 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:01:11 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:01:11 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:15:47 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:15:50 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:15:55 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:16:34 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:16:36 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:16:41 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:16:52 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:16:56 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:16:58 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:17:06 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:19:43 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:19:45 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:19:50 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:20:03 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:20:06 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:20:11 BRT 2017 : Michael !Clicou em 'Remover'
+Fri Jun 30 21:20:12 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:20:50 BRT 2017 : Michael !Login cancelado
+Fri Jun 30 21:20:54 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:20:56 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:21:01 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:21:13 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:21:15 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:21:19 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:21:33 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:21:35 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:21:39 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:22:28 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:22:30 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:22:34 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:22:49 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:22:51 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:22:55 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:23:24 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:23:26 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:23:31 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:23:51 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:23:53 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:23:58 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:23:58 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:25:01 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:25:03 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:25:09 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:25:09 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:25:47 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:25:49 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:25:56 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:25:56 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:28:49 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:28:51 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:28:56 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:30:33 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:30:35 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:30:39 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:30:39 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:45:32 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:45:35 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:45:43 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:45:43 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:45:46 BRT 2017 : Michael !Clicou em 'Editar'
+Fri Jun 30 21:45:46 BRT 2017 : Michael !Produto foi para a edição'
+Fri Jun 30 21:46:29 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:46:31 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:46:38 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:46:38 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:47:02 BRT 2017 : Michael !Clicou em 'Remover'
+Fri Jun 30 21:47:02 BRT 2017 : Michael !Produto removido
+Fri Jun 30 21:47:18 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:47:18 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:47:54 BRT 2017 : Michael !Clicou em 'Editar'
+Fri Jun 30 21:47:54 BRT 2017 : Michael !Produto foi para a edição'
+Fri Jun 30 21:48:01 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:48:01 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:48:50 BRT 2017 : Michael !Entrou
+Fri Jun 30 21:48:52 BRT 2017 : Michael !Abriu a janela Controle de Estoque
+Fri Jun 30 21:48:59 BRT 2017 : Michael !Clicou em 'Adicionar'
+Fri Jun 30 21:48:59 BRT 2017 : Michael !Cadastrado um novo produto
+Fri Jun 30 21:49:11 BRT 2017 : Michael !Clicou em 'Remover'
+Fri Jun 30 21:49:11 BRT 2017 : Michael !Produto removido

@@ -2,6 +2,8 @@ package br.pet.getset;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
 
@@ -10,6 +12,15 @@ public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
     private long QantAdd;
     private long QuantEstoque;
     private String Data;
+    private Date dat ;
+
+    public Date getDat() {
+        return dat;
+    }
+
+    public void setDat(Date dat) {
+        this.dat = dat;
+    }
     private String fornecedor;
     private BigDecimal Preco;
     private String PrecoStr;
@@ -108,5 +119,7 @@ public class EstoqueGetSet implements Comparable<EstoqueGetSet> {
 
         return this.Nome_Produto.compareTo(estoque.Nome_Produto);
     }
+
+
 
 }

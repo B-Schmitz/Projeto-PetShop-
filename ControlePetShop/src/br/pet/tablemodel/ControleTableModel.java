@@ -1,5 +1,6 @@
 package br.pet.tablemodel;
 
+import br.pet.dao.ControleEstoqueDao;
 import br.pet.getset.EstoqueGetSet;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,6 +13,8 @@ public class ControleTableModel extends AbstractTableModel {
     private final String[] colunas = {"IdProduto", "Nome", "Quantidade", "Preço",
         "Fornecedor", "Data da compra", "Qtd Estoque"};
     private long soma;
+    
+    private ControleEstoqueDao dao = new ControleEstoqueDao();
 
     @Override
     public String getColumnName(int column) {
@@ -23,6 +26,7 @@ public class ControleTableModel extends AbstractTableModel {
         EstoqueGetSet produto;
 
         produto = produtos.get(linha);
+        dao.Delete(produto);
         produtos.remove(linha);
         somaEstoque(produto);
         atualizaEstoque(produto);

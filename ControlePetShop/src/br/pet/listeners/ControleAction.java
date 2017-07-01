@@ -1,5 +1,6 @@
 package br.pet.listeners;
 
+import br.pet.dao.ControleEstoqueDao;
 import br.pet.excecoes.LogExceptions;
 import br.pet.getset.EstoqueGetSet;
 import java.awt.event.ActionEvent;
@@ -8,12 +9,14 @@ import br.pet.janelas.ControleEstoque;
 import br.pet.log.Log;
 import br.pet.tablemodel.ControleTableModel;
 import java.io.IOException;
+import java.text.ParseException;
 import javax.swing.JTable;
 
 public class ControleAction implements ActionListener {
 
     private final ControleEstoque controle;
     private final LogExceptions execao = new LogExceptions();
+    private ControleEstoqueDao dao = new ControleEstoqueDao();
 
     private EstoqueGetSet estoq;
     private JTable tabela;
@@ -53,6 +56,11 @@ public class ControleAction implements ActionListener {
                 tabela.setModel(model);
 
                 model.addLinha(estoq);
+                try {
+                    dao.Insert(estoq);
+                } catch (ParseException ex) {
+                  //  Logger.getLogger(ControleAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
                     Log("!Cadastrado um novo produto");
 
             }
@@ -76,6 +84,7 @@ public class ControleAction implements ActionListener {
             } else {
 
                 int i = tabela.getSelectedRow();
+                
 
                 model.remove(i);
                 Log("!Produto removido");
