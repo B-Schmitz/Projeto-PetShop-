@@ -3,6 +3,7 @@ package br.pet.getset;
 public class AnimalGetSet {
 
     private String Proprietario;
+    private ClienteGetSet cliente;
     private String Animal;
     private String Nome;
     private String Raca;
@@ -11,6 +12,14 @@ public class AnimalGetSet {
     private int Idade;
     private int Altura;
     private int Peso;
+
+    public ClienteGetSet getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClienteGetSet cliente) {
+        this.cliente = cliente;
+    }
 
     public  String getProprietario() {
         return Proprietario;

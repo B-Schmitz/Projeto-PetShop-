@@ -7,7 +7,6 @@ import br.pet.getset.AnimalGetSet;
 import br.pet.listeners.AnimaisAction;
 import br.pet.excecoes.LogExceptions;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 public class Animal extends javax.swing.JInternalFrame {
 

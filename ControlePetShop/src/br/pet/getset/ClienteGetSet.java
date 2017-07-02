@@ -7,6 +7,15 @@ public class ClienteGetSet {
     private String Sexo;
     private String Email;
     private String CPF;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCPF() {
         return CPF;

@@ -14,7 +14,7 @@ public class AnimalDao {
             conn = Conexao.getConnection();
             String sql = "insert into animal (proprietario, animal, nome, raca, sexo, cor, idade, altura, peso) values(?,?,?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
-            ps.setString(1, a.getProprietario());
+            ps.setInt(1, a.getCliente().getId());
             ps.setString(2, a.getAnimal());
             ps.setString(3, a.getNome());
             ps.setString(4, a.getRaca());

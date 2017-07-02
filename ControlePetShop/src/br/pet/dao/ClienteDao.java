@@ -145,6 +145,67 @@ public class ClienteDao {
         }
     }
 
+    public ClienteGetSet buscaNome(String nome) {
+
+        ClienteGetSet c = new ClienteGetSet();
+        ResultSet rs = null;
+        Connection conn = null;
+        PreparedStatement ps = null;
+
+        try {
+            conn = Conexao.getConnection();
+            String sql = "select * from cliente where nome = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, nome);
+            ps.execute();
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                c.setId(rs.getInt("id"));
+                c.setCPF(rs.getString("cpf"));
+                c.setNome(rs.getString("nome"));
+                c.setIdade(rs.getInt("idade"));
+                c.setSexo(rs.getString("sexo"));
+                c.setTelefone(rs.getLong("telefone"));
+                c.setEndereco(rs.getString("endereco"));
+                c.setEmail(rs.getString("email"));
+
+                conn.commit();
+            }
+        } catch (SQLException e) {
+            // System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException ex) {
+                    // System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                }
+                return c = null;
+            }
+
+        } finally {
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERRO: " + ex.getMessage());
+                }
+            }
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    // System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                }
+            }
+        }
+        return c;
+    }
+
     public void Read(ClienteGetSet c) {
 
         ResultSet rs = null;
