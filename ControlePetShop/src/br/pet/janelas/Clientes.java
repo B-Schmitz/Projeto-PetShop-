@@ -322,7 +322,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 || field_endereco_cliente.getText().trim().isEmpty());
     }
 
-    public ClienteGetSet Deletar() {
+/*    public ClienteGetSet Deletar() {
         String result = (JOptionPane.showInputDialog(null, "Informe o CPF: ", "Deletar cliente", JOptionPane.PLAIN_MESSAGE));
         if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
             JOptionPane.showMessageDialog(null, "O delete foi cancelado ou CPF inserido é inválido", "Deletar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
@@ -331,7 +331,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         } else {
             client = new ClienteGetSet();
             client.setCPF(result);
-            /* dao.Read(client);
+             dao.Read(client);
             if ("".equals(client.getNome().trim())) {
                 JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
@@ -340,12 +340,12 @@ public class Clientes extends javax.swing.JInternalFrame {
                 daAni.Delete(client.getId());
                 dao.Delete(client);
                 Log("!Deletou cliente: " + client.getCPF());
-            }*/
+            }
         }
         return client;
     }
-
-    public void Buscar() {
+*/
+  /*  public void Buscar() {
         client.setNome(""); // Define o nome como vazio para verificação no banco depois.
         String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
         if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
@@ -362,9 +362,9 @@ public class Clientes extends javax.swing.JInternalFrame {
                 Log("!Buscou cliente: " + client.getCPF());
             }
         }
-    }
+    }*/
 
-    public void Atualizar() {
+    /*public void Atualizar() {
         if (Verifica()) {
             client.setCPF(field_CPF_cliente.getText().replaceAll("[-.]", "").trim());
           
@@ -388,7 +388,7 @@ public class Clientes extends javax.swing.JInternalFrame {
             Log("!Atualização de cliente falhou");
         }
 
-    }
+    }*/
 
     public void Escreve() {
         int num;

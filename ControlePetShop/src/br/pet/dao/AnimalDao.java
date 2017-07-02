@@ -1,7 +1,6 @@
 package br.pet.dao;
 
 import br.pet.getset.AnimalGetSet;
-import br.pet.getset.ClienteGetSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
