@@ -20,14 +20,14 @@ public class Principal extends javax.swing.JFrame {
     private final ImageIcon icone;
     private Dimension d;
     private final Color classic = new Color(204, 204, 204);
-    private final Color dark = new Color(82,63,33);
+    private final Color escuro = new Color(82, 63, 33);
 
     public Principal() {
         initComponents();
 
         // Configuração da Janela
         this.setLocationRelativeTo(null);
-        icone = new ImageIcon("src/br/pet/icones/login.png");
+        icone = new ImageIcon("src/br/pet/icones/bigdog.png");
         this.setIconImage(icone.getImage());
     }
 
@@ -50,7 +50,7 @@ public class Principal extends javax.swing.JFrame {
         try {
             Log.escrever(msg);
         } catch (IOException ex) {
-             execao.exception(ex);
+            execao.exception(ex);
         }
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -67,7 +67,7 @@ public class Principal extends javax.swing.JFrame {
         menu_ajuda = new javax.swing.JMenu();
         menu_sobre = new javax.swing.JMenuItem();
         menu_tema = new javax.swing.JMenu();
-        menu_dark = new javax.swing.JMenuItem();
+        menu_escuro = new javax.swing.JMenuItem();
         menu_classico = new javax.swing.JMenuItem();
         menu_sair = new javax.swing.JMenu();
 
@@ -89,10 +89,10 @@ public class Principal extends javax.swing.JFrame {
         );
         desktopPane_principalLayout.setVerticalGroup(
             desktopPane_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_patinhas, javax.swing.GroupLayout.PREFERRED_SIZE, 554, Short.MAX_VALUE)
+            .addComponent(label_patinhas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 554, Short.MAX_VALUE)
         );
 
-        menu_bar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        menu_bar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         menu_bar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         menu_bar.setOpaque(false);
 
@@ -170,15 +170,15 @@ public class Principal extends javax.swing.JFrame {
         menu_tema.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_tema.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
 
-        menu_dark.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        menu_dark.setText("Tema Dark");
-        menu_dark.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menu_dark.addActionListener(new java.awt.event.ActionListener() {
+        menu_escuro.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        menu_escuro.setText("Tema Escuro");
+        menu_escuro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu_escuro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menu_darkActionPerformed(evt);
+                menu_escuroActionPerformed(evt);
             }
         });
-        menu_tema.add(menu_dark);
+        menu_tema.add(menu_escuro);
 
         menu_classico.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         menu_classico.setText("Tema Clássico");
@@ -257,10 +257,10 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menu_sairMouseClicked
 
-    private void menu_darkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_darkActionPerformed
-        desktopPane_principal.setBackground(dark);
-        Log("!Alterou tema para dark");
-    }//GEN-LAST:event_menu_darkActionPerformed
+    private void menu_escuroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_escuroActionPerformed
+        desktopPane_principal.setBackground(escuro);
+        Log("!Alterou tema para escuro");
+    }//GEN-LAST:event_menu_escuroActionPerformed
 
     private void menu_classicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_classicoActionPerformed
         desktopPane_principal.setBackground(classic);
@@ -315,7 +315,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu menu_cadastros;
     private javax.swing.JMenuItem menu_classico;
     private javax.swing.JMenuItem menu_cliente;
-    private javax.swing.JMenuItem menu_dark;
+    private javax.swing.JMenuItem menu_escuro;
     private javax.swing.JMenuItem menu_estoque;
     private javax.swing.JMenuItem menu_funcionario;
     private javax.swing.JMenu menu_sair;

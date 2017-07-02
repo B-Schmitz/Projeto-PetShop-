@@ -37,7 +37,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
+        label_versao = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Ajuda");
@@ -100,8 +100,8 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Versão: 2.0");
+        label_versao.setForeground(new java.awt.Color(255, 255, 255));
+        label_versao.setText("Versão: 2.0");
 
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
         Jpanel.setLayout(JpanelLayout);
@@ -140,13 +140,15 @@ public class Ajuda extends javax.swing.JInternalFrame {
                             .addComponent(label_duarte)
                             .addComponent(label_bernardo)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
-                        .addGroup(JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(label_programadores))
+                        .addComponent(label_programadores)
                         .addGap(20, 20, 20))))
             .addGroup(JpanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(label_icones))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label_versao)
+                .addGap(45, 45, 45))
         );
         JpanelLayout.setVerticalGroup(
             JpanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +158,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
                 .addGap(6, 6, 6)
                 .addComponent(label_descrição)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addComponent(label_versao)
                 .addGap(2, 2, 2)
                 .addComponent(label_programadores1)
                 .addGap(6, 6, 6)
@@ -194,7 +196,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
                                 .addGap(6, 6, 6)
                                 .addComponent(label_bernardo))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(label_icones))
         );
 
@@ -224,7 +226,6 @@ public class Ajuda extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Jpanel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -243,6 +244,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
     private javax.swing.JLabel label_michael;
     private javax.swing.JLabel label_programadores;
     private javax.swing.JLabel label_programadores1;
+    private javax.swing.JLabel label_versao;
     // End of variables declaration//GEN-END:variables
 
 }

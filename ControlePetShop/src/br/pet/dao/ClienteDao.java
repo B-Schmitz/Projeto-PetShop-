@@ -20,7 +20,7 @@ public class ClienteDao {
             ps = conn.prepareStatement(sql);
             ps.setString(1, c.getCPF());
             ps.setString(2, c.getNome());
-            ps.setLong(3, c.getIdade());
+            ps.setInt(3, c.getIdade());
             ps.setString(4, c.getSexo());
             ps.setLong(5, c.getTelefone());
             ps.setString(6, c.getEndereco());
@@ -63,7 +63,7 @@ public class ClienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "update cliente set endereco = ?, email= ?,idade = ?,nome = ?, sexo = ?, telefone = ?, where cpf = ?";
+            String sql = "update cliente set endereco = ?, email= ?,idade = ?,nome = ?, sexo = ?, telefone = ? where cpf = ?";
             ps = conn.prepareStatement(sql);
 
             ps.setString(1, c.getEndereco());

@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
 import br.pet.listeners.CadastroClienteAction;
 import br.pet.excecoes.LogExceptions;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class Clientes extends javax.swing.JInternalFrame {
@@ -28,6 +29,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_deletar_cliente.addActionListener(cliente);
         botao_limpar_cliente.addActionListener(cliente);
         botao_buscar_cliente.addActionListener(cliente);
+        botao_atualizar_cliente.addActionListener(cliente);
         field_idade_cliente.setDocument(new LimitandoCamposNumericos(3));
         field_nome_cliente.setDocument(new Letras());
 
@@ -55,6 +57,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_limpar_cliente = new javax.swing.JButton();
         botao_deletar_cliente = new javax.swing.JButton();
         botao_buscar_cliente = new javax.swing.JButton();
+        botao_atualizar_cliente = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de cliente");
@@ -129,58 +132,67 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_buscar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_buscar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        botao_atualizar_cliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_atualizar_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/update.png"))); // NOI18N
+        botao_atualizar_cliente.setText("Atualizar");
+        botao_atualizar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_atualizar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(label_idade_cliente)
-                        .addGap(104, 104, 104)
-                        .addComponent(label_cpf_cliente)
-                        .addGap(18, 18, 18)
-                        .addComponent(field_CPF_cliente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(label_nome_cliente))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_email_cliente)
-                                    .addComponent(label_endereco_cliente))))
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(field_email_cliente)
-                            .addComponent(field_nome_cliente)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(label_telefone_cliente)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(field_endereco_cliente))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_buscar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(label_idade_cliente)
+                            .addGap(104, 104, 104)
+                            .addComponent(label_cpf_cliente)
+                            .addGap(18, 18, 18)
+                            .addComponent(field_CPF_cliente))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(label_nome_cliente))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(label_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(label_email_cliente)
+                                        .addComponent(label_endereco_cliente))))
+                            .addGap(3, 3, 3)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(field_email_cliente)
+                                .addComponent(field_nome_cliente)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(field_idade_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(comboBox_sexo_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(label_telefone_cliente)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(field_telefone_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(field_endereco_cliente))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botao_atualizar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botao_buscar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,11 +226,12 @@ public class Clientes extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botao_cadastrar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botao_deletar_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botao_buscar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botao_limpar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_buscar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_atualizar_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -227,6 +240,7 @@ public class Clientes extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botao_atualizar_cliente;
     private javax.swing.JButton botao_buscar_cliente;
     private javax.swing.JButton botao_cadastrar_cliente;
     private javax.swing.JButton botao_deletar_cliente;
@@ -250,10 +264,8 @@ public class Clientes extends javax.swing.JInternalFrame {
     public ClienteGetSet getcliente() {
 
         client = new ClienteGetSet();
-
         cpf = field_CPF_cliente.getText().replaceAll("[-.]", "").trim();
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
-
         try {
             client.setTelefone(Long.parseLong(tel));
             client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
@@ -270,6 +282,14 @@ public class Clientes extends javax.swing.JInternalFrame {
 
         return client;
 
+    }
+
+    public void Log(String msg) {
+        try {
+            Log.escrever(msg);
+        } catch (IOException ex) {
+            execao.exception(ex);
+        }
     }
 
     public void limpar() {
@@ -293,22 +313,61 @@ public class Clientes extends javax.swing.JInternalFrame {
     }
 
     public void Deletar() {
-        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:"));
-        client.setCPF(result);
-        dao.Delete(client);
+        String result = (JOptionPane.showInputDialog(null, "Informe o CPF: ", "Deletar cliente", JOptionPane.PLAIN_MESSAGE));
+        if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
+            JOptionPane.showMessageDialog(null, "O delete foi cancelado ou CPF inserido é inválido", "Deletar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+            Log("!Deletar cliente falhou. Ação cancelada ");
+        } else {
+            client.setCPF(result);
+            dao.Read(client);
+            if ("".equals(client.getNome().trim())) {
+                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
+            } else {
+                dao.Delete(client);
+                Log("!Deletou cliente: " + client.getCPF());
+            }
+        }
     }
 
     public void Buscar() {
         client.setNome(""); // Define o nome como vazio para verificação no banco depois.
-        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:"));
-        client.setCPF(result);
-        dao.Read(client);
-        if ("".equals(client.getNome().trim())) {
-            JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
+        if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
+            Log("!Buscar cliente falhou. Ação cancelada ");
+            JOptionPane.showMessageDialog(null, "A busca foi cancelada ou CPF inserido é inválido", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         } else {
-            Escreve();
-
+            client.setCPF(result);
+            dao.Read(client);
+            if ("".equals(client.getNome().trim())) {
+                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                Log("!Buscar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
+            } else {
+                Escreve();
+                Log("!Buscou cliente: " + client.getCPF());
+            }
         }
+    }
+
+    public void Atualizar() {
+        if (Verifica()) {
+             client.setCPF(field_CPF_cliente.getText().replaceAll("[-.]", "").trim());
+            dao.Read(client);
+            System.out.println(client.getNome());
+            if ("".equals(client.getNome().trim())) {
+                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                Log("!Atualizar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
+            } else {
+                dao.Update(client);
+                JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
+                Log("!Atualizou cliente: " + client.getCPF());
+                client.setNome("");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar a atualização", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+            Log("!Atualização de cliente falhou");
+        }
+
     }
 
     public void Escreve() {
@@ -325,7 +384,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         field_email_cliente.setText(client.getEmail());
         field_endereco_cliente.setText(client.getEndereco());
         field_telefone_cliente.setText(String.valueOf(client.getTelefone()));
-
+     
+        client.setNome("");
     }
-
 }

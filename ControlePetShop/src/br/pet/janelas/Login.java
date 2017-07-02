@@ -33,7 +33,6 @@ public class Login extends javax.swing.JFrame {
             execao.exception(ex);
         }
         user = linha;
-        log.setUser(user);
 
         // Configurações da Janela
         this.setResizable(false);
@@ -63,7 +62,6 @@ public class Login extends javax.swing.JFrame {
             bufferedWriter.flush();
             bufferedWriter.close();
         }
-
     }
 
     public static void ler() throws IOException {
@@ -118,6 +116,7 @@ public class Login extends javax.swing.JFrame {
                 if (senha_atual.trim().isEmpty()) {
                     senha_atual = senha_nova; // Recebe senha anterior ou seja não muda.
                     JOptionPane.showMessageDialog(null, "A senha não pode estar vazia", "Alteração não efetuada", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                    Log("!Falha ao alterar senha");
                 } else {
                     JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
 

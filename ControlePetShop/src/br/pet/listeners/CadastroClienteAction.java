@@ -19,7 +19,6 @@ public class CadastroClienteAction implements ActionListener {
     private final ClienteDao dao = new ClienteDao();
 
     public CadastroClienteAction(Clientes cliente) {
-
         this.cliente = cliente;
     }
 
@@ -34,40 +33,39 @@ public class CadastroClienteAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
-            Log("!Clicou em 'Cadastrar'");
+            Log("!Clicou em 'Cadastrar Cliente'");
             if (cliente.Verifica()) {
                 client = cliente.getcliente();
-                
-                    dao.Insert(client);
-
-                
-                System.out.println(client.toString());
+                dao.Insert(client);
+                //System.out.println(client.toString()); Remover ???
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
-                Log("!Cadastrou um novo cliente");
+                Log("!Cadastrou um novo cliente: " + client.getCPF());
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                Log("!Cadastrou de cliente falhou");
             }
         }
 
-         if (e.getActionCommand().equals("Deletar")) {
-             client = cliente.getcliente();
-             cliente.Deletar();
-             // faltou log
+        if (e.getActionCommand().equals("Deletar")) {
+            Log("!Clicou em 'Deletar Cliente'");
+            client = cliente.getcliente();
+            cliente.Deletar();
         }
-         
-          if (e.getActionCommand().equals("Buscar")) {
-             // Clientes c = new Clientes();
-             client = cliente.getcliente();
-             cliente.Buscar();
-             // faltou log
+
+        if (e.getActionCommand().equals("Buscar")) {
+            Log("!Clicou em 'Buscar Cliente'");
+            client = cliente.getcliente();
+            cliente.Buscar();
         }
-        
-        
+
+        if (e.getActionCommand().equals("Atualizar")) {
+            Log("!Clicou em 'Atualizar Cliente'");
+           cliente.Atualizar();
+        }
+
         if (e.getActionCommand().equals("Limpar")) {
             cliente.limpar();
             Log("!Limpou os campos no cadastro de cliente");
         }
-
     }
-
 }

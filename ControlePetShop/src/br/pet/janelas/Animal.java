@@ -99,26 +99,26 @@ public class Animal extends javax.swing.JInternalFrame {
         label_sexo_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/sexo.PNG"))); // NOI18N
         label_sexo_animal.setText("Sexo:");
 
-        comboBox_sexo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea", " " }));
+        comboBox_sexo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
 
         comboBox_tipo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachorro", "Gato", "Coelho" }));
 
         botao_cadastrar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_cadastrar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/add.png"))); // NOI18N
         botao_cadastrar_animais.setText("Cadastrar");
-        botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_cadastrar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_cadastrar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_limpar_animais.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_limpar_animais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/limpar.png"))); // NOI18N
         botao_limpar_animais.setText("Limpar");
-        botao_limpar_animais.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_limpar_animais.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_limpar_animais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         botao_deletar_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_deletar_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/remove.png"))); // NOI18N
         botao_deletar_animal.setText("Deletar");
-        botao_deletar_animal.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        botao_deletar_animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_deletar_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
