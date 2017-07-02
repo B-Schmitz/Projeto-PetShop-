@@ -221,6 +221,7 @@ public class ClienteDao {
             rs = ps.executeQuery();
 
             if (rs.next()) {
+                c.setId(rs.getInt("id"));
                 c.setCPF(rs.getString("cpf"));
                 c.setNome(rs.getString("nome"));
                 c.setIdade(rs.getInt("idade"));

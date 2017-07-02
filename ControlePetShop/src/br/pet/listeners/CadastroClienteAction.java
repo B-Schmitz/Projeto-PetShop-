@@ -1,5 +1,6 @@
 package br.pet.listeners;
 
+import br.pet.dao.AnimalDao;
 import br.pet.dao.ClienteDao;
 import br.pet.excecoes.LogExceptions;
 import br.pet.getset.ClienteGetSet;
@@ -17,6 +18,7 @@ public class CadastroClienteAction implements ActionListener {
     private ClienteGetSet client;
     private final LogExceptions execao = new LogExceptions();
     private final ClienteDao dao = new ClienteDao();
+    private final AnimalDao daoAni = new AnimalDao();
 
     public CadastroClienteAction(Clientes cliente) {
         this.cliente = cliente;
@@ -48,8 +50,20 @@ public class CadastroClienteAction implements ActionListener {
 
         if (e.getActionCommand().equals("Deletar")) {
             Log("!Clicou em 'Deletar Cliente'");
-            client = cliente.getcliente();
-            cliente.Deletar();
+            ClienteGetSet client = new ClienteGetSet();
+            client = cliente.Deletar();
+            if(client != null){
+            dao.Read(client);
+            if ("".equals(client.getNome().trim())) {
+                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
+            } else {
+                
+                daoAni.Delete(client.getId());
+                dao.Delete(client);
+                Log("!Deletou cliente: " + client.getCPF());
+            }
+            }
         }
 
         if (e.getActionCommand().equals("Buscar")) {
