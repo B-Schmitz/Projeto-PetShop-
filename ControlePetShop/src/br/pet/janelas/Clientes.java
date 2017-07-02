@@ -138,6 +138,11 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_atualizar_cliente.setText("Atualizar");
         botao_atualizar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_atualizar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_atualizar_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_atualizar_clienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,6 +244,10 @@ public class Clientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botao_atualizar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_clienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_atualizar_clienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_atualizar_cliente;
@@ -279,7 +288,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
         client.setEmail(field_email_cliente.getText().trim());
         client.setCPF(cpf);
-        limpar();
+        
 
         return client;
 
@@ -358,16 +367,21 @@ public class Clientes extends javax.swing.JInternalFrame {
     public void Atualizar() {
         if (Verifica()) {
             client.setCPF(field_CPF_cliente.getText().replaceAll("[-.]", "").trim());
+          
             dao.Read(client);
             System.out.println(client.getNome());
             if ("".equals(client.getNome().trim())) {
                 JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Atualizar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
             } else {
+                // Precisava pegar os dados informados
+                client = getcliente();
                 dao.Update(client);
+                limpar();
                 JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                 Log("!Atualizou cliente: " + client.getCPF());
-                client.setNome("");
+                //Porque isso em baixo?
+              //  client.setNome("");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar a atualização", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));

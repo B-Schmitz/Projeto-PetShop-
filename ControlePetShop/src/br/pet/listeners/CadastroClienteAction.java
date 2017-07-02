@@ -36,12 +36,28 @@ public class CadastroClienteAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
             Log("!Clicou em 'Cadastrar Cliente'");
+            ClienteGetSet c = new ClienteGetSet();
             if (cliente.Verifica()) {
-                client = cliente.getcliente();
-                dao.Insert(client);
-                //System.out.println(client.toString()); Remover ???
-                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
-                Log("!Cadastrou um novo cliente: " + client.getCPF());
+                c = cliente.getcliente();
+                dao.Read(c);
+                if (c.getNome().equals("")) {
+
+                    client = cliente.getcliente();
+
+                    dao.Insert(client);
+                    //System.out.println(client.toString()); Remover ???
+                    cliente.limpar();
+                    JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
+                    Log("!Cadastrou um novo cliente: " + client.getCPF());
+                } else {
+                    
+                    //Talvez colocar aqui um joptionPane avisando q o cpf ja existe no banco, e perguntar se quer cancelar ou atualizar, sei la
+                    
+                    client = cliente.getcliente();
+                    dao.Update(client);
+                    cliente.limpar();
+                }
+
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Cadastrou de cliente falhou");
@@ -52,17 +68,17 @@ public class CadastroClienteAction implements ActionListener {
             Log("!Clicou em 'Deletar Cliente'");
             ClienteGetSet client = new ClienteGetSet();
             client = cliente.Deletar();
-            if(client != null){
-            dao.Read(client);
-            if ("".equals(client.getNome().trim())) {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
-            } else {
-                
-                daoAni.Delete(client.getId());
-                dao.Delete(client);
-                Log("!Deletou cliente: " + client.getCPF());
-            }
+            if (client != null) {
+                dao.Read(client);
+                if ("".equals(client.getNome().trim())) {
+                    JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                    Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
+                } else {
+
+                    daoAni.Delete(client.getId());
+                    dao.Delete(client);
+                    Log("!Deletou cliente: " + client.getCPF());
+                }
             }
         }
 
@@ -74,7 +90,7 @@ public class CadastroClienteAction implements ActionListener {
 
         if (e.getActionCommand().equals("Atualizar")) {
             Log("!Clicou em 'Atualizar Cliente'");
-           cliente.Atualizar();
+            cliente.Atualizar();
         }
 
         if (e.getActionCommand().equals("Limpar")) {
