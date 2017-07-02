@@ -299,16 +299,29 @@ public class Clientes extends javax.swing.JInternalFrame {
     }
 
     public void Buscar() {
+        client.setNome(""); // Define o nome como vazio para verificação no banco depois.
         String result = (JOptionPane.showInputDialog(null, "Informe o CPF:"));
         client.setCPF(result);
         dao.Read(client);
-        Escreve();
+        if ("".equals(client.getNome().trim())) {
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+        } else {
+            Escreve();
+
+        }
     }
 
     public void Escreve() {
-        field_CPF_cliente.setText(String.valueOf(client.getCPF()));
+        int num;
+        if (client.getSexo().equals("Masculino")) {
+            num = 0;
+        } else {
+            num = 1;
+        }
+        field_CPF_cliente.setText((client.getCPF()));
         field_nome_cliente.setText(client.getNome());
         field_idade_cliente.setText(String.valueOf(client.getIdade()));
+        comboBox_sexo_cliente.setSelectedIndex(num);
         field_email_cliente.setText(client.getEmail());
         field_endereco_cliente.setText(client.getEndereco());
         field_telefone_cliente.setText(String.valueOf(client.getTelefone()));
