@@ -255,7 +255,6 @@ public class Clientes extends javax.swing.JInternalFrame {
         tel = field_telefone_cliente.getText().replaceAll("[()]", "").trim();
 
         try {
-            client.setCPF(Long.parseLong(cpf));
             client.setTelefone(Long.parseLong(tel));
             client.setIdade(Integer.parseInt(field_idade_cliente.getText()));
         } catch (Exception ex) {
@@ -266,6 +265,7 @@ public class Clientes extends javax.swing.JInternalFrame {
         client.setNome(field_nome_cliente.getText().trim());
         client.setSexo((String) comboBox_sexo_cliente.getSelectedItem());
         client.setEmail(field_email_cliente.getText().trim());
+        client.setCPF(cpf);
         limpar();
 
         return client;
@@ -293,27 +293,26 @@ public class Clientes extends javax.swing.JInternalFrame {
     }
 
     public void Deletar() {
-        long result = Long.valueOf(JOptionPane.showInputDialog(null, "Informe o CPF:"));
+        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:"));
         client.setCPF(result);
         dao.Delete(client);
     }
 
-       public void Buscar() {
-       long result = Long.valueOf(JOptionPane.showInputDialog(null, "Informe o CPF:"));
-       client.setCPF(result);
-       dao.Read(client);
-       Escreve();
+    public void Buscar() {
+        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:"));
+        client.setCPF(result);
+        dao.Read(client);
+        Escreve();
     }
-       
-         public void Escreve() {
-             field_CPF_cliente.setText(String.valueOf(client.getCPF()));
-             field_nome_cliente.setText(client.getNome());
-             field_idade_cliente.setText(String.valueOf(client.getIdade()));
-            field_email_cliente.setText(client.getEmail());
-            field_endereco_cliente.setText(client.getEndereco());
-            field_telefone_cliente.setText(String.valueOf(client.getTelefone()));
 
-        }
-    
-    
+    public void Escreve() {
+        field_CPF_cliente.setText(String.valueOf(client.getCPF()));
+        field_nome_cliente.setText(client.getNome());
+        field_idade_cliente.setText(String.valueOf(client.getIdade()));
+        field_email_cliente.setText(client.getEmail());
+        field_endereco_cliente.setText(client.getEndereco());
+        field_telefone_cliente.setText(String.valueOf(client.getTelefone()));
+
+    }
+
 }

@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteDao {
 
@@ -20,7 +18,7 @@ public class ClienteDao {
             conn = Conexao.getConnection();
             String sql = "insert into cliente (cpf, nome,idade,sexo,telefone,endereco,email) values(?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
-            ps.setLong(1, c.getCPF());
+            ps.setString(1, c.getCPF());
             ps.setString(2, c.getNome());
             ps.setLong(3, c.getIdade());
             ps.setString(4, c.getSexo());
@@ -74,7 +72,7 @@ public class ClienteDao {
             ps.setString(4, c.getNome());
             ps.setString(5, c.getSexo());
             ps.setLong(6, c.getTelefone());
-            ps.setLong(7, c.getCPF());
+            ps.setString(7, c.getCPF());
             ps.execute();
 
             conn.commit();
@@ -114,7 +112,7 @@ public class ClienteDao {
             conn = Conexao.getConnection();
             String sql = "delete from cliente where cpf = ?";
             ps = conn.prepareStatement(sql);
-            ps.setLong(1, c.getCPF());
+            ps.setString(1, c.getCPF());
             ps.execute();
 
             conn.commit();
@@ -157,20 +155,21 @@ public class ClienteDao {
             conn = Conexao.getConnection();
             String sql = "select * from cliente where cpf = ?";
             ps = conn.prepareStatement(sql);
-            ps.setLong(1, c.getCPF());
+            ps.setString(1, c.getCPF());
             ps.execute();
             rs = ps.executeQuery();
 
-                while(rs.next()){
-               c.setCPF(rs.getLong("cpf"));
+            if (rs.next()) {
+                c.setCPF(rs.getString("cpf"));
                 c.setNome(rs.getString("nome"));
                 c.setIdade(rs.getInt("idade"));
                 c.setSexo(rs.getString("sexo"));
                 c.setTelefone(rs.getLong("telefone"));
                 c.setEndereco(rs.getString("endereco"));
-                c.setEmail(rs.getString("email"));}
+                c.setEmail(rs.getString("email"));
 
-            conn.commit();
+                conn.commit();
+            }
         } catch (SQLException e) {
             // System.out.println("ERRO: " + e.getMessage());
             execao.exception(e);

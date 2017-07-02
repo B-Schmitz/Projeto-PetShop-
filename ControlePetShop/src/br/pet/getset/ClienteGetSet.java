@@ -6,7 +6,15 @@ public class ClienteGetSet {
     private String Endereco;
     private String Sexo;
     private String Email;
-    private long CPF;
+    private String CPF;
+
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
     private long Telefone;
     private int Idade;
 
@@ -42,13 +50,6 @@ public class ClienteGetSet {
         this.Email = Email;
     }
 
-    public long getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(long CPF) {
-        this.CPF = CPF;
-    }
 
     public long getTelefone() {
         return Telefone;
