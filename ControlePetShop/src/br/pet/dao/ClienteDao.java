@@ -183,7 +183,7 @@ public class ClienteDao {
                     // System.out.println("ERRO: " + ex.getMessage());
                     execao.exception(ex);
                 }
-                return c = null;
+               
             }
 
         } finally {

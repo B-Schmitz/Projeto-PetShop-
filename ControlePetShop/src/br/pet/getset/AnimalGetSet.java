@@ -12,6 +12,15 @@ public class AnimalGetSet {
     private int Idade;
     private int Altura;
     private int Peso;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public ClienteGetSet getCliente() {
         return cliente;

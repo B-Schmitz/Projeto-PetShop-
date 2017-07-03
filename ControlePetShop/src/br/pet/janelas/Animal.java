@@ -22,6 +22,8 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_cadastrar_animais.addActionListener(animais);
         botao_limpar_animais.addActionListener(animais);
         botao_deletar_animal.addActionListener(animais);
+        botao_buscar_animal.addActionListener(animais);
+        botao_atualizar_Animal.addActionListener(animais);
 
         field_altura.setDocument(new Numeros());
         field_idade_animal.setDocument(new Numeros());
@@ -59,6 +61,8 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_limpar_animais = new javax.swing.JButton();
         field_idade_animal = new javax.swing.JTextField();
         botao_deletar_animal = new javax.swing.JButton();
+        botao_buscar_animal = new javax.swing.JButton();
+        botao_atualizar_Animal = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Cadastro de animal");
@@ -100,6 +104,11 @@ public class Animal extends javax.swing.JInternalFrame {
         label_sexo_animal.setText("Sexo:");
 
         comboBox_sexo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
+        comboBox_sexo_animal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBox_sexo_animalActionPerformed(evt);
+            }
+        });
 
         comboBox_tipo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachorro", "Gato", "Coelho" }));
 
@@ -121,56 +130,80 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_deletar_animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_deletar_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        botao_buscar_animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_buscar_animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/buscar.png"))); // NOI18N
+        botao_buscar_animal.setText("Buscar");
+        botao_buscar_animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_buscar_animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        botao_atualizar_Animal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        botao_atualizar_Animal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/update.png"))); // NOI18N
+        botao_atualizar_Animal.setText("Atualizar");
+        botao_atualizar_Animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botao_atualizar_Animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botao_atualizar_Animal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botao_atualizar_AnimalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_proprietario)
-                            .addComponent(label_animal)
-                            .addComponent(label_nome_animal)
-                            .addComponent(label_raca)
-                            .addComponent(label_peso))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(field_nome_animal)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(comboBox_tipo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(label_sexo_animal)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(comboBox_sexo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(label_idade_animal)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(field_proprietario))
+                        .addGap(4, 4, 4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_proprietario)
+                                    .addComponent(label_animal)
+                                    .addComponent(label_nome_animal)
+                                    .addComponent(label_raca)
+                                    .addComponent(label_peso))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(field_nome_animal)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(comboBox_tipo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(label_sexo_animal)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(comboBox_sexo_animal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(label_idade_animal)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(field_idade_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(field_proprietario))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(field_raca, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(field_raca, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(label_cor))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(field_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(label_altura)))
                                         .addGap(18, 18, 18)
-                                        .addComponent(label_cor))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(field_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(label_altura)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(field_cor, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                                            .addComponent(field_altura)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(field_cor, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
-                                    .addComponent(field_altura)))))
+                                .addComponent(botao_deletar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(botao_cadastrar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botao_deletar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(99, 99, 99)
+                        .addComponent(botao_buscar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(botao_atualizar_Animal, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -209,14 +242,30 @@ public class Animal extends javax.swing.JInternalFrame {
                     .addComponent(botao_cadastrar_animais)
                     .addComponent(botao_limpar_animais, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_deletar_animal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botao_buscar_animal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_atualizar_Animal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void comboBox_sexo_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_sexo_animalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBox_sexo_animalActionPerformed
+
+    private void botao_atualizar_AnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_AnimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_atualizar_AnimalActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botao_atualizar_Animal;
+    private javax.swing.JButton botao_atualizar_cliente;
+    private javax.swing.JButton botao_atualizar_cliente1;
+    private javax.swing.JButton botao_buscar_animal;
     private javax.swing.JButton botao_cadastrar_animais;
     private javax.swing.JButton botao_deletar_animal;
     private javax.swing.JButton botao_limpar_animais;
@@ -259,7 +308,7 @@ public class Animal extends javax.swing.JInternalFrame {
         ani.setCor(field_cor.getText().trim());
         ani.setSexo((String) comboBox_sexo_animal.getSelectedItem());
 
-        limpar();
+       
 
         return ani;
 
@@ -285,6 +334,53 @@ public class Animal extends javax.swing.JInternalFrame {
                 || field_peso.getText().isEmpty());
     }
     
+    public void Escreve() {
+        int sex;
+        if (ani.getSexo().equals("Macho")) {
+            sex = 0;
+        } else {
+            sex = 1;
+        }
+        
+        int tipo;
+        
+        if(ani.getAnimal().equals("Cachorro")){
+            tipo = 0;
+        }
+        
+        else if(ani.getAnimal().equals("Gato")){
+            
+            tipo = 1;
+            
+        }
+        else{
+            
+            tipo = 2;
+            
+        }
+        
+        ani.setProprietario(ani.getCliente().getNome());
+        
+        field_altura.setText(String.valueOf(ani.getAltura()));
+        field_cor.setText(ani.getCor());
+        field_idade_animal.setText(String.valueOf(ani.getIdade()));
+        field_nome_animal.setText(ani.getNome());
+        field_peso.setText(String.valueOf(ani.getPeso()));
+        field_proprietario.setText(ani.getProprietario());
+        field_raca.setText(ani.getRaca());
+        comboBox_sexo_animal.setSelectedIndex(sex);
+        comboBox_tipo_animal.setSelectedIndex(tipo);
+        
+       /* field_CPF_cliente.setText((client.getCPF()));
+        field_nome_cliente.setText(client.getNome());
+        field_idade_cliente.setText(String.valueOf(client.getIdade()));
+        comboBox_sexo_cliente.setSelectedIndex(num);
+        field_email_cliente.setText(client.getEmail());
+        field_endereco_cliente.setText(client.getEndereco());
+        field_telefone_cliente.setText(String.valueOf(client.getTelefone()));
+
+        client.setNome("");*/
+    }
     
     /*
         Não da para fazer com ID, pois não tem como setar ID, talvez criar um campo Código do animal resolve !

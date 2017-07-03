@@ -18,7 +18,6 @@ public class CadastroClienteAction implements ActionListener {
     private ClienteGetSet client;
     private final LogExceptions execao = new LogExceptions();
     private final ClienteDao dao = new ClienteDao();
-    private final AnimalDao daoAni = new AnimalDao();
     
     public CadastroClienteAction(Clientes cliente) {
         this.cliente = cliente;
@@ -79,7 +78,7 @@ public class CadastroClienteAction implements ActionListener {
                     Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
                 } else {
                     AnimalDao daAni = new AnimalDao();
-                    daAni.Delete(client.getId());
+                    daAni.DeleteProprietario(client.getId());
                     dao.Delete(client);
                     JOptionPane.showMessageDialog(null, "Cadastro deletado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Deletou cliente: " + client.getCPF());
