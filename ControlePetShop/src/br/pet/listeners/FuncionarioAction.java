@@ -42,6 +42,8 @@ public class FuncionarioAction implements ActionListener {
                 fun.setNome("");
                 dao.Read(fun);
                 if (fun.getNome().equals("")) {
+                   // adicionei isso
+                    fun = funcionario.getfuncio();
                     dao.Insert(fun);
                     funcionario.limpar();
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));

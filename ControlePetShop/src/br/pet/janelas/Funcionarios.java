@@ -313,7 +313,8 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         fun.setSexo((String) comboBox_sexo_funcionario.getSelectedItem());
         fun.setCPF(cpf);
 
-        limpar();
+        //comentei isso
+        //limpar();
        
 
         return fun;
