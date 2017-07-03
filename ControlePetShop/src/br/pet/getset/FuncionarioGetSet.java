@@ -7,8 +7,9 @@ public class FuncionarioGetSet {
     private String Sexo;
     private String Endereco;
     private String Email;
+    private String CPF;
     private int Idade;
-    private long CPF;
+    private int id;
     private long Num_Pis;
     private long Telefone;
 
@@ -60,11 +61,19 @@ public class FuncionarioGetSet {
         this.Idade = Idade;
     }
 
-    public long getCPF() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(long CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 

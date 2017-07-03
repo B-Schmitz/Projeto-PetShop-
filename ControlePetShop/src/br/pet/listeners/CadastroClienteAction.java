@@ -13,16 +13,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class CadastroClienteAction implements ActionListener {
-    
+
     private final Clientes cliente;
     private ClienteGetSet client;
     private final LogExceptions execao = new LogExceptions();
     private final ClienteDao dao = new ClienteDao();
-    
+
     public CadastroClienteAction(Clientes cliente) {
         this.cliente = cliente;
     }
-    
+
     public void Log(String msg) {
         try {
             Log.escrever(msg);
@@ -30,7 +30,7 @@ public class CadastroClienteAction implements ActionListener {
             execao.exception(ex);
         }
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
@@ -40,34 +40,25 @@ public class CadastroClienteAction implements ActionListener {
                 client.setNome("");
                 dao.Read(client);
                 if (client.getNome().equals("")) {
-                    
-                    client = cliente.getcliente();
-                    
                     dao.Insert(client);
-                    //System.out.println(client.toString()); Remover ???
                     cliente.limpar();
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Cadastrou um novo cliente: " + client.getCPF());
                 } else {
-                    
                     JOptionPane.showMessageDialog(null, "CPF ja cadastrado", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                    
                 }
-                
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Cadastrou de cliente falhou");
             }
         }
-        
+
         if (e.getActionCommand().equals("Deletar")) {
-            Log("!Clicou em 'Deletar Cliente'");
-            
+            Log("!Clicou em 'Deletar cliente'");
             String result = (JOptionPane.showInputDialog(null, "Informe o CPF: ", "Deletar cliente", JOptionPane.PLAIN_MESSAGE));
             if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
                 JOptionPane.showMessageDialog(null, "O delete foi cancelado ou CPF inserido é inválido", "Deletar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Deletar cliente falhou. Ação cancelada ");
-                
             } else {
                 client = new ClienteGetSet();
                 client.setCPF(result);
@@ -85,12 +76,10 @@ public class CadastroClienteAction implements ActionListener {
                 }
             }
         }
-        
+
         if (e.getActionCommand().equals("Buscar")) {
-            Log("!Clicou em 'Buscar Cliente'");
+            Log("!Clicou em 'Buscar cliente'");
             client = cliente.getcliente();
-            // cliente.Buscar();
-            
             client.setNome(""); // Define o nome como vazio para verificação no banco depois.
             String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
             if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
@@ -108,12 +97,12 @@ public class CadastroClienteAction implements ActionListener {
                 }
             }
         }
-        
+
         if (e.getActionCommand().equals("Atualizar")) {
             Log("!Clicou em 'Atualizar Cliente'");
             //  cliente.Atualizar();
             if (cliente.Verifica()) {
-                
+
                 client = cliente.getcliente();
                 client.setNome("");
                 dao.Read(client);
@@ -136,7 +125,7 @@ public class CadastroClienteAction implements ActionListener {
                 Log("!Atualização de cliente falhou");
             }
         }
-        
+
         if (e.getActionCommand().equals("Limpar")) {
             cliente.limpar();
             Log("!Limpou os campos no cadastro de cliente");

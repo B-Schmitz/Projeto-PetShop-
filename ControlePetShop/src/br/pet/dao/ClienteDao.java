@@ -207,7 +207,7 @@ public class ClienteDao {
     }
 
     public void Read(ClienteGetSet c) {
-
+        
         ResultSet rs = null;
         Connection conn = null;
         PreparedStatement ps = null;
