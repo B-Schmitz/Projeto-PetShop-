@@ -40,6 +40,7 @@ public class CadastroClienteAction implements ActionListener {
                 client.setNome("");
                 dao.Read(client);
                 if (client.getNome().equals("")) {
+                    client = cliente.getcliente();
                     dao.Insert(client);
                     cliente.limpar();
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
