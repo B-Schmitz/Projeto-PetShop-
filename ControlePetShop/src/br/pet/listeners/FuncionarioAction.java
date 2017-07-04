@@ -42,7 +42,7 @@ public class FuncionarioAction implements ActionListener {
                 fun.setNome("");
                 dao.Read(fun);
                 if (fun.getNome().equals("")) {
-                   // adicionei isso
+                    // adicionei isso
                     fun = funcionario.getfuncio();
                     dao.Insert(fun);
                     funcionario.limpar();
@@ -68,15 +68,15 @@ public class FuncionarioAction implements ActionListener {
             Log("!Clicou em 'Atualizar Funcionário'");
             if (funcionario.Verifica()) {
                 fun = funcionario.getfuncio();
+                fun.setNome("");
                 dao.Read(fun);
-                System.out.println(fun.getNome());
                 if ("".equals(fun.getNome().trim())) {
                     JOptionPane.showMessageDialog(null, "Funcionário não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     Log("!Atualizar falhou. Funcionário: " + fun.getCPF() + " não encontrado no banco de dados");
                 } else {
+                    fun = funcionario.getfuncio();
                     dao.Update(fun);
                     funcionario.limpar();
-                    fun.setNome("");
                     JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Atualizou funcionário: " + fun.getCPF());
                 }

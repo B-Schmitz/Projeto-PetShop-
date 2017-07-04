@@ -33,6 +33,8 @@ public class CadastroClienteAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        // CADASTRO DE CLIENTE
         if (e.getActionCommand().equals("Cadastrar")) {
             Log("!Clicou em 'Cadastrar Cliente'");
             if (cliente.Verifica()) {
@@ -54,6 +56,7 @@ public class CadastroClienteAction implements ActionListener {
             }
         }
 
+            // DELETAR CLIENTE DO BANCO DE DADOS
         if (e.getActionCommand().equals("Deletar")) {
             Log("!Clicou em 'Deletar cliente'");
             String result = (JOptionPane.showInputDialog(null, "Informe o CPF: ", "Deletar cliente", JOptionPane.PLAIN_MESSAGE));
@@ -78,6 +81,7 @@ public class CadastroClienteAction implements ActionListener {
             }
         }
 
+         // BUSCAR CLIENTE NO BANCO DE DADOS
         if (e.getActionCommand().equals("Buscar")) {
             Log("!Clicou em 'Buscar cliente'");
             client = cliente.getcliente();
@@ -99,27 +103,22 @@ public class CadastroClienteAction implements ActionListener {
             }
         }
 
+        // ATUALIZAR CLIENTE NO BANCO DE DADOS
         if (e.getActionCommand().equals("Atualizar")) {
             Log("!Clicou em 'Atualizar Cliente'");
-            //  cliente.Atualizar();
             if (cliente.Verifica()) {
-
                 client = cliente.getcliente();
                 client.setNome("");
                 dao.Read(client);
-                System.out.println(client.getNome());
                 if ("".equals(client.getNome().trim())) {
                     JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     Log("!Atualizar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
                 } else {
-                    // Precisava pegar os dados informados
                     client = cliente.getcliente();
                     dao.Update(client);
                     cliente.limpar();
                     JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Atualizou cliente: " + client.getCPF());
-                    //Porque isso em baixo?
-                    //  client.setNome("");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar a atualização", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
@@ -127,6 +126,7 @@ public class CadastroClienteAction implements ActionListener {
             }
         }
 
+        // LIMPAR CAMPOS NA TELA DE CADASTRO DE CLIENTE
         if (e.getActionCommand().equals("Limpar")) {
             cliente.limpar();
             Log("!Limpou os campos no cadastro de cliente");
