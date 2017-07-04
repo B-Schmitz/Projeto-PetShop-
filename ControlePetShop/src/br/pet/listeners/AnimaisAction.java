@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import br.pet.excecoes.LogExceptions;
 import br.pet.getset.ClienteGetSet;
+import br.pet.janelas.Principal;
 
 public class AnimaisAction implements ActionListener {
 
@@ -23,11 +24,14 @@ public class AnimaisAction implements ActionListener {
     private ClienteDao clienteDao = new ClienteDao();
     private ClienteGetSet cli = new ClienteGetSet();
     private String resAnimal;
+    private Principal p ;
 
     public AnimaisAction(Animal animais) {
 
         this.animais = animais;
+        
     }
+     
 
     public void Log(String msg) {
         try {
@@ -55,7 +59,17 @@ public class AnimaisAction implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Cadastrou um novo animal");
                 } else {
+                    
+                    //Aquiiiiii
+                    
                     JOptionPane.showMessageDialog(null, "Proprietario não existe no banco", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                    // Se puder colocar um joptinpane para o usuario decidir se quer ou não adicionar um cliente
+                    int op = JOptionPane.showConfirmDialog(null, "Deseja cadastrar novo cliente?");
+                    if(op == 0){
+                    p = animais.RetornaPrincipal();
+                    p.Chamacliente();}
+                    
+                   
                 }
                 //precisa terminar
             } else {
@@ -74,6 +88,7 @@ public class AnimaisAction implements ActionListener {
                 boolean t = AnimalDao.buscaNome(ani, resAnimal);
                 if (t) {
                     AnimalDao.Delete(ani);
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Animal não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 }
@@ -102,7 +117,6 @@ public class AnimaisAction implements ActionListener {
                     AnimalDao.buscaNome(ani, ani.getNome());
 
                     aniUpdate.setId(ani.getId());
-                    // ani =  animais.getAnimais();
 
                     AnimalDao.Update(aniUpdate);
                     animais.limpar();
@@ -133,22 +147,25 @@ public class AnimaisAction implements ActionListener {
     }
 
     public void buscar() {
-        String resCliente = (JOptionPane.showInputDialog(null, "Informe o nome do proprietario:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
-        if (resCliente == null || resCliente.equals("")) {
-            // Log("!Buscar cliente falhou. Ação cancelada ");
-            // JOptionPane.showMessageDialog(null, "A busca foi cancelada ou CPF inserido é inválido", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+        String resProprietario = (JOptionPane.showInputDialog(null, "Informe o nome do proprietario:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
+        if (resProprietario == null ) {
+             Log("!Buscar proprietario falhou. Ação cancelada ");
+             JOptionPane.showMessageDialog(null, "A busca foi cancelada", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
         } else {
 
             cli.setNome("");
-            cli = clienteDao.buscaNome(resCliente);
+            cli = clienteDao.buscaNome(resProprietario);
 
             if (cli.getNome() == null) {
                 JOptionPane.showMessageDialog(null, "Proprietario não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Buscar falhou. Cliente: " + resCliente + " não encontrado no banco de dados");
+                Log("!Buscar falhou. Cliente: " + resProprietario + " não encontrado no banco de dados");
             } else {
                 resAnimal = (JOptionPane.showInputDialog(null, "Informe o nome do animal:", "Buscar Animal", JOptionPane.PLAIN_MESSAGE));
-                if (resAnimal == null || resAnimal.equals("")) {
+                if (resAnimal == null ) {
 
+                    Log("!Buscar animal falhou. Ação cancelada ");
+             JOptionPane.showMessageDialog(null, "A busca foi cancelada", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                    
                 } else {
                     ani = animais.getAnimais();
                     ani.setNome("");

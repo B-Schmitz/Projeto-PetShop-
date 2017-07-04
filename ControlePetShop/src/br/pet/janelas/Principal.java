@@ -219,6 +219,11 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void Chamacliente(){
+        Janela(c_cliente);
+    }
+
+    
     private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
         Log("!Abriu a janela Cliente");
         Janela(c_cliente);
@@ -233,6 +238,7 @@ public class Principal extends javax.swing.JFrame {
         Log("!Abriu a janela Animal");
 
         Janela(animal);
+        animal.PegaPrincipal(this);
     }//GEN-LAST:event_menu_animalActionPerformed
 
     private void menu_estoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_estoqueActionPerformed

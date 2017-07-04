@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 
 public class Animal extends javax.swing.JInternalFrame {
 
+    private Principal p;
     private final AnimaisAction animais = new AnimaisAction(this);
     private AnimalGetSet ani;
     private final LogExceptions execao = new LogExceptions();
@@ -34,6 +35,14 @@ public class Animal extends javax.swing.JInternalFrame {
         field_nome_animal.setDocument(new Letras());
         field_proprietario.setDocument(new Letras());
         field_raca.setDocument(new Letras());
+    }
+    
+    public void PegaPrincipal(Principal p){
+    
+    this.p = p;
+}
+    public Principal RetornaPrincipal(){
+        return p;
     }
 
     @SuppressWarnings("unchecked")
