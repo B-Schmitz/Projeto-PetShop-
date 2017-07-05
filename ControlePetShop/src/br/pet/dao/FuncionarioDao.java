@@ -33,13 +33,15 @@ public class FuncionarioDao {
             conn.commit();
 
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+           // System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -48,14 +50,16 @@ public class FuncionarioDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                  //  System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -81,13 +85,15 @@ public class FuncionarioDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+            //System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -96,14 +102,16 @@ public class FuncionarioDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -121,13 +129,15 @@ public class FuncionarioDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+            //System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -136,14 +146,16 @@ public class FuncionarioDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -157,7 +169,7 @@ public class FuncionarioDao {
 
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from funcionario where cpf = ?";
+            String sql = "select id,cpf,nome,cargo,idade,sexo,telefone,endereco,email,num_pis from funcionario where cpf = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, f.getCPF());
             ps.execute();

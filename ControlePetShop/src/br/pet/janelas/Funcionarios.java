@@ -137,11 +137,6 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         botao_atualizar_funcionario.setText("Atualizar");
         botao_atualizar_funcionario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_atualizar_funcionario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botao_atualizar_funcionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_atualizar_funcionarioActionPerformed(evt);
-            }
-        });
 
         botao_buscar_funcionario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         botao_buscar_funcionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/buscar.png"))); // NOI18N
@@ -261,10 +256,6 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botao_atualizar_funcionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_funcionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_atualizar_funcionarioActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_atualizar_funcionario;
@@ -313,10 +304,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
         fun.setSexo((String) comboBox_sexo_funcionario.getSelectedItem());
         fun.setCPF(cpf);
 
-        //comentei isso
-        //limpar();
        
-
         return fun;
 
     }

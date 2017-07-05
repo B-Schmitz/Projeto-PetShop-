@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import br.pet.log.Log;
 import br.pet.excecoes.LogExceptions;
+import br.pet.getset.LoginGetSet;
 import java.awt.HeadlessException;
 
 public class Login extends javax.swing.JFrame {
@@ -45,6 +46,17 @@ public class Login extends javax.swing.JFrame {
         botao_alterar_senha.addActionListener(login);
 
     }
+    
+    public LoginGetSet getLogin(){
+        LoginGetSet login = new LoginGetSet();
+        
+        login.setLogin(field_usuario.getText());
+        login.setSenha(new String(field_senha.getPassword()));
+        
+        
+        return login;
+    }
+    
 
     public void Log(String msg) {
         try {

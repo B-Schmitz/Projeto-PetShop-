@@ -2,7 +2,6 @@ package br.pet.getset;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class EstoqueGetSet implements Comparable<EstoqueGetSet> {

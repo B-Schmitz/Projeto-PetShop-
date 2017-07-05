@@ -30,13 +30,15 @@ public class ClienteDao {
             conn.commit();
 
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+           // System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                 //   System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -45,14 +47,16 @@ public class ClienteDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -77,13 +81,15 @@ public class ClienteDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+           // System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -92,13 +98,15 @@ public class ClienteDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
+                    execao.exception(ex);
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
@@ -117,13 +125,15 @@ public class ClienteDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+          //  System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -139,7 +149,8 @@ public class ClienteDao {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -154,7 +165,7 @@ public class ClienteDao {
 
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from cliente where nome = ?";
+            String sql = "select id,cpf,nome,idade,sexo,telefone,endereco,email from cliente where nome = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, nome);
             ps.execute();
@@ -191,7 +202,8 @@ public class ClienteDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
@@ -214,7 +226,7 @@ public class ClienteDao {
 
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from cliente where cpf = ?";
+            String sql = "select id,cpf,nome,idade,sexo,telefone,endereco,email from cliente where cpf = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, c.getCPF());
             ps.execute();
@@ -250,7 +262,8 @@ public class ClienteDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {

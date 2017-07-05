@@ -102,7 +102,8 @@ public class ControleEstoqueDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
@@ -126,7 +127,7 @@ public class ControleEstoqueDao {
 
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from estoque";
+            String sql = "select id_produto,data_compra,fornecedor,nome,preco,quantidade,em_estoque from estoque";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
 
@@ -164,7 +165,8 @@ public class ControleEstoqueDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {

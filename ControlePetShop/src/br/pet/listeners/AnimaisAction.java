@@ -21,7 +21,7 @@ public class AnimaisAction implements ActionListener {
     private AnimalGetSet aniUpdate;
     private final LogExceptions execao = new LogExceptions();
     private final AnimalDao AnimalDao = new AnimalDao();
-    private ClienteDao clienteDao = new ClienteDao();
+    private final ClienteDao clienteDao = new ClienteDao();
     private ClienteGetSet cli = new ClienteGetSet();
     private String resAnimal;
     private Principal p;
@@ -56,7 +56,7 @@ public class AnimaisAction implements ActionListener {
                     Log("!Cadastrou um novo animal");
                 } else {
 
-                    //Aquiiiiii
+                    
                     JOptionPane.showMessageDialog(null, "Proprietario não existe no banco", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     // Se puder colocar um joptinpane para o usuario decidir se quer ou não adicionar um cliente
                     int op = JOptionPane.showConfirmDialog(null, "Deseja cadastrar novo cliente?");
@@ -88,8 +88,7 @@ public class AnimaisAction implements ActionListener {
                 }
             }
 
-            //animais.Deletar();
-            //falta log
+            
         }
         if (e.getActionCommand().equals("Atualizar")) {
             Log("!Clicou em 'Atualizar Animal'");
@@ -141,7 +140,8 @@ public class AnimaisAction implements ActionListener {
     }
 
     public void buscar() {
-        String resProprietario = (JOptionPane.showInputDialog(null, "Informe o nome do proprietario:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
+        String resProprietario ="";
+        resProprietario = (JOptionPane.showInputDialog(null, "Informe o nome do proprietario:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
         if (resProprietario == null) {
             Log("!Buscar proprietario falhou. Ação cancelada ");
             JOptionPane.showMessageDialog(null, "A busca foi cancelada", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
@@ -154,6 +154,7 @@ public class AnimaisAction implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Proprietario não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 Log("!Buscar falhou. Cliente: " + resProprietario + " não encontrado no banco de dados");
             } else {
+                resAnimal = "";
                 resAnimal = (JOptionPane.showInputDialog(null, "Informe o nome do animal:", "Buscar Animal", JOptionPane.PLAIN_MESSAGE));
                 if (resAnimal == null) {
 
@@ -167,7 +168,6 @@ public class AnimaisAction implements ActionListener {
 
                 }
 
-                // Log("!Buscou cliente: " + client.getCPF());
             }
         }
     }

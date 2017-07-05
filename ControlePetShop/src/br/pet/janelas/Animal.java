@@ -114,11 +114,6 @@ public class Animal extends javax.swing.JInternalFrame {
         label_sexo_animal.setText("Sexo:");
 
         comboBox_sexo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
-        comboBox_sexo_animal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBox_sexo_animalActionPerformed(evt);
-            }
-        });
 
         comboBox_tipo_animal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cachorro", "Gato", "Coelho" }));
 
@@ -151,11 +146,6 @@ public class Animal extends javax.swing.JInternalFrame {
         botao_atualizar_Animal.setText("Atualizar");
         botao_atualizar_Animal.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_atualizar_Animal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botao_atualizar_Animal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_atualizar_AnimalActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -259,14 +249,6 @@ public class Animal extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void comboBox_sexo_animalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBox_sexo_animalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBox_sexo_animalActionPerformed
-
-    private void botao_atualizar_AnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_AnimalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_atualizar_AnimalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

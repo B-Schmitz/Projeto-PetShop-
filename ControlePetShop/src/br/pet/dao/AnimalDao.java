@@ -32,12 +32,14 @@ public class AnimalDao {
             conn.commit();
 
         } catch (SQLException e) {
+            execao.exception(e);
             System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
+                    execao.exception(ex);
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
@@ -47,14 +49,16 @@ public class AnimalDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -77,13 +81,15 @@ public class AnimalDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+           // System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                  //  System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -92,14 +98,16 @@ public class AnimalDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                  //  System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                  //  System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -118,13 +126,15 @@ public class AnimalDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+         //   System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                 //   System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -133,14 +143,16 @@ public class AnimalDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -158,13 +170,15 @@ public class AnimalDao {
 
             conn.commit();
         } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
+            execao.exception(e);
+          //  System.out.println("ERRO: " + e.getMessage());
 
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                 //   System.out.println("ERRO: " + ex.getMessage());
                 }
             }
 
@@ -173,14 +187,16 @@ public class AnimalDao {
                 try {
                     ps.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                   // System.out.println("ERRO: " + ex.getMessage());
                 }
             }
             if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
+                    execao.exception(ex);
+                    //System.out.println("ERRO: " + ex.getMessage());
                 }
             }
         }
@@ -196,7 +212,7 @@ public class AnimalDao {
        
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from animal where proprietario = ? and nome = ?";
+            String sql = "select id,animal,nome,raca,cor,sexo,idade,altura,peso,proprietario from animal where proprietario = ? and nome = ?";
             ps = conn.prepareStatement(sql);
             ps.setInt(1, a.getCliente().getId());
             ps.setString(2, nome);

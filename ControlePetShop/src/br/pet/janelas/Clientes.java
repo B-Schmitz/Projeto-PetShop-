@@ -1,6 +1,5 @@
 package br.pet.janelas;
 
-import br.pet.dao.AnimalDao;
 import br.pet.dao.ClienteDao;
 import br.pet.excecoes.Letras;
 import br.pet.excecoes.LimitandoCamposNumericos;
@@ -11,7 +10,6 @@ import javax.swing.JFormattedTextField;
 import br.pet.listeners.CadastroClienteAction;
 import br.pet.excecoes.LogExceptions;
 import java.io.IOException;
-import javax.swing.JOptionPane;
 
 public class Clientes extends javax.swing.JInternalFrame {
 
@@ -138,11 +136,6 @@ public class Clientes extends javax.swing.JInternalFrame {
         botao_atualizar_cliente.setText("Atualizar");
         botao_atualizar_cliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         botao_atualizar_cliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botao_atualizar_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botao_atualizar_clienteActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -244,10 +237,6 @@ public class Clientes extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botao_atualizar_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botao_atualizar_clienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botao_atualizar_clienteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao_atualizar_cliente;
@@ -321,74 +310,6 @@ public class Clientes extends javax.swing.JInternalFrame {
                 || field_telefone_cliente.getText().replaceAll("[()]", "").trim().isEmpty()
                 || field_endereco_cliente.getText().trim().isEmpty());
     }
-
-/*    public ClienteGetSet Deletar() {
-        String result = (JOptionPane.showInputDialog(null, "Informe o CPF: ", "Deletar cliente", JOptionPane.PLAIN_MESSAGE));
-        if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
-            JOptionPane.showMessageDialog(null, "O delete foi cancelado ou CPF inserido é inválido", "Deletar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-            Log("!Deletar cliente falhou. Ação cancelada ");
-            client = null;
-        } else {
-            client = new ClienteGetSet();
-            client.setCPF(result);
-             dao.Read(client);
-            if ("".equals(client.getNome().trim())) {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Deletar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
-            } else {
-                AnimalDao daAni = new AnimalDao();
-                daAni.Delete(client.getId());
-                dao.Delete(client);
-                Log("!Deletou cliente: " + client.getCPF());
-            }
-        }
-        return client;
-    }
-*/
-  /*  public void Buscar() {
-        client.setNome(""); // Define o nome como vazio para verificação no banco depois.
-        String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
-        if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
-            Log("!Buscar cliente falhou. Ação cancelada ");
-            JOptionPane.showMessageDialog(null, "A busca foi cancelada ou CPF inserido é inválido", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-        } else {
-            client.setCPF(result);
-            dao.Read(client);
-            if ("".equals(client.getNome().trim())) {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Buscar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
-            } else {
-                Escreve();
-                Log("!Buscou cliente: " + client.getCPF());
-            }
-        }
-    }*/
-
-    /*public void Atualizar() {
-        if (Verifica()) {
-            client.setCPF(field_CPF_cliente.getText().replaceAll("[-.]", "").trim());
-          
-            dao.Read(client);
-            System.out.println(client.getNome());
-            if ("".equals(client.getNome().trim())) {
-                JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Atualizar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
-            } else {
-                // Precisava pegar os dados informados
-                client = getcliente();
-                dao.Update(client);
-                limpar();
-                JOptionPane.showMessageDialog(null, "Atualização realizada com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
-                Log("!Atualizou cliente: " + client.getCPF());
-                //Porque isso em baixo?
-              //  client.setNome("");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar a atualização", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-            Log("!Atualização de cliente falhou");
-        }
-
-    }*/
 
     public void Escreve() {
         int num;
