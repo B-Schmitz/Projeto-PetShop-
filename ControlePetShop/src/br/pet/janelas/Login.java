@@ -54,7 +54,6 @@ public class Login extends javax.swing.JFrame {
 
         l.setLogin(field_usuario.getText());
         l.setSenha(new String(field_senha.getPassword()));
-
         return l;
     }
 
@@ -91,7 +90,6 @@ public class Login extends javax.swing.JFrame {
             escrever(l.getLogin());
         } catch (IOException ex) {
             execao.exception(ex);
-            // Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         Log("!Entrou");
         p = new Principal();
@@ -121,10 +119,8 @@ public class Login extends javax.swing.JFrame {
                     Log("!Falha ao alterar senha");
                 } else {
                     JOptionPane.showMessageDialog(null, "Senha modificada", "Alteração efetuada", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
-
                     Log("!Alterou a senha");
                 }
-
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
@@ -132,7 +128,6 @@ public class Login extends javax.swing.JFrame {
             execao.exception(ex);
             senha_atual = senha_nova;
         }
-
         return senha_atual;
     }
 

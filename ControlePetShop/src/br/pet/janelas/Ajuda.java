@@ -101,7 +101,7 @@ public class Ajuda extends javax.swing.JInternalFrame {
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         label_versao.setForeground(new java.awt.Color(255, 255, 255));
-        label_versao.setText("Versão: 2.0");
+        label_versao.setText("Versão: 3.0");
 
         javax.swing.GroupLayout JpanelLayout = new javax.swing.GroupLayout(Jpanel);
         Jpanel.setLayout(JpanelLayout);

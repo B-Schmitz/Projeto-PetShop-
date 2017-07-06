@@ -1,8 +1,7 @@
-
 package br.pet.getset;
 
-
 public class LoginGetSet {
+
     private String login;
     private String senha;
     private int id;

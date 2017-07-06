@@ -77,7 +77,6 @@ public class Principal extends javax.swing.JFrame {
         desktopPane_principal.setBackground(new java.awt.Color(204, 204, 204));
 
         label_patinhas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/pet/icones/pegadas.png"))); // NOI18N
-        label_patinhas.setText("jLabel1");
 
         desktopPane_principal.setLayer(label_patinhas, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
