@@ -8,12 +8,15 @@ import br.pet.log.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class LoginAction implements ActionListener {
 
     private final Login login;
     private LoginGetSet Login;
-    private LoginDao logindao;
+    private final LoginDao logindao = new LoginDao();
     private final LogExceptions execao = new LogExceptions();
 
     public LoginAction(Login login) {
@@ -24,17 +27,42 @@ public class LoginAction implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Entrar")) {
-         //  login.Testa_Usuario();
-           //Não sei o que ta dando errado
-           
-           Login = login.getLogin();
-        //   logindao.Read(Login);
-          
-            login.Testa_Senha();}
-               
            
 
-        
+            Login = login.getLogin();
+            LoginGetSet l;
+
+            l = logindao.GetUsuario(Login.getLogin());
+
+            if (l.getLogin() != null) {
+                try {
+                    Log.escrever("Usuario validado");
+                } catch (IOException ex) {
+                    // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                    execao.exception(ex);
+                }
+                if (l.getSenha().equals(Login.getSenha())) {
+
+                    login.CarregaPrincipal();
+                } else {
+                    try {
+                        Log.escrever("Senha invalida");
+                        JOptionPane.showMessageDialog(null, "Senha incorreta!");
+                    } catch (IOException ex) {
+                        execao.exception(ex);
+                        //  Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            } else {
+                try {
+                    Log.escrever("Usuario não encontrado");
+                    JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
+                } catch (IOException ex) {
+                    execao.exception(ex);
+                    // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
         if (e.getActionCommand().equals("Cancelar")) {
             try {
                 Log.escrever("!Login cancelado");
@@ -43,8 +71,33 @@ public class LoginAction implements ActionListener {
             }
             System.exit(0);
         }
-        if(e.getActionCommand().equals("Alterar senha")){
-            login.AlterarSenha();
+        if (e.getActionCommand().equals("Alterar senha")) {
+            Login = login.getLogin();
+             LoginGetSet l;
+
+            l = logindao.GetUsuario(Login.getLogin());
+
+            if (l.getLogin() != null) {
+                try {
+                    Log.escrever("Usuario validado");
+                } catch (IOException ex) {
+                    execao.exception(ex);
+                   // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+            String senha = login.AlterarSenha(l.getSenha());
+            
+            if(!senha.equals(l.getSenha())){
+                    try {
+                        Log.escrever("Nova senha validado");
+                    } catch (IOException ex) {
+                        execao.exception(ex);
+                       // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                Login.setSenha(senha);
+                logindao.Update(Login);
+            }
+            }
         }
     }
 

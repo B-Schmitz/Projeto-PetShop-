@@ -22,3 +22,6 @@ INSERT INTO ANIMAL VALUES(11,'Cachorro','pe','vira lata','preto','Macho',20,20,2
 INSERT INTO ANIMAL VALUES(20,'Cachorro','Xaxa','Hot dog','vermelho','Macho',15,10,200,27)
 INSERT INTO ANIMAL VALUES(22,'Cachorro','Hola','Hot dog','vermelho','Macho',20,10,200,27)
 INSERT INTO FUNCIONARIO VALUES(0,'08421958909','Rubens Barbosa','Gerente',32,'Masculino',48996520518,'Rua Emilio de Freitas 103','bernardo_commercial@gmail.com',75873897893)
+INSERT INTO LOGIN VALUES(1,'admin','admin')
+INSERT INTO LOGIN VALUES(2,'Bernardo','admin')
+INSERT INTO LOGIN VALUES(3,'Michael','admin')

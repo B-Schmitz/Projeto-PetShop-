@@ -23,6 +23,9 @@ public class Login extends javax.swing.JFrame {
     private final ImageIcon icone;
     private Principal p;
     private static String linha;
+    private LoginGetSet l = new LoginGetSet();
+
+    ;
 
     public Login() {
 
@@ -46,17 +49,14 @@ public class Login extends javax.swing.JFrame {
         botao_alterar_senha.addActionListener(login);
 
     }
-    
-    public LoginGetSet getLogin(){
-        LoginGetSet login = new LoginGetSet();
-        
-        login.setLogin(field_usuario.getText());
-        login.setSenha(new String(field_senha.getPassword()));
-        
-        
-        return login;
+
+    public LoginGetSet getLogin() {
+
+        l.setLogin(field_usuario.getText());
+        l.setSenha(new String(field_senha.getPassword()));
+
+        return l;
     }
-    
 
     public void Log(String msg) {
         try {
@@ -85,31 +85,21 @@ public class Login extends javax.swing.JFrame {
         }
     }
 
-    public void Testa_Usuario() {
-        user = field_usuario.getText();
+    public void CarregaPrincipal() {
+        log.setUser(user);
         try {
-            escrever(user);
-        } catch (IOException e) {
-            execao.exception(e);
+            escrever(l.getLogin());
+        } catch (IOException ex) {
+            execao.exception(ex);
+            // Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Log("!Entrou");
+        p = new Principal();
+        p.setVisible(true);
+        dispose();
     }
 
-    public void Testa_Senha() {
-        senha_nova = new String(field_senha.getPassword());
-        if (senha_nova.equals(senha_atual)) {
-            log.setUser(user);
-            Log("!Entrou");
-            p = new Principal();
-            p.setVisible(true);
-            dispose();
-        } else {
-            Log("!Login falhou, senha incorreta");
-            field_senha.setText("");
-            JOptionPane.showMessageDialog(null, "Por favor, informe senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-        }
-    }
-
-    public void AlterarSenha() {
+    public String AlterarSenha(String senha_atual) {
 
         password.setText(null);
         password2.setText(null);
@@ -120,7 +110,7 @@ public class Login extends javax.swing.JFrame {
             senha_nova = new String(password2.getPassword());
 
             if (senha_nova.equals(senha_atual)) {
-
+                Log("!A senha foi validada");
                 password.setEchoChar('*');
                 JOptionPane.showMessageDialog(null, painel_senha, "Alterar Senha", JOptionPane.PLAIN_MESSAGE);
                 senha_atual = new String(password.getPassword());
@@ -139,8 +129,11 @@ public class Login extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Por favor, informe a senha correta", "Senha incorreta", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
         } catch (HeadlessException ex) {
+            execao.exception(ex);
             senha_atual = senha_nova;
         }
+
+        return senha_atual;
     }
 
     @SuppressWarnings("unchecked")
