@@ -18,7 +18,7 @@ public class Login extends javax.swing.JFrame {
     private LogExceptions execao = new LogExceptions();
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
-    private String senha_nova, senha_atual = "admin";
+    private String senha_nova;
     private String user;
     private final ImageIcon icone;
     private Principal p;
