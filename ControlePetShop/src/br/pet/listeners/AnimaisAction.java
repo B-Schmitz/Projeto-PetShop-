@@ -46,7 +46,7 @@ public class AnimaisAction implements ActionListener {
             Log("!Clicou em 'Cadastrar'");
             if (animais.Verifica()) {
                 ani = animais.getAnimais();
-                // System.out.println(ani.toString());
+                System.out.println(ani.toString());
                 ClienteGetSet cli = clienteDao.buscaNome(ani.getProprietario());
                 if (cli.getNome() != null) {
 
@@ -54,9 +54,9 @@ public class AnimaisAction implements ActionListener {
                     AnimalDao.Insert(ani);
                     JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Cadastrou um novo animal");
+                    animais.limpar();
                 } else {
 
-                    
                     JOptionPane.showMessageDialog(null, "Proprietario não existe no banco", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     // Se puder colocar um joptinpane para o usuario decidir se quer ou não adicionar um cliente
                     int op = JOptionPane.showConfirmDialog(null, "Deseja cadastrar novo cliente?");
@@ -77,18 +77,21 @@ public class AnimaisAction implements ActionListener {
         }
 
         if (e.getActionCommand().equals("Deletar")) {
+            Log("!Clicou em 'Deletar Animal'");
             buscar();
             if (ani != null) {
                 boolean t = AnimalDao.buscaNome(ani, resAnimal);
                 if (t) {
                     AnimalDao.Delete(ani);
+                    JOptionPane.showMessageDialog(null, "Deletado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
+                    Log("!Deletou animal");
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Animal não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 }
+                ani = null;
             }
 
-            
         }
         if (e.getActionCommand().equals("Atualizar")) {
             Log("!Clicou em 'Atualizar Animal'");
@@ -131,16 +134,17 @@ public class AnimaisAction implements ActionListener {
             if (ani != null) {
                 boolean t = AnimalDao.buscaNome(ani, resAnimal);
                 if (t) {
-                    animais.Escreve();
+                    animais.Escreve(ani);
                 } else {
                     JOptionPane.showMessageDialog(null, "Animal não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                 }
             }
+            ani = null;
         }
     }
 
     public void buscar() {
-        String resProprietario ="";
+        String resProprietario = "";
         resProprietario = (JOptionPane.showInputDialog(null, "Informe o nome do proprietario:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
         if (resProprietario == null) {
             Log("!Buscar proprietario falhou. Ação cancelada ");
@@ -162,7 +166,7 @@ public class AnimaisAction implements ActionListener {
                     JOptionPane.showMessageDialog(null, "A busca foi cancelada", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
 
                 } else {
-                    ani = animais.getAnimais();
+                    ani = new AnimalGetSet();
                     ani.setNome("");
                     ani.setCliente(cli);
 

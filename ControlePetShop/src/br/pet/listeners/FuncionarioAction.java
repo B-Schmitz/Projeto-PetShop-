@@ -89,7 +89,7 @@ public class FuncionarioAction implements ActionListener {
         // BUSCAR FUNCIONÁRIO NO BANCO DE DADOS
         if (e.getActionCommand().equals("Buscar")) {
             Log("!Clicou em 'Buscar funcionário'");
-            fun = funcionario.getfuncio();
+            fun = new FuncionarioGetSet();
             fun.setNome(""); // Define o nome como vazio para verificação no banco depois.
             String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar funcionário", JOptionPane.PLAIN_MESSAGE));
             if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
@@ -97,12 +97,12 @@ public class FuncionarioAction implements ActionListener {
                 JOptionPane.showMessageDialog(null, "A busca foi cancelada ou CPF inserido é inválido", "Buscar cancelado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             } else {
                 fun.setCPF(result);
-                dao.Read(fun);
+               dao.Read(fun);
                 if ("".equals(fun.getNome().trim())) {
                     JOptionPane.showMessageDialog(null, "Funcionário não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     Log("!Buscar falhou. Funcionário: " + fun.getCPF() + " não encontrado no banco de dados");
                 } else {
-                    funcionario.Escreve();
+                    funcionario.Escreve(fun);
                     Log("!Buscou funcionário: " + fun.getCPF());
                 }
             }

@@ -311,7 +311,7 @@ public class Clientes extends javax.swing.JInternalFrame {
                 || field_endereco_cliente.getText().trim().isEmpty());
     }
 
-    public void Escreve() {
+    public void Escreve(ClienteGetSet client) {
         int num;
         if (client.getSexo().equals("Masculino")) {
             num = 0;

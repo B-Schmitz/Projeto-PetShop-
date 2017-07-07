@@ -8,8 +8,7 @@ import br.pet.log.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class LoginAction implements ActionListener {
@@ -35,6 +34,7 @@ public class LoginAction implements ActionListener {
             l = logindao.GetUsuario(Login.getLogin());
 
             if (l.getLogin() != null) {
+               
                 try {
                     Log.escrever("Usuario validado");
                 } catch (IOException ex) {
@@ -47,7 +47,7 @@ public class LoginAction implements ActionListener {
                 } else {
                     try {
                         Log.escrever("Senha invalida");
-                        JOptionPane.showMessageDialog(null, "Senha incorreta!");
+                        JOptionPane.showMessageDialog(null, "Senha incorreta!", "Login", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     } catch (IOException ex) {
                         execao.exception(ex);
                         //  Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -56,7 +56,8 @@ public class LoginAction implements ActionListener {
             } else {
                 try {
                     Log.escrever("Usuario não encontrado");
-                    JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
+                    JOptionPane.showMessageDialog(null, "Usuario não encontrado!", "Login", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                    
                 } catch (IOException ex) {
                     execao.exception(ex);
                     // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,6 +99,16 @@ public class LoginAction implements ActionListener {
                 logindao.Update(Login);
             }
             }
+            else {
+                try {
+                    Log.escrever("Usuario não encontrado");
+                    JOptionPane.showMessageDialog(null, "Usuario não encontrado!", "Alterar senha", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
+                } catch (IOException ex) {
+                    execao.exception(ex);
+                    // Logger.getLogger(LoginAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
         }
     }
 

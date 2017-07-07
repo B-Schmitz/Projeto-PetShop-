@@ -333,7 +333,7 @@ public class Funcionarios extends javax.swing.JInternalFrame {
                 || field_email_funcionario.getText().trim().isEmpty());
     }
     
-     public void Escreve() {
+     public void Escreve(FuncionarioGetSet fun) {
         int num;
         if (fun.getSexo().equals("Masculino")) {
             num = 0;

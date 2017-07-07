@@ -319,7 +319,7 @@ public class Animal extends javax.swing.JInternalFrame {
                 || field_peso.getText().isEmpty());
     }
 
-    public void Escreve() {
+    public void Escreve(AnimalGetSet ani) {
         int sex, tipo;
         if (ani.getSexo().equals("Macho")) {
             sex = 0;

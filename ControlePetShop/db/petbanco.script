@@ -25,3 +25,4 @@ INSERT INTO FUNCIONARIO VALUES(0,'08421958909','Rubens Barbosa','Gerente',32,'Ma
 INSERT INTO LOGIN VALUES(1,'admin','admin')
 INSERT INTO LOGIN VALUES(2,'Bernardo','admin')
 INSERT INTO LOGIN VALUES(3,'Michael','admin')
+INSERT INTO LOGIN VALUES(4,'Duarte','admin')

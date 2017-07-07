@@ -84,7 +84,7 @@ public class CadastroClienteAction implements ActionListener {
          // BUSCAR CLIENTE NO BANCO DE DADOS
         if (e.getActionCommand().equals("Buscar")) {
             Log("!Clicou em 'Buscar cliente'");
-            client = cliente.getcliente();
+            client = new ClienteGetSet();
             client.setNome(""); // Define o nome como vazio para verificação no banco depois.
             String result = (JOptionPane.showInputDialog(null, "Informe o CPF:", "Buscar cliente", JOptionPane.PLAIN_MESSAGE));
             if (result == null || result.equals("") || result.length() < 11 || result.length() > 11) {
@@ -97,7 +97,7 @@ public class CadastroClienteAction implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Cliente não encontrado no banco de dados", "Não encontrado", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
                     Log("!Buscar falhou. Cliente: " + client.getCPF() + " não encontrado no banco de dados");
                 } else {
-                    cliente.Escreve();
+                    cliente.Escreve(client);
                     Log("!Buscou cliente: " + client.getCPF());
                 }
             }

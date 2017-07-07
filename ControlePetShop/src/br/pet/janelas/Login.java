@@ -19,7 +19,6 @@ public class Login extends javax.swing.JFrame {
     private LoginAction login = new LoginAction(this);
     private Log log = new Log();
     private String senha_nova;
-    private String user;
     private final ImageIcon icone;
     private Principal p;
     private static String linha;
@@ -36,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         } catch (IOException ex) {
             execao.exception(ex);
         }
-        user = linha;
+        
 
         // Configurações da Janela
         this.setResizable(false);
@@ -54,6 +53,7 @@ public class Login extends javax.swing.JFrame {
 
         l.setLogin(field_usuario.getText());
         l.setSenha(new String(field_senha.getPassword()));
+        log.setUser(l.getLogin());
         return l;
     }
 
@@ -84,8 +84,9 @@ public class Login extends javax.swing.JFrame {
         }
     }
 
+
     public void CarregaPrincipal() {
-        log.setUser(user);
+        
         try {
             escrever(l.getLogin());
         } catch (IOException ex) {
