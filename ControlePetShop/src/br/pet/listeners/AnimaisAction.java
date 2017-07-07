@@ -43,7 +43,7 @@ public class AnimaisAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Cadastrar")) {
-            Log("!Clicou em 'Cadastrar'");
+            Log("!Clicou em 'Cadastrar animal'");
             if (animais.Verifica()) {
                 ani = animais.getAnimais();
                 System.out.println(ani.toString());
@@ -58,14 +58,12 @@ public class AnimaisAction implements ActionListener {
                 } else {
 
                     JOptionPane.showMessageDialog(null, "Proprietario não existe no banco", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                    // Se puder colocar um joptinpane para o usuario decidir se quer ou não adicionar um cliente
                     int op = JOptionPane.showConfirmDialog(null, "Deseja cadastrar novo cliente?");
                     if (op == 0) {
                         p = animais.RetornaPrincipal();
                         p.Chamacliente();
                     }
                 }
-                //precisa terminar
             } else {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar o cadastro", "Cadastro falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
             }
@@ -83,7 +81,7 @@ public class AnimaisAction implements ActionListener {
                 boolean t = AnimalDao.buscaNome(ani, resAnimal);
                 if (t) {
                     AnimalDao.Delete(ani);
-                    JOptionPane.showMessageDialog(null, "Deletado com sucesso", "Cadastro concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
+                    JOptionPane.showMessageDialog(null, "Deletado com sucesso", "Delete concluído", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
                     Log("!Deletou animal");
 
                 } else {
@@ -115,6 +113,8 @@ public class AnimaisAction implements ActionListener {
                     aniUpdate.setId(ani.getId());
 
                     AnimalDao.Update(aniUpdate);
+                    JOptionPane.showMessageDialog(null, "Atualizado com sucesso", "Atualização concluída", JOptionPane.PLAIN_MESSAGE, new ImageIcon("src/br/pet/icones/aceito.png"));
+                    Log("!Atualizou animal");
                     animais.limpar();
                 } else {
                     JOptionPane.showMessageDialog(null, "Cadastro não encontrado", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
@@ -123,7 +123,7 @@ public class AnimaisAction implements ActionListener {
             } else {
 
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos para efetuar a atualização", "Atualização falhou", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/br/pet/icones/erro.png"));
-                Log("!Atualização de cliente falhou");
+                Log("!Atualização de animal falhou");
             }
 
         }
@@ -171,7 +171,6 @@ public class AnimaisAction implements ActionListener {
                     ani.setCliente(cli);
 
                 }
-
             }
         }
     }

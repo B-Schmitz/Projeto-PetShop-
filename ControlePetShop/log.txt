@@ -54,3 +54,51 @@ Thu Jul 06 22:51:33 BRT 2017 : Michael !Clicou em 'Cadastrar'
 Thu Jul 06 22:51:40 BRT 2017 : Michael !Clicou em 'Cadastrar'
 Thu Jul 06 22:51:41 BRT 2017 : Michael !Cadastrou um novo animal
 Thu Jul 06 22:52:02 BRT 2017 : Michael !Clicou em 'Cadastrar'
+Fri Jul 07 19:23:56 BRT 2017 : Michael Usuario validado
+Fri Jul 07 19:23:56 BRT 2017 : Michael !Entrou
+Fri Jul 07 19:24:03 BRT 2017 : Michael !Abriu a janela Animal
+Fri Jul 07 19:24:04 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:24:14 BRT 2017 : Michael !Buscar falhou. Cliente: 38 não encontrado no banco de dados
+Fri Jul 07 19:24:33 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:24:35 BRT 2017 : Michael !Buscar falhou. Cliente: 26 não encontrado no banco de dados
+Fri Jul 07 19:24:38 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:24:55 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:25:29 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:25:51 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:26:56 BRT 2017 : Michael Usuario validado
+Fri Jul 07 19:26:56 BRT 2017 : Michael !Entrou
+Fri Jul 07 19:26:58 BRT 2017 : Michael !Abriu a janela Animal
+Fri Jul 07 19:26:59 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:27:19 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:28:46 BRT 2017 : Michael Usuario validado
+Fri Jul 07 19:28:46 BRT 2017 : Michael !Entrou
+Fri Jul 07 19:28:49 BRT 2017 : Michael !Abriu a janela Animal
+Fri Jul 07 19:28:50 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:29:03 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:29:04 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:29:06 BRT 2017 : Michael !Atualização de cliente falhou
+Fri Jul 07 19:29:22 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:29:32 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:33:17 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:33:30 BRT 2017 : Michael !Clicou em 'Cadastrar'
+Fri Jul 07 19:33:30 BRT 2017 : Michael !Cadastrou um novo animal
+Fri Jul 07 19:33:34 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:33:36 BRT 2017 : Michael !Buscar proprietario falhou. Ação cancelada 
+Fri Jul 07 19:33:38 BRT 2017 : Michael !Clicou em 'Deletar Animal'
+Fri Jul 07 19:33:54 BRT 2017 : Michael !Deletou animal
+Fri Jul 07 19:34:15 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:34:33 BRT 2017 : Michael Usuario validado
+Fri Jul 07 19:34:33 BRT 2017 : Michael !Entrou
+Fri Jul 07 19:34:35 BRT 2017 : Michael !Abriu a janela Animal
+Fri Jul 07 19:34:36 BRT 2017 : Michael !Clicou em 'Buscar Animal'
+Fri Jul 07 19:34:42 BRT 2017 : Michael !Clicou em 'Atualizar Animal'
+Fri Jul 07 19:34:46 BRT 2017 : Michael !Atualizou animal
+Fri Jul 07 19:34:54 BRT 2017 : Michael !Alterou tema para escuro
+Fri Jul 07 19:35:03 BRT 2017 : Michael !Clicou em sair
+Fri Jul 07 19:35:05 BRT 2017 : Michael !Saiu
+Fri Jul 07 19:37:09 BRT 2017 : Michael Usuario validado
+Fri Jul 07 19:37:09 BRT 2017 : Michael !Entrou
+Fri Jul 07 19:37:12 BRT 2017 : Michael !Abriu a janela Cliente
+Fri Jul 07 19:37:30 BRT 2017 : Michael !Abriu a janela Funcionário
+Fri Jul 07 19:37:41 BRT 2017 : Michael !Abriu a janela Animal
+Fri Jul 07 19:37:48 BRT 2017 : Michael !Abriu a janela Controle de Estoque
